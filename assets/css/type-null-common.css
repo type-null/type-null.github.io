@@ -80,3 +80,20 @@ body .WrapperArea {
   border: solid 1px #F97767;
   box-sizing: border-box;
   background-color: #fee9e7; }
+
+.Heading1 {
+  word-wrap: break-word;
+  word-break: break-all;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1em;
+  font-weight: 700;
+  text-align: center; }
+  @media screen and (max-width: 844px) {
+    .Heading1 {
+      margin-bottom: 30px;
+      font-size: 3.2rem; } }
+  @media screen and (min-width: 845px) {
+    .Heading1 {
+      margin-bottom: 50px;
+      font-size: 3.8rem; } }
