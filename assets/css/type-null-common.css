@@ -98,168 +98,173 @@ body .WrapperArea {
       margin-bottom: 50px;
       font-size: 3.8rem; } }
 
-.SearchArea .SearchArea_inner {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #fff;
-  position: relative; }
-  .SearchArea .SearchArea_inner .SearchArea_tabGroup {
-    position: relative; }
-    .SearchArea .SearchArea_inner .SearchArea_tabGroup .EventSearchLinkArea {
-      z-index: 10;
-      position: absolute;
-      font-size: 1.4rem;
-      box-sizing: border-box;
-      right: 0;
-      line-height: 1em; }
-      @media screen and (max-width: 844px) {
-        .SearchArea .SearchArea_inner .SearchArea_tabGroup .EventSearchLinkArea {
-          bottom: -42px; } }
-      @media screen and (min-width: 845px) {
-        .SearchArea .SearchArea_inner .SearchArea_tabGroup .EventSearchLinkArea {
-          top: 12px; } }
-    .SearchArea .SearchArea_inner .SearchArea_tabGroup .BeginnerLinkArea {
-      z-index: 10;
-      position: absolute;
-      font-size: 1.4rem;
-      box-sizing: border-box;
-      right: 0;
-      line-height: 1em; }
-      .SearchArea .SearchArea_inner .SearchArea_tabGroup .BeginnerLinkArea a {
-        display: block;
-        position: relative;
-        padding-left: 1.2em; }
-        .SearchArea .SearchArea_inner .SearchArea_tabGroup .BeginnerLinkArea a:before {
-          font-family: 'pokemoncard-font';
-          position: absolute;
-          font-size: 110%;
-          top: 50%;
-          left: 0;
-          content: "\F808";
-          -webkit-transform: translateY(-50%);
-                  transform: translateY(-50%); }
-      @media screen and (max-width: 844px) {
-        .SearchArea .SearchArea_inner .SearchArea_tabGroup .BeginnerLinkArea {
-          display: none; } }
-      @media screen and (min-width: 845px) {
-        .SearchArea .SearchArea_inner .SearchArea_tabGroup .BeginnerLinkArea {
-          top: 12px; } }
-    .SearchArea .SearchArea_inner .SearchArea_tabGroup .KSTab {
-      -ms-touch-action: none;
-      touch-action: none;
-      position: relative;
-      margin-bottom: 0;
-      padding-bottom: 0;
-      z-index: 1; }
-      .SearchArea .SearchArea_inner .SearchArea_tabGroup .KSTab:before {
-        border-bottom: none; }
-  .SearchArea .SearchArea_inner .KSTabContents, .SearchArea .SearchArea_inner .SearchAreaFormGroup {
-    position: relative;
-    z-index: 0;
-    margin-top: -2px; }
-    .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner {
-      position: relative; }
-      .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item.current, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner.current {
-        border: solid 1px #ddd;
-        box-sizing: border-box; }
-        @media screen and (min-width: 845px) {
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item.current, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner.current {
-            padding: 28px 40px; } }
-        @media screen and (max-width: 844px) {
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item.current, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item.current, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner.current {
-            padding: 20px 17px; } }
-      .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm:before, .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm:after, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm:before, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm:after, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm:after, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm:after {
-        content: "";
-        display: table;
-        clear: both; }
-      .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text {
-        float: left;
-        height: 48px;
-        font-size: 1.6rem;
-        border-radius: 7px 0 0 7px / 7px 0 0 7px;
-        border-right: 0; }
-      .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button {
-        height: 48px;
-        line-height: 48px;
-        float: right;
-        padding: 0;
-        font-weight: bold;
-        border-radius: 0 7px 7px 0 / 0 7px 7px 0; }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button i, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button i, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button i, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button i {
-          font-size: 22px; }
-      @media screen and (min-width: 845px) {
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text {
-          width: calc(100% - 120px); }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-orient: horizontal;
-          -webkit-box-direction: normal;
-              -ms-flex-direction: row;
-                  flex-direction: row;
-          -ms-flex-wrap: nowrap;
-              flex-wrap: nowrap;
-          -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center;
-          -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center;
-          -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
-          width: 120px; }
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel {
-            display: block;
-            width: 100%; }
-            .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span {
-              margin-left: 1.3em;
-              position: relative;
-              width: auto;
-              font-weight: bold;
-              display: inline-block; }
-              .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span:before, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span:before {
-                font-family: 'pokemoncard-font';
-                content: "\F705";
-                font-weight: normal;
-                position: absolute;
-                top: 50%;
-                font-size: 22px;
-                left: -1.3em;
-                -webkit-transform: translateY(-50%);
-                        transform: translateY(-50%); } }
-      @media screen and (max-width: 844px) {
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .KSTextInput_text, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .KSTextInput_text {
-          width: calc(100% - 64px); }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button {
-          width: 64px;
-          text-align: center; }
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel i, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel i, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel i, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel i {
-            line-height: 48px;
-            font-size: 24px; }
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchTextForm .Button .SearchButtonLabel span, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchTextForm .Button .SearchButtonLabel span {
-            width: 0; } }
-      .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm {
-        font-size: 1.4rem; }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm:before, .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm:after, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm:before, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm:after, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm:after, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm:before, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm:after {
-          content: "";
-          display: table;
-          clear: both; }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm .Title, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm .Title, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm .Title, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm .Title {
-          font-weight: bold;
-          margin-top: 20px;
-          margin-right: 12px;
-          font-size: 1.2rem;
-          display: block; }
-        .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton {
-          float: left;
-          display: block;
-          margin-right: 1.5em; }
-          @media screen and (max-width: 844px) {
-            .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm .KSRadioButton, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton {
-              float: none; } }
-          .SearchArea .SearchArea_inner .KSTabContents .KSTabContents_item .SearchRadioForm .KSRadioButton .KSFormText, .SearchArea .SearchArea_inner .KSTabContents .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton .KSFormText, .SearchArea .SearchArea_inner .SearchAreaFormGroup .KSTabContents_item .SearchRadioForm .KSRadioButton .KSFormText, .SearchArea .SearchArea_inner .SearchAreaFormGroup .SearchAreaFormGroup_inner .SearchRadioForm .KSRadioButton .KSFormText {
-            margin-bottom: 0 !important;
-            margin-right: 0.3em;
-            margin-left: 0; }
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+@font-face {
+  font-family: "pokemoncard-font";
+  src: url("/assets/fonts/pokemoncard-font.eot");
+  src: url("/assets/fonts/pokemoncard-font.eot?#iefix") format("eot"), url("/assets/fonts/pokemoncard-font.woff") format("woff"), url("/assets/fonts/pokemoncard-font.ttf") format("truetype"), url("/assets/fonts/pokemoncard-font.svg#pokemoncard-font") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.pcg {
+  display: inline-block;
+  font-family: "pokemoncard-font";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.pcg-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+.pcg-2x {
+  font-size: 2em; }
+
+.pcg-3x {
+  font-size: 3em; }
+
+.pcg-4x {
+  font-size: 4em; }
+
+.pcg-5x {
+  font-size: 5em; }
+
+.pcg-fw {
+  width: 1.2857142857142858em;
+  text-align: center; }
+
+.pcg-arrow-up:before {
+  content: "\F700"; }
+
+.pcg-arrow-rigth:before {
+  content: "\F701"; }
+
+.pcg-arrow-down:before {
+  content: "\F702"; }
+
+.pcg-arrow-left:before {
+  content: "\F703"; }
+
+.pcg-arrow-anchor:before {
+  content: "\F704"; }
+
+.pcg-search:before {
+  content: "\F705"; }
+
+.pcg-monster-ball:before {
+  content: "\F806"; }
+
+.pcg-calendar:before {
+  content: "\F807"; }
+
+.pcg-blank:before {
+  content: "\F708"; }
+
+.pcg-check:before {
+  content: "\F709"; }
+
+.pcg-megamark:before {
+  content: "\F70A"; }
+
+.pcg-card:before {
+  content: "\F70B"; }
+
+.pcg-prismstar:before {
+  content: "\F70C"; }
+
+.pcg-deck:before {
+  content: "\F800"; }
+
+.pcg-flag:before {
+  content: "\F801"; }
+
+.pcg-pikachu:before {
+  content: "\F802"; }
+
+.pcg-cross:before {
+  content: "\F803"; }
+
+.pcg-hamburger:before {
+  content: "\F804"; }
+
+.pcg-beginner:before {
+  content: "\F808"; }
+
+.pcg-monster-ball-v2:before {
+  content: "\F806"; }
+
+.pcg-calendar-v2:before {
+  content: "\F807"; }
+
+.pcg-beginner-v2:before {
+  content: "\F808"; }
