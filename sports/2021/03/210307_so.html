@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">    <!-- Last-Modified="2021/03/10 00:00:00"-->
+    <meta name="theme-color" content="#489FE6">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Too Young To Be A Top Soccer Player? | Type Null</title>
+    <meta name="keywords" content="soccer,player,data,age,insight,sports,analytics,python">
+    <meta name="description" content="A recent article points that most of the top players in Europe in 2019-20 season are no younger than 29 years old. It also refers to a statistics study which finds the peak age for the UEFA Champions League is 26-30. We try to answer the following questions using the evidence from MLS: Does a soccer player need to get older in order to perform better? Should the contract of a younger player be longer until peak age? How should age be factored into value assessment for different positions ...">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo_arceus.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@typenull21">
+    <meta property="og:title" content="Too Young To Be A Top Soccer Player? | Type Null">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="A recent article points that most of the top players in Europe in 2019-20 season are no younger than 29 years old. It also refers to a statistics study which finds the peak age for the UEFA Champions League is 26-30. We try to answer the following questions using the evidence from MLS: Does a soccer player need to get older in order to perform better? Should the contract of a younger player be longer until &quot;peak age&quot;? How should age be factored into value assessment for different positions ...">
+    <meta property="og:url" content="https://type-null.github.io/sports/2021/03/210307_so.html">
+    <meta property="og:image" content="https://www.pokemon.co.jp/PostImages/9417f679995b8f3ce6055a4e6c03fa0d845b22fc.jpg">
+    <meta property="og:site_name" content="Type Null Official">
+    <meta property="og:locale" content="ja_JP">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">  </head>  <body class="page-sub page-shop">    <div class="body-wrapper">
+<header class="header" id="header">
+  <div class="header__body">
+    <div class="header__logo view-pc"><a href="/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'logo', 'click-lbl':'btn', 'event':'click'});"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren"/></a></div>
+    <nav class="gnav" id="gnav">
+      <ul class="gnav__list">
+        <li class="gnav__list-item nav-cat__news"><a class="gnav__list-links" href="/info/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'news', 'click-lbl':'btn', 'event':'click'});"><span>NEWS</span></a></li>
+        <li class="gnav__list-item nav-cat__game"><a class="gnav__list-links" href="/game/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'game', 'click-lbl':'btn', 'event':'click'});"><span>GAME</span></a></li>
+        <li class="gnav__list-item nav-cat__app"><a class="gnav__list-links" href="/app/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'app', 'click-lbl':'btn', 'event':'click'});"><span>APP</span></a></li>
+        <li class="gnav__list-item nav-cat__card"><a class="gnav__list-links" href="/card/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'card', 'click-lbl':'btn', 'event':'click'});"><span>CARD</span></a></li>
+        <li class="gnav__list-item nav-cat__tv_movie"><a class="gnav__list-links" href="/tv_movie/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'tv-movie', 'click-lbl':'btn', 'event':'click'});"><span>TV／MOVIE</span></a></li>
+        <li class="gnav__list-item nav-cat__shop"><a class="gnav__list-links" href="/soccer/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'shop', 'click-lbl':'btn', 'event':'click'});"><span>Soccer</span></a></li>
+        <li class="gnav__list-item nav-cat__goods"><a class="gnav__list-links" href="/goods/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'goods', 'click-lbl':'btn', 'event':'click'});"><span>GOODS</span></a></li>
+      </ul>
+    </nav>
+    <ul class="gnav-link__list">
+      <li class="gnav-link__list-item gnav-link__list-item--zukan"><a href="https://zukan.pokemon.co.jp/" target="_blank" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'zukan', 'click-lbl':'btn', 'event':'click'});"><span class="view-sp">ポケモン</span><span>図鑑</span></a></li>
+      <li class="gnav-link__list-item gnav-link__list-item--support"><a href="https://www.linkedin.com/in/weihangren" target="_blank" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'support', 'click-lbl':'btn', 'event':'click'});"><span>LinkedIn</span></a></li>
+        <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'search', 'click-lbl':'btn', 'event':'click'});"><span>検索</span></button>
+      </li>
+    </ul>
+  </div>
+  <div class="header-search">
+    <button class="header-search__close"><span></span><span></span></button>
+    <div class="header-search__element">
+      <form name="search_form" action="https://pokemon.dga.jp/" method="GET" onsubmit="return mysearch(this);">
+      <!-- <form name="search_form" action="https://pokemon.dga.jp/" method="GET" onsubmit="return mysearch(this);"> -->
+      <input type="text" name="kw" value="" class="iSearchAssist header-search__input">
+      <input type="hidden" name="ie" value="u">
+      <button type="submit" onclick="dataLayer.push({'click-ctg':'g-header', 'click-act':'serch', 'click-lbl':'submit', 'event':'click'});" class="header-search__submit"><i class="icon-search"></i>
+      </button>
+      </form>
+    </div>
+    <ul class="header-search__tag"></ul>
+  </div>
+  <div class="header__sp-block view-sp">
+    <div class="header__sp-menu-toggle">
+      <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'menu', 'click-lbl':'btn', 'event':'click'});"></button>
+    </div>
+    <div class="header__logo home-logo"><a href="/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'logo', 'click-lbl':'btn', 'event':'click'});"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren"/></a></div>
+    <div class="header__sp-search">
+      <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'search', 'click-lbl':'btn', 'event':'click'});"></button>
+    </div>
+  </div>
+</header>      <main class="main-area">
+        <div class="news-detail">
+          <div class="news-detail__header">
+            <div class="news-detail__header-info">
+              <div class="news-detail__header-category news-detail__header-category--sports"></div>              
+            </div>
+<ul class="detail-header__sns">
+  <li class="detail-header__sns-item"><a class="sns-item__tw" href="" target="_blank"><img src="/assets/images/icon-twitter.svg" alt="Twitter"/></a></li>
+  <li class="detail-header__sns-item"><a class="sns-item__ln" href="" target="_blank"><img src="/assets/images/icon-line.svg" alt="LINE"/></a></li>
+</ul>          </div>
+          <div class="news-body">
+            <div class="page-head">
+              <h1 class="m-ttl-top">Too Young To Be A Top Soccer Player?</h1>
+              <div class="news-detail__header-time">2021.03.07</div>
+              <div class="page-head__tags">
+                <ul class="page-head__tags-list">
+                  <li class="page-head__tags-element"><a href="/goods/?flg=9">Soccer</a></li>                </ul>
+              </div>
+            </div>
+            <div class="page-mainwrap"><div class="page-parag">
+<div class="page-parag__inr">
+<p class="m-text-center">
+<img src="/PostImages/7dd9453c5b75fd5e5906ce979f1d85f9e9511926.jpg" alt="Too Young To Be A Top Soccer Player?" class="g-flex-image">
+</p>
+
+<div class="m-unit">
+<div class="page-parag">
+<div class="page-parag__inr">
+<p class="m-text-preline">3月1日（月）に発売したポケモンパンをご紹介するよ！
+■ポケモンミニ蒸しケーキ　もも　鉄分入り…鉄分入りの、ふんわりとした、もも味の蒸しケーキだよ。
+■ポケモンミルククリーム＆ホイップパン…宮城県産の牛乳を使用したミルククリームを包んで、ホイップクリームを注入したパンだよ。
+■ポケモンシューブール　チョコクリーム入り…チョコクリームを包んで、シュー生地をかぶせたパンだよ。
+■ポケモンきなこチョコロール…ホイップクリームをサンドし、きなこチョコでコーティングしたパンだよ。
+■ポケモンたまごパン…ふんわりとした生地に、たまごサラダとケチャップを絞ったパンだよ。
+■ピカチュウのパウンドケーキ　バター味…ピカチュウの顔の形をした、バター味のしっとりとしたパウンドケーキだよ。
+
+どの商品にも、デコキャラシールが1枚入っているよ。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="m-slider js-slide">
+<div class="m-slider__hd">
+<ul class="m-slider__area js-slide__area">
+<li><img src="/PostImages/d7f0439d09951625235493bb739235cc87c55386.jpg" alt="ミニ蒸しケーキ　もも　鉄分入り"><p class="m-text-center">ミニ蒸しケーキ　もも　鉄分入り</p>
+</li>
+<li><img src="/PostImages/69a4ec51c6f586d1d7ffc9b1d8a53a25737a216f.jpg" alt="ミルククリーム＆ホイップパン"><p class="m-text-center">ミルククリーム＆ホイップパン</p>
+</li>
+<li><img src="/PostImages/21d428e3752b2b18b45e57e16b1b46ea6de08eef.jpg" alt="シューブール　チョコクリーム入り"><p class="m-text-center">シューブール　チョコクリーム入り</p>
+</li>
+<li><img src="/PostImages/9990e8b8709e7dfb7a4c807510beb3385005a58f.jpg" alt="きなこチョコロール"><p class="m-text-center">きなこチョコロール</p>
+</li>
+<li><img src="/PostImages/aa9d93bbff2925f7e1e0a5064880c3e2bf7622ef.jpg" alt="たまごパン"><p class="m-text-center">たまごパン</p>
+</li>
+<li><img src="/PostImages/e1384ab8e29385d947dddf31a0dbdd7bcfe4b05f.jpg" alt="パウンドケーキ　バター味"><p class="m-text-center">パウンドケーキ　バター味</p>
+</li>
+</ul></div>
+<div class="m-slider__btm">
+<ul class="m-slider__nav js-slide__nav">
+<li><img src="/PostImages/d7f0439d09951625235493bb739235cc87c55386.jpg" alt="ミニ蒸しケーキ　もも　鉄分入り"></li>
+<li><img src="/PostImages/69a4ec51c6f586d1d7ffc9b1d8a53a25737a216f.jpg" alt="ミルククリーム＆ホイップパン"></li>
+<li><img src="/PostImages/21d428e3752b2b18b45e57e16b1b46ea6de08eef.jpg" alt="シューブール　チョコクリーム入り"></li>
+<li><img src="/PostImages/9990e8b8709e7dfb7a4c807510beb3385005a58f.jpg" alt="きなこチョコロール"></li>
+<li><img src="/PostImages/aa9d93bbff2925f7e1e0a5064880c3e2bf7622ef.jpg" alt="たまごパン"></li>
+<li><img src="/PostImages/e1384ab8e29385d947dddf31a0dbdd7bcfe4b05f.jpg" alt="パウンドケーキ　バター味"></li>
+</ul></div></div>
+<div class="page-parag">
+<div class="page-parag__inr">
+<table class="m-tbl-nml">
+<colgroup>
+<col style="width:25%;">
+<col style="width:75%;">
+</colgroup>
+<tbody>
+<tr>
+<th>発売元</th>
+<td>第一屋製パン株式会社</td>
+</tr>
+<tr>
+<th>発売日</th>
+<td>2021年3月1日（月）</td>
+</tr>
+<tr>
+<th>価格</th>
+<td>■ポケモンミニ蒸しケーキ　もも　鉄分入り　112円（税込）<br>
+■ポケモンミルククリーム＆ホイップパン　134円（税込）<br>
+■ポケモンシューブール　チョコクリーム入り　134円（税込）<br>
+■ポケモンきなこチョコロール　134円（税込）<br>
+■ポケモンたまごパン　134円（税込）<br>
+■ピカチュウのパウンドケーキ　バター味　173円（税込）</td>
+</tr>
+<tr>
+<th>お問い合わせ</th>
+<td>第一屋製パン株式会社 お客様相談室<br>
+TEL：フリーダイヤル　0120-880-135<br>
+受付時間：9時～17時（土日、祝日、年末年始を除く）</td>
+</tr>
+<tr>
+<th>注意事項</th>
+<td><span class="m-text-supply">※新型コロナウイルス感染拡大の影響により、急遽、発売日の変更・延期となる可能性もございます。あらかじめ、ご了承ください。<br>
+また、最新情報は、リンク先ウェブサイトやお問い合わせ先にて、ご確認ください。<br>
+※店頭での商品のお取り扱い開始日は、地域・店舗によって異なる場合がございます。<br>
+※地域により、お取り扱いしていない商品もございます。ご容赦ください。<br>
+※掲載情報はページ公開時点のものです。予告なく変更になる場合がございます。<br>
+※写真はイメージです。実際の商品と、色やデザインが異なる場合がございます。</span></td>
+</tr>
+</tbody>
+</table>
+
+
+
+<div class="detail-website">
+</div><h5 class="m-ttl-str">関連情報</h5>
+<p><a href="http://www.daiichipan.co.jp/?page_id=350" target="_blank" class="m-btn-nxt is-color6">第一屋製パン株式会社　ポケモンパン情報ページ<i class="m-icon-blank"></i></a></p>
+<div class="page-parag">
+<div class="page-parag__inr">
+<hr class="m-hr-line">
+<div class="m-unit--s">
+<p class="m-text-xxxxsmall m-text-supply">
+©Nintendo・Creatures・GAME FREAK・TV Tokyo・ShoPro・JR Kikaku ©Pokémon</p>
+</div>
+</div>
+</div>
+
+        </div>
+      </main>
+
+<div class="breadcrumb">
+  <ol class="breadcrumb__list">
+    <li><a href="/">TOP</a></li>
+    <li><a href="/sports/">SPORTS</a></li>
+    <li><span>Too Young To Be A Top Soccer Player?</span></li>
+  </ol>
+</div>
