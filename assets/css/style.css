@@ -1270,7 +1270,7 @@ input[type='search']::-webkit-search-cancel-button {
 
 .breadcrumb__list li::after {
     content: '';
-    background: url("/img/icon-breadcrumb.svg") no-repeat center bottom;
+    background: url("/assets/images/icon-breadcrumb.svg") no-repeat center bottom;
     width: 7px;
     height: 12px;
     background-size: 100% auto;
