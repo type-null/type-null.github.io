@@ -4984,8 +4984,10 @@ input[type='search']::-webkit-search-cancel-button {
 }
 
 .link-img {
+    width: 100px;
+    height: auto;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
