@@ -5004,7 +5004,8 @@ input[type='search']::-webkit-search-cancel-button {
     top: 0;
     left: 0;
     -webkit-transition: all .3s;
-    transition: all .3s
+    transition: all .3s;
+    z-index: 1;
 }
 
 .link-img:hover {
@@ -5015,7 +5016,8 @@ input[type='search']::-webkit-search-cancel-button {
 .link-img:hover .img {
     -webkit-transform: scale(4);
     -ms-transform: scale(4);
-    transform: scale(4)
+    transform: scale(4);
+    z-index: 2;
 }
 
 .link-box {
