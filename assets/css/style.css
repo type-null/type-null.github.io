@@ -4984,8 +4984,6 @@ input[type='search']::-webkit-search-cancel-button {
 }
 
 .link-img {
-    width: 200px;
-    height: auto;
     position: relative;
     overflow: visible;
     display: -webkit-box;
@@ -25551,6 +25549,11 @@ html.no-touchdv footer a:hover {
 
 .container-cover.is-active {
     display: block
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
 }
 
 
