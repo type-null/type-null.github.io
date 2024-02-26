@@ -5022,7 +5022,7 @@ input[type='search']::-webkit-search-cancel-button {
 
 .link-box {
     background: #fff;
-    padding: 1px;
+    padding: 0px;
 }
 
 @media screen and (min-width:768px) {
