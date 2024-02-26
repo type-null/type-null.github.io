@@ -5013,9 +5013,9 @@ input[type='search']::-webkit-search-cancel-button {
 }
 
 .link-img:hover .img {
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2)
+    -webkit-transform: scale(4);
+    -ms-transform: scale(4);
+    transform: scale(4)
 }
 
 .link-box {
