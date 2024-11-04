@@ -1,206 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="#">
-    <meta property="og:image" content="#">
-    <meta property="og:site_name" content="Your Name Portfolio">
-    <meta property="og:locale" content="en_US">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Your Name - Portfolio</title>
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        .header__logo img {
-            height: 50px;
-        }
-        .gnav__list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        .gnav__list-item {
-            margin: 0 10px;
-        }
-        .gnav__list-links {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .gnav__list-links:hover {
-            text-decoration: underline;
-        }
-        .body-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .biography__picture {
-            float: left;
-            margin-right: 20px;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .project-card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
-            width: calc(33.333% - 40px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-        .project-card a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-        .project-card a:hover {
-            text-decoration: underline;
-        }
-        .project-card p {
-            margin: 10px 0;
-        }
-        .paper-list li {
-            margin-bottom: 10px;
-        }
-        .paper-list a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .paper-list a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link to a custom CSS file to match original styles -->
+  <style>
+    /* Basic reset and styling similar to the original code */
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header, main, footer {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .profile-pic {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #489FE6;
+    }
+    .bio-section {
+      margin: 20px 0;
+    }
+    .bio-section h2 {
+      font-size: 1.5em;
+      color: #489FE6;
+    }
+    .project-grid, .paper-list {
+      display: grid;
+      gap: 15px;
+    }
+    .project-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin: 20px 0;
+    }
+    .project-card, .paper-item {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+    .project-card h3, .paper-item h4 {
+      margin-top: 0;
+    }
+    .project-card p, .paper-item p {
+      font-size: 0.9em;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.8em;
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <img src="your-photo.jpg" alt="Your Name" class="profile-pic">
+    <h1>Your Name</h1>
+    <p>Your job title or tagline</p>
+  </header>
 
-<body class="page-sub page-shop">
-    <header class="header" id="header">
-        <div class="header__body">
-            <div class="header__logo view-pc"><a href="/" onclick="dataLayer.push({'click-ctg':'portfolio', 'click-act':'logo', 'click-lbl':'btn', 'event':'click'});"><img src="your-logo.png" alt="Your Name Logo"></a></div>
-            <nav class="gnav" id="gnav">
-                <!-- Navigation links using place holder text -->
-                <ul class="gnav__list">
-                    <li class="gnav__list-item"><a class="gnav__list-links" href="#biography" onclick="dataLayer.push({'click-ctg':'portfolio', 'click-act':'biography', 'click-lbl':'btn', 'event':'click'});"><span>Biography</span></a></li>
-                    <li class="gnav__list-item"><a class="gnav__list-links" href="#projects" onclick="dataLayer.push({'click-ctg':'portfolio', 'click-act':'projects', 'click-lbl':'btn', 'event':'click'});"><span>Projects</span></a></li>
-                    <li class="gnav__list-item"><a class="gnav__list-links" href="#papers" onclick="dataLayer.push({'click-ctg':'portfolio', 'click-act':'papers', 'click-lbl':'btn', 'event':'click'});"><span>Papers</span></a></li>
-                    <li class="gnav__list-item"><a class="gnav__list-links" href="#contact" onclick="dataLayer.push({'click-ctg':'portfolio', 'click-act':'contact', 'click-lbl':'btn', 'event':'click'});"><span>Contact</span></a></li>
-                </ul>
-            </nav>
+  <main>
+    <section class="bio-section">
+      <h2>Biography</h2>
+      <p>A brief introduction about yourself, your background, expertise, and what you’re passionate about. You can mention your education, professional journey, and goals here.</p>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <!-- Sample Project Card -->
+        <div class="project-card">
+          <h3>Project Title 1</h3>
+          <p>A brief description of the project. Mention the technologies or tools used, and the main goals or outcomes of the project.</p>
+          <a href="https://link-to-project.com" target="_blank">View Project</a>
         </div>
-    </header>
+        <div class="project-card">
+          <h3>Project Title 2</h3>
+          <p>A brief description of the project. Mention the technologies or tools used, and the main goals or outcomes of the project.</p>
+          <a href="https://link-to-project.com" target="_blank">View Project</a>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
 
-    <div class="body-wrapper">
-        <main>
-            <section id="biography">
-                <h2>Biography</h2>
-                <img src="your-picture.jpg" alt="Your Name" class="biography__picture">
-                <p>Hello! I’m [Your Name], a [Your Profession] specializing in [Your Specialization].</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis enim eu tristique pulvinar. Maecenas interdum magna et risus varius, vel tincidunt odio ultricies.</p>
-                <p>Donec nec libero ac sem scelerisque aliquet. Nullam id neque interdum, hendrerit justo sed, pharetra mi. Integer pulvinar, magna a tempor aliquet, orci eros elementum justo, vitae convallis arcu orci nec arcu.</p>
-            </section>
+    <section class="papers">
+      <h2>Research Papers</h2>
+      <div class="paper-list">
+        <!-- Sample Paper Item -->
+        <div class="paper-item">
+          <h4>Paper Title 1</h4>
+          <p>Abstract or brief overview of the paper's content.</p>
+          <a href="https://arxiv.org/abs/example" target="_blank">Read on arXiv</a>
+        </div>
+        <div class="paper-item">
+          <h4>Paper Title 2</h4>
+          <p>Abstract or brief overview of the paper's content.</p>
+          <a href="https://arxiv.org/abs/example" target="_blank">Read on arXiv</a>
+        </div>
+        <!-- Add more paper items as needed -->
+      </div>
+    </section>
+  </main>
 
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project-list">
-                    <div class="project-card">
-                        <a href="project-link1" target="_blank">Project Title 1</a>
-                        <p>Short description of project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis enim eu tristique pulvinar.</p>
-                    </div>
-                    <div class="project-card">
-                        <a href="project-link2" target="_blank">Project Title 2</a>
-                        <p>Short description of project 2. Suspendisse potenti. Vestibulum dapibus nisi eget felis dapibus, non pretium libero gravida.</p>
-                    </div>
-                    <div class="project-card">
-                        <a href="project-link3" target="_blank">Project Title 3</a>
-                        <p>Short description of project 3. Quisque vehicula dui in mi mollis consectetur. Mauris pellentesque congue felis nec aliquam.</p>
-                    </div>
-                    <div class="project-card">
-                        <a href="project-link4" target="_blank">Project Title 4</a>
-                        <p>Short description of project 4. Nullam sit amet eros nec ipsum elementum feugiat. Suspendisse scelerisque aliquet enim ut dictum.</p>
-                    </div>
-                    <div class="project-card">
-                        <a href="project-link5" target="_blank">Project Title 5</a>
-                        <p>Short description of project 5. Mauris quis turpis felis. Integer sollicitudin vel dui nec fermentum. Fusce quis nulla sed.</p>
-                    </div>
-                    <div class="project-card">
-                        <a href="project-link6" target="_blank">Project Title 6</a>
-                        <p>Short description of project 6. Phasellus suscipit nisl ac orci aliquet, nec consectetur diam vehicula. Curabitur faucibus.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="papers">
-                <h2>Papers</h2>
-                <ul class="paper-list">
-                    <li>
-                        <a href="https://arxiv.org/abs/paperid1" target="_blank">Paper Title 1</a>
-                        <p>Published in [Journal/Conference Name]. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </li>
-                    <li>
-                        <a href="https://arxiv.org/abs/paperid2" target="_blank">Paper Title 2</a>
-                        <p>Published in [Journal/Conference Name]. Praesent venenatis enim eu tristique pulvinar.</p>
-                    </li>
-                    <li>
-                        <a href="https://arxiv.org/abs/paperid3" target="_blank">Paper Title 3</a>
-                        <p>Published in [Journal/Conference Name]. Suspendisse potenti.</p>
-                    </li>
-                    <li>
-                        <a href="https://arxiv.org/abs/paperid4" target="_blank">Paper Title 4</a>
-                        <p>Published in [Journal/Conference Name]. Nullam sit amet eros nec ipsum elementum feugiat.</p>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>If you'd like to get in touch, feel free to email me at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
-            </section>
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> Your Name. All rights reserved.
+  </footer>
 </body>
-
 </html>
