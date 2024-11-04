@@ -4,119 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- Link to a custom CSS file to match original styles -->
-  <style>
-    /* Basic reset and styling similar to the original code */
-    body {
-      font-family: 'Lato', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header, main, footer {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      padding: 20px 0;
-    }
-    .profile-pic {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid #489FE6;
-    }
-    .bio-section {
-      margin: 20px 0;
-    }
-    .bio-section h2 {
-      font-size: 1.5em;
-      color: #489FE6;
-    }
-    .project-grid, .paper-list {
-      display: grid;
-      gap: 15px;
-    }
-    .project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      margin: 20px 0;
-    }
-    .project-card, .paper-item {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-    .project-card h3, .paper-item h4 {
-      margin-top: 0;
-    }
-    .project-card p, .paper-item p {
-      font-size: 0.9em;
-      color: #666;
-    }
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      color: #999;
-      font-size: 0.8em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <img src="your-photo.jpg" alt="Your Name" class="profile-pic">
-    <h1>Your Name</h1>
-    <p>Your job title or tagline</p>
-  </header>
+<body class="page-sub page-portfolio">
+  <div class="body-wrapper">
 
-  <main>
-    <section class="bio-section">
-      <h2>Biography</h2>
-      <p>A brief introduction about yourself, your background, expertise, and what you’re passionate about. You can mention your education, professional journey, and goals here.</p>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <!-- Sample Project Card -->
-        <div class="project-card">
-          <h3>Project Title 1</h3>
-          <p>A brief description of the project. Mention the technologies or tools used, and the main goals or outcomes of the project.</p>
-          <a href="https://link-to-project.com" target="_blank">View Project</a>
-        </div>
-        <div class="project-card">
-          <h3>Project Title 2</h3>
-          <p>A brief description of the project. Mention the technologies or tools used, and the main goals or outcomes of the project.</p>
-          <a href="https://link-to-project.com" target="_blank">View Project</a>
-        </div>
-        <!-- Add more project cards as needed -->
+    <!-- Header Section -->
+    <header class="header" id="header">
+      <div class="header__body">
+        <div class="header__logo"><a href="#"><img src="your-photo.jpg" alt="Your Logo" width="145"></a></div>
+        <nav class="gnav" id="gnav">
+          <ul class="gnav__list">
+            <li class="gnav__list-item"><a class="gnav__list-links" href="#biography"><span>Biography</span></a></li>
+            <li class="gnav__list-item"><a class="gnav__list-links" href="#projects"><span>Projects</span></a></li>
+            <li class="gnav__list-item"><a class="gnav__list-links" href="#papers"><span>Papers</span></a></li>
+          </ul>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section class="papers">
-      <h2>Research Papers</h2>
-      <div class="paper-list">
-        <!-- Sample Paper Item -->
-        <div class="paper-item">
-          <h4>Paper Title 1</h4>
-          <p>Abstract or brief overview of the paper's content.</p>
-          <a href="https://arxiv.org/abs/example" target="_blank">Read on arXiv</a>
+    <!-- Main Content Area -->
+    <main class="main-area">
+      <section class="contents-area__section contents-area__section--portfolio">
+        <div class="contents-area__inner">
+
+          <!-- Biography Section -->
+          <section id="biography" class="biography-section">
+            <h1 class="heading-section"><span>Biography</span></h1>
+            <p class="biography-content">
+              Your biography goes here. This could include details about your background, areas of expertise, professional goals, and other relevant personal information.
+            </p>
+          </section>
+
+          <!-- Projects Section -->
+          <section id="projects" class="projects-section">
+            <h1 class="heading-section"><span>Projects</span></h1>
+            <div class="news-list">
+              <div class="news-list__body project-grid">
+                <div class="news-list__element project-card">
+                  <a class="news-list__links" href="https://project-link.com" target="_blank">
+                    <figure class="news-list__th">
+                      <p class="news-list__img"><img src="project-image1.jpg" alt="Project Image 1"></p>
+                    </figure>
+                    <div class="news-list__content">
+                      <div class="news-list__title">Project Title 1</div>
+                      <div class="news-list__description">Brief description of Project 1.</div>
+                    </div>
+                  </a>
+                </div>
+                <!-- Add more project cards in this format as needed -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Research Papers Section -->
+          <section id="papers" class="papers-section">
+            <h1 class="heading-section"><span>Research Papers</span></h1>
+            <div class="news-list">
+              <div class="news-list__body paper-list">
+                <div class="news-list__element paper-item">
+                  <a class="news-list__links" href="https://arxiv.org/abs/example" target="_blank">
+                    <div class="news-list__title">Paper Title 1</div>
+                    <div class="news-list__description">Brief abstract of the paper.</div>
+                  </a>
+                </div>
+                <!-- Add more paper items in this format as needed -->
+              </div>
+            </div>
+          </section>
+
         </div>
-        <div class="paper-item">
-          <h4>Paper Title 2</h4>
-          <p>Abstract or brief overview of the paper's content.</p>
-          <a href="https://arxiv.org/abs/example" target="_blank">Read on arXiv</a>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="footer">
+      <div class="footer__upper">
+        <div class="footer__upper-body">
+          <div class="footer__logo"><a href="#"><img src="your-photo.jpg" alt="Your Logo"></a></div>
+          <nav class="footer__sitemap">
+            <ul class="footer__sitemap-body">
+              <li class="footer__sitemap-item"><a class="footer__sitemap-links" href="#biography"><span>Biography</span></a></li>
+              <li class="footer__sitemap-item"><a class="footer__sitemap-links" href="#projects"><span>Projects</span></a></li>
+              <li class="footer__sitemap-item"><a class="footer__sitemap-links" href="#papers"><span>Papers</span></a></li>
+            </ul>
+          </nav>
         </div>
-        <!-- Add more paper items as needed -->
       </div>
-    </section>
-  </main>
+      <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Your Name. All rights reserved.</p>
+    </footer>
 
-  <footer>
-    &copy; <script>document.write(new Date().getFullYear())</script> Your Name. All rights reserved.
-  </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
