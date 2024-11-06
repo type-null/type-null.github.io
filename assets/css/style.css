@@ -24578,7 +24578,6 @@ a.m-link-dwn,
     border-bottom: 2px solid #cbd0d8;
     word-break: break-all;
     background: #fff;
-    table-layout: fixed;
 }
 
 @media screen and (max-width:767.9px) {
@@ -24596,7 +24595,7 @@ a.m-link-dwn,
 .m-tbl-nml th,
 .m-tbl-nmlfix td,
 .m-tbl-nml td {
-    padding: 5px;
+    padding: 15px;
     vertical-align: middle;
     text-align: center;
 }
@@ -24614,7 +24613,7 @@ a.m-link-dwn,
     .m-tbl-nmlfix td,
     .m-tbl-nml td {
         display: block;
-        padding: 10px 5px
+        padding: 15px 10px
     }
 }
 
