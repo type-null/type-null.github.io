@@ -3,6 +3,8 @@
 Please visit --> [homepage](https://type-null.github.io)
 
 # Build Timeline
+## 2025
+- 2.9 Try to build [resume](https://type-null.github.io/resume/index.html) page.
 ## 2021
 - 3.8 Concept made to showcase some projects.
 - 3.10 First logo. ([ch](/assets/images/logo_arceus.png)/[en](/assets/images/logo_arceus_en.png))
