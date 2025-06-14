@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Suits: Interactive Strategy Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals & Strategic Indigo -->
+    <!-- Application Structure Plan: A task-oriented, multi-section single-page application. The structure is designed to mirror a player's workflow during a game: 1. A central 'Dashboard' for navigation. 2. A 'Hand Assessor' tool for pre-trade analysis. 3. A 'Market Strategy' module for in-game tactics and opponent profiling. 4. A 'Campaign Manager' for bankroll and long-term planning. This non-linear, tool-based structure was chosen over a simple document layout to transform the report's dense theory into an actionable, interactive playbook that provides tangible assistance during the time-pressured trading phase, maximizing usability and strategic impact. -->
+    <!-- Visualization & Content Choices: 1. Hand Assessment: User inputs card counts -> Goal: Calculate -> Viz: Dynamic Bar Chart (Chart.js) showing posterior probabilities -> Interaction: Button click updates chart -> Justification: Visualizing probabilities is more intuitive than a static table. 2. Opponent Profiling: User selects archetype -> Goal: Compare/Organize -> Viz: Dynamic text/card display (HTML/CSS) -> Interaction: Clickable buttons reveal detailed strategies -> Justification: Turns a static table into an interactive quick-reference guide. 3. Kelly Calculator: User adjusts sliders/radios -> Goal: Calculate -> Viz: Dynamic text output -> Interaction: Real-time updates on input change -> Justification: Simplifies a complex formula into an accessible tool. 4. Process Flows: Styled HTML/CSS flexbox layouts -> Goal: Organize/Explain -> Justification: Clarifies step-by-step processes without using external graphics libraries, adhering to constraints. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        .nav-link { transition: all 0.2s ease-in-out; }
+        .nav-link.active { background-color: #4f46e5; color: white; }
+        .nav-link:not(.active):hover { background-color: #eef2ff; }
+        .card-input::-webkit-outer-spin-button, .card-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .card-input[type=number] { -moz-appearance: textfield; }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div id="app" class="min-h-screen flex flex-col">
+        
+        <header class="bg-white shadow-sm sticky top-0 z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-xl sm:text-2xl font-bold text-slate-900">Trading Suits: The Strategic Playbook</h1>
+                    <nav class="hidden sm:flex items-center space-x-2">
+                        <button onclick="app.showSection('dashboard')" class="nav-link active font-semibold py-2 px-4 rounded-md text-sm" data-section="dashboard">Dashboard</button>
+                        <button onclick="app.showSection('assessor')" class="nav-link font-semibold py-2 px-4 rounded-md text-sm" data-section="assessor">Hand Assessor</button>
+                        <button onclick="app.showSection('market')" class="nav-link font-semibold py-2 px-4 rounded-md text-sm" data-section="market">Market Strategy</button>
+                        <button onclick="app.showSection('campaign')" class="nav-link font-semibold py-2 px-4 rounded-md text-sm" data-section="campaign">Campaign Manager</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <nav class="sm:hidden bg-white border-t border-b border-slate-200 p-2 grid grid-cols-4 gap-2">
+            <button onclick="app.showSection('dashboard')" class="nav-link active text-xs font-semibold py-2 px-1 rounded-md" data-section="dashboard">Dashboard</button>
+            <button onclick="app.showSection('assessor')" class="nav-link text-xs font-semibold py-2 px-1 rounded-md" data-section="assessor">Assessor</button>
+            <button onclick="app.showSection('market')" class="nav-link text-xs font-semibold py-2 px-1 rounded-md" data-section="market">Market</button>
+            <button onclick="app.showSection('campaign')" class="nav-link text-xs font-semibold py-2 px-1 rounded-md" data-section="campaign">Campaign</button>
+        </nav>
+
+        <main class="flex-grow">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Master the Market</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">This playbook synthesizes the core report into four interactive modules. Navigate between them to build your strategic edge, from initial hand analysis to long-term wealth maximization.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="font-bold text-lg text-indigo-700">1. Probabilistic Inference</h3>
+                        <p class="text-slate-600 mt-2 text-sm">Use the <button onclick="app.showSection('assessor')" class="font-semibold text-indigo-600 hover:underline">Hand Assessor</button> to transform your dealt cards into a powerful informational advantage. Instantly calculate the probability of each suit being gold.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="font-bold text-lg text-indigo-700">2. Market Strategy</h3>
+                        <p class="text-slate-600 mt-2 text-sm">Dive into the <button onclick="app.showSection('market')" class="font-semibold text-indigo-600 hover:underline">Market Strategy</button> module to profile opponents, understand bidding tactics, and learn to signal, bluff, and deceive like an expert.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="font-bold text-lg text-indigo-700">3. Dynamic Exploitation</h3>
+                        <p class="text-slate-600 mt-2 text-sm">This is the psychological layer. The Market Strategy module also contains tools to model and exploit the specific behavioral patterns and weaknesses of your human adversaries.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="font-bold text-lg text-indigo-700">4. Campaign Management</h3>
+                        <p class="text-slate-600 mt-2 text-sm">Visit the <button onclick="app.showSection('campaign')" class="font-semibold text-indigo-600 hover:underline">Campaign Manager</button> to use the Kelly Criterion for disciplined bankroll growth and adapt your macro-strategy to each phase of the game.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hand Assessor Section -->
+            <section id="assessor" class="page-section hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Hand Assessor: Your Informational Edge</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">The first 30 seconds of a round are critical. Your hand is the only private information you have. Use this tool to instantly convert your card counts into actionable posterior probabilities, revealing the most likely gold suit.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                        <h3 class="font-semibold text-xl mb-4">Enter Your 10-Card Hand</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                            <div id="spades-input-container">
+                                <label for="spades" class="block text-sm font-medium text-slate-700 mb-1">Spades (♠)</label>
+                                <input type="number" id="spades" class="card-input w-full p-3 border-2 border-slate-300 rounded-md text-center text-lg font-bold focus:ring-indigo-500 focus:border-indigo-500" min="0" max="10" value="0">
+                            </div>
+                            <div id="clubs-input-container">
+                                <label for="clubs" class="block text-sm font-medium text-slate-700 mb-1">Clubs (♣)</label>
+                                <input type="number" id="clubs" class="card-input w-full p-3 border-2 border-slate-300 rounded-md text-center text-lg font-bold focus:ring-indigo-500 focus:border-indigo-500" min="0" max="10" value="0">
+                            </div>
+                            <div id="hearts-input-container">
+                                <label for="hearts" class="block text-sm font-medium text-slate-700 mb-1">Hearts (♥)</label>
+                                <input type="number" id="hearts" class="card-input w-full p-3 border-2 border-slate-300 rounded-md text-center text-lg font-bold focus:ring-indigo-500 focus:border-indigo-500" min="0" max="10" value="0">
+                            </div>
+                            <div id="diamonds-input-container">
+                                <label for="diamonds" class="block text-sm font-medium text-slate-700 mb-1">Diamonds (♦)</label>
+                                <input type="number" id="diamonds" class="card-input w-full p-3 border-2 border-slate-300 rounded-md text-center text-lg font-bold focus:ring-indigo-500 focus:border-indigo-500" min="0" max="10" value="0">
+                            </div>
+                        </div>
+                        <p class="text-center text-slate-500 text-sm mb-4">Total cards: <span id="total-cards" class="font-bold">0</span> / 10</p>
+                        <button onclick="app.calculateProbabilities()" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-slate-400" id="calculate-btn" disabled>Calculate Probabilities</button>
+                    </div>
+
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                        <h3 class="font-semibold text-xl mb-4">Gold Suit Probability</h3>
+                        <div class="chart-container">
+                            <canvas id="probabilityChart"></canvas>
+                        </div>
+                        <p id="assessor-interpretation" class="mt-4 text-center text-slate-600 font-medium"></p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Market Strategy Section -->
+            <section id="market" class="page-section hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Market Strategy & Opponent Profiling</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">The trading floor is a psychological battlefield. Use this guide to understand bidding tactics and profile your opponents to exploit their tendencies for maximum profit.</p>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                    <h3 class="font-semibold text-xl mb-6 text-center">Opponent Archetype Profiler</h3>
+                    <div class="flex justify-center flex-wrap gap-2 sm:gap-4 mb-8" id="archetype-selector">
+                    </div>
+                    
+                    <div id="archetype-display" class="border-t border-slate-200 pt-6">
+                        <!-- Content will be injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campaign Manager Section -->
+            <section id="campaign" class="page-section hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Campaign & Bankroll Manager</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">Long-term victory requires discipline. Manage your capital with the Kelly Criterion to maximize growth and minimize risk, and adapt your strategy to your position in the game.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                        <h3 class="font-semibold text-xl mb-2">Round Trading Budget Calculator</h3>
+                        <p class="text-sm text-slate-500 mb-6">Based on the Dynamic Fractional Kelly Criterion.</p>
+
+                        <div class="space-y-6">
+                            <div>
+                                <label for="bankroll" class="block text-sm font-medium text-slate-700">Current Bankroll: <span id="bankroll-value" class="font-bold text-indigo-600">$300</span></label>
+                                <input type="range" id="bankroll" min="100" max="5000" value="300" step="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                            </div>
+                            <div>
+                                <p class="block text-sm font-medium text-slate-700 mb-2">Confidence Level in Gold Suit</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <label class="flex-1">
+                                        <input type="radio" name="confidence" value="low" class="sr-only peer">
+                                        <div class="w-full text-center p-3 border rounded-md cursor-pointer text-sm font-semibold peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600">Low (&lt;50%)</div>
+                                    </label>
+                                    <label class="flex-1">
+                                        <input type="radio" name="confidence" value="medium" class="sr-only peer" checked>
+                                        <div class="w-full text-center p-3 border rounded-md cursor-pointer text-sm font-semibold peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600">Medium (50-80%)</div>
+                                    </label>
+                                    <label class="flex-1">
+                                        <input type="radio" name="confidence" value="high" class="sr-only peer">
+                                        <div class="w-full text-center p-3 border rounded-md cursor-pointer text-sm font-semibold peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600">High (&gt;80%)</div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 border-t border-slate-200 pt-6 text-center">
+                            <p class="text-slate-600">Recommended Trading Budget for this Round:</p>
+                            <p id="budget-recommendation" class="text-3xl font-bold text-indigo-700 mt-1">$15 - $25</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                        <h3 class="font-semibold text-xl mb-6">Macro-Level Game Adaptation</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Early Game (Weeks 1-2)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Focus on capital preservation, information gathering, and building a solid table image. Avoid high-variance confrontations and grind small edges.</p>
+                            </div>
+                            <div class="border-t border-slate-200 pt-4">
+                                <h4 class="font-semibold text-slate-900">Mid Game (Weeks 3-4)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Strategy diverges based on stack size. <span class="font-semibold">Big Stacks</span> apply pressure. <span class="font-semibold">Mid Stacks</span> play selectively. <span class="font-semibold">Short Stacks</span> look for a single high-EV spot to commit.</p>
+                            </div>
+                             <div class="border-t border-slate-200 pt-4">
+                                <h4 class="font-semibold text-slate-900">Late Game (Week 5)</h4>
+                                <p class="text-sm text-slate-600 mt-1">It's the "final table." Decisions shift from pure EV to maximizing your probability of winning. Avoid risks that could cause ruin, even if they are profitable in a vacuum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="bg-white mt-12 border-t">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Strategic Gaming Analytics. This application is an interactive interpretation of the "Quantitative Framework for Strategic Dominance" report.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+    const app = {
+        probabilityChart: null,
+        
+        archetypeData: {
+            rock: {
+                name: 'The Rock',
+                icon: '🪨',
+                description: 'Highly risk-averse and plays for certainty. Only makes large bids with overwhelming strength.',
+                strategy: 'Isolate them. Use aggression and bluffs to steal cards. Drive up prices on their target suit to make them overpay for their certainty.',
+                defense: 'Respect their rare, large bets. Fold unless you have a hand that can beat their likely monster holding. Do not pay them off.'
+            },
+            maniac: {
+                name: 'The Maniac',
+                icon: '⚡️',
+                description: 'Risk-seeking, loves action, and may be prone to emotional play. High trading frequency.',
+                strategy: 'Become a "market maker." Sell them cards at inflated prices. Let them drive the action and only engage with your strongest holdings. Induce them to over-commit to the wrong suit.',
+                defense: 'Avoid bluffing them; they will call too often. Be prepared to withstand their aggression and wait for premium opportunities to trap them.'
+            },
+            calculator: {
+                name: 'The Calculator',
+                icon: '💻',
+                description: 'Rational, disciplined, and likely employing a sound strategy. Actions seem logical and consistent.',
+                strategy: 'Unpredictability is key. Vary your play style. Mix in deceptive plays and controlled bluffs to prevent them from forming an accurate model of you.',
+                defense: 'Play a sound, fundamental game. Avoid obvious mistakes. Focus on making marginally better decisions and extracting thin value. The edge against this player is small.'
+            },
+            follower: {
+                name: 'The Follower',
+                icon: '🐑',
+                description: 'Low confidence and susceptible to herd behavior. Tends to trade only after others have established a market.',
+                strategy: 'Initiate information cascades. Make strong, early bids to establish a trend you want them to follow. Use their predictability to your advantage.',
+                defense: 'Be wary of joining a cascade they are part of. Their actions contain little independent information; they are merely echoing the market.'
+            }
+        },
+
+        init() {
+            this.setupEventListeners();
+            this.initChart();
+            this.populateArchetypes();
+            this.showArchetype('rock');
+            this.updateBudget();
+        },
+        
+        setupEventListeners() {
+            document.querySelectorAll('.card-input').forEach(input => {
+                input.addEventListener('input', this.updateTotalCards);
+            });
+            document.getElementById('bankroll').addEventListener('input', (e) => {
+                document.getElementById('bankroll-value').textContent = `$${e.target.value}`;
+                this.updateBudget();
+            });
+            document.querySelectorAll('input[name="confidence"]').forEach(radio => {
+                radio.addEventListener('change', this.updateBudget);
+            });
+        },
+
+        showSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.section === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        },
+        
+        updateTotalCards() {
+            const inputs = document.querySelectorAll('.card-input');
+            let total = 0;
+            inputs.forEach(input => {
+                total += parseInt(input.value) || 0;
+            });
+            const totalEl = document.getElementById('total-cards');
+            const calculateBtn = document.getElementById('calculate-btn');
+            
+            totalEl.textContent = total;
+            totalEl.classList.toggle('text-red-500', total !== 10);
+            calculateBtn.disabled = total !== 10;
+        },
+
+        initChart() {
+            const ctx = document.getElementById('probabilityChart').getContext('2d');
+            this.probabilityChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Spades Gold', 'Clubs Gold', 'Hearts Gold', 'Diamonds Gold'],
+                    datasets: [{
+                        label: 'Probability',
+                        data: [25, 25, 25, 25],
+                        backgroundColor: [
+                            'rgba(55, 65, 81, 0.8)',
+                            'rgba(55, 65, 81, 0.8)',
+                            'rgba(220, 38, 38, 0.8)',
+                            'rgba(220, 38, 38, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(17, 24, 39, 1)',
+                            'rgba(17, 24, 39, 1)',
+                            'rgba(153, 27, 27, 1)',
+                            'rgba(153, 27, 27, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Probability: ${context.raw.toFixed(1)}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            document.getElementById('assessor-interpretation').textContent = 'Enter your hand to see updated probabilities. Before cards are dealt, each suit has a 25% chance of being gold.';
+        },
+        
+        logFactorial(n) {
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += Math.log(i);
+            }
+            return sum;
+        },
+
+        logHypergeometric(k, N, K, n) {
+            return this.logFactorial(K) - this.logFactorial(k) - this.logFactorial(K - k) +
+                   this.logFactorial(N - K) - this.logFactorial(n - k) - this.logFactorial(N - K - n + k) -
+                   (this.logFactorial(N) - this.logFactorial(n) - this.logFactorial(N - n));
+        },
+
+        calculateProbabilities() {
+            const s = parseInt(document.getElementById('spades').value);
+            const c = parseInt(document.getElementById('clubs').value);
+            const h = parseInt(document.getElementById('hearts').value);
+            const d = parseInt(document.getElementById('diamonds').value);
+
+            const deckConfigs = {
+                spadesGold: { S: 10, C: 12, H: 10, D: 8 }, // Clubs is gold suit
+                clubsGold:  { S: 12, C: 10, H: 10, D: 8 }, // Spades is gold suit
+                heartsGold: { S: 10, C: 8, H: 12, D: 10 }, // Diamonds is gold suit
+                diamondsGold: { S: 8, C: 10, H: 10, D: 12 }  // Hearts is gold suit
+            };
+            
+            const logLikelihoods = {};
+
+            for (const [key, config] of Object.entries(deckConfigs)) {
+                 logLikelihoods[key] = this.logHypergeometric(s, 40, config.S, 10) +
+                                       this.logHypergeometric(c, 30, config.C, 10) +
+                                       this.logHypergeometric(h, 20, config.H, 10) +
+                                       this.logHypergeometric(d, 10, config.D, 10);
+                
+                 logLikelihoods[key] = this.logHypergeometric(s, 40, config.S, 10) +
+                                       this.logHypergeometric(c, 40-config.S, config.C, 10-s) +
+                                       this.logHypergeometric(h, 40-config.S-config.C, config.H, 10-s-c) +
+                                       this.logHypergeometric(d, 40-config.S-config.C-config.H, config.D, 10-s-c-h);
+
+                 let logProb = this.logHypergeometric(s, 40, config.S, 10) +
+                               this.logHypergeometric(c, 40 - config.S, config.C, 10 - s) +
+                               this.logHypergeometric(h, 40 - config.S - config.C, config.H, 10 - s - c) +
+                               this.logHypergeometric(d, config.D, config.D, d);
+
+                 logLikelihoods[key] = this.logHypergeometric(s, 40, config.S, 10) + 
+                                       this.logHypergeometric(c, 40-config.S, config.C, 10-s) +
+                                       this.logHypergeometric(h, 40-config.S-config.C, config.H, 10-s-c) +
+                                       this.logHypergeometric(d, 40-config.S-config.C-config.H, config.D, 10-s-c-h);
+                let logP_H = Math.log(0.25);
+                let log_P_E_given_H = this.logHypergeometric(s, 40, config.S, 10) + this.logHypergeometric(c, 40-config.S, config.C, 10-s) + this.logHypergeometric(h, 40-config.S-config.C, config.H, 10-s-c);
+                logLikelihoods[key] = log_P_E_given_H + logP_H;
+            }
+
+            const hand = {S:s, C:c, H:h, D:d};
+            const likelihoods = {};
+            
+            for(const [key, config] of Object.entries(deckConfigs)){
+                likelihoods[key] = Math.exp(
+                    this.logHypergeometric(hand['S'], 40, config['S'], 10) +
+                    this.logHypergeometric(hand['C'], 30, config['C'], 10) +
+                    this.logHypergeometric(hand['H'], 20, config['H'], 10) +
+                    this.logHypergeometric(hand['D'], 10, config['D'], 10)
+                );
+            }
+            
+            const logL = {};
+            const deckComps = {
+                clubsGold:    {S:12, C:10, H:10, D:8},
+                spadesGold:   {S:10, C:12, H:10, D:8},
+                diamondsGold: {S:10, C:8,  H:12, D:10},
+                heartsGold:   {S:8, C:10, H:10, D:12}
+            };
+            
+            for (const [key, deck] of Object.entries(deckComps)) {
+                logL[key] = this.logHypergeometric(s, 40, deck.S, 10) +
+                            this.logHypergeometric(c, 30, deck.C, 10 - s) +
+                            this.logHypergeometric(h, 20, deck.H, 10 - s - c) +
+                            this.logHypergeometric(d, 10, deck.D, 10 - s - c - h);
+            }
+            
+            const posteriorNumerator = {};
+            const logPrior = Math.log(0.25);
+            for(const key in logL){
+                posteriorNumerator[key] = logL[key] + logPrior;
+            }
+
+            const maxLog = Math.max(...Object.values(posteriorNumerator));
+            let marginal = 0;
+            for(const key in posteriorNumerator){
+                marginal += Math.exp(posteriorNumerator[key] - maxLog);
+            }
+
+            const logMarginal = Math.log(marginal) + maxLog;
+
+            const posteriors = {};
+            let totalProb = 0;
+            for(const key in posteriorNumerator){
+                posteriors[key] = Math.exp(posteriorNumerator[key] - logMarginal);
+                totalProb += posteriors[key];
+            }
+            
+            this.updateChart([posteriors.spadesGold * 100, posteriors.clubsGold * 100, posteriors.heartsGold * 100, posteriors.diamondsGold * 100]);
+        },
+
+        updateChart(data) {
+            this.probabilityChart.data.datasets[0].data = data;
+            this.probabilityChart.update();
+            
+            const maxProb = Math.max(...data);
+            const maxIndex = data.indexOf(maxProb);
+            const suitNames = ['Spades', 'Clubs', 'Hearts', 'Diamonds'];
+            const interpretations = {
+                spades: "High Clubs count makes Spades a likely gold suit.",
+                clubs: "High Spades count makes Clubs a likely gold suit.",
+                hearts: "High Diamonds count makes Hearts a likely gold suit.",
+                diamonds: "High Hearts count makes Diamonds a likely gold suit."
+            };
+            
+            const blackCount = parseInt(document.getElementById('spades').value) + parseInt(document.getElementById('clubs').value);
+            const redCount = parseInt(document.getElementById('hearts').value) + parseInt(document.getElementById('diamonds').value);
+            
+            let primarySignal = '';
+            if (Math.abs(blackCount - redCount) >= 4) {
+                primarySignal = `Strong color imbalance (${blackCount} black vs ${redCount} red).`;
+            } else if (Math.abs(blackCount - redCount) >= 2) {
+                 primarySignal = `Slight color imbalance (${blackCount} black vs ${redCount} red).`;
+            } else {
+                 primarySignal = `Balanced colors. Probabilities driven by individual suit counts.`
+            }
+            
+            document.getElementById('assessor-interpretation').textContent = `${primarySignal} The most likely gold suit is ${suitNames[maxIndex]} with ${maxProb.toFixed(1)}% probability.`;
+        },
+
+        populateArchetypes() {
+            const container = document.getElementById('archetype-selector');
+            container.innerHTML = '';
+            for(const [key, data] of Object.entries(this.archetypeData)) {
+                const button = document.createElement('button');
+                button.className = 'archetype-btn flex-grow sm:flex-none text-center p-3 border rounded-md cursor-pointer font-semibold peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600';
+                button.dataset.archetype = key;
+                button.onclick = () => this.showArchetype(key);
+                button.innerHTML = `<span class="text-2xl">${data.icon}</span><span class="block text-xs sm:text-sm mt-1">${data.name}</span>`;
+                container.appendChild(button);
+            }
+        },
+        
+        showArchetype(key) {
+            const data = this.archetypeData[key];
+            const container = document.getElementById('archetype-display');
+            document.querySelectorAll('.archetype-btn').forEach(btn => {
+                btn.classList.toggle('bg-indigo-100', btn.dataset.archetype === key);
+                btn.classList.toggle('border-indigo-400', btn.dataset.archetype === key);
+            });
+            container.innerHTML = `
+                <div class="text-center">
+                    <h4 class="text-2xl font-bold">${data.icon} ${data.name}</h4>
+                    <p class="text-slate-600 mt-1 max-w-xl mx-auto">${data.description}</p>
+                </div>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-green-700">Exploitative Strategy</h5>
+                        <p class="text-slate-700 mt-2">${data.strategy}</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-red-700">Defensive Posture</h5>
+                        <p class="text-slate-700 mt-2">${data.defense}</p>
+                    </div>
+                </div>
+            `;
+        },
+
+        updateBudget() {
+            const bankroll = parseInt(document.getElementById('bankroll').value);
+            const confidence = document.querySelector('input[name="confidence"]:checked').value;
+            
+            const kellyFractions = { low: 1/8, medium: 1/4, high: 1/2 };
+            const fraction = kellyFractions[confidence];
+
+            const lowerBound = Math.round((bankroll * fraction * 0.1) / 5) * 5;
+            const upperBound = Math.round((bankroll * fraction * 0.16) / 5) * 5;
+
+            document.getElementById('budget-recommendation').textContent = `$${lowerBound} - $${upperBound}`;
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        app.init();
+    });
+
+    </script>
+</body>
+</html>
