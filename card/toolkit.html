@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prize Card Odds Calculator</title>
+<style>
+    body {
+        font-family: system-ui, sans-serif;
+        background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+        padding: 20px;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .glass-card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .stepper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .stepper button {
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
+        margin: 0 8px;
+    }
+    .stepper span {
+        min-width: 40px;
+        text-align: center;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .result {
+        font-size: 1.25rem;
+        margin-top: 10px;
+    }
+    .distribution {
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    .distribution div {
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 0;
+    }
+    .disclosure {
+        cursor: pointer;
+        user-select: none;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Prize Card Odds</h1>
+
+<div class="glass-card">
+    <div class="stepper">
+        <label>Deck size:</label>
+        <button onclick="updateValue('deckSize', -5)">-</button>
+        <span id="deckSizeValue">60</span>
+        <button onclick="updateValue('deckSize', 5)">+</button>
+    </div>
+
+    <div class="stepper">
+        <label>Copies in deck:</label>
+        <button onclick="updateValue('copies', -1)">-</button>
+        <span id="copiesValue">2</span>
+        <button onclick="updateValue('copies', 1)">+</button>
+    </div>
+
+    <div class="stepper">
+        <label>Prize cards:</label>
+        <button onclick="updateValue('prizeCards', -1)">-</button>
+        <span id="prizeCardsValue">6</span>
+        <button onclick="updateValue('prizeCards', 1)">+</button>
+    </div>
+</div>
+
+<div class="glass-card">
+    <div class="result">
+        At least one in deck after setup: <span id="atLeastOne">0%</span>
+    </div>
+
+    <div class="disclosure" onclick="toggleDistribution()">Full distribution ▼</div>
+    <div class="distribution" id="distribution" style="display:none;"></div>
+</div>
+
+<script>
+let deckSize = 60;
+let copies = 2;
+let prizeCards = 6;
+
+function binomial(n, k) {
+    if(k < 0 || k > n) return 0;
+    if(k === 0 || k === n) return 1;
+    k = Math.min(k, n - k);
+    let result = 1;
+    for(let i=1;i<=k;i++){
+        result = result * (n - i + 1) / i;
+    }
+    return result;
+}
+
+function hypergeometric(C, k, deck, prize) {
+    let numerator = binomial(C, k) * binomial(deck - C, prize - k);
+    let denominator = binomial(deck, prize);
+    return denominator > 0 ? numerator / denominator : 0;
+}
+
+function updateValue(type, delta) {
+    if(type === 'deckSize') {
+        deckSize = Math.max(Math.max(copies, prizeCards), deckSize + delta);
+        document.getElementById('deckSizeValue').textContent = deckSize;
+    } else if(type === 'copies') {
+        copies = Math.min(deckSize, Math.max(1, copies + delta));
+        document.getElementById('copiesValue').textContent = copies;
+    } else if(type === 'prizeCards') {
+        prizeCards = Math.min(deckSize, Math.max(1, prizeCards + delta));
+        document.getElementById('prizeCardsValue').textContent = prizeCards;
+    }
+    calculate();
+}
+
+function calculate() {
+    // At least one in deck
+    let yRange = [];
+    let upper = Math.min(copies, deckSize - prizeCards);
+    for(let y=0; y<=Math.max(0, upper); y++) yRange.push(y);
+
+    let deckProbabilities = yRange.map(y => {
+        let x = copies - y;
+        return {y: y, p: hypergeometric(copies, x, deckSize, prizeCards)};
+    });
+
+    let pAllPrized = deckProbabilities.find(d => d.y === 0)?.p || 0;
+    document.getElementById('atLeastOne').textContent = (100*(1-pAllPrized)).toFixed(5) + "%";
+
+    // Full distribution
+    let distDiv = document.getElementById('distribution');
+    distDiv.innerHTML = '';
+    deckProbabilities.forEach(d => {
+        let div = document.createElement('div');
+        div.innerHTML = `<span>${d.y} in deck</span><span>${(100*d.p).toFixed(2)}%</span>`;
+        distDiv.appendChild(div);
+    });
+}
+
+function toggleDistribution() {
+    let distDiv = document.getElementById('distribution');
+    distDiv.style.display = distDiv.style.display === 'none' ? 'block' : 'none';
+}
+
+// Initial calculation
+calculate();
+</script>
+
+</body>
+</html>
