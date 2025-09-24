@@ -3,62 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prize Card Odds Calculator</title>
+<title>Prize Card Odds</title>
 <style>
     body {
-        font-family: system-ui, sans-serif;
-        background: linear-gradient(to bottom, #e0eafc, #cfdef3);
-        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #f2f2f7;
         margin: 0;
+        padding: 20px;
+        color: #1c1c1e;
     }
     h1 {
         text-align: center;
         margin-bottom: 20px;
+        font-weight: 600;
     }
-    .glass-card {
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(12px);
-        border-radius: 20px;
+    .card {
+        background: #ffffffcc;
+        border-radius: 16px;
         padding: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
     .stepper {
         display: flex;
         align-items: center;
         margin-bottom: 12px;
     }
+    .stepper label {
+        flex: 1;
+    }
     .stepper button {
-        font-size: 18px;
         width: 32px;
         height: 32px;
-        margin: 0 8px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        margin-left: 8px;
+        cursor: pointer;
     }
     .stepper span {
-        min-width: 40px;
+        width: 40px;
+        display: inline-block;
         text-align: center;
         font-family: monospace;
-        font-weight: bold;
-    }
-    .result {
-        font-size: 1.25rem;
-        margin-top: 10px;
+        font-weight: 600;
     }
     .distribution {
         margin-top: 10px;
-        max-height: 200px;
-        overflow-y: auto;
+        font-family: monospace;
     }
     .distribution div {
         display: flex;
         justify-content: space-between;
-        padding: 2px 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #eee;
     }
-    .disclosure {
-        cursor: pointer;
-        user-select: none;
-        font-weight: bold;
-        margin-top: 10px;
+    .distribution div:last-child {
+        border-bottom: none;
     }
 </style>
 </head>
@@ -66,7 +68,7 @@
 
 <h1>Prize Card Odds</h1>
 
-<div class="glass-card">
+<div class="card">
     <div class="stepper">
         <label>Deck size:</label>
         <button onclick="updateValue('deckSize', -5)">-</button>
@@ -89,13 +91,8 @@
     </div>
 </div>
 
-<div class="glass-card">
-    <div class="result">
-        At least one in deck after setup: <span id="atLeastOne">0%</span>
-    </div>
-
-    <div class="disclosure" onclick="toggleDistribution()">Full distribution ▼</div>
-    <div class="distribution" id="distribution" style="display:none;"></div>
+<div class="card">
+    <div class="distribution" id="distribution"></div>
 </div>
 
 <script>
@@ -135,7 +132,6 @@ function updateValue(type, delta) {
 }
 
 function calculate() {
-    // At least one in deck
     let yRange = [];
     let upper = Math.min(copies, deckSize - prizeCards);
     for(let y=0; y<=Math.max(0, upper); y++) yRange.push(y);
@@ -145,9 +141,6 @@ function calculate() {
         return {y: y, p: hypergeometric(copies, x, deckSize, prizeCards)};
     });
 
-    let pAllPrized = deckProbabilities.find(d => d.y === 0)?.p || 0;
-    document.getElementById('atLeastOne').textContent = (100*(1-pAllPrized)).toFixed(5) + "%";
-
     // Full distribution
     let distDiv = document.getElementById('distribution');
     distDiv.innerHTML = '';
@@ -156,11 +149,6 @@ function calculate() {
         div.innerHTML = `<span>${d.y} in deck</span><span>${(100*d.p).toFixed(2)}%</span>`;
         distDiv.appendChild(div);
     });
-}
-
-function toggleDistribution() {
-    let distDiv = document.getElementById('distribution');
-    distDiv.style.display = distDiv.style.display === 'none' ? 'block' : 'none';
 }
 
 // Initial calculation
