@@ -14,6 +14,12 @@
         transition: background 0.3s, color 0.3s;
         background: #f2f2f7;
         color: #1c1c1e;
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        width: 100%;
+        max-width: 420px; /* Limit card width on wide screens */
     }
     h1 {
         text-align: center;
@@ -28,6 +34,7 @@
         box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         backdrop-filter: blur(12px);
         transition: background 0.3s, box-shadow 0.3s;
+        width: 100%;
     }
     .stepper {
         display: flex;
@@ -52,12 +59,21 @@
         width: 40px;
         display: inline-block;
         text-align: center;
-        font-family: monospace;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         font-weight: 600;
     }
-    .distribution {
-        margin-top: 10px;
+    .result {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin-bottom: 10px;
+    }
+    .result span {
+        font-weight: bold;
         font-family: monospace;
+    }
+    .distribution {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family: monospace;
+        margin-top: 10px;
     }
     .distribution div {
         display: flex;
@@ -107,6 +123,7 @@
 </head>
 <body>
 
+<div class="container">
 <h1>Prize Card Odds</h1>
 
 <div class="card">
@@ -133,7 +150,11 @@
 </div>
 
 <div class="card">
+    <div class="result">
+        At least one in deck after setup: <span id="atLeastOne">0%</span>
+    </div>
     <div class="distribution" id="distribution"></div>
+</div>
 </div>
 
 <script>
@@ -181,6 +202,10 @@ function calculate() {
         let x = copies - y;
         return {y: y, p: hypergeometric(copies, x, deckSize, prizeCards)};
     });
+
+    // At least one in deck
+    let pAllPrized = deckProbabilities.find(d => d.y === 0)?.p || 0;
+    document.getElementById('atLeastOne').textContent = (100*(1-pAllPrized)).toFixed(5) + "%";
 
     // Full distribution
     let distDiv = document.getElementById('distribution');
