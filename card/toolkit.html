@@ -208,7 +208,7 @@ function calculate() {
     distDiv.innerHTML = '';
     deckProbabilities.forEach(d => {
         let div = document.createElement('div');
-        div.innerHTML = `<span>${d.y} in prize</span><span>${(100*d.p).toFixed(2)}%</span>`;
+        div.innerHTML = `<span>${d.x} in prize</span><span>${(100*d.p).toFixed(2)}%</span>`;
         distDiv.appendChild(div);
     });
 }
