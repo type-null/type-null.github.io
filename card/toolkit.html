@@ -196,7 +196,7 @@ function calculate() {
 
     let deckProbabilities = yRange.map(y => {
         let x = copies - y;
-        return {y: y, p: hypergeometric(copies, x, deckSize, prizeCards)};
+        return {x: x, p: hypergeometric(copies, x, deckSize, prizeCards)};
     });
 
     // At least one in deck
@@ -208,7 +208,7 @@ function calculate() {
     distDiv.innerHTML = '';
     deckProbabilities.forEach(d => {
         let div = document.createElement('div');
-        div.innerHTML = `<span>${d.y} in deck</span><span>${(100*d.p).toFixed(2)}%</span>`;
+        div.innerHTML = `<span>${d.y} in prize</span><span>${(100*d.p).toFixed(2)}%</span>`;
         distDiv.appendChild(div);
     });
 }
