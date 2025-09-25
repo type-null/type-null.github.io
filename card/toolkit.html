@@ -206,7 +206,7 @@ function calculate() {
     // Full distribution
     let distDiv = document.getElementById('distribution');
     distDiv.innerHTML = '';
-    deckProbabilities.forEach(d => {
+    deckProbabilities.slice().reverse().forEach(d => {
         let div = document.createElement('div');
         div.innerHTML = `<span>${d.y} in prize</span><span>${(100*d.p).toFixed(2)}%</span>`;
         distDiv.appendChild(div);
