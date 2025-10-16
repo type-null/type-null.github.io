@@ -52,6 +52,15 @@
         .btn-secondary:hover {
             background-color: #059669;
         }
+         .btn-outline {
+            background-color: transparent;
+            border: 2px solid #3B82F6;
+            color: #3B82F6;
+        }
+        .btn-outline:hover {
+            background-color: #3B82F6;
+            color: white;
+        }
         .win-row {
             background-color: rgba(16, 185, 129, 0.3) !important;
             transition: background-color 0.5s ease;
@@ -65,6 +74,19 @@
         }
         .dice-coin.toss {
             transform: rotateY(1080deg) rotateX(720deg) scale(1.1);
+        }
+        /* Modal styles */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
         }
     </style>
 </head>
@@ -127,8 +149,65 @@
     <div id="modal-screen" class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-center space-y-6">
         <h2 id="modal-title" class="text-4xl font-extrabold text-blue-400">Welcome!</h2>
         <p id="modal-text" class="text-lg text-gray-300">Start with $1000 and test your luck. Place bets on random events and see if you can win big!</p>
-        <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
+        <div class="flex flex-col space-y-4">
+            <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
+            <button id="show-strategy-button" class="btn btn-outline text-lg hidden">Learn Strategies</button>
+        </div>
     </div>
+
+    <!-- Strategy Modal -->
+    <div id="strategy-modal" class="modal-backdrop hidden">
+        <div class="w-full max-w-3xl bg-gray-800 rounded-2xl shadow-2xl p-8 text-left space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <button id="close-strategy-button" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+            <h2 class="text-3xl font-bold text-blue-400 border-b border-gray-700 pb-3">Optimal Betting Strategies</h2>
+            
+            <div class="space-y-4 text-gray-300">
+                <p>To maximize bankroll growth, you need a disciplined strategy. Here are a few approaches, from simple to advanced.</p>
+                
+                <!-- Strategy 1 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-green-400">1. The Conservative Grinder (Low Risk)</h3>
+                    <p class="mt-1">Focus on capital preservation. Bet small amounts on high-probability events (those with low payouts like 1:2 or 1:3). The goal is to make small, consistent gains and stay in the game.</p>
+                </div>
+                
+                <!-- Strategy 2 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-yellow-400">2. The Value Hunter (Medium Risk)</h3>
+                    <p class="mt-1">This balanced approach seeks "value" — bets where the payout seems generous for the risk. Focus on mid-tier payouts (1:1 to 5:1) and try to estimate if the odds offered are better than the event's true probability.</p>
+                </div>
+
+                <!-- Strategy 3 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-red-400">3. The Kelly Criterion (Calculated Aggression)</h3>
+                    <p class="mt-1">A famous formula for maximizing long-term bankroll growth. It calculates the optimal fraction of your bankroll to bet on a single event.</p>
+                    <p class="mt-2 pl-4 border-l-4 border-gray-600"><strong>The Formula:</strong> Bet % = (BP - Q) / B</p>
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li><strong>B</strong> = The decimal payout. (A 3:1 ratio means B=3).</li>
+                        <li><strong>P</strong> = Your estimated probability of winning (e.g., 0.4 for a 40% chance).</li>
+                        <li><strong>Q</strong> = The probability of losing (1 - P).</li>
+                    </ul>
+                    <p class="mt-2"><strong>Challenge:</strong> You must accurately estimate 'P'. If you overestimate your chance of winning, you will lose money faster. Because of this, it's safer to use **Fractional Kelly**: bet only a fraction (e.g., 25% or 50%) of the amount the formula suggests. This protects you from errors and unlucky streaks.</p>
+                </div>
+
+                 <!-- Strategy 4 -->
+                <div>
+                    <h3 class="text-xl font-semibold text-cyan-400">4. Bayesian Adaptive Strategy (Learning from Experience)</h3>
+                    <p class="mt-1">Think like a scientist. Start with a belief about which bets are good. As you play, observe the outcomes and update your beliefs. If an event seems to win more often than its payout implies over many rounds, gradually increase your confidence and bet size on it.</p>
+                </div>
+
+                <!-- Practical Tips -->
+                <div class="pt-4 border-t border-gray-700">
+                     <h3 class="text-2xl font-bold text-blue-400">Bonus Practical Tips</h3>
+                     <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Manage Your Risk Per Round:</strong> Never bet more than 10-20% of your total bankroll in a single round. This prevents a short unlucky streak from causing catastrophic ruin.</li>
+                        <li><strong>Avoid Longshots Blindly:</strong> Ignore the high-payout bets (like 10:1 or more) unless you have a strong reason to believe the event's true chance of occurring is much higher than the payout implies. They are usually not profitable long-term.</li>
+                        <li><strong>Think Long-Term:</strong> True strategy emerges over many rounds. Track your bankroll chart to see what's working. The law of large numbers favors strategies that maximize expected growth (like Kelly) over short-term gambles.</li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // DOM Elements
@@ -137,6 +216,10 @@
         const modalTitle = document.getElementById('modal-title');
         const modalText = document.getElementById('modal-text');
         const modalButton = document.getElementById('modal-button');
+        const showStrategyButton = document.getElementById('show-strategy-button');
+        const strategyModal = document.getElementById('strategy-modal');
+        const closeStrategyButton = document.getElementById('close-strategy-button');
+
 
         const roundNumberEl = document.getElementById('round-number');
         const bankrollEl = document.getElementById('bankroll');
@@ -161,7 +244,6 @@
         
         // --- Event Definitions with Difficulty (1=Easy, 10=Hard) ---
         const eventPool = [
-            // Dice only events
             { text: d => `Sum of ${d} dice is > ${d * 3.5}`, minDice: 1, difficulty: 3, evaluator: (dice, coins) => dice.reduce((a, b) => a + b, 0) > dice.length * 3.5 },
             { text: d => `Sum of ${d} dice is < ${d * 3}`, minDice: 1, difficulty: 3, evaluator: (dice, coins) => dice.reduce((a, b) => a + b, 0) < dice.length * 3 },
             { text: d => `All ${d} dice are even`, minDice: 1, difficulty: 5, evaluator: (dice, coins) => dice.every(die => die % 2 === 0) },
@@ -171,15 +253,11 @@
             { text: d => `No '1's are rolled`, minDice: 1, difficulty: 2, evaluator: (dice, coins) => !dice.includes(1) },
             { text: d => `At least two dice are the same`, minDice: 2, difficulty: 3, evaluator: (dice, coins) => new Set(dice).size < dice.length },
             { text: d => `All dice are different`, minDice: 2, maxDice: 6, difficulty: 6, evaluator: (dice, coins) => new Set(dice).size === dice.length },
-            
-            // Coin only events
             { text: (d,c) => `Exactly ${Math.ceil(c/2)} heads`, minCoins: 2, difficulty: 6, evaluator: (dice, coins) => coins.filter(coin => coin === 'H').length === Math.ceil(coins.length/2) },
             { text: (d,c) => `At least ${Math.ceil(c/2)} heads`, minCoins: 1, difficulty: 2, evaluator: (dice, coins) => coins.filter(coin => coin === 'H').length >= Math.ceil(coins.length/2) },
             { text: (d,c) => `More tails than heads`, minCoins: 1, difficulty: 3, evaluator: (dice, coins) => coins.filter(coin => coin === 'T').length > coins.filter(coin => coin === 'H').length },
             { text: (d,c) => `All ${c} coins are heads`, minCoins: 2, difficulty: 8, evaluator: (dice, coins) => coins.every(coin => coin === 'H') },
             { text: (d,c) => `All ${c} coins are tails`, minCoins: 2, difficulty: 8, evaluator: (dice, coins) => coins.every(coin => coin === 'T') },
-
-            // Combined events
             { text: d => `Dice sum is even & at least one head`, minDice: 1, minCoins: 1, difficulty: 4, evaluator: (dice, coins) => (dice.reduce((a, b) => a + b, 0) % 2 === 0) && coins.includes('H') },
             { text: d => `Dice sum is odd & all coins are same`, minDice: 1, minCoins: 2, difficulty: 7, evaluator: (dice, coins) => (dice.reduce((a, b) => a + b, 0) % 2 !== 0) && (coins.every(c => c === 'H') || coins.every(c => c === 'T')) },
         ];
@@ -257,27 +335,17 @@
 
             for (let i = 0; i < numStatements; i++) {
                 const event = shuffled[i];
-                // Generate smarter payout ratios based on difficulty
                 const difficulty = event.difficulty + state.round / 3;
                 let payoutNumerator, payoutDenominator;
 
-                if (difficulty < 3) { // High probability event
-                    payoutNumerator = 1;
-                    payoutDenominator = Math.floor(Math.random() * 2) + 2; // 1:2, 1:3
-                } else if (difficulty < 6) { // Medium probability
-                    payoutNumerator = Math.floor(Math.random() * 2) + 1; // 1 or 2
-                    payoutDenominator = 1; 
-                } else if (difficulty < 8) { // Low probability
-                    payoutNumerator = Math.floor(Math.random() * 4) + 3; // 3 to 6
-                    payoutDenominator = 1;
-                } else { // Very low probability
-                    payoutNumerator = Math.floor(Math.random() * 6) + 7; // 7 to 12
-                    payoutDenominator = 1;
-                }
-                // House edge: sometimes make it slightly worse for the player
+                if (difficulty < 3) { payoutNumerator = 1; payoutDenominator = Math.floor(Math.random() * 2) + 2; } 
+                else if (difficulty < 6) { payoutNumerator = Math.floor(Math.random() * 2) + 1; payoutDenominator = 1; } 
+                else if (difficulty < 8) { payoutNumerator = Math.floor(Math.random() * 4) + 3; payoutDenominator = 1; } 
+                else { payoutNumerator = Math.floor(Math.random() * 6) + 7; payoutDenominator = 1; }
+                
                 if(Math.random() > 0.6) payoutNumerator *= 0.9;
                 
-                const statement = { id: i, text: event.text(state.diceCount, state.coinCount), payout: [Math.round(payoutNumerator * 10)/10, payoutDenominator], evaluator: event.evaluator };
+                const statement = { id: i, text: event.text(state.diceCount, state.coinCount), payout: [Math.max(0.1, Math.round(payoutNumerator * 10)/10), payoutDenominator], evaluator: event.evaluator };
                 state.statements.push(statement);
 
                 const row = document.createElement('tr');
@@ -311,7 +379,7 @@
             document.querySelectorAll('.bet-input').forEach(input => {
                 let value = parseInt(input.value) || 0;
                 if(value < 0) value = 0;
-                input.value = value; // Correct negative inputs
+                input.value = value;
                 totalBet += value;
             });
 
@@ -400,8 +468,9 @@
 
         function gameOver() {
             modalTitle.textContent = 'Game Over!';
-            modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Better luck next time! <br> Would you like to play again?`;
+            modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Better luck next time!`;
             modalButton.textContent = 'Play Again';
+            showStrategyButton.classList.remove('hidden');
             modalScreen.classList.remove('hidden');
             gameContainer.classList.add('hidden');
         }
@@ -418,6 +487,7 @@
             modalTitle.textContent = 'Welcome!';
             modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!';
             modalButton.textContent = 'Start Game';
+            showStrategyButton.classList.add('hidden');
         }
 
         // --- Event Listeners ---
@@ -428,7 +498,6 @@
             if (state.round % 2 === 0) state.diceCount++; else state.coinCount++;
             if(state.diceCount > 6) state.diceCount = 6;
             if(state.coinCount > 8) state.coinCount = 8;
-            
             startRound();
         });
 
@@ -438,6 +507,14 @@
             initGameState(); 
             initChart();
             startRound();
+        });
+
+        showStrategyButton.addEventListener('click', () => {
+            strategyModal.classList.remove('hidden');
+        });
+
+        closeStrategyButton.addEventListener('click', () => {
+            strategyModal.classList.add('hidden');
         });
 
         // Initialize on page load
