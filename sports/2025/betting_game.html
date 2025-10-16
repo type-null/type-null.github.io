@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice & Coin Betting Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bet-input {
+            width: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: right;
+            transition: all 0.2s ease;
+        }
+        .bet-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+            border-color: #3B82F6;
+        }
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563EB;
+        }
+        .btn-primary:disabled {
+            background-color: #6B7280;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background-color: #10B981;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #059669;
+        }
+        .win-row {
+            background-color: rgba(16, 185, 129, 0.3) !important;
+            transition: background-color 0.5s ease;
+        }
+        .loss-row {
+            background-color: rgba(239, 68, 68, 0.3) !important;
+            transition: background-color 0.5s ease;
+        }
+        .dice-coin {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .dice-coin.toss {
+            transform: rotateY(1080deg) rotateX(720deg) scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+    <div id="game-container" class="w-full max-w-5xl bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-6 hidden">
+        
+        <!-- Header & Stats -->
+        <div class="flex flex-col md:flex-row justify-between items-center pb-4 border-b border-gray-700">
+            <h1 class="text-3xl font-bold text-blue-400 mb-4 md:mb-0">Probability Parlay</h1>
+            <div class="flex items-center space-x-6 text-lg">
+                <div>Round: <span id="round-number" class="font-bold text-yellow-400">1</span></div>
+                <div>Bankroll: <span id="bankroll" class="font-bold text-green-400">$1000</span></div>
+                <div>Total Bet: <span id="total-bet" class="font-bold text-red-400">$0</span></div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left Side: Results & Chart -->
+            <div class="space-y-4">
+                <!-- Dice and Coin Results -->
+                <div class="bg-gray-900/50 rounded-lg p-6 min-h-[120px] flex flex-col items-center justify-center space-y-4">
+                    <div class="flex justify-center items-center gap-4" id="results-display">
+                        <!-- Dice and coins will be rendered here -->
+                    </div>
+                    <p id="round-message" class="text-xl font-semibold text-yellow-300 h-7"></p>
+                </div>
+                 <!-- Bankroll Chart -->
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-2 text-center text-gray-400">Bankroll History</h3>
+                    <canvas id="bankroll-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Right Side: Betting Table -->
+            <div class="overflow-y-auto max-h-[60vh]">
+                <table class="w-full text-left">
+                    <thead class="sticky top-0 bg-gray-800 z-10">
+                        <tr>
+                            <th class="p-3 text-lg">Event</th>
+                            <th class="p-3 text-lg text-center">Payout Ratio</th>
+                            <th class="p-3 text-lg text-right">Your Bet ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="betting-table" class="divide-y divide-gray-700">
+                        <!-- Betting rows will be generated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex justify-center pt-4">
+            <button id="play-button" class="btn btn-primary text-xl">Place Bets & Play</button>
+            <button id="next-round-button" class="btn btn-secondary text-xl hidden">Next Round</button>
+        </div>
+    </div>
+
+    <!-- Start/Game Over Screen -->
+    <div id="modal-screen" class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-center space-y-6">
+        <h2 id="modal-title" class="text-4xl font-extrabold text-blue-400">Welcome!</h2>
+        <p id="modal-text" class="text-lg text-gray-300">Start with $1000 and test your luck. Place bets on random events and see if you can win big!</p>
+        <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
+    </div>
+
+    <script>
+        // DOM Elements
+        const gameContainer = document.getElementById('game-container');
+        const modalScreen = document.getElementById('modal-screen');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalButton = document.getElementById('modal-button');
+
+        const roundNumberEl = document.getElementById('round-number');
+        const bankrollEl = document.getElementById('bankroll');
+        const totalBetEl = document.getElementById('total-bet');
+        const resultsDisplay = document.getElementById('results-display');
+        const roundMessageEl = document.getElementById('round-message');
+        const bettingTable = document.getElementById('betting-table');
+        const playButton = document.getElementById('play-button');
+        const nextRoundButton = document.getElementById('next-round-button');
+        const chartCanvas = document.getElementById('bankroll-chart');
+
+        // Game State
+        let bankrollChart;
+        let state = {
+            round: 1,
+            bankroll: 1000,
+            diceCount: 2,
+            coinCount: 3,
+            statements: [],
+            bankrollHistory: [],
+        };
+        
+        // --- Event Definitions with Difficulty (1=Easy, 10=Hard) ---
+        const eventPool = [
+            // Dice only events
+            { text: d => `Sum of ${d} dice is > ${d * 3.5}`, minDice: 1, difficulty: 3, evaluator: (dice, coins) => dice.reduce((a, b) => a + b, 0) > dice.length * 3.5 },
+            { text: d => `Sum of ${d} dice is < ${d * 3}`, minDice: 1, difficulty: 3, evaluator: (dice, coins) => dice.reduce((a, b) => a + b, 0) < dice.length * 3 },
+            { text: d => `All ${d} dice are even`, minDice: 1, difficulty: 5, evaluator: (dice, coins) => dice.every(die => die % 2 === 0) },
+            { text: d => `All ${d} dice are odd`, minDice: 1, difficulty: 5, evaluator: (dice, coins) => dice.every(die => die % 2 !== 0) },
+            { text: d => `Product of ${d} dice is > ${d * 10}`, minDice: 2, difficulty: 4, evaluator: (dice, coins) => dice.reduce((a, b) => a * b, 1) > dice.length * 10 },
+            { text: d => `At least one '6' is rolled`, minDice: 1, difficulty: 2, evaluator: (dice, coins) => dice.includes(6) },
+            { text: d => `No '1's are rolled`, minDice: 1, difficulty: 2, evaluator: (dice, coins) => !dice.includes(1) },
+            { text: d => `At least two dice are the same`, minDice: 2, difficulty: 3, evaluator: (dice, coins) => new Set(dice).size < dice.length },
+            { text: d => `All dice are different`, minDice: 2, maxDice: 6, difficulty: 6, evaluator: (dice, coins) => new Set(dice).size === dice.length },
+            
+            // Coin only events
+            { text: (d,c) => `Exactly ${Math.ceil(c/2)} heads`, minCoins: 2, difficulty: 6, evaluator: (dice, coins) => coins.filter(coin => coin === 'H').length === Math.ceil(coins.length/2) },
+            { text: (d,c) => `At least ${Math.ceil(c/2)} heads`, minCoins: 1, difficulty: 2, evaluator: (dice, coins) => coins.filter(coin => coin === 'H').length >= Math.ceil(coins.length/2) },
+            { text: (d,c) => `More tails than heads`, minCoins: 1, difficulty: 3, evaluator: (dice, coins) => coins.filter(coin => coin === 'T').length > coins.filter(coin => coin === 'H').length },
+            { text: (d,c) => `All ${c} coins are heads`, minCoins: 2, difficulty: 8, evaluator: (dice, coins) => coins.every(coin => coin === 'H') },
+            { text: (d,c) => `All ${c} coins are tails`, minCoins: 2, difficulty: 8, evaluator: (dice, coins) => coins.every(coin => coin === 'T') },
+
+            // Combined events
+            { text: d => `Dice sum is even & at least one head`, minDice: 1, minCoins: 1, difficulty: 4, evaluator: (dice, coins) => (dice.reduce((a, b) => a + b, 0) % 2 === 0) && coins.includes('H') },
+            { text: d => `Dice sum is odd & all coins are same`, minDice: 1, minCoins: 2, difficulty: 7, evaluator: (dice, coins) => (dice.reduce((a, b) => a + b, 0) % 2 !== 0) && (coins.every(c => c === 'H') || coins.every(c => c === 'T')) },
+        ];
+
+        // --- UI & Chart Rendering ---
+        
+        function getDieSVG(value) {
+            const dots = { 1: [[50, 50]], 2: [[25, 25], [75, 75]], 3: [[25, 25], [50, 50], [75, 75]], 4: [[25, 25], [25, 75], [75, 25], [75, 75]], 5: [[25, 25], [25, 75], [75, 25], [75, 75], [50, 50]], 6: [[25, 25], [25, 50], [25, 75], [75, 25], [75, 50], [75, 75]] };
+            const dotCircles = value ? dots[value].map(d => `<circle cx="${d[0]}" cy="${d[1]}" r="8" fill="currentColor"/>`).join('') : '';
+            return `<svg viewBox="0 0 100 100" class="w-16 h-16 dice-coin ${value ? 'text-white' : 'text-gray-600'}"><rect x="5" y="5" width="90" height="90" rx="15" fill="currentColor" class="${value ? 'text-red-500' : 'text-gray-700'}"/><g class="text-white">${dotCircles}</g></svg>`;
+        }
+
+        function getCoinSVG(value) {
+            const content = value === 'H' ? 'H' : value === 'T' ? 'T' : '?';
+            const color = value === 'H' ? 'text-yellow-400' : value === 'T' ? 'text-blue-400' : 'text-gray-600';
+            const bgColor = value ? 'bg-gray-700' : 'bg-gray-700';
+            return `<div class="w-16 h-16 rounded-full flex items-center justify-center dice-coin ${color} ${bgColor}"><span class="text-3xl font-bold">${content}</span></div>`;
+        }
+        
+        function updateStats() {
+            roundNumberEl.textContent = state.round;
+            bankrollEl.textContent = `$${Math.round(state.bankroll)}`;
+            const bets = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0);
+            totalBetEl.textContent = `$${bets}`;
+        }
+
+        function renderPlaceholders() {
+            resultsDisplay.innerHTML = '';
+            for (let i = 0; i < state.diceCount; i++) resultsDisplay.innerHTML += getDieSVG(null);
+            for (let i = 0; i < state.coinCount; i++) resultsDisplay.innerHTML += getCoinSVG(null);
+        }
+        
+        function initChart() {
+            const ctx = chartCanvas.getContext('2d');
+            if(bankrollChart) bankrollChart.destroy();
+            bankrollChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: state.bankrollHistory.map((_, i) => `R${i}`),
+                    datasets: [{
+                        label: 'Bankroll',
+                        data: state.bankrollHistory,
+                        borderColor: '#3B82F6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        tension: 0.2,
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                        x: { ticks: { color: '#9CA3AF' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            bankrollChart.data.labels = state.bankrollHistory.map((_, i) => i === 0 ? 'Start' : `R${i}`);
+            bankrollChart.data.datasets[0].data = state.bankrollHistory;
+            bankrollChart.update();
+        }
+
+        // --- Game Logic ---
+
+        function generateStatements() {
+            state.statements = [];
+            bettingTable.innerHTML = '';
+            
+            const availableEvents = eventPool.filter(e => (!e.minDice || state.diceCount >= e.minDice) && (!e.maxDice || state.diceCount <= e.maxDice) && (!e.minCoins || state.coinCount >= e.minCoins) && (!e.maxCoins || state.coinCount <= e.maxCoins));
+            const shuffled = availableEvents.sort(() => 0.5 - Math.random());
+            const numStatements = Math.min(15, shuffled.length);
+
+            for (let i = 0; i < numStatements; i++) {
+                const event = shuffled[i];
+                // Generate smarter payout ratios based on difficulty
+                const difficulty = event.difficulty + state.round / 3;
+                let payoutNumerator, payoutDenominator;
+
+                if (difficulty < 3) { // High probability event
+                    payoutNumerator = 1;
+                    payoutDenominator = Math.floor(Math.random() * 2) + 2; // 1:2, 1:3
+                } else if (difficulty < 6) { // Medium probability
+                    payoutNumerator = Math.floor(Math.random() * 2) + 1; // 1 or 2
+                    payoutDenominator = 1; 
+                } else if (difficulty < 8) { // Low probability
+                    payoutNumerator = Math.floor(Math.random() * 4) + 3; // 3 to 6
+                    payoutDenominator = 1;
+                } else { // Very low probability
+                    payoutNumerator = Math.floor(Math.random() * 6) + 7; // 7 to 12
+                    payoutDenominator = 1;
+                }
+                // House edge: sometimes make it slightly worse for the player
+                if(Math.random() > 0.6) payoutNumerator *= 0.9;
+                
+                const statement = { id: i, text: event.text(state.diceCount, state.coinCount), payout: [Math.round(payoutNumerator * 10)/10, payoutDenominator], evaluator: event.evaluator };
+                state.statements.push(statement);
+
+                const row = document.createElement('tr');
+                row.className = 'odd:bg-gray-800/50 even:bg-gray-900/50';
+                row.dataset.statementId = i;
+                row.innerHTML = `<td class="p-3">${statement.text}</td><td class="p-3 text-center font-semibold text-cyan-400">${statement.payout[0]}:${statement.payout[1]}</td><td class="p-3 text-right"><input type="number" min="0" max="${state.bankroll}" step="10" class="bet-input" placeholder="0"></td>`;
+                bettingTable.appendChild(row);
+            }
+        }
+
+        function startRound() {
+            roundMessageEl.textContent = '';
+            playButton.classList.remove('hidden');
+            nextRoundButton.classList.add('hidden');
+            playButton.disabled = false;
+
+            renderPlaceholders();
+            generateStatements();
+            updateStats();
+            updateChart();
+
+            document.querySelectorAll('.bet-input').forEach(input => {
+                input.value = '';
+                input.disabled = false;
+                input.addEventListener('input', handleBetInput);
+            });
+        }
+        
+        function handleBetInput(e) {
+            let totalBet = 0;
+            document.querySelectorAll('.bet-input').forEach(input => {
+                let value = parseInt(input.value) || 0;
+                if(value < 0) value = 0;
+                input.value = value; // Correct negative inputs
+                totalBet += value;
+            });
+
+            if (totalBet > state.bankroll) {
+                e.target.value = Math.max(0, parseInt(e.target.value) - (totalBet - state.bankroll));
+            }
+            updateStats();
+        }
+
+        function playRound() {
+            playButton.disabled = true;
+            roundMessageEl.textContent = 'Rolling and Tossing...';
+            document.querySelectorAll('.bet-input').forEach(input => input.disabled = true);
+            
+            const totalBet = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0);
+            
+            if (totalBet === 0) {
+                 roundMessageEl.textContent = 'Place a bet to play!';
+                 playButton.disabled = false;
+                 document.querySelectorAll('.bet-input').forEach(input => input.disabled = false);
+                 return;
+            }
+
+            state.bankroll -= totalBet;
+            updateStats();
+
+            const diceResults = Array.from({ length: state.diceCount }, () => Math.floor(Math.random() * 6) + 1);
+            const coinResults = Array.from({ length: state.coinCount }, () => Math.random() > 0.5 ? 'H' : 'T');
+            
+            document.querySelectorAll('.dice-coin').forEach(el => el.classList.add('toss'));
+
+            setTimeout(() => {
+                resultsDisplay.innerHTML = '';
+                diceResults.forEach(d => resultsDisplay.innerHTML += getDieSVG(d));
+                coinResults.forEach(c => resultsDisplay.innerHTML += getCoinSVG(c));
+                document.querySelectorAll('.dice-coin').forEach(el => el.classList.add('toss'));
+
+                let winnings = 0;
+                bettingTable.querySelectorAll('tr').forEach(row => {
+                    const statementId = parseInt(row.dataset.statementId);
+                    const betInput = row.querySelector('.bet-input');
+                    const betAmount = Number(betInput.value) || 0;
+
+                    if (betAmount > 0) {
+                        const statement = state.statements.find(s => s.id === statementId);
+                        const won = statement.evaluator(diceResults, coinResults);
+                        
+                        if (won) {
+                            const payout = (betAmount / statement.payout[1]) * statement.payout[0];
+                            winnings += betAmount + payout;
+                            row.classList.add('win-row');
+                        } else {
+                            row.classList.add('loss-row');
+                        }
+                    }
+                });
+
+                state.bankroll += winnings;
+                const netChange = winnings - totalBet;
+                
+                if (netChange > 0) {
+                    roundMessageEl.textContent = `You won $${netChange.toFixed(0)} this round!`;
+                    roundMessageEl.className = 'text-xl font-semibold h-7 text-green-400';
+                } else if (netChange < 0) {
+                    roundMessageEl.textContent = `You lost $${Math.abs(netChange).toFixed(0)} this round.`;
+                    roundMessageEl.className = 'text-xl font-semibold h-7 text-red-400';
+                } else {
+                    roundMessageEl.textContent = "You broke even this round.";
+                    roundMessageEl.className = 'text-xl font-semibold h-7 text-yellow-300';
+                }
+
+                state.bankrollHistory.push(state.bankroll);
+                updateChart();
+
+                if (state.bankroll <= 0) {
+                    state.bankroll = 0;
+                    gameOver();
+                } else {
+                    playButton.classList.add('hidden');
+                    nextRoundButton.classList.remove('hidden');
+                }
+
+                updateStats();
+            }, 1000);
+        }
+
+        function gameOver() {
+            modalTitle.textContent = 'Game Over!';
+            modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Better luck next time! <br> Would you like to play again?`;
+            modalButton.textContent = 'Play Again';
+            modalScreen.classList.remove('hidden');
+            gameContainer.classList.add('hidden');
+        }
+
+        function initGameState() {
+            state = {
+                round: 1,
+                bankroll: 1000,
+                diceCount: 2,
+                coinCount: 3,
+                statements: [],
+                bankrollHistory: [1000],
+            };
+            modalTitle.textContent = 'Welcome!';
+            modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!';
+            modalButton.textContent = 'Start Game';
+        }
+
+        // --- Event Listeners ---
+        playButton.addEventListener('click', playRound);
+        
+        nextRoundButton.addEventListener('click', () => {
+            state.round++;
+            if (state.round % 2 === 0) state.diceCount++; else state.coinCount++;
+            if(state.diceCount > 6) state.diceCount = 6;
+            if(state.coinCount > 8) state.coinCount = 8;
+            
+            startRound();
+        });
+
+        modalButton.addEventListener('click', () => {
+            modalScreen.classList.add('hidden');
+            gameContainer.classList.remove('hidden');
+            initGameState(); 
+            initChart();
+            startRound();
+        });
+
+        // Initialize on page load
+        initGameState();
+
+    </script>
+</body>
+</html>
+
