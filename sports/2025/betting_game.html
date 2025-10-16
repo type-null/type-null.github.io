@@ -109,20 +109,20 @@
             <div class="space-y-4">
                 <!-- Dice and Coin Results -->
                 <div class="bg-gray-900/50 rounded-lg p-6 min-h-[120px] flex flex-col items-center justify-center space-y-4">
-                    <div class="flex justify-center items-center gap-4" id="results-display">
+                    <div class="flex justify-center items-center gap-4 flex-wrap" id="results-display">
                         <!-- Dice and coins will be rendered here -->
                     </div>
                     <p id="round-message" class="text-xl font-semibold text-yellow-300 h-7"></p>
                 </div>
                  <!-- Bankroll Chart -->
-                <div class="bg-gray-900/50 rounded-lg p-4">
+                <div id="chart-container-game" class="bg-gray-900/50 rounded-lg p-4">
                     <h3 class="text-lg font-semibold mb-2 text-center text-gray-400">Bankroll History</h3>
                     <canvas id="bankroll-chart"></canvas>
                 </div>
             </div>
 
             <!-- Right Side: Betting Table -->
-            <div class="overflow-y-auto max-h-[60vh]">
+            <div class="overflow-y-auto max-h-[70vh]">
                 <table class="w-full text-left">
                     <thead class="sticky top-0 bg-gray-800 z-10">
                         <tr>
@@ -149,6 +149,10 @@
     <div id="modal-screen" class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-center space-y-6">
         <h2 id="modal-title" class="text-4xl font-extrabold text-blue-400">Welcome!</h2>
         <p id="modal-text" class="text-lg text-gray-300">Start with $1000 and test your luck. Place bets on random events and see if you can win big!</p>
+        
+        <!-- Container for the chart on game over -->
+        <div id="gameover-chart-container" class="mt-4 w-full"></div>
+
         <div class="flex flex-col space-y-4">
             <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
             <button id="show-strategy-button" class="btn btn-outline text-lg hidden">Learn Strategies</button>
@@ -456,6 +460,7 @@
 
                 if (state.bankroll <= 0) {
                     state.bankroll = 0;
+                    updateStats(); // Update stats to show $0 before game over
                     gameOver();
                 } else {
                     playButton.classList.add('hidden');
@@ -471,6 +476,14 @@
             modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Better luck next time!`;
             modalButton.textContent = 'Play Again';
             showStrategyButton.classList.remove('hidden');
+
+            // Move the chart to the game over screen
+            const chartCanvas = document.getElementById('bankroll-chart');
+            const gameOverChartContainer = document.getElementById('gameover-chart-container');
+            if (chartCanvas && gameOverChartContainer) {
+                gameOverChartContainer.appendChild(chartCanvas);
+            }
+
             modalScreen.classList.remove('hidden');
             gameContainer.classList.add('hidden');
         }
@@ -502,6 +515,18 @@
         });
 
         modalButton.addEventListener('click', () => {
+            // Move chart back to the main game container before re-initializing
+            const chartCanvas = document.getElementById('bankroll-chart');
+            const gameChartContainer = document.getElementById('chart-container-game');
+            const gameOverChartContainer = document.getElementById('gameover-chart-container');
+
+            if (chartCanvas && gameChartContainer) {
+                gameChartContainer.appendChild(chartCanvas);
+            }
+            if (gameOverChartContainer) {
+                gameOverChartContainer.innerHTML = ''; // Clear the modal's chart container
+            }
+
             modalScreen.classList.add('hidden');
             gameContainer.classList.remove('hidden');
             initGameState(); 
