@@ -82,12 +82,12 @@
 
         .win-row {
             background-color: rgba(16, 185, 129, 0.3) !important;
-            transition: background-color 0.5s ease;
+            transition: background-color: 0.5s ease;
         }
 
         .loss-row {
             background-color: rgba(239, 68, 68, 0.3) !important;
-            transition: background-color 0.5s ease;
+            transition: background-color: 0.5s ease;
         }
 
         .game-piece {
@@ -98,7 +98,6 @@
             transform: rotateY(1080deg) rotateX(720deg) scale(1.1);
         }
 
-        /* Modal styles */
         .modal-backdrop {
             position: fixed;
             top: 0;
@@ -118,12 +117,16 @@
             border-radius: 12px;
             padding: 16px;
         }
+
+        .trade-input {
+            width: 100px;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
 
-    <div id="game-container" class="w-full max-w-7xl bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-6 hidden">
+    <div id="game-container" class="w-full max-w-[1600px] bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-6 hidden">
 
         <!-- Header & Stats -->
         <div class="flex flex-col md:flex-row justify-between items-center pb-4 border-b border-gray-700">
@@ -135,89 +138,103 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- Left Side: Results & Chart -->
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <!-- Dice Betting -->
+            <div class="betting-section">
+                <h2 class="text-xl font-bold text-red-400 mb-3 text-center">Dice Roll <span
+                        class="text-sm font-normal text-gray-400">(Sum)</span></h2>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr>
+                            <th class="p-2 text-sm">Item</th>
+                            <th class="p-2 text-sm text-center">Odds</th>
+                            <th class="p-2 text-sm text-right">Wager</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dice-betting-table" class="divide-y divide-gray-700"></tbody>
+                </table>
+            </div>
+            <!-- Coin Betting -->
+            <div class="betting-section">
+                <h2 class="text-xl font-bold text-yellow-400 mb-3 text-center">Coin Flip <span
+                        class="text-sm font-normal text-gray-400">(3 Coins)</span></h2>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr>
+                            <th class="p-2 text-sm">Item</th>
+                            <th class="p-2 text-sm text-center">Odds</th>
+                            <th class="p-2 text-sm text-right">Wager</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coin-betting-table" class="divide-y divide-gray-700"></tbody>
+                </table>
+            </div>
+            <!-- Card Betting -->
+            <div class="betting-section space-y-4">
+                <div>
+                    <h2 class="text-xl font-bold text-green-400 text-center">Card Draw</h2>
+                    <p class="text-center text-xs text-gray-400">Sum of 3 cards to trade a market. Product of first 2 to
+                        bet.</p>
+                </div>
+                <!-- Market Trading -->
+                <div id="card-market-section" class="text-center space-y-2"></div>
+                <!-- Product Betting -->
+                <table class="w-full text-left">
+                    <thead>
+                        <tr>
+                            <th class="p-2 text-sm">Item (Product of first two)</th>
+                            <th class="p-2 text-sm text-center">Odds</th>
+                            <th class="p-2 text-sm text-right">Wager</th>
+                        </tr>
+                    </thead>
+                    <tbody id="card-product-betting-table" class="divide-y divide-gray-700"></tbody>
+                </table>
+            </div>
+            <!-- Results Display & Controls -->
             <div class="space-y-4 flex flex-col">
-                <!-- Game Piece Results -->
                 <div
                     class="bg-gray-900/50 rounded-lg p-6 flex-grow flex flex-col items-center justify-center space-y-4">
-                    <div class="flex justify-center items-center gap-4 flex-wrap" id="results-display">
-                        <!-- Dice, coins, and cards will be rendered here -->
-                    </div>
-                    <p id="round-message" class="text-xl font-semibold text-yellow-300 h-7"></p>
+                    <div id="results-display" class="flex flex-col items-center justify-center gap-4 w-full"></div>
+                    <p id="round-message" class="text-xl font-semibold text-yellow-300 h-7 text-center"></p>
                 </div>
-                <!-- Bankroll Chart -->
-                <div id="chart-container-game" class="bg-gray-900/50 rounded-lg p-4">
-                    <h3 class="text-lg font-semibold mb-2 text-center text-gray-400">Bankroll History</h3>
-                    <canvas id="bankroll-chart"></canvas>
-                </div>
-            </div>
-
-            <!-- Right Side: Betting Tables -->
-            <div class="space-y-6 overflow-y-auto max-h-[75vh]">
-                <!-- Dice Betting -->
-                <div id="dice-betting-section" class="betting-section">
-                    <h2 class="text-2xl font-bold text-red-400 mb-3 text-center">Dice Events (2 Rolls)</h2>
-                    <table class="w-full text-left">
-                        <tbody id="dice-betting-table" class="divide-y divide-gray-700"></tbody>
-                    </table>
-                </div>
-                <!-- Coin Betting -->
-                <div id="coin-betting-section" class="betting-section">
-                    <h2 class="text-2xl font-bold text-yellow-400 mb-3 text-center">Coin Events (3 Flips)</h2>
-                    <table class="w-full text-left">
-                        <tbody id="coin-betting-table" class="divide-y divide-gray-700"></tbody>
-                    </table>
-                </div>
-                <!-- Card Betting -->
-                <div id="card-betting-section" class="betting-section">
-                    <h2 class="text-2xl font-bold text-green-400 mb-3 text-center">Card Events (3 Draws)</h2>
-                    <table class="w-full text-left">
-                        <tbody id="card-betting-table" class="divide-y divide-gray-700"></tbody>
-                    </table>
+                <div class="flex justify-center pt-4">
+                    <button id="play-button" class="btn btn-primary text-xl w-full">Place Bets & Play</button>
+                    <button id="next-round-button" class="btn btn-secondary text-xl w-full hidden">Next Round</button>
                 </div>
             </div>
         </div>
 
-        <!-- Controls -->
-        <div class="flex justify-center pt-4">
-            <button id="play-button" class="btn btn-primary text-xl">Place Bets & Play</button>
-            <button id="next-round-button" class="btn btn-secondary text-xl hidden">Next Round</button>
+        <!-- Hidden container for the chart canvas during gameplay -->
+        <div id="chart-container-game" class="hidden">
+            <canvas id="bankroll-chart"></canvas>
         </div>
     </div>
 
-    <!-- Start/Game Over Screen -->
+    <!-- Modals (Start/Game Over, Strategy, Leaderboard) -->
     <div id="modal-screen" class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-center space-y-6">
         <h2 id="modal-title" class="text-4xl font-extrabold text-blue-400">Welcome!</h2>
         <p id="modal-text" class="text-lg text-gray-300">Start with $1000 and test your luck. Place bets on random
             events and see if you can win big!</p>
-
-        <!-- Container for the chart on game over -->
-        <div id="gameover-chart-container" class="mt-4 w-full"></div>
-
-        <!-- High Score Submission Form -->
+        <div id="gameover-chart-container" class="mt-4 w-full relative"></div>
         <div id="highscore-form" class="hidden space-y-3">
             <p class="font-bold text-lg text-green-400">New High Score!</p>
             <input type="text" id="player-name" class="name-input" placeholder="Enter your name for the leaderboard"
                 maxlength="15">
             <button id="submit-score-button" class="btn btn-primary w-full">Submit Score</button>
         </div>
-
         <div id="modal-controls" class="flex flex-col space-y-4">
             <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
             <button id="leaderboard-button" class="btn btn-outline text-lg">Leaderboard</button>
             <button id="show-strategy-button" class="btn btn-outline text-lg hidden">Learn Strategies</button>
         </div>
     </div>
-
-    <!-- Strategy Modal -->
     <div id="strategy-modal" class="modal-backdrop hidden">
         <div
             class="w-full max-w-3xl bg-gray-800 rounded-2xl shadow-2xl p-8 text-left space-y-6 relative max-h-[90vh] overflow-y-auto">
             <button id="close-strategy-button"
                 class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
             <h2 class="text-3xl font-bold text-blue-400 border-b border-gray-700 pb-3">Optimal Betting Strategies</h2>
-
             <div class="space-y-4 text-gray-300">
                 <p>To maximize bankroll growth, you need a disciplined strategy. Here are a few approaches, from simple
                     to advanced.</p>
@@ -274,8 +291,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Leaderboard Modal -->
     <div id="leaderboard-modal" class="modal-backdrop hidden">
         <div
             class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-left space-y-4 relative max-h-[90vh] overflow-y-auto">
@@ -287,181 +302,87 @@
     </div>
 
     <script type="module">
-        // Firebase Imports
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // DOM Elements
         const ui = {
-            gameContainer: document.getElementById('game-container'),
-            modalScreen: document.getElementById('modal-screen'),
-            modalTitle: document.getElementById('modal-title'),
-            modalText: document.getElementById('modal-text'),
-            modalButton: document.getElementById('modal-button'),
-            showStrategyButton: document.getElementById('show-strategy-button'),
-            strategyModal: document.getElementById('strategy-modal'),
-            closeStrategyButton: document.getElementById('close-strategy-button'),
-            leaderboardButton: document.getElementById('leaderboard-button'),
-            leaderboardModal: document.getElementById('leaderboard-modal'),
-            closeLeaderboardButton: document.getElementById('close-leaderboard-button'),
-            leaderboardContent: document.getElementById('leaderboard-content'),
-            highscoreForm: document.getElementById('highscore-form'),
-            playerNameInput: document.getElementById('player-name'),
-            submitScoreButton: document.getElementById('submit-score-button'),
-            modalControls: document.getElementById('modal-controls'),
-            roundNumber: document.getElementById('round-number'),
-            bankroll: document.getElementById('bankroll'),
-            totalBet: document.getElementById('total-bet'),
-            resultsDisplay: document.getElementById('results-display'),
-            roundMessage: document.getElementById('round-message'),
-            diceBettingTable: document.getElementById('dice-betting-table'),
-            coinBettingTable: document.getElementById('coin-betting-table'),
-            cardBettingTable: document.getElementById('card-betting-table'),
-            playButton: document.getElementById('play-button'),
-            nextRoundButton: document.getElementById('next-round-button'),
-            chartCanvas: document.getElementById('bankroll-chart'),
+            gameContainer: document.getElementById('game-container'), modalScreen: document.getElementById('modal-screen'), modalTitle: document.getElementById('modal-title'), modalText: document.getElementById('modal-text'), modalButton: document.getElementById('modal-button'), showStrategyButton: document.getElementById('show-strategy-button'), strategyModal: document.getElementById('strategy-modal'), closeStrategyButton: document.getElementById('close-strategy-button'), leaderboardButton: document.getElementById('leaderboard-button'), leaderboardModal: document.getElementById('leaderboard-modal'), closeLeaderboardButton: document.getElementById('close-leaderboard-button'), leaderboardContent: document.getElementById('leaderboard-content'), highscoreForm: document.getElementById('highscore-form'), playerNameInput: document.getElementById('player-name'), submitScoreButton: document.getElementById('submit-score-button'), modalControls: document.getElementById('modal-controls'), roundNumber: document.getElementById('round-number'), bankroll: document.getElementById('bankroll'), totalBet: document.getElementById('total-bet'), resultsDisplay: document.getElementById('results-display'), roundMessage: document.getElementById('round-message'), diceBettingTable: document.getElementById('dice-betting-table'), coinBettingTable: document.getElementById('coin-betting-table'), cardMarketSection: document.getElementById('card-market-section'), cardProductBettingTable: document.getElementById('card-product-betting-table'), playButton: document.getElementById('play-button'), nextRoundButton: document.getElementById('next-round-button'), chartCanvas: document.getElementById('bankroll-chart'), gameChartContainer: document.getElementById('chart-container-game'),
         };
-
-        // Firebase State
         let db, auth;
+        const DICE_COUNT = 2, COIN_COUNT = 3, CARD_COUNT = 3;
+        let bankrollChart, state = {};
 
-        // Game Constants
-        const DICE_COUNT = 2;
-        const COIN_COUNT = 3;
-        const CARD_COUNT = 3;
+        const diceEventPool = [{ text: '2 or 3', prob: 3 / 36, evaluator: d => [2, 3].includes(d.reduce((a, b) => a + b, 0)) }, { text: '4', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 4 }, { text: '5', prob: 4 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 5 }, { text: '9', prob: 4 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 9 }, { text: '10', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 10 }, { text: '6, 7 or 8', prob: 16 / 36, evaluator: d => [6, 7, 8].includes(d.reduce((a, b) => a + b, 0)) }, { text: '11 or 12', prob: 3 / 36, evaluator: d => [11, 12].includes(d.reduce((a, b) => a + b, 0)) }, { text: 'Even', prob: 18 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) % 2 === 0 }, { text: 'Odd', prob: 18 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) % 2 !== 0 }, { text: 'Product > 30', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a * b, 1) > 30 }, { text: 'Doubles', prob: 6 / 36, evaluator: d => d[0] === d[1] },];
+        const coinEventPool = [{ text: 'All three identical', prob: 2 / 8, evaluator: (d, c) => new Set(c).size === 1 }, { text: 'More heads than tails', prob: 4 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length > c.filter(x => x === 'T').length }, { text: 'All 3 are Heads', prob: 1 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 3 }, { text: 'All 3 are Tails', prob: 1 / 8, evaluator: (d, c) => c.filter(x => x === 'T').length === 3 }, { text: 'Exactly 2 Heads', prob: 3 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 2 }, { text: 'Exactly 1 Head', prob: 3 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 1 }, { text: 'At least one Head', prob: 7 / 8, evaluator: (d, c) => c.includes('H') }, { text: 'At least one Tail', prob: 7 / 8, evaluator: (d, c) => c.includes('T') }, { text: 'First and last are same', prob: 4 / 8, evaluator: (d, c) => c[0] === c[2] },];
+        const cardProductEventPool = [{ text: 'Product > 100', prob: 0.17, evaluator: (d, c, h) => (h[0].value * h[1].value) > 100 }, { text: 'Product is even', prob: 0.75, evaluator: (d, c, h) => (h[0].value * h[1].value) % 2 === 0 }, { text: 'Product < 20', prob: 0.16, evaluator: (d, c, h) => (h[0].value * h[1].value) < 20 }, { text: 'Product > 75', prob: 0.30, evaluator: (d, c, h) => (h[0].value * h[1].value) > 75 }, { text: 'Product is between 40 and 60', prob: 0.15, evaluator: (d, c, h) => { const p = h[0].value * h[1].value; return p >= 40 && p <= 60; } }, { text: 'Product is a perfect square', prob: 0.08, evaluator: (d, c, h) => { const p = h[0].value * h[1].value; const sqrt = Math.sqrt(p); return sqrt === Math.floor(sqrt); } }, { text: 'Product ends in 0', prob: 0.34, evaluator: (d, c, h) => (h[0].value * h[1].value) % 10 === 0 }, { text: 'Both cards are Face Cards', prob: (12 / 52) * (11 / 51), evaluator: (d, c, h) => h[0].value === 10 && h[1].value === 10 }, { text: 'Both cards are same value', prob: 3 / 51, evaluator: (d, c, h) => h[0].value === h[1].value },];
 
-        // Game State
-        let bankrollChart;
-        let state = {};
-
-        // --- Event Pools with True Probabilities ---
-        const diceEventPool = [
-            { text: 'Sum is 7', prob: 6 / 36, evaluator: (d, c, h) => d.reduce((a, b) => a + b, 0) === 7 },
-            { text: 'Doubles are rolled', prob: 6 / 36, evaluator: (d, c, h) => d[0] === d[1] },
-            { text: 'Sum is even', prob: 18 / 36, evaluator: (d, c, h) => d.reduce((a, b) => a + b, 0) % 2 === 0 },
-            { text: 'Sum > 8', prob: 10 / 36, evaluator: (d, c, h) => d.reduce((a, b) => a + b, 0) > 8 },
-            { text: 'Sum < 6', prob: 10 / 36, evaluator: (d, c, h) => d.reduce((a, b) => a + b, 0) < 6 },
-            { text: 'At least one 6', prob: 11 / 36, evaluator: (d, c, h) => d.includes(6) },
-            { text: 'No 1s rolled', prob: 25 / 36, evaluator: (d, c, h) => !d.includes(1) },
-            { text: 'Both dice > 3', prob: 9 / 36, evaluator: (d, c, h) => d.every(v => v > 3) },
-            { text: 'Both dice are even', prob: 9 / 36, evaluator: (d, c, h) => d.every(v => v % 2 === 0) },
-            { text: 'A 1 and a 6 are rolled', prob: 2 / 36, evaluator: (d, c, h) => d.includes(1) && d.includes(6) },
-        ];
-
-        const coinEventPool = [
-            { text: 'All 3 are Heads', prob: 1 / 8, evaluator: (d, c, h) => c.filter(x => x === 'H').length === 3 },
-            { text: 'All 3 are Tails', prob: 1 / 8, evaluator: (d, c, h) => c.filter(x => x === 'T').length === 3 },
-            { text: 'Exactly 2 Heads', prob: 3 / 8, evaluator: (d, c, h) => c.filter(x => x === 'H').length === 2 },
-            { text: 'Exactly 1 Head', prob: 3 / 8, evaluator: (d, c, h) => c.filter(x => x === 'H').length === 1 },
-            { text: 'More Heads than Tails', prob: 4 / 8, evaluator: (d, c, h) => c.filter(x => x === 'H').length > c.filter(x => x === 'T').length },
-            { text: 'At least one Head', prob: 7 / 8, evaluator: (d, c, h) => c.includes('H') },
-            { text: 'First and last are same', prob: 4 / 8, evaluator: (d, c, h) => c[0] === c[2] },
-        ];
-
-        const cardEventPool = [
-            { text: 'A Pair is drawn', prob: 0.169, evaluator: (d, c, h) => { const ranks = h.map(card => card.rank); return new Set(ranks).size === 2; } },
-            { text: 'Three of a Kind', prob: 0.002, evaluator: (d, c, h) => { const ranks = h.map(card => card.rank); return new Set(ranks).size === 1; } },
-            { text: 'A Flush (all same suit)', prob: 0.051, evaluator: (d, c, h) => { const suits = h.map(card => card.suit); return new Set(suits).size === 1; } },
-            { text: 'A Straight (e.g., 5-6-7)', prob: 0.035, evaluator: (d, c, h) => { const v = h.map(card => card.value).sort((a, b) => a - b); return (v[2] - v[1] === 1 && v[1] - v[0] === 1) || (v[0] === 2 && v[1] === 3 && v[2] === 14); } },
-            { text: 'All cards are Red', prob: 0.117, evaluator: (d, c, h) => h.every(card => card.color === 'red') },
-            { text: 'All cards are Black', prob: 0.117, evaluator: (d, c, h) => h.every(card => card.color === 'black') },
-            { text: 'At least one Ace', prob: 0.217, evaluator: (d, c, h) => h.some(card => card.rank === 'A') },
-            { text: 'All are face cards (J,Q,K)', prob: 0.009, evaluator: (d, c, h) => h.every(card => ['J', 'Q', 'K'].includes(card.rank)) },
-            { text: 'Sum of card values > 30', prob: 0.2, evaluator: (d, c, h) => h.reduce((sum, card) => sum + card.value, 0) > 30 }, // Approximation
-            { text: 'No face cards drawn', prob: 0.47, evaluator: (d, c, h) => !h.some(card => ['J', 'Q', 'K'].includes(card.rank)) },
-        ];
-
-        // --- UI Rendering ---
-        function getDieSVG(value) { /* ... same as before ... */ return `<svg viewBox="0 0 100 100" class="w-12 h-12 game-piece ${value ? 'text-white' : 'text-gray-600'}"><rect x="5" y="5" width="90" height="90" rx="15" fill="currentColor" class="${value ? 'text-red-500' : 'text-gray-700'}"/><g class="text-white">${value ? { 1: [[50, 50]], 2: [[25, 25], [75, 75]], 3: [[25, 25], [50, 50], [75, 75]], 4: [[25, 25], [25, 75], [75, 25], [75, 75]], 5: [[25, 25], [25, 75], [75, 25], [75, 75], [50, 50]], 6: [[25, 25], [25, 50], [25, 75], [75, 25], [75, 50], [75, 75]] }[value].map(d => `<circle cx="${d[0]}" cy="${d[1]}" r="8" fill="currentColor"/>`).join('') : ''}</g></svg>`; }
-        function getCoinSVG(value) { /* ... same as before ... */ const content = value === 'H' ? 'H' : value === 'T' ? 'T' : '?'; const color = value === 'H' ? 'text-yellow-400' : value === 'T' ? 'text-blue-400' : 'text-gray-600'; const bgColor = value ? 'bg-gray-700' : 'bg-gray-700'; return `<div class="w-12 h-12 rounded-full flex items-center justify-center game-piece ${color} ${bgColor}"><span class="text-2xl font-bold">${content}</span></div>`; }
+        function getDieSVG(value) { const dots = { 1: [[50, 50]], 2: [[25, 25], [75, 75]], 3: [[25, 25], [50, 50], [75, 75]], 4: [[25, 25], [25, 75], [75, 25], [75, 75]], 5: [[25, 25], [25, 75], [75, 25], [75, 75], [50, 50]], 6: [[25, 25], [25, 50], [25, 75], [75, 25], [75, 50], [75, 75]] }; const dotCircles = value ? dots[value].map(d => `<circle cx="${d[0]}" cy="${d[1]}" r="8" fill="currentColor"/>`).join('') : ''; return `<svg viewBox="0 0 100 100" class="w-12 h-12 game-piece ${value ? 'text-white' : 'text-gray-600'}"><rect x="5" y="5" width="90" height="90" rx="15" fill="currentColor" class="${value ? 'text-red-500' : 'text-gray-700'}"/><g class="text-white">${dotCircles}</g></svg>`; }
+        function getCoinSVG(value) { const content = value === 'H' ? 'H' : value === 'T' ? 'T' : '?'; const color = value === 'H' ? 'text-yellow-400' : value === 'T' ? 'text-blue-400' : 'text-gray-600'; const bgColor = value ? 'bg-gray-700' : 'bg-gray-700'; return `<div class="w-12 h-12 rounded-full flex items-center justify-center game-piece ${color} ${bgColor}"><span class="text-2xl font-bold">${content}</span></div>`; }
         function getCardSVG(card) {
-            if (!card) {
-                return `<div class="w-14 h-20 rounded-md bg-gray-700 game-piece flex items-center justify-center"><div class="w-12 h-16 rounded border-2 border-dashed border-gray-500"></div></div>`;
-            }
-            const colorClass = (card.suit === '♥' || card.suit === '♦') ? 'text-red-500' : 'text-gray-200';
-            return `<div class="w-14 h-20 rounded-md bg-white p-1 shadow-lg game-piece flex flex-col justify-between ${colorClass}">
-                <div class="text-left"><div class="font-bold text-lg leading-none">${card.rank}</div><div>${card.suit}</div></div>
-                <div class="text-right transform rotate-180"><div class="font-bold text-lg leading-none">${card.rank}</div><div>${card.suit}</div></div>
-            </div>`;
+            if (!card) { return `<div class="w-14 h-20 rounded-md bg-gray-700 game-piece flex items-center justify-center"><div class="w-12 h-16 rounded border-2 border-dashed border-gray-500"></div></div>`; }
+            const colorClass = (card.suit === '♥' || card.suit === '♦') ? 'text-red-600' : 'text-black';
+            return `<div class="w-14 h-20 rounded-md bg-white p-2 shadow-lg game-piece ${colorClass}"><div class="text-left"><div class="font-bold text-xl leading-none">${card.rank}</div><div class="text-lg">${card.suit}</div></div></div>`;
         }
-
-        function updateStats() {
-            ui.roundNumber.textContent = state.round;
-            ui.bankroll.textContent = `$${Math.round(state.bankroll)}`;
-            const bets = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0);
-            ui.totalBet.textContent = `$${bets}`;
-        }
+        function updateStats() { ui.roundNumber.textContent = state.round; ui.bankroll.textContent = `$${Math.round(state.bankroll)}`; const bets = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0); ui.totalBet.textContent = `$${bets}`; }
 
         function renderPlaceholders() {
             ui.resultsDisplay.innerHTML = '';
-            for (let i = 0; i < DICE_COUNT; i++) ui.resultsDisplay.innerHTML += getDieSVG(null);
-            for (let i = 0; i < COIN_COUNT; i++) ui.resultsDisplay.innerHTML += getCoinSVG(null);
-            for (let i = 0; i < CARD_COUNT; i++) ui.resultsDisplay.innerHTML += getCardSVG(null);
+            const diceRow = document.createElement('div'); diceRow.className = 'flex justify-center items-center gap-4 flex-wrap';
+            for (let i = 0; i < DICE_COUNT; i++) diceRow.innerHTML += getDieSVG(null);
+            const coinRow = document.createElement('div'); coinRow.className = 'flex justify-center items-center gap-4 flex-wrap';
+            for (let i = 0; i < COIN_COUNT; i++) coinRow.innerHTML += getCoinSVG(null);
+            const cardRow = document.createElement('div'); cardRow.className = 'flex justify-center items-center gap-4 flex-wrap';
+            for (let i = 0; i < CARD_COUNT; i++) cardRow.innerHTML += getCardSVG(null);
+            ui.resultsDisplay.appendChild(diceRow); ui.resultsDisplay.appendChild(coinRow); ui.resultsDisplay.appendChild(cardRow);
         }
 
-        function initChart() { /* ... same as before ... */ const ctx = ui.chartCanvas.getContext('2d'); if (bankrollChart) bankrollChart.destroy(); bankrollChart = new Chart(ctx, { type: 'line', data: { labels: state.bankrollHistory.map((_, i) => `R${i}`), datasets: [{ label: 'Bankroll', data: state.bankrollHistory, borderColor: '#3B82F6', backgroundColor: 'rgba(59, 130, 246, 0.2)', tension: 0.2, fill: true, }] }, options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.1)' } }, x: { ticks: { color: '#9CA3AF' }, grid: { display: false } } } }); }
-        function updateChart() { /* ... same as before ... */ bankrollChart.data.labels = state.bankrollHistory.map((_, i) => i === 0 ? 'Start' : `R${i}`); bankrollChart.data.datasets[0].data = state.bankrollHistory; bankrollChart.update(); }
+        function initChart() { const ctx = ui.chartCanvas.getContext('2d'); if (bankrollChart) bankrollChart.destroy(); bankrollChart = new Chart(ctx, { type: 'line', data: { labels: state.bankrollHistory.map((_, i) => `R${i}`), datasets: [{ label: 'Bankroll', data: state.bankrollHistory, borderColor: '#3B82F6', backgroundColor: 'rgba(59, 130, 246, 0.2)', tension: 0.2, fill: true, }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.1)' } }, x: { ticks: { color: '#9CA3AF' }, grid: { display: false } } } } }); }
+        function updateChart() { bankrollChart.data.labels = state.bankrollHistory.map((_, i) => i === 0 ? 'Start' : `R${i}`); bankrollChart.data.datasets[0].data = state.bankrollHistory; bankrollChart.update(); }
+        function createDeck() { const suits = { '♥': 'red', '♦': 'red', '♣': 'black', '♠': 'black' }; const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']; const values = { '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11 }; return Object.keys(suits).flatMap(suit => ranks.map(rank => ({ suit, rank, value: values[rank], color: suits[suit] }))); }
+        function drawCards(deck, count) { for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[deck[i], deck[j]] = [deck[j], deck[i]]; } return deck.slice(0, count); }
 
-        // --- Card Logic ---
-        function createDeck() {
-            const suits = { '♥': 'red', '♦': 'red', '♣': 'black', '♠': 'black' };
-            const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-            const values = { '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14 };
-            return Object.keys(suits).flatMap(suit => ranks.map(rank => ({ suit, rank, value: values[rank], color: suits[suit] })));
-        }
-
-        function drawCards(deck, count) {
-            // Fisher-Yates shuffle
-            for (let i = deck.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [deck[i], deck[j]] = [deck[j], deck[i]];
-            }
-            return deck.slice(0, count);
-        }
-
-        // --- Game Logic ---
         function generateStatements() {
             state.statements = [];
-            const tables = { dice: ui.diceBettingTable, coin: ui.coinBettingTable, card: ui.cardBettingTable };
+            const tables = { dice: ui.diceBettingTable, coin: ui.coinBettingTable, cardProduct: ui.cardProductBettingTable };
             Object.values(tables).forEach(t => t.innerHTML = '');
+            const createRow = (event, type, table) => { const trueOdds = (1 / event.prob) - 1; const houseEdge = 1 - (Math.random() * 0.23 + 0.02); const payout = parseFloat((trueOdds * houseEdge).toFixed(1)); const statement = { id: `${type}-${event.text}`, text: event.text, payout: [payout, 1], evaluator: event.evaluator }; state.statements.push(statement); const row = document.createElement('tr'); row.className = 'odd:bg-gray-800/50 even:bg-gray-900/50'; row.dataset.statementId = statement.id; row.innerHTML = `<td class="p-2 text-sm">${statement.text}</td><td class="p-2 text-center font-semibold text-cyan-400 text-sm">${statement.payout[0]}:1</td><td class="p-2 text-right"><input type="number" min="0" step="1" class="bet-input text-sm" placeholder="0"></td>`; table.appendChild(row); };
+            const createRandomRows = (pool, type, table) => { const shuffled = pool.sort(() => 0.5 - Math.random()); const count = Math.floor(Math.random() * 3) + 7; for (let i = 0; i < Math.min(count, shuffled.length); i++) { createRow(shuffled[i], type, table); } };
+            createRandomRows(diceEventPool, 'dice', tables.dice); createRandomRows(coinEventPool, 'coin', tables.coin); createRandomRows(cardProductEventPool, 'cardProduct', tables.cardProduct);
+            const midPoint = Math.floor(Math.random() * 6) + 22; const sellPrice = midPoint - 1; const buyPrice = midPoint + 1;
+            const marketStatement = { id: 'card-market', sellPrice, buyPrice, evaluator: (d, c, h) => { const sum = h.reduce((a, b) => a + b.value, 0); const sellBet = Number(document.getElementById('sell-volume-input').value) || 0; const buyBet = Number(document.getElementById('buy-volume-input').value) || 0; let winnings = 0; if (sellBet > 0 && sum < sellPrice) winnings += sellBet * 2; if (buyBet > 0 && sum > buyPrice) winnings += buyBet * 2; return winnings; } };
+            state.statements.push(marketStatement);
+            ui.cardMarketSection.innerHTML = `<div class="flex items-center justify-center gap-4 text-lg"> <div class="text-right"> <div class="text-sm">Sell Volume</div> <input type="number" id="sell-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> <div class="font-bold text-2xl p-4 bg-gray-900/50 rounded-lg"> <span class="text-red-400">${sellPrice}</span> @ <span class="text-green-400">${buyPrice}</span> </div> <div> <div class="text-sm">Buy Volume</div> <input type="number" id="buy-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> </div>`;
+        }
 
-            const createRowsForPool = (pool, type) => {
-                const shuffled = pool.sort(() => 0.5 - Math.random());
-                for (let i = 0; i < 7; i++) {
-                    const event = shuffled[i];
-                    const trueOdds = (1 / event.prob) - 1;
-                    const houseEdge = 1 - (Math.random() * 0.15 + 0.05); // 5-20% edge
-                    const payoutNumerator = parseFloat((trueOdds * houseEdge).toFixed(2));
-                    const payout = [payoutNumerator, 1];
+        function startRound() { ui.roundMessage.textContent = ''; ui.playButton.classList.remove('hidden'); ui.nextRoundButton.classList.add('hidden'); ui.playButton.disabled = false; document.querySelectorAll('.bet-input').forEach(input => { input.value = ''; input.disabled = false; input.addEventListener('input', handleBetInput); }); document.querySelectorAll('tbody tr, .trade-container').forEach(el => el.classList.remove('win-row', 'loss-row')); renderPlaceholders(); generateStatements(); updateStats(); updateChart(); }
 
-                    const statement = { id: `${type}-${i}`, text: event.text, payout: payout, evaluator: event.evaluator };
-                    state.statements.push(statement);
+        function handleBetInput(e) {
+            // Sanitize current input to be a non-negative integer.
+            const sanitizedValue = e.target.value.replace(/[^0-9]/g, '');
+            let currentValue = parseInt(sanitizedValue, 10) || 0;
 
-                    const row = document.createElement('tr');
-                    row.className = 'odd:bg-gray-800/50 even:bg-gray-900/50';
-                    row.dataset.statementId = statement.id;
-                    row.innerHTML = `
-                        <td class="p-3 text-sm">${statement.text}</td>
-                        <td class="p-3 text-center font-semibold text-cyan-400">${statement.payout[0]}:1</td>
-                        <td class="p-3 text-right"><input type="number" min="0" step="10" class="bet-input text-sm" placeholder="0"></td>`;
-                    tables[type].appendChild(row);
+            // Calculate the sum of all other bets.
+            let otherBetsTotal = 0;
+            document.querySelectorAll('.bet-input').forEach(input => {
+                if (input !== e.target) {
+                    otherBetsTotal += parseInt(input.value, 10) || 0;
                 }
-            };
+            });
 
-            createRowsForPool(diceEventPool, 'dice');
-            createRowsForPool(coinEventPool, 'coin');
-            createRowsForPool(cardEventPool, 'card');
+            // Determine the maximum value this input can hold.
+            const maxAllowedForThisInput = state.bankroll - otherBetsTotal;
+
+            // Correct the value if it exceeds the maximum allowed.
+            if (currentValue > maxAllowedForThisInput) {
+                currentValue = maxAllowedForThisInput;
+            }
+
+            // Update the input field with the sanitized and corrected value.
+            e.target.value = currentValue > 0 ? currentValue : '';
+
+            // Finally, update the total bet display.
+            updateStats();
         }
-
-        function startRound() {
-            ui.roundMessage.textContent = ''; ui.playButton.classList.remove('hidden'); ui.nextRoundButton.classList.add('hidden'); ui.playButton.disabled = false;
-            document.querySelectorAll('.bet-input').forEach(input => { input.value = ''; input.disabled = false; input.addEventListener('input', handleBetInput); });
-            document.querySelectorAll('tbody tr').forEach(row => row.classList.remove('win-row', 'loss-row'));
-            renderPlaceholders(); generateStatements(); updateStats(); updateChart();
-        }
-
-        function handleBetInput(e) { /* ... same as before ... */ let otherBets = 0; document.querySelectorAll('.bet-input').forEach(input => { if (input !== e.target) { otherBets += Number(input.value) || 0; } }); const maxAllowedForThisInput = state.bankroll - otherBets; let currentBet = Number(e.target.value) || 0; if (currentBet < 0) { e.target.value = ''; } else if (currentBet > maxAllowedForThisInput) { e.target.value = maxAllowedForThisInput > 0 ? maxAllowedForThisInput : ''; } updateStats(); }
 
         function playRound() {
             ui.playButton.disabled = true; ui.roundMessage.textContent = 'Rolling, Tossing, Drawing...'; document.querySelectorAll('.bet-input').forEach(input => input.disabled = true);
@@ -469,7 +390,6 @@
             if (totalBet === 0) { ui.roundMessage.textContent = 'Place a bet to play!'; ui.playButton.disabled = false; document.querySelectorAll('.bet-input').forEach(input => input.disabled = false); return; }
             state.bankroll -= totalBet; updateStats();
 
-            // Generate results
             const diceResults = Array.from({ length: DICE_COUNT }, () => Math.floor(Math.random() * 6) + 1);
             const coinResults = Array.from({ length: COIN_COUNT }, () => Math.random() > 0.5 ? 'H' : 'T');
             const cardResults = drawCards(createDeck(), CARD_COUNT);
@@ -477,35 +397,21 @@
             document.querySelectorAll('.game-piece').forEach(el => el.classList.add('toss'));
 
             setTimeout(() => {
-                ui.resultsDisplay.innerHTML = '';
-                diceResults.forEach(d => ui.resultsDisplay.innerHTML += getDieSVG(d));
-                coinResults.forEach(c => ui.resultsDisplay.innerHTML += getCoinSVG(c));
-                cardResults.forEach(card => ui.resultsDisplay.innerHTML += getCardSVG(card));
-
+                ui.resultsDisplay.innerHTML = ''; const diceRow = document.createElement('div'); diceRow.className = 'flex justify-center items-center gap-4 flex-wrap'; diceResults.forEach(d => diceRow.innerHTML += getDieSVG(d)); const coinRow = document.createElement('div'); coinRow.className = 'flex justify-center items-center gap-4 flex-wrap'; coinResults.forEach(c => coinRow.innerHTML += getCoinSVG(c)); const cardRow = document.createElement('div'); cardRow.className = 'flex justify-center items-center gap-4 flex-wrap'; cardResults.forEach(card => cardRow.innerHTML += getCardSVG(card)); ui.resultsDisplay.appendChild(diceRow); ui.resultsDisplay.appendChild(coinRow); ui.resultsDisplay.appendChild(cardRow);
                 let winnings = 0;
                 document.querySelectorAll('tbody tr').forEach(row => {
-                    const statementId = row.dataset.statementId;
-                    const betInput = row.querySelector('.bet-input');
-                    const betAmount = Number(betInput.value) || 0;
-
-                    if (betAmount > 0) {
-                        const statement = state.statements.find(s => s.id === statementId);
-                        const won = statement.evaluator(diceResults, coinResults, cardResults);
-                        if (won) {
-                            const payout = betAmount * statement.payout[0];
-                            winnings += betAmount + payout;
-                            row.classList.add('win-row');
-                        } else {
-                            row.classList.add('loss-row');
-                        }
-                    }
+                    const statementId = row.dataset.statementId; const betInput = row.querySelector('.bet-input'); const betAmount = Number(betInput.value) || 0;
+                    if (betAmount > 0) { const statement = state.statements.find(s => s.id === statementId); if (statement) { const won = statement.evaluator(diceResults, coinResults, cardResults); if (won) { winnings += betAmount + (betAmount * statement.payout[0]); row.classList.add('win-row'); } else { row.classList.add('loss-row'); } } }
                 });
-
+                const marketStatement = state.statements.find(s => s.id === 'card-market'); winnings += marketStatement.evaluator(diceResults, coinResults, cardResults);
+                const cardSum = cardResults.reduce((a, b) => a + b.value, 0); const sellInput = document.getElementById('sell-volume-input'); const buyInput = document.getElementById('buy-volume-input');
+                if (Number(sellInput.value) > 0) { sellInput.parentElement.parentElement.classList.add(cardSum < marketStatement.sellPrice ? 'win-row' : 'loss-row'); }
+                if (Number(buyInput.value) > 0) { buyInput.parentElement.parentElement.classList.add(cardSum > marketStatement.buyPrice ? 'win-row' : 'loss-row'); }
                 state.bankroll += winnings; state.peakBankroll = Math.max(state.peakBankroll, state.bankroll);
                 const netChange = winnings - totalBet;
-                if (netChange > 0) { ui.roundMessage.textContent = `You won $${netChange.toFixed(0)} this round!`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-green-400'; }
-                else if (netChange < 0) { ui.roundMessage.textContent = `You lost $${Math.abs(netChange).toFixed(0)} this round.`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-red-400'; }
-                else { ui.roundMessage.textContent = "You broke even this round."; ui.roundMessage.className = 'text-xl font-semibold h-7 text-yellow-300'; }
+                if (netChange > 0) { ui.roundMessage.textContent = `You won $${netChange.toFixed(0)}!`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-green-400'; }
+                else if (netChange < 0) { ui.roundMessage.textContent = `You lost $${Math.abs(netChange).toFixed(0)}.`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-red-400'; }
+                else { ui.roundMessage.textContent = "Broke even."; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-yellow-300'; }
                 state.bankrollHistory.push(state.bankroll); updateChart();
                 if (state.bankroll <= 0) { state.bankroll = 0; updateStats(); gameOver(); }
                 else { ui.playButton.classList.add('hidden'); ui.nextRoundButton.classList.remove('hidden'); }
@@ -513,38 +419,16 @@
             }, 1000);
         }
 
-        async function gameOver() { /* ... same as before ... */ ui.modalTitle.textContent = 'Game Over!'; ui.modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Your peak bankroll was $${Math.round(state.peakBankroll)}.`; ui.modalButton.textContent = 'Play Again'; ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); ui.showStrategyButton.classList.remove('hidden'); const chartCanvasEl = document.getElementById('bankroll-chart'); const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (chartCanvasEl && gameOverChartContainer) { gameOverChartContainer.appendChild(chartCanvasEl); } ui.modalScreen.classList.remove('hidden'); ui.gameContainer.classList.add('hidden'); await checkAndSubmitHighScore(); }
-        async function checkAndSubmitHighScore() { /* ... same as before ... */ if (!state.userId) return; const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id'; const docRef = doc(db, `/artifacts/${appId}/public/data/leaderboard`, state.userId); const docSnap = await getDoc(docRef); const currentHighScore = docSnap.exists() ? docSnap.data().score : 0; if (state.peakBankroll > currentHighScore) { ui.modalText.innerHTML += `<br>Congratulations, you have a new high score!`; ui.modalControls.classList.add('hidden'); ui.highscoreForm.classList.remove('hidden'); ui.playerNameInput.value = state.playerName || ''; } }
-        async function saveHighScore() { /* ... same as before ... */ const name = ui.playerNameInput.value.trim(); if (!name) { alert("Please enter a name."); return; } state.playerName = name; localStorage.setItem('playerName', name); ui.submitScoreButton.disabled = true; ui.submitScoreButton.textContent = 'Saving...'; const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id'; const docRef = doc(db, `/artifacts/${appId}/public/data/leaderboard`, state.userId); await setDoc(docRef, { name: state.playerName, score: Math.round(state.peakBankroll) }); ui.highscoreForm.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.modalText.innerHTML = `High score saved! You've gone bankrupt after ${state.round} rounds.`; }
-        async function showLeaderboard() { /* ... same as before ... */ ui.leaderboardModal.classList.remove('hidden'); ui.leaderboardContent.innerHTML = `<p class="text-center">Loading...</p>`; const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id'; const scoresRef = collection(db, `/artifacts/${appId}/public/data/leaderboard`); const q = query(scoresRef, orderBy("score", "desc"), limit(10)); try { const querySnapshot = await getDocs(q); let html = '<ol class="list-decimal list-inside space-y-2">'; let rank = 1; if (querySnapshot.empty) { html = '<p class="text-center">No scores yet. Be the first!</p>'; } else { querySnapshot.forEach((doc) => { const data = doc.data(); html += `<li class="text-lg p-2 rounded ${doc.id === state.userId ? 'bg-blue-900/50' : ''}"><span class="font-bold w-6 inline-block">${rank}.</span> ${data.name} - <span class="font-bold text-green-400">$${data.score}</span></li>`; rank++; }); html += '</ol>'; } ui.leaderboardContent.innerHTML = html; } catch (error) { ui.leaderboardContent.innerHTML = `<p class="text-center text-red-400">Could not load leaderboard.</p>`; console.error("Error fetching leaderboard:", error); } }
-
-        function initGameState() {
-            state = {
-                round: 1,
-                bankroll: 1000,
-                peakBankroll: 1000,
-                statements: [],
-                bankrollHistory: [1000],
-                userId: state.userId, // Persist userId across games
-                playerName: state.playerName, // Persist player name
-            };
-            ui.modalTitle.textContent = 'Welcome!'; ui.modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!';
-            ui.modalButton.textContent = 'Start Game'; ui.showStrategyButton.classList.add('hidden');
-            ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden');
-        }
+        async function gameOver() { ui.modalTitle.textContent = 'Game Over!'; ui.modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Your peak bankroll was $${Math.round(state.peakBankroll)}.`; ui.modalButton.textContent = 'Play Again'; ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); ui.showStrategyButton.classList.remove('hidden'); const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (ui.chartCanvas && gameOverChartContainer) { gameOverChartContainer.appendChild(ui.chartCanvas); } ui.modalScreen.classList.remove('hidden'); ui.gameContainer.classList.add('hidden'); await checkAndSubmitHighScore(); }
+        async function checkAndSubmitHighScore() { if (!state.userId) return; const docRef = doc(db, "leaderboard", state.userId); const docSnap = await getDoc(docRef); const currentHighScore = docSnap.exists() ? docSnap.data().score : 0; if (state.peakBankroll > currentHighScore) { ui.modalText.innerHTML += `<br>Congratulations, you have a new high score!`; ui.modalControls.classList.add('hidden'); ui.highscoreForm.classList.remove('hidden'); ui.playerNameInput.value = state.playerName || ''; } }
+        async function saveHighScore() { const name = ui.playerNameInput.value.trim(); if (!name) { alert("Please enter a name."); return; } state.playerName = name; localStorage.setItem('playerName', name); ui.submitScoreButton.disabled = true; ui.submitScoreButton.textContent = 'Saving...'; try { const docRef = doc(db, "leaderboard", state.userId); await setDoc(docRef, { name: state.playerName, score: Math.round(state.peakBankroll), rounds: state.round }); ui.modalText.innerHTML = `High score saved! You've gone bankrupt after ${state.round} rounds.`; } catch (error) { console.error("Error saving high score:", error); ui.modalText.innerHTML += `<br><span class="text-red-500">Could not save score.</span>`; } finally { ui.highscoreForm.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.submitScoreButton.disabled = false; ui.submitScoreButton.textContent = 'Submit Score'; } }
+        async function showLeaderboard() { ui.leaderboardModal.classList.remove('hidden'); ui.leaderboardContent.innerHTML = `<p class="text-center">Loading...</p>`; const scoresRef = collection(db, "leaderboard"); const q = query(scoresRef, orderBy("score", "desc"), limit(10)); try { const querySnapshot = await getDocs(q); let html = '<ol class="list-decimal list-inside space-y-2">'; let rank = 1; if (querySnapshot.empty) { html = '<p class="text-center">No scores yet. Be the first!</p>'; } else { querySnapshot.forEach((doc) => { const data = doc.data(); html += `<li class="text-lg p-2 rounded ${doc.id === state.userId ? 'bg-blue-900/50' : ''}"><div class="flex justify-between items-center"><span><span class="font-bold w-6 inline-block">${rank}.</span> ${data.name}</span> <span class="text-right"><span class="font-bold text-green-400">$${data.score}</span><br><span class="text-xs text-gray-400">${data.rounds} rounds</span></span></div></li>`; rank++; }); html += '</ol>'; } ui.leaderboardContent.innerHTML = html; } catch (error) { ui.leaderboardContent.innerHTML = `<p class="text-center text-red-400">Could not load leaderboard.</p>`; console.error("Error fetching leaderboard:", error); } }
+        function initGameState() { state = { round: 1, bankroll: 1000, peakBankroll: 1000, statements: [], bankrollHistory: [1000], userId: state.userId, playerName: state.playerName, }; ui.modalTitle.textContent = 'Welcome!'; ui.modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!'; ui.modalButton.textContent = 'Start Game'; ui.showStrategyButton.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); }
 
         // --- Event Listeners ---
         ui.playButton.addEventListener('click', playRound);
         ui.nextRoundButton.addEventListener('click', () => { state.round++; startRound(); });
-        ui.modalButton.addEventListener('click', () => {
-            const chartCanvasEl = document.getElementById('bankroll-chart');
-            const gameChartContainer = document.getElementById('chart-container-game');
-            const gameOverChartContainer = document.getElementById('gameover-chart-container');
-            if (chartCanvasEl && gameChartContainer) { gameChartContainer.appendChild(chartCanvasEl); }
-            if (gameOverChartContainer) { gameOverChartContainer.innerHTML = ''; }
-            ui.modalScreen.classList.add('hidden'); ui.gameContainer.classList.remove('hidden');
-            initGameState(); initChart(); startRound();
-        });
+        ui.modalButton.addEventListener('click', () => { const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (ui.chartCanvas && ui.gameChartContainer) { ui.gameChartContainer.appendChild(ui.chartCanvas); } if (gameOverChartContainer) { gameOverChartContainer.innerHTML = ''; } ui.modalScreen.classList.add('hidden'); ui.gameContainer.classList.remove('hidden'); initGameState(); initChart(); startRound(); });
         ui.showStrategyButton.addEventListener('click', () => { ui.strategyModal.classList.remove('hidden'); });
         ui.closeStrategyButton.addEventListener('click', () => { ui.strategyModal.classList.add('hidden'); });
         ui.leaderboardButton.addEventListener('click', showLeaderboard);
@@ -553,6 +437,7 @@
 
         // --- Firebase Initialization ---
         async function initializeFirebase() {
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
             const firebaseConfig = {
                 apiKey: "AIzaSyAlTtdba9-A6TXRzLSmDo0Iv7fvL6b_n5E",
                 authDomain: "betting-game-8e703.firebaseapp.com",
@@ -561,38 +446,10 @@
                 messagingSenderId: "442916375849",
                 appId: "1:442916375849:web:d651af435354103688fb38",
                 measurementId: "G-91246D6EY7"
-            };
-            if (!firebaseConfig.projectId) {
-                console.error("Firebase initialization failed: 'firebaseConfig' is not set.");
-                ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable: Firebase config is missing.</span>';
-                ui.leaderboardButton.disabled = true;
-                return;
-            }
-            try {
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-                onAuthStateChanged(auth, async (user) => {
-                    if (user) {
-                        state.userId = user.uid;
-                        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-                        const docRef = doc(db, `/artifacts/${appId}/public/data/leaderboard`, state.userId);
-                        const docSnap = await getDoc(docRef);
-                        if (docSnap.exists()) {
-                            state.playerName = docSnap.data().name;
-                            localStorage.setItem('playerName', state.playerName);
-                        }
-                    }
-                });
-                await signInAnonymously(auth);
-            } catch (error) {
-                console.error("Firebase initialization failed:", error);
-                ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable. Check console for errors.</span>';
-                ui.leaderboardButton.disabled = true;
-            }
+            }; if (!firebaseConfig.projectId) { console.error("Firebase initialization failed: 'firebaseConfig' is not set."); ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable: Firebase config is missing.</span>'; ui.leaderboardButton.disabled = true; return; }
+            try { const app = initializeApp(firebaseConfig); db = getFirestore(app); auth = getAuth(app); onAuthStateChanged(auth, async (user) => { if (user) { state.userId = user.uid; const docRef = doc(db, "leaderboard", state.userId); const docSnap = await getDoc(docRef); if (docSnap.exists()) { state.playerName = docSnap.data().name; localStorage.setItem('playerName', state.playerName); } } }); await signInAnonymously(auth); } catch (error) { console.error("Firebase initialization failed:", error); ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable. Check console for errors.</span>'; ui.leaderboardButton.disabled = true; }
         }
 
-        // --- Initialize on page load ---
         state.playerName = localStorage.getItem('playerName');
         initGameState();
         initializeFirebase();
