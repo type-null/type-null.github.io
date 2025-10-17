@@ -354,33 +354,57 @@
             ui.cardMarketSection.innerHTML = `<div class="flex items-center justify-center gap-4 text-lg"> <div class="text-right"> <div class="text-sm">Sell Volume</div> <input type="number" id="sell-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> <div class="font-bold text-2xl p-4 bg-gray-900/50 rounded-lg"> <span class="text-red-400">${sellPrice}</span> @ <span class="text-green-400">${buyPrice}</span> </div> <div> <div class="text-sm">Buy Volume</div> <input type="number" id="buy-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> </div>`;
         }
 
-        function startRound() { ui.roundMessage.textContent = ''; ui.playButton.classList.remove('hidden'); ui.nextRoundButton.classList.add('hidden'); ui.playButton.disabled = false; document.querySelectorAll('.bet-input').forEach(input => { input.value = ''; input.disabled = false; input.addEventListener('input', handleBetInput); }); document.querySelectorAll('tbody tr, .trade-container').forEach(el => el.classList.remove('win-row', 'loss-row')); renderPlaceholders(); generateStatements(); updateStats(); updateChart(); }
+        function startRound() {
+            ui.roundMessage.textContent = '';
+            ui.playButton.classList.remove('hidden');
+            ui.nextRoundButton.classList.add('hidden');
+            ui.playButton.disabled = false;
 
+            // Clear old elements and create the new ones for this round first.
+            generateStatements();
+
+            // NOW, find all the newly created inputs and attach the validation logic.
+            document.querySelectorAll('.bet-input').forEach(input => {
+                input.value = ''; // This was already here, but now it's just clearing the placeholder.
+                input.disabled = false;
+                input.addEventListener('input', handleBetInput);
+            });
+
+            // The rest of the function remains the same.
+            document.querySelectorAll('tbody tr, .trade-container').forEach(el => el.classList.remove('win-row', 'loss-row'));
+            renderPlaceholders();
+            updateStats();
+            updateChart();
+        }
         function handleBetInput(e) {
-            // Sanitize current input to be a non-negative integer.
-            const sanitizedValue = e.target.value.replace(/[^0-9]/g, '');
-            let currentValue = parseInt(sanitizedValue, 10) || 0;
+            const currentInput = e.target;
 
-            // Calculate the sum of all other bets.
+            // 1. Sanitize the input to allow only whole numbers.
+            // This removes any non-digit characters.
+            currentInput.value = currentInput.value.replace(/[^0-9]/g, '');
+            let currentValue = parseInt(currentInput.value, 10) || 0;
+
+            // 2. Calculate the total amount already wagered in OTHER input fields.
             let otherBetsTotal = 0;
             document.querySelectorAll('.bet-input').forEach(input => {
-                if (input !== e.target) {
+                // We only sum up the values of inputs that are not the one currently being edited.
+                if (input !== currentInput) {
                     otherBetsTotal += parseInt(input.value, 10) || 0;
                 }
             });
 
-            // Determine the maximum value this input can hold.
-            const maxAllowedForThisInput = state.bankroll - otherBetsTotal;
+            // 3. Determine the maximum allowed bet for the current input field.
+            // This is the total bankroll minus what's already been bet elsewhere.
+            const maxAllowed = state.bankroll - otherBetsTotal;
 
-            // Correct the value if it exceeds the maximum allowed.
-            if (currentValue > maxAllowedForThisInput) {
-                currentValue = maxAllowedForThisInput;
+            // 4. If the current bet exceeds the maximum allowed, automatically correct it.
+            if (currentValue > maxAllowed) {
+                currentValue = maxAllowed;
+                // Update the input field. If the max allowed is 0 or less, just clear the input.
+                currentInput.value = currentValue > 0 ? currentValue : '';
             }
 
-            // Update the input field with the sanitized and corrected value.
-            e.target.value = currentValue > 0 ? currentValue : '';
-
-            // Finally, update the total bet display.
+            // 5. Finally, update the "Total Bet" display.
             updateStats();
         }
 
