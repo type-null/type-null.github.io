@@ -304,8 +304,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        const ui = {
+        import { getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js"; const ui = {
             gameContainer: document.getElementById('game-container'), modalScreen: document.getElementById('modal-screen'), modalTitle: document.getElementById('modal-title'), modalText: document.getElementById('modal-text'), modalButton: document.getElementById('modal-button'), showStrategyButton: document.getElementById('show-strategy-button'), strategyModal: document.getElementById('strategy-modal'), closeStrategyButton: document.getElementById('close-strategy-button'), leaderboardButton: document.getElementById('leaderboard-button'), leaderboardModal: document.getElementById('leaderboard-modal'), closeLeaderboardButton: document.getElementById('close-leaderboard-button'), leaderboardContent: document.getElementById('leaderboard-content'), highscoreForm: document.getElementById('highscore-form'), playerNameInput: document.getElementById('player-name'), submitScoreButton: document.getElementById('submit-score-button'), modalControls: document.getElementById('modal-controls'), roundNumber: document.getElementById('round-number'), bankroll: document.getElementById('bankroll'), totalBet: document.getElementById('total-bet'), resultsDisplay: document.getElementById('results-display'), roundMessage: document.getElementById('round-message'), diceBettingTable: document.getElementById('dice-betting-table'), coinBettingTable: document.getElementById('coin-betting-table'), cardMarketSection: document.getElementById('card-market-section'), cardProductBettingTable: document.getElementById('card-product-betting-table'), playButton: document.getElementById('play-button'), nextRoundButton: document.getElementById('next-round-button'), chartCanvas: document.getElementById('bankroll-chart'), gameChartContainer: document.getElementById('chart-container-game'),
         };
         let db, auth;
@@ -445,8 +444,73 @@
 
         async function gameOver() { ui.modalTitle.textContent = 'Game Over!'; ui.modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Your peak bankroll was $${Math.round(state.peakBankroll)}.`; ui.modalButton.textContent = 'Play Again'; ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); ui.showStrategyButton.classList.remove('hidden'); const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (ui.chartCanvas && gameOverChartContainer) { gameOverChartContainer.appendChild(ui.chartCanvas); } ui.modalScreen.classList.remove('hidden'); ui.gameContainer.classList.add('hidden'); await checkAndSubmitHighScore(); }
         async function checkAndSubmitHighScore() { if (!state.userId) return; const docRef = doc(db, "leaderboard", state.userId); const docSnap = await getDoc(docRef); const currentHighScore = docSnap.exists() ? docSnap.data().score : 0; if (state.peakBankroll > currentHighScore) { ui.modalText.innerHTML += `<br>Congratulations, you have a new high score!`; ui.modalControls.classList.add('hidden'); ui.highscoreForm.classList.remove('hidden'); ui.playerNameInput.value = state.playerName || ''; } }
-        async function saveHighScore() { const name = ui.playerNameInput.value.trim(); if (!name) { alert("Please enter a name."); return; } state.playerName = name; localStorage.setItem('playerName', name); ui.submitScoreButton.disabled = true; ui.submitScoreButton.textContent = 'Saving...'; try { const docRef = doc(db, "leaderboard", state.userId); await setDoc(docRef, { name: state.playerName, score: Math.round(state.peakBankroll), rounds: state.round }); ui.modalText.innerHTML = `High score saved! You've gone bankrupt after ${state.round} rounds.`; } catch (error) { console.error("Error saving high score:", error); ui.modalText.innerHTML += `<br><span class="text-red-500">Could not save score.</span>`; } finally { ui.highscoreForm.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.submitScoreButton.disabled = false; ui.submitScoreButton.textContent = 'Submit Score'; } }
-        async function showLeaderboard() { ui.leaderboardModal.classList.remove('hidden'); ui.leaderboardContent.innerHTML = `<p class="text-center">Loading...</p>`; const scoresRef = collection(db, "leaderboard"); const q = query(scoresRef, orderBy("score", "desc"), limit(10)); try { const querySnapshot = await getDocs(q); let html = '<ol class="list-decimal list-inside space-y-2">'; let rank = 1; if (querySnapshot.empty) { html = '<p class="text-center">No scores yet. Be the first!</p>'; } else { querySnapshot.forEach((doc) => { const data = doc.data(); html += `<li class="text-lg p-2 rounded ${doc.id === state.userId ? 'bg-blue-900/50' : ''}"><div class="flex justify-between items-center"><span><span class="font-bold w-6 inline-block">${rank}.</span> ${data.name}</span> <span class="text-right"><span class="font-bold text-green-400">$${data.score}</span><br><span class="text-xs text-gray-400">${data.rounds} rounds</span></span></div></li>`; rank++; }); html += '</ol>'; } ui.leaderboardContent.innerHTML = html; } catch (error) { ui.leaderboardContent.innerHTML = `<p class="text-center text-red-400">Could not load leaderboard.</p>`; console.error("Error fetching leaderboard:", error); } }
+        async function saveHighScore() {
+            const name = ui.playerNameInput.value.trim();
+            if (!name) { alert("Please enter a name."); return; }
+            state.playerName = name;
+            localStorage.setItem('playerName', name);
+            ui.submitScoreButton.disabled = true;
+            ui.submitScoreButton.textContent = 'Saving...';
+            try {
+                const docRef = doc(db, "leaderboard", state.userId);
+                // We add the timestamp field here using serverTimestamp()
+                await setDoc(docRef, {
+                    name: state.playerName,
+                    score: Math.round(state.peakBankroll),
+                    rounds: state.round,
+                    timestamp: serverTimestamp()
+                });
+                ui.modalText.innerHTML = `High score saved! You've gone bankrupt after ${state.round} rounds.`;
+            } catch (error) {
+                console.error("Error saving high score:", error);
+                ui.modalText.innerHTML += `<br><span class="text-red-500">Could not save score.</span>`;
+            } finally {
+                ui.highscoreForm.classList.add('hidden');
+                ui.modalControls.classList.remove('hidden');
+                ui.submitScoreButton.disabled = false;
+                ui.submitScoreButton.textContent = 'Submit Score';
+            }
+        }
+        async function showLeaderboard() {
+            ui.leaderboardModal.classList.remove('hidden');
+            ui.leaderboardContent.innerHTML = `<p class="text-center">Loading...</p>`;
+            const scoresRef = collection(db, "leaderboard");
+            const q = query(scoresRef, orderBy("score", "desc"), limit(10));
+            try {
+                const querySnapshot = await getDocs(q);
+                let html = '<ol class="list-decimal list-outside space-y-2 ml-4">';
+                if (querySnapshot.empty) {
+                    html = '<p class="text-center">No scores yet. Be the first!</p>';
+                } else {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        let dateString = '';
+                        if (data.timestamp) {
+                            const date = data.timestamp.toDate();
+                            // Using a more compact date format
+                            dateString = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
+                        }
+
+                        // THE FIX: All stats (score, rounds, date) are now in one flex container.
+                        html += `<li class="text-lg p-2 rounded ${doc.id === state.userId ? 'bg-blue-900/50' : ''}">
+                                     <div class="flex justify-between items-center">
+                                         <span>${data.name}</span>
+                                         <div class="flex items-baseline gap-3 whitespace-nowrap">
+                                             <span class="font-bold text-green-400">$${data.score}</span>
+                                             <span class="text-xs text-gray-400">(${data.rounds} rounds)</span>
+                                             <span class="text-xs text-gray-500">${dateString}</span>
+                                         </div>
+                                     </div>
+                                 </li>`;
+                    });
+                    html += '</ol>';
+                }
+                ui.leaderboardContent.innerHTML = html;
+            } catch (error) {
+                ui.leaderboardContent.innerHTML = `<p class="text-center text-red-400">Could not load leaderboard.</p>`;
+                console.error("Error fetching leaderboard:", error);
+            }
+        }
         function initGameState() { state = { round: 1, bankroll: 1000, peakBankroll: 1000, statements: [], bankrollHistory: [1000], userId: state.userId, playerName: state.playerName, }; ui.modalTitle.textContent = 'Welcome!'; ui.modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!'; ui.modalButton.textContent = 'Start Game'; ui.showStrategyButton.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); }
 
         // --- Event Listeners ---
