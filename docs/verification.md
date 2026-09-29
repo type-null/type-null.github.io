@@ -106,6 +106,8 @@ After the pack-preview repair, the final standalone Chrome `file://` run decoded
 - The original August release claim has counterexamples in the supplied archive. The calendar and new posts distinguish recorded months from verified product dates and missing entries from confirmed gaps.
 - Legacy tool dependencies and probability errors were repaired; independent exact calculations and input/settlement boundary tests cover them.
 - Build checks reject invalid metadata, duplicate/reserved routes, missing media, unsafe paths, unpublished related links, and remote runtime dependencies in offline mode.
+- The first Linux publication run exposed a test-fixture mismatch: a loopback-only resource test still reported an online browser, allowing the newly supported remote project preview to load. It now explicitly reports offline status and verifies the real project previews retain their local images and make no iframe request even when their load buttons are clicked. Separate online embed tests still exercise automatic visibility loading.
+- Chromium headless shell downloads PDFs instead of displaying Chrome's native viewer, reporting a navigation abort during the successful handoff. The direct-file media test now clicks the actual fallback link and verifies either the native viewer's completed file request or the downloaded file's exact bytes. Only matching, verified PDF download handoffs are accepted; other failed resources remain errors.
 
 ## Reproduce
 

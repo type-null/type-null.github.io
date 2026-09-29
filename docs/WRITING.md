@@ -193,6 +193,7 @@ Add these optional lines inside the opening page-information block:
 | `draft: true` | Do not generate or publish the page. |
 | `unlisted: true` | Keep the direct address working; omit the page from homepage, topic listings, search, RSS, and sitemap. This is not access control: anyone with the address can open it. |
 | `featured: true` | Make a listed post eligible for the homepage’s featured image carousel. |
+| `announcement: true` | Prioritize a listed post in the two-link INFORMATION strip, without changing NEWS ordering. Multiple announcements follow publication order. |
 | `template: feature` | Use the visual feature layout. |
 | `created: 2026-09-28` | Record a known first-written day independently of publication. |
 | `updated: 2026-09-29` | Record the last published revision; update it yourself when revising. |

@@ -92,6 +92,7 @@ Video and PDF produced from actual post metadata.
 
     def setUp(self):
         self.errors, self.failed, self.remote, self.console_errors, self.requests, self.outside = [], [], [], [], [], []
+        self.pdf_download_handoffs = []
         self.active_base = ROOT
         self.contexts = []
         self.context = self.new_context()
@@ -113,7 +114,8 @@ Video and PDF produced from actual post metadata.
             if urlsplit(request.url).scheme == 'file' and not file_path(request.url).is_relative_to(self.active_base):
                 self.outside.append({'url': request.url, 'expectedRoot': str(self.active_base)})
         context.on('request', request_seen)
-        context.on('requestfailed', lambda request: self.failed.append({'url': request.url, 'failure': request.failure}))
+        context.on('requestfailed', lambda request: self.failed.append({
+            'url': request.url, 'failure': request.failure, 'navigation': request.is_navigation_request()}))
         def watch_page(page):
             page.on('pageerror', lambda error: self.errors.append(str(error)))
             page.on('console', lambda message: self.console_errors.append(message.text) if message.type == 'error' else None)
@@ -123,7 +125,8 @@ Video and PDF produced from actual post metadata.
     def tearDown(self):
         report = {'test': self.id(), 'pageErrors': self.errors, 'failedRequests': self.failed,
                   'networkRequests': self.remote, 'consoleErrors': self.console_errors,
-                  'requestsOutsidePackage': self.outside, 'requests': self.requests}
+                  'requestsOutsidePackage': self.outside, 'requests': self.requests,
+                  'verifiedPdfDownloadHandoffs': self.pdf_download_handoffs}
         (ARTIFACTS / f'{self._testMethodName}.json').write_text(json.dumps(report, indent=2, ensure_ascii=False))
         # Finish assertions before closing contexts so deliberate teardown cannot
         # be mistaken for an application resource failure.
@@ -391,6 +394,8 @@ Video and PDF produced from actual post metadata.
                     mobile.screenshot(path=str(ARTIFACTS / 'timeline-mobile-file.png'), full_page=False)
 
     def test_authored_video_decodes_plays_and_pdf_has_a_local_file_fallback(self):
+        downloads = []
+        self.page.on('download', lambda download: downloads.append(download))
         self.goto(self.media_page)
         self.page.wait_for_function('document.querySelector("video").readyState >= 2')
         video = self.page.locator('video')
@@ -407,17 +412,45 @@ Video and PDF produced from actual post metadata.
         frame = self.page.locator('iframe[title="Sample document"]')
         frame.scroll_into_view_if_needed()
         self.assertEqual(file_path(frame.evaluate('(element)=>element.src')), pdf_path)
-        # Native PDF viewer internals differ by browser. Verify that the actual
-        # iframe requests the local PDF, and that its independent link targets
-        # the complete fixture bytes; do not claim PDF rendering fidelity.
-        with self.context.expect_event('request', predicate=lambda request: request.url.startswith('file:') and file_path(request.url) == pdf_path) as requested:
-            frame.evaluate('(element,url)=>{element.loading="eager";element.src=url}', pdf_path.as_uri() + '?file-navigation-check=1')
-        self.assertTrue(requested.value.is_navigation_request())
+        self.assertIn(pdf_path.as_uri(), self.requests)
         fallback = self.page.get_by_role('link', name='Sample document', exact=False)
         self.assertEqual(file_path(fallback.evaluate('(element)=>element.href')), pdf_path)
-        self.assertEqual(pdf_path.read_bytes(), (ROOT / 'tests/fixtures/sample.pdf').read_bytes())
-        self.assertTrue(pdf_path.read_bytes().startswith(b'%PDF-1.4'))
-        self.assertTrue(pdf_path.read_bytes().rstrip().endswith(b'%%EOF'))
+        expect(fallback).to_have_attribute('target', '_blank')
+        expect(fallback).to_have_attribute('rel', 'noopener noreferrer')
+        expected_bytes = (ROOT / 'tests/fixtures/sample.pdf').read_bytes()
+        self.assertEqual(pdf_path.read_bytes(), expected_bytes)
+        self.assertTrue(expected_bytes.startswith(b'%PDF-1.4'))
+        self.assertTrue(expected_bytes.rstrip().endswith(b'%%EOF'))
+        # Full Chrome opens a native PDF viewer; Chromium headless shell hands
+        # PDFs to its download handler and reports ERR_ABORTED for navigation.
+        # Exercise the real fallback click in either case, without claiming
+        # that the native viewer's rendering has been inspected.
+        if self.page.evaluate('navigator.pdfViewerEnabled'):
+            with self.context.expect_event('requestfinished', predicate=lambda request:
+                    request.url == pdf_path.as_uri() and request.is_navigation_request()) as finished:
+                with self.page.expect_popup() as opened:
+                    fallback.click()
+            popup = opened.value
+            popup.wait_for_url(pdf_path.as_uri())
+            self.assertEqual(finished.value.response().status, 200)
+            self.assertTrue(popup.evaluate('window.opener === null'))
+        else:
+            with self.page.expect_download(predicate=lambda download: download.url == pdf_path.as_uri()) as opened:
+                fallback.click()
+            self.assertIn(opened.value, downloads)
+            self.assertEqual(opened.value.suggested_filename, pdf_path.name)
+            for download in downloads:
+                self.assertEqual(download.url, pdf_path.as_uri())
+                self.assertIsNone(download.failure())
+                self.assertEqual(download.path().read_bytes(), expected_bytes)
+            # Only these two exact navigations may be download handoffs: the
+            # iframe and the clicked fallback. Other aborts remain failures.
+            self.pdf_download_handoffs = [failure for failure in self.failed
+                if failure == {'url': pdf_path.as_uri(), 'failure': 'net::ERR_ABORTED', 'navigation': True}]
+            self.assertGreaterEqual(len(self.pdf_download_handoffs), 1)
+            self.assertLessEqual(len(self.pdf_download_handoffs), 2)
+            self.assertGreaterEqual(len(downloads), len(self.pdf_download_handoffs))
+            self.failed = [failure for failure in self.failed if failure not in self.pdf_download_handoffs]
         self.page.screenshot(path=str(ARTIFACTS / 'authored-media-file.png'), full_page=True)
 
     def test_no_javascript_preserves_file_navigation_and_all_186_images(self):

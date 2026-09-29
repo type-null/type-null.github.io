@@ -143,6 +143,7 @@ These settings go between the opening `---` lines. Start small and add only the 
 | `tags` | List of text labels, for example `[Cards, Notes]`. |
 | `toc` | `true` adds a table of contents from the article headings. |
 | `featured` | `true` makes a listed post eligible for the homepage featured image carousel. |
+| `announcement` | `true` prioritizes a listed post in the homepage's two-link INFORMATION strip. Multiple announcements follow publication order; NEWS still shows the newest six posts. |
 | `draft` | `true` omits the page from the build. |
 | `unlisted` | `true` keeps the direct page but omits it from homepage, topic listings, search, feed, and sitemap. It does not make a page private. |
 | `permalink` | Explicit public address, useful when moving or renaming a post. |

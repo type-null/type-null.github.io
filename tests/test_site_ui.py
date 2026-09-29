@@ -256,9 +256,16 @@ class SiteBrowserTests(unittest.TestCase):
         self.assertEqual(self.page.locator('.post-card').count(), min(6, len(self.posts)))
 
     def test_real_routes_images_and_responsive_layouts(self):
+        # The fixture serves the local site over HTTP but permits no internet.
+        # Report that state to optional project embeds too. Online visibility
+        # loading is covered separately by test_project_ui; it must not race
+        # this test's strict no-remote-resource assertion.
+        self.context.add_init_script(
+            "Object.defineProperty(Navigator.prototype, 'onLine', {get: () => false})")
         routes = ['/', '/posts/', '/card/', '/sports/', '/notes/', '/404.html', '/resume/2025/resume.html'] + [post['url'] for post in self.posts]
         for route in routes:
             self.page.goto(self.url + route)
+            self.assertFalse(self.page.evaluate('navigator.onLine'))
             self.assertEqual(self.page.locator('h1').count(), 1, route)
             self.assertTrue(self.page.locator('link[rel="canonical"]').get_attribute('href').startswith('https://type-null.github.io/'))
             for width in (320, 390, 768, 1440):
@@ -268,6 +275,12 @@ class SiteBrowserTests(unittest.TestCase):
             self.page.locator('img').evaluate_all('(images)=>images.forEach(image=>image.loading="eager")')
             self.page.wait_for_function('Array.from(document.images).every(image=>image.complete)')
             self.assertEqual(self.page.locator('img').evaluate_all('(images)=>images.filter(image=>!image.naturalWidth).map(image=>image.src)'), [], route)
+            for project in self.page.locator('[data-project-url]').all():
+                project.locator('[data-project-load]').scroll_into_view_if_needed()
+                project.locator('[data-project-load]').click()
+                expect(project.locator('[data-project-status]')).to_contain_text('You are offline')
+                expect(project.locator('.project-preview')).to_be_visible()
+                expect(project.locator('iframe')).to_have_count(0)
 
     def test_article_sharing_gallery_and_first_party_embed(self):
         self.context.grant_permissions(['clipboard-read', 'clipboard-write'])
