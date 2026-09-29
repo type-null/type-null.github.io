@@ -1,6 +1,6 @@
 # Verification record
 
-Verified locally on September 29, 2026 using Chrome, including direct `file://` navigation without a server or browser security bypasses. The repository-root `index.html` and `_site/index.html` are identical generated homepages. `_site/` is the clean GitHub Pages artifact. Temporary HTTP compatibility fixtures shut down after testing; no preview server runs. Publication uses isolated Git checkouts. The three companion repositories have successful Pages deployments, and their actual live controls have been verified inside the articles.
+Verified locally on September 29, 2026 using Chrome, including direct `file://` navigation without a server or browser security bypasses. The repository-root `index.html` and `_site/index.html` are identical generated homepages. `_site/` is the clean GitHub Pages artifact. Temporary HTTP compatibility fixtures shut down after testing; no preview server runs. Publication uses isolated Git checkouts. The blog and three companion repositories have successful Pages deployments, and their actual live controls have been verified inside the articles.
 
 ## Acceptance and the direct-file baseline
 
@@ -14,8 +14,8 @@ Earlier HTTP-only tests missed the direct-file failure. Reproducing the user's a
 
 | Check | Result |
 | --- | --- |
-| Checked production build | 24 generated pages; 18 posts (17 listed, 1 unlisted); 3 topics; 1,427 local references resolved; root pages synchronized |
-| Python regression suite | Final publishing integration: all 181 tests passed in 60.488 seconds, including Chrome checks. The earlier homepage baseline passed 152 tests; pack-preview and interactive-tool follow-ups are recorded below. |
+| Checked production build | 24 generated pages; 18 posts (17 listed, 1 unlisted); 3 topics; 1,430 local references resolved after the squirrel introduction/preview refresh; root pages synchronized |
+| Python regression suite | All 181 tests passed locally in 60.488 seconds, including Chrome checks. After correcting the PDF/offline browser fixtures, all 181 passed on Linux in 110.972 seconds in [the successful Pages deployment](https://github.com/type-null/type-null.github.io/actions/runs/36625159278). The earlier homepage baseline passed 152 tests; pack-preview and interactive-tool follow-ups are recorded below. |
 | Live project embeds | Seven browser tests cover offline/no-JavaScript fallbacks, one article screenshot, independent website/source links, explicit loading from files, hosted visibility loading, ready-message sender/origin checks, modal controls, and intercepted 404 timeout/retry. Actual deployed apps were additionally used at 1440/390 px. |
 | Florida research placeholder | Pinned first in the homepage INFORMATION strip, featured in the carousel, and indexed in Notes/search. The old `florida/map.html` links to the introduction. Three targeted tests verify generic announcement ordering and offline/no-JavaScript navigation. Substantive research-site work is paused; no research results were published. |
 | Interactive article follow-up | 45 build tests and 2 media browser tests passed. After the final tool theme, all 9 strict direct-file tests, 3 tool UI tests and 7 game tests passed; this was targeted verification, not a rerun of the earlier full suite. |

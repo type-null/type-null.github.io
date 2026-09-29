@@ -1,0 +1,60 @@
+[
+  {
+    "project": "calendar",
+    "width": 1440,
+    "article": "https://type-null.github.io/card/event-calendar/",
+    "iframe": "https://type-null.github.io/PTCG-calendar/",
+    "interaction": "passed"
+  },
+  {
+    "project": "database",
+    "width": 1440,
+    "article": "https://type-null.github.io/card/card-database/",
+    "iframe": "https://type-null.github.io/PTCG-database/",
+    "interaction": "passed"
+  },
+  {
+    "project": "squirrel",
+    "width": 1440,
+    "article": "https://type-null.github.io/notes/squirrel-census/",
+    "iframe": "https://type-null.github.io/Website-central-park-squirrel-tracker/",
+    "interaction": "passed"
+  },
+  {
+    "width": 1440,
+    "homepageNewsCount": 6,
+    "floridaNavigation": "passed",
+    "errors": [],
+    "failedResources": [],
+    "httpErrors": []
+  },
+  {
+    "project": "calendar",
+    "width": 390,
+    "article": "https://type-null.github.io/card/event-calendar/",
+    "iframe": "https://type-null.github.io/PTCG-calendar/",
+    "interaction": "passed"
+  },
+  {
+    "project": "database",
+    "width": 390,
+    "article": "https://type-null.github.io/card/card-database/",
+    "iframe": "https://type-null.github.io/PTCG-database/",
+    "interaction": "passed"
+  },
+  {
+    "project": "squirrel",
+    "width": 390,
+    "article": "https://type-null.github.io/notes/squirrel-census/",
+    "iframe": "https://type-null.github.io/Website-central-park-squirrel-tracker/",
+    "interaction": "passed"
+  },
+  {
+    "width": 390,
+    "homepageNewsCount": 6,
+    "floridaNavigation": "passed",
+    "errors": [],
+    "failedResources": [],
+    "httpErrors": []
+  }
+]
