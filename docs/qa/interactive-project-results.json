@@ -1,0 +1,106 @@
+[
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_project_previews_are_local_portable_and_link_to_their_own_repositories",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker",
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker",
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker"
+    ],
+    "interceptedProjectLoads": [],
+    "expectedHttpErrors": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_project_previews_and_keyboard_links_work_without_javascript",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://type-null.github.io/PTCG-calendar/",
+      "https://type-null.github.io/PTCG-database/",
+      "https://type-null.github.io/Website-central-park-squirrel-tracker/"
+    ],
+    "interceptedProjectLoads": [],
+    "expectedHttpErrors": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_configured_website_uses_preview_and_open_button_without_loading_it_early",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://github.com/type-null/example-project",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://github.com/type-null/example-project"
+    ],
+    "interceptedProjectLoads": [],
+    "expectedHttpErrors": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_file_reader_explicitly_loads_ready_project_and_keeps_state_when_opening_a_tab",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://projects.example.test/interactive/",
+      "https://projects.example.test/interactive/"
+    ],
+    "interceptedProjectLoads": [
+      "https://projects.example.test/interactive/",
+      "https://projects.example.test/interactive/"
+    ],
+    "expectedHttpErrors": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_hosted_article_loads_independent_project_when_preview_enters_view",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [],
+    "interceptedProjectLoads": [
+      "https://projects.example.test/interactive/"
+    ],
+    "expectedHttpErrors": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_hosted_404_cannot_replace_saved_preview_and_can_be_retried",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [],
+    "interceptedProjectLoads": [
+      "https://projects.example.test/interactive/",
+      "https://projects.example.test/interactive/"
+    ],
+    "expectedHttpErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_florida_research_placeholder_is_discoverable_without_invented_destinations",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [],
+    "interceptedProjectLoads": [],
+    "expectedHttpErrors": []
+  }
+]

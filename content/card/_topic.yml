@@ -1,0 +1,6 @@
+label: Cards
+description: Release patterns, pack artwork, and tools for the Pokémon TCG.
+color: "#5969df"
+icon: cards
+order: 1
+home_layout: gallery

@@ -1,0 +1,6 @@
+label: Sports
+description: Games, probability experiments, and a sports archive.
+color: "#00c879"
+icon: ball
+order: 2
+home_layout: feature

@@ -1,547 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probability Parlay: Dice, Coins & Cards</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A browser-only probability playground with dice, coins and cards. No real money or account required.">
+<title>Probability Parlay · Type: Null</title>
+<link rel="stylesheet" href="../../assets/generated/css/assets/fonts/pokemon-fonts.css">
+<style>
+:root{color-scheme:light;--ink:#404248;--muted:#75777e;--line:#dde1ea;--blue:#489fe6;--purple:#5969df;--surface:#f3f4f5}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 'Noto Sans JP',Helvetica,Arial,sans-serif}
+main{max-width:1280px;margin:auto;padding:24px}
+h1,h2,h3,p{margin:0 0 12px}
+h1{font-size:34px;line-height:1.4;letter-spacing:normal}
+h2{font-size:24px;line-height:1.4;letter-spacing:normal}
+h3{font-size:16px}
+button,input{font:inherit}
+button{border:0;border-radius:60px;padding:10px 19px;background:linear-gradient(90deg,#489fe6,#84c3f6);color:white;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 6px #0003}
+button:enabled:hover{opacity:.75}
+button:disabled{opacity:.45;cursor:default}
+.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #246ba6;outline-offset:3px}
+[hidden]{display:none!important}
+.eyebrow{font:700 12px/1.6 'Lato',sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--blue)}
+.muted{color:var(--muted);font-size:13px}
+.intro{background:white;border-radius:10px;padding:clamp(20px,4vw,40px);border:1px solid var(--line);box-shadow:0 0 15px #0000000d;position:relative;overflow:hidden}
+.intro p{max-width:70ch}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.intro .actions{margin-top:22px}
+.rules{margin:20px 0;background:white;border-top:3px dotted var(--line);border-bottom:3px dotted var(--line);padding:16px 20px}
+.rules summary{font-weight:700;cursor:pointer}
+.rules p:first-of-type{margin-top:12px}
+.rules p:last-child{margin-bottom:0}
+.stats{display:flex;flex-wrap:wrap;gap:12px 30px;margin:22px 0}
+.stat{display:flex;flex-direction:column}
+.stat small{color:var(--muted);font:400 12px/1.6 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.09em}
+.stat strong{font:700 24px/1.6 'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);padding:16px;border-radius:10px;margin-bottom:16px}
+.controls p{margin:0;flex-basis:100%}
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0;box-shadow:0 0 15px #0000000d}
+.panel:nth-child(2){border-top:4px solid var(--purple)}
+.panel:nth-child(1){border-top:4px solid var(--blue)}
+.panel:nth-child(3){border-top:4px solid #ff9f3d}
+.panel h2{margin-bottom:3px}
+.bet-table{width:100%;border-collapse:collapse;margin-top:16px;table-layout:fixed}
+.bet-table th{text-align:left;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 4px;border-bottom:1px solid var(--line)}
+.bet-table td{padding:10px 4px;vertical-align:middle;border-bottom:1px solid var(--line);font-size:13px}
+.bet-table th:first-child{width:48%}
+.bet-table th:nth-child(2){width:21%}
+.bet-table th:last-child{width:31%;text-align:right}
+.bet-table small{display:block;color:var(--muted);font-size:11px}
+.bet-table .payout{color:var(--purple);font-family:'Lato',sans-serif;font-weight:700;font-variant-numeric:tabular-nums}
+.bet-input{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px;text-align:right;background:var(--surface);color:var(--ink);font-family:'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.bet-input[aria-invalid=true]{border:2px solid #a43343}
+.bet-input:disabled{color:var(--muted);opacity:.8}
+.win td{background:#e5f5f1}
+.loss td{background:#fbebed}
+.result-marker{font-size:11px;font-weight:750}
+.win .result-marker{color:#08654f}
+.loss .result-marker{color:#a43343}
+.sum-note{margin:16px 0 0;font-size:12px;color:var(--muted)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.result-pieces{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.piece{display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:48px;padding:6px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font:700 20px/1.6 'Lato',sans-serif}
+.coin{border-radius:50%;background:#fff7dd;font-size:17px}
+.red{color:#b33850}
+.chart{display:block;width:100%;height:170px}
+.chart path{stroke:var(--line)}
+.chart polyline{stroke:var(--blue)}
+.chart circle{fill:var(--purple)}
+.chart text{fill:var(--muted);font-family:'Lato',sans-serif}
+.history{font-size:12px}
+.history summary{cursor:pointer}
+.history ol{display:flex;gap:8px 20px;flex-wrap:wrap;padding-left:22px;font-family:'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.status{min-height:24px;color:#97404d;font-weight:650}
+.session-end{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.save-form{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.save-form label{font-size:13px;font-weight:650}
+.save-form input{display:block;margin-top:5px;border:1px solid var(--line);border-radius:8px;padding:8px;max-width:100%;background:white;color:var(--ink)}
+dialog{border:1px solid var(--line);border-radius:10px;box-shadow:0 0 30px #0003;color:var(--ink);width:min(560px,calc(100% - 32px));padding:28px}
+dialog::backdrop{background:#40424888}
+.dialog-header{display:flex;align-items:start;justify-content:space-between;gap:10px}
+.score-list{padding-left:22px}
+.score-list li{padding:8px;border-bottom:2px dotted var(--line);overflow-wrap:anywhere}
+.score-list strong,.score-list small{display:block}
+.close{padding:6px 14px;font-size:18px}
+.footer{font-size:12px;color:var(--muted);margin:24px 0 0}
 
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+@media(max-width:1000px){.board{grid-template-columns:1fr 1fr}
+.panel:last-child{grid-column:1/-1}
+}
+@media(max-width:650px){main{padding:16px}
+body{font-size:14px}
+h1{font-size:24px}
+h2{font-size:20px}
+.board,.summary-grid{grid-template-columns:1fr}
+.panel{padding:16px}
+.panel:last-child{grid-column:auto}
+.stats{gap:12px 20px}
+.stat strong{font-size:19px}
+.controls .actions{width:100%}
+.controls button{flex:1}
+.intro{padding:24px}
+.bet-table th:first-child{width:51%}
+.bet-table th:nth-child(2){width:20%}
+.bet-table th:last-child{width:29%}
+.intro h1{max-width:12ch}
+}
 
-        .bet-input,
-        .name-input {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            border-radius: 8px;
-            padding: 8px 12px;
-            text-align: right;
-            transition: all 0.2s ease;
-        }
+@media(prefers-reduced-motion:no-preference){button{transition:opacity .3s}
+tr.win td,tr.loss td{transition:background .25s}
+}
 
-        .name-input {
-            text-align: left;
-        }
-
-        .bet-input:focus,
-        .name-input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-            border-color: #3B82F6;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary {
-            background-color: #3B82F6;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2563EB;
-        }
-
-        .btn-primary:disabled {
-            background-color: #6B7280;
-            cursor: not-allowed;
-        }
-
-        .btn-secondary {
-            background-color: #10B981;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #059669;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid #3B82F6;
-            color: #3B82F6;
-        }
-
-        .btn-outline:hover {
-            background-color: #3B82F6;
-            color: white;
-        }
-
-        .win-row {
-            background-color: rgba(16, 185, 129, 0.3) !important;
-            transition: background-color: 0.5s ease;
-        }
-
-        .loss-row {
-            background-color: rgba(239, 68, 68, 0.3) !important;
-            transition: background-color: 0.5s ease;
-        }
-
-        .game-piece {
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .game-piece.toss {
-            transform: rotateY(1080deg) rotateX(720deg) scale(1.1);
-        }
-
-        .modal-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 50;
-        }
-
-        .betting-section {
-            background-color: rgba(17, 24, 39, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px;
-        }
-
-        .trade-input {
-            width: 100px;
-        }
-    </style>
+</style>
+<script defer src="../../assets/js/tools/betting.js"></script>
 </head>
-
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
-
-    <div id="game-container" class="w-full max-w-[1600px] bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-6 hidden">
-
-        <!-- Header & Stats -->
-        <div class="flex flex-col md:flex-row justify-between items-center pb-4 border-b border-gray-700">
-            <h1 class="text-3xl font-bold text-blue-400 mb-4 md:mb-0">Probability Parlay</h1>
-            <div class="flex items-center space-x-6 text-lg">
-                <div>Round: <span id="round-number" class="font-bold text-yellow-400">1</span></div>
-                <div>Bankroll: <span id="bankroll" class="font-bold text-green-400">$1000</span></div>
-                <div>Total Bet: <span id="total-bet" class="font-bold text-red-400">$0</span></div>
-            </div>
-        </div>
-
-        <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            <!-- Dice Betting -->
-            <div class="betting-section">
-                <h2 class="text-xl font-bold text-red-400 mb-3 text-center">Dice Roll <span
-                        class="text-sm font-normal text-gray-400">(Sum)</span></h2>
-                <table class="w-full text-left">
-                    <thead>
-                        <tr>
-                            <th class="p-2 text-sm">Item</th>
-                            <th class="p-2 text-sm text-center">Odds</th>
-                            <th class="p-2 text-sm text-right">Wager</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dice-betting-table" class="divide-y divide-gray-700"></tbody>
-                </table>
-            </div>
-            <!-- Coin Betting -->
-            <div class="betting-section">
-                <h2 class="text-xl font-bold text-yellow-400 mb-3 text-center">Coin Flip <span
-                        class="text-sm font-normal text-gray-400">(3 Coins)</span></h2>
-                <table class="w-full text-left">
-                    <thead>
-                        <tr>
-                            <th class="p-2 text-sm">Item</th>
-                            <th class="p-2 text-sm text-center">Odds</th>
-                            <th class="p-2 text-sm text-right">Wager</th>
-                        </tr>
-                    </thead>
-                    <tbody id="coin-betting-table" class="divide-y divide-gray-700"></tbody>
-                </table>
-            </div>
-            <!-- Card Betting -->
-            <div class="betting-section space-y-4">
-                <div>
-                    <h2 class="text-xl font-bold text-green-400 text-center">Card Draw</h2>
-                    <p class="text-center text-xs text-gray-400">Sum of 3 cards to trade a market. Product of first 2 to
-                        bet.</p>
-                </div>
-                <!-- Market Trading -->
-                <div id="card-market-section" class="text-center space-y-2"></div>
-                <!-- Product Betting -->
-                <table class="w-full text-left">
-                    <thead>
-                        <tr>
-                            <th class="p-2 text-sm">Item (Product of first two)</th>
-                            <th class="p-2 text-sm text-center">Odds</th>
-                            <th class="p-2 text-sm text-right">Wager</th>
-                        </tr>
-                    </thead>
-                    <tbody id="card-product-betting-table" class="divide-y divide-gray-700"></tbody>
-                </table>
-            </div>
-            <!-- Results Display & Controls -->
-            <div class="space-y-4 flex flex-col">
-                <div
-                    class="bg-gray-900/50 rounded-lg p-6 flex-grow flex flex-col items-center justify-center space-y-4">
-                    <div id="results-display" class="flex flex-col items-center justify-center gap-4 w-full"></div>
-                    <p id="round-message" class="text-xl font-semibold text-yellow-300 h-7 text-center"></p>
-                </div>
-                <div class="flex justify-center pt-4">
-                    <button id="play-button" class="btn btn-primary text-xl w-full">Place Bets & Play</button>
-                    <button id="next-round-button" class="btn btn-secondary text-xl w-full hidden">Next Round</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hidden container for the chart canvas during gameplay -->
-        <div id="chart-container-game" class="hidden">
-            <canvas id="bankroll-chart"></canvas>
-        </div>
-    </div>
-
-    <!-- Modals (Start/Game Over, Strategy, Leaderboard) -->
-    <div id="modal-screen" class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-center space-y-6">
-        <h2 id="modal-title" class="text-4xl font-extrabold text-blue-400">Welcome!</h2>
-        <p id="modal-text" class="text-lg text-gray-300">Start with $1000 and test your luck. Place bets on random
-            events and see if you can win big!</p>
-        <div id="gameover-chart-container" class="mt-4 w-full relative"></div>
-        <div id="highscore-form" class="hidden space-y-3">
-            <p class="font-bold text-lg text-green-400">New High Score!</p>
-            <input type="text" id="player-name" class="name-input" placeholder="Enter your name for the leaderboard"
-                maxlength="15">
-            <button id="submit-score-button" class="btn btn-primary w-full">Submit Score</button>
-        </div>
-        <div id="modal-controls" class="flex flex-col space-y-4">
-            <button id="modal-button" class="btn btn-primary text-xl">Start Game</button>
-            <button id="leaderboard-button" class="btn btn-outline text-lg">Leaderboard</button>
-            <button id="show-strategy-button" class="btn btn-outline text-lg hidden">Learn Strategies</button>
-        </div>
-    </div>
-    <div id="strategy-modal" class="modal-backdrop hidden">
-        <div
-            class="w-full max-w-3xl bg-gray-800 rounded-2xl shadow-2xl p-8 text-left space-y-6 relative max-h-[90vh] overflow-y-auto">
-            <button id="close-strategy-button"
-                class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
-            <h2 class="text-3xl font-bold text-blue-400 border-b border-gray-700 pb-3">Optimal Betting Strategies</h2>
-            <div class="space-y-4 text-gray-300">
-                <p>To maximize bankroll growth, you need a disciplined strategy. Here are a few approaches, from simple
-                    to advanced.</p>
-                <div>
-                    <h3 class="text-xl font-semibold text-green-400">1. The Conservative Grinder (Low Risk)</h3>
-                    <p class="mt-1">Focus on capital preservation. Bet small amounts on high-probability events (those
-                        with low payouts like 1:2 or 1:3). The goal is to make small, consistent gains and stay in the
-                        game.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-yellow-400">2. The Value Hunter (Medium Risk)</h3>
-                    <p class="mt-1">This balanced approach seeks "value" — bets where the payout seems generous for the
-                        risk. Focus on mid-tier payouts (1:1 to 5:1) and try to estimate if the odds offered are better
-                        than the event's true probability.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-red-400">3. The Kelly Criterion (Calculated Aggression)</h3>
-                    <p class="mt-1">A famous formula for maximizing long-term bankroll growth. It calculates the optimal
-                        fraction of your bankroll to bet on a single event.</p>
-                    <p class="mt-2 pl-4 border-l-4 border-gray-600"><strong>The Formula:</strong> Bet % = (BP - Q) / B
-                    </p>
-                    <ul class="list-disc list-inside mt-2 ml-4">
-                        <li><strong>B</strong> = The decimal payout. (A 3:1 ratio means B=3).</li>
-                        <li><strong>P</strong> = Your estimated probability of winning (e.g., 0.4 for a 40% chance).
-                        </li>
-                        <li><strong>Q</strong> = The probability of losing (1 - P).</li>
-                    </ul>
-                    <p class="mt-2"><strong>Challenge:</strong> You must accurately estimate 'P'. If you overestimate
-                        your chance of winning, you will lose money faster. Because of this, it's safer to use
-                        **Fractional Kelly**: bet only a fraction (e.g., 25% or 50%) of the amount the formula suggests.
-                        This protects you from errors and unlucky streaks.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-cyan-400">4. Bayesian Adaptive Strategy (Learning from
-                        Experience)</h3>
-                    <p class="mt-1">Think like a scientist. Start with a belief about which bets are good. As you play,
-                        observe the outcomes and update your beliefs. If an event seems to win more often than its
-                        payout implies over many rounds, gradually increase your confidence and bet size on it.</p>
-                </div>
-                <div class="pt-4 border-t border-gray-700">
-                    <h3 class="text-2xl font-bold text-blue-400">Bonus Practical Tips</h3>
-                    <ul class="list-disc list-inside mt-2 space-y-2">
-                        <li><strong>Manage Your Risk Per Round:</strong> Never bet more than 10-20% of your total
-                            bankroll in a single round. This prevents a short unlucky streak from causing catastrophic
-                            ruin.</li>
-                        <li><strong>Avoid Longshots Blindly:</strong> Ignore the high-payout bets (like 10:1 or more)
-                            unless you have a strong reason to believe the event's true chance of occurring is much
-                            higher than the payout implies. They are usually not profitable long-term.</li>
-                        <li><strong>Think Long-Term:</strong> True strategy emerges over many rounds. Track your
-                            bankroll chart to see what's working. The law of large numbers favors strategies that
-                            maximize expected growth (like Kelly) over short-term gambles.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="leaderboard-modal" class="modal-backdrop hidden">
-        <div
-            class="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl p-8 text-left space-y-4 relative max-h-[90vh] overflow-y-auto">
-            <button id="close-leaderboard-button"
-                class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
-            <h2 class="text-3xl font-bold text-blue-400 border-b border-gray-700 pb-3 mb-4">Leaderboard</h2>
-            <div id="leaderboard-content"></div>
-        </div>
-    </div>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js"; const ui = {
-            gameContainer: document.getElementById('game-container'), modalScreen: document.getElementById('modal-screen'), modalTitle: document.getElementById('modal-title'), modalText: document.getElementById('modal-text'), modalButton: document.getElementById('modal-button'), showStrategyButton: document.getElementById('show-strategy-button'), strategyModal: document.getElementById('strategy-modal'), closeStrategyButton: document.getElementById('close-strategy-button'), leaderboardButton: document.getElementById('leaderboard-button'), leaderboardModal: document.getElementById('leaderboard-modal'), closeLeaderboardButton: document.getElementById('close-leaderboard-button'), leaderboardContent: document.getElementById('leaderboard-content'), highscoreForm: document.getElementById('highscore-form'), playerNameInput: document.getElementById('player-name'), submitScoreButton: document.getElementById('submit-score-button'), modalControls: document.getElementById('modal-controls'), roundNumber: document.getElementById('round-number'), bankroll: document.getElementById('bankroll'), totalBet: document.getElementById('total-bet'), resultsDisplay: document.getElementById('results-display'), roundMessage: document.getElementById('round-message'), diceBettingTable: document.getElementById('dice-betting-table'), coinBettingTable: document.getElementById('coin-betting-table'), cardMarketSection: document.getElementById('card-market-section'), cardProductBettingTable: document.getElementById('card-product-betting-table'), playButton: document.getElementById('play-button'), nextRoundButton: document.getElementById('next-round-button'), chartCanvas: document.getElementById('bankroll-chart'), gameChartContainer: document.getElementById('chart-container-game'),
-        };
-        let db, auth;
-        const DICE_COUNT = 2, COIN_COUNT = 3, CARD_COUNT = 3;
-        let bankrollChart, state = {};
-
-        const diceEventPool = [{ text: '2 or 3', prob: 3 / 36, evaluator: d => [2, 3].includes(d.reduce((a, b) => a + b, 0)) }, { text: '4', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 4 }, { text: '5', prob: 4 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 5 }, { text: '9', prob: 4 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 9 }, { text: '10', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) === 10 }, { text: '6, 7 or 8', prob: 16 / 36, evaluator: d => [6, 7, 8].includes(d.reduce((a, b) => a + b, 0)) }, { text: '11 or 12', prob: 3 / 36, evaluator: d => [11, 12].includes(d.reduce((a, b) => a + b, 0)) }, { text: 'Even', prob: 18 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) % 2 === 0 }, { text: 'Odd', prob: 18 / 36, evaluator: d => d.reduce((a, b) => a + b, 0) % 2 !== 0 }, { text: 'Product > 30', prob: 3 / 36, evaluator: d => d.reduce((a, b) => a * b, 1) > 30 }, { text: 'Doubles', prob: 6 / 36, evaluator: d => d[0] === d[1] },];
-        const coinEventPool = [{ text: 'All three identical', prob: 2 / 8, evaluator: (d, c) => new Set(c).size === 1 }, { text: 'More heads than tails', prob: 4 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length > c.filter(x => x === 'T').length }, { text: 'All 3 are Heads', prob: 1 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 3 }, { text: 'All 3 are Tails', prob: 1 / 8, evaluator: (d, c) => c.filter(x => x === 'T').length === 3 }, { text: 'Exactly 2 Heads', prob: 3 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 2 }, { text: 'Exactly 1 Head', prob: 3 / 8, evaluator: (d, c) => c.filter(x => x === 'H').length === 1 }, { text: 'At least one Head', prob: 7 / 8, evaluator: (d, c) => c.includes('H') }, { text: 'At least one Tail', prob: 7 / 8, evaluator: (d, c) => c.includes('T') }, { text: 'First and last are same', prob: 4 / 8, evaluator: (d, c) => c[0] === c[2] },];
-        const cardProductEventPool = [{ text: 'Product > 100', prob: 0.17, evaluator: (d, c, h) => (h[0].value * h[1].value) > 100 }, { text: 'Product is even', prob: 0.75, evaluator: (d, c, h) => (h[0].value * h[1].value) % 2 === 0 }, { text: 'Product < 20', prob: 0.16, evaluator: (d, c, h) => (h[0].value * h[1].value) < 20 }, { text: 'Product > 75', prob: 0.30, evaluator: (d, c, h) => (h[0].value * h[1].value) > 75 }, { text: 'Product is between 40 and 60', prob: 0.15, evaluator: (d, c, h) => { const p = h[0].value * h[1].value; return p >= 40 && p <= 60; } }, { text: 'Product is a perfect square', prob: 0.08, evaluator: (d, c, h) => { const p = h[0].value * h[1].value; const sqrt = Math.sqrt(p); return sqrt === Math.floor(sqrt); } }, { text: 'Product ends in 0', prob: 0.34, evaluator: (d, c, h) => (h[0].value * h[1].value) % 10 === 0 }, { text: 'Both cards are Face Cards', prob: (12 / 52) * (11 / 51), evaluator: (d, c, h) => h[0].value === 10 && h[1].value === 10 }, { text: 'Both cards are same value', prob: 3 / 51, evaluator: (d, c, h) => h[0].value === h[1].value },];
-
-        function getDieSVG(value) { const dots = { 1: [[50, 50]], 2: [[25, 25], [75, 75]], 3: [[25, 25], [50, 50], [75, 75]], 4: [[25, 25], [25, 75], [75, 25], [75, 75]], 5: [[25, 25], [25, 75], [75, 25], [75, 75], [50, 50]], 6: [[25, 25], [25, 50], [25, 75], [75, 25], [75, 50], [75, 75]] }; const dotCircles = value ? dots[value].map(d => `<circle cx="${d[0]}" cy="${d[1]}" r="8" fill="currentColor"/>`).join('') : ''; return `<svg viewBox="0 0 100 100" class="w-12 h-12 game-piece ${value ? 'text-white' : 'text-gray-600'}"><rect x="5" y="5" width="90" height="90" rx="15" fill="currentColor" class="${value ? 'text-red-500' : 'text-gray-700'}"/><g class="text-white">${dotCircles}</g></svg>`; }
-        function getCoinSVG(value) { const content = value === 'H' ? 'H' : value === 'T' ? 'T' : '?'; const color = value === 'H' ? 'text-yellow-400' : value === 'T' ? 'text-blue-400' : 'text-gray-600'; const bgColor = value ? 'bg-gray-700' : 'bg-gray-700'; return `<div class="w-12 h-12 rounded-full flex items-center justify-center game-piece ${color} ${bgColor}"><span class="text-2xl font-bold">${content}</span></div>`; }
-        function getCardSVG(card) {
-            if (!card) { return `<div class="w-14 h-20 rounded-md bg-gray-700 game-piece flex items-center justify-center"><div class="w-12 h-16 rounded border-2 border-dashed border-gray-500"></div></div>`; }
-            const colorClass = (card.suit === '♥' || card.suit === '♦') ? 'text-red-600' : 'text-black';
-            return `<div class="w-14 h-20 rounded-md bg-white p-2 shadow-lg game-piece ${colorClass}"><div class="text-left"><div class="font-bold text-xl leading-none">${card.rank}</div><div class="text-lg">${card.suit}</div></div></div>`;
-        }
-        function updateStats() { ui.roundNumber.textContent = state.round; ui.bankroll.textContent = `$${Math.round(state.bankroll)}`; const bets = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0); ui.totalBet.textContent = `$${bets}`; }
-
-        function renderPlaceholders() {
-            ui.resultsDisplay.innerHTML = '';
-            const diceRow = document.createElement('div'); diceRow.className = 'flex justify-center items-center gap-4 flex-wrap';
-            for (let i = 0; i < DICE_COUNT; i++) diceRow.innerHTML += getDieSVG(null);
-            const coinRow = document.createElement('div'); coinRow.className = 'flex justify-center items-center gap-4 flex-wrap';
-            for (let i = 0; i < COIN_COUNT; i++) coinRow.innerHTML += getCoinSVG(null);
-            const cardRow = document.createElement('div'); cardRow.className = 'flex justify-center items-center gap-4 flex-wrap';
-            for (let i = 0; i < CARD_COUNT; i++) cardRow.innerHTML += getCardSVG(null);
-            ui.resultsDisplay.appendChild(diceRow); ui.resultsDisplay.appendChild(coinRow); ui.resultsDisplay.appendChild(cardRow);
-        }
-
-        function initChart() { const ctx = ui.chartCanvas.getContext('2d'); if (bankrollChart) bankrollChart.destroy(); bankrollChart = new Chart(ctx, { type: 'line', data: { labels: state.bankrollHistory.map((_, i) => `R${i}`), datasets: [{ label: 'Bankroll', data: state.bankrollHistory, borderColor: '#3B82F6', backgroundColor: 'rgba(59, 130, 246, 0.2)', tension: 0.2, fill: true, }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.1)' } }, x: { ticks: { color: '#9CA3AF' }, grid: { display: false } } } } }); }
-        function updateChart() { bankrollChart.data.labels = state.bankrollHistory.map((_, i) => i === 0 ? 'Start' : `R${i}`); bankrollChart.data.datasets[0].data = state.bankrollHistory; bankrollChart.update(); }
-        function createDeck() { const suits = { '♥': 'red', '♦': 'red', '♣': 'black', '♠': 'black' }; const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']; const values = { '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11 }; return Object.keys(suits).flatMap(suit => ranks.map(rank => ({ suit, rank, value: values[rank], color: suits[suit] }))); }
-        function drawCards(deck, count) { for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[deck[i], deck[j]] = [deck[j], deck[i]]; } return deck.slice(0, count); }
-
-        function generateStatements() {
-            state.statements = [];
-            const tables = { dice: ui.diceBettingTable, coin: ui.coinBettingTable, cardProduct: ui.cardProductBettingTable };
-            Object.values(tables).forEach(t => t.innerHTML = '');
-            const createRow = (event, type, table) => { const trueOdds = (1 / event.prob) - 1; const houseEdge = 1 - (Math.random() * 0.23 + 0.02); const payout = parseFloat((trueOdds * houseEdge).toFixed(1)); const statement = { id: `${type}-${event.text}`, text: event.text, payout: [payout, 1], evaluator: event.evaluator }; state.statements.push(statement); const row = document.createElement('tr'); row.className = 'odd:bg-gray-800/50 even:bg-gray-900/50'; row.dataset.statementId = statement.id; row.innerHTML = `<td class="p-2 text-sm">${statement.text}</td><td class="p-2 text-center font-semibold text-cyan-400 text-sm">${statement.payout[0]}:1</td><td class="p-2 text-right"><input type="number" min="0" step="1" class="bet-input text-sm" placeholder="0"></td>`; table.appendChild(row); };
-            const createRandomRows = (pool, type, table) => { const shuffled = pool.sort(() => 0.5 - Math.random()); const count = Math.floor(Math.random() * 3) + 7; for (let i = 0; i < Math.min(count, shuffled.length); i++) { createRow(shuffled[i], type, table); } };
-            createRandomRows(diceEventPool, 'dice', tables.dice); createRandomRows(coinEventPool, 'coin', tables.coin); createRandomRows(cardProductEventPool, 'cardProduct', tables.cardProduct);
-            const midPoint = Math.floor(Math.random() * 6) + 22; const sellPrice = midPoint - 1; const buyPrice = midPoint + 1;
-            const marketStatement = { id: 'card-market', sellPrice, buyPrice, evaluator: (d, c, h) => { const sum = h.reduce((a, b) => a + b.value, 0); const sellBet = Number(document.getElementById('sell-volume-input').value) || 0; const buyBet = Number(document.getElementById('buy-volume-input').value) || 0; let winnings = 0; if (sellBet > 0 && sum < sellPrice) winnings += sellBet * 2; if (buyBet > 0 && sum > buyPrice) winnings += buyBet * 2; return winnings; } };
-            state.statements.push(marketStatement);
-            ui.cardMarketSection.innerHTML = `<div class="flex items-center justify-center gap-2 text-lg"> <div class="text-right"> <div class="text-sm">Sell Volume</div> <input type="number" id="sell-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> <div class="font-bold text-xl p-3 bg-gray-900/50 rounded-lg whitespace-nowrap"> <span class="text-red-400">${sellPrice}</span> @ <span class="text-green-400">${buyPrice}</span> </div> <div> <div class="text-sm">Buy Volume</div> <input type="number" id="buy-volume-input" class="bet-input trade-input text-sm" placeholder="0"> </div> </div>`;
-        }
-
-        function startRound() {
-            ui.roundMessage.textContent = '';
-            ui.playButton.classList.remove('hidden');
-            ui.nextRoundButton.classList.add('hidden');
-            ui.playButton.disabled = false;
-
-            // Clear old elements and create the new ones for this round first.
-            generateStatements();
-
-            // NOW, find all the newly created inputs and attach the validation logic.
-            document.querySelectorAll('.bet-input').forEach(input => {
-                input.value = ''; // This was already here, but now it's just clearing the placeholder.
-                input.disabled = false;
-                input.addEventListener('input', handleBetInput);
-            });
-
-            // The rest of the function remains the same.
-            document.querySelectorAll('tbody tr, .trade-container').forEach(el => el.classList.remove('win-row', 'loss-row'));
-            renderPlaceholders();
-            updateStats();
-            updateChart();
-        }
-        function handleBetInput(e) {
-            const currentInput = e.target;
-
-            // 1. Sanitize the input to allow only whole numbers.
-            // This removes any non-digit characters.
-            currentInput.value = currentInput.value.replace(/[^0-9]/g, '');
-            let currentValue = parseInt(currentInput.value, 10) || 0;
-
-            // 2. Calculate the total amount already wagered in OTHER input fields.
-            let otherBetsTotal = 0;
-            document.querySelectorAll('.bet-input').forEach(input => {
-                // We only sum up the values of inputs that are not the one currently being edited.
-                if (input !== currentInput) {
-                    otherBetsTotal += parseInt(input.value, 10) || 0;
-                }
-            });
-
-            // 3. Determine the maximum allowed bet for the current input field.
-            // This is the total bankroll minus what's already been bet elsewhere.
-            const maxAllowed = state.bankroll - otherBetsTotal;
-
-            // 4. If the current bet exceeds the maximum allowed, automatically correct it.
-            if (currentValue > maxAllowed) {
-                currentValue = maxAllowed;
-                // Update the input field. If the max allowed is 0 or less, just clear the input.
-                currentInput.value = currentValue > 0 ? currentValue : '';
-            }
-
-            // 5. Finally, update the "Total Bet" display.
-            updateStats();
-        }
-
-        function playRound() {
-            ui.playButton.disabled = true; ui.roundMessage.textContent = 'Rolling, Tossing, Drawing...'; document.querySelectorAll('.bet-input').forEach(input => input.disabled = true);
-            const totalBet = Array.from(document.querySelectorAll('.bet-input')).reduce((sum, input) => sum + (Number(input.value) || 0), 0);
-            if (totalBet === 0) { ui.roundMessage.textContent = 'Place a bet to play!'; ui.playButton.disabled = false; document.querySelectorAll('.bet-input').forEach(input => input.disabled = false); return; }
-            state.bankroll -= totalBet; updateStats();
-
-            const diceResults = Array.from({ length: DICE_COUNT }, () => Math.floor(Math.random() * 6) + 1);
-            const coinResults = Array.from({ length: COIN_COUNT }, () => Math.random() > 0.5 ? 'H' : 'T');
-            const cardResults = drawCards(createDeck(), CARD_COUNT);
-
-            document.querySelectorAll('.game-piece').forEach(el => el.classList.add('toss'));
-
-            setTimeout(() => {
-                ui.resultsDisplay.innerHTML = ''; const diceRow = document.createElement('div'); diceRow.className = 'flex justify-center items-center gap-4 flex-wrap'; diceResults.forEach(d => diceRow.innerHTML += getDieSVG(d)); const coinRow = document.createElement('div'); coinRow.className = 'flex justify-center items-center gap-4 flex-wrap'; coinResults.forEach(c => coinRow.innerHTML += getCoinSVG(c)); const cardRow = document.createElement('div'); cardRow.className = 'flex justify-center items-center gap-4 flex-wrap'; cardResults.forEach(card => cardRow.innerHTML += getCardSVG(card)); ui.resultsDisplay.appendChild(diceRow); ui.resultsDisplay.appendChild(coinRow); ui.resultsDisplay.appendChild(cardRow);
-                let winnings = 0;
-                document.querySelectorAll('tbody tr').forEach(row => {
-                    const statementId = row.dataset.statementId; const betInput = row.querySelector('.bet-input'); const betAmount = Number(betInput.value) || 0;
-                    if (betAmount > 0) { const statement = state.statements.find(s => s.id === statementId); if (statement) { const won = statement.evaluator(diceResults, coinResults, cardResults); if (won) { winnings += betAmount + (betAmount * statement.payout[0]); row.classList.add('win-row'); } else { row.classList.add('loss-row'); } } }
-                });
-                const marketStatement = state.statements.find(s => s.id === 'card-market'); winnings += marketStatement.evaluator(diceResults, coinResults, cardResults);
-                const cardSum = cardResults.reduce((a, b) => a + b.value, 0); const sellInput = document.getElementById('sell-volume-input'); const buyInput = document.getElementById('buy-volume-input');
-                if (Number(sellInput.value) > 0) { sellInput.parentElement.parentElement.classList.add(cardSum < marketStatement.sellPrice ? 'win-row' : 'loss-row'); }
-                if (Number(buyInput.value) > 0) { buyInput.parentElement.parentElement.classList.add(cardSum > marketStatement.buyPrice ? 'win-row' : 'loss-row'); }
-                state.bankroll += winnings; state.peakBankroll = Math.max(state.peakBankroll, state.bankroll);
-                const netChange = winnings - totalBet;
-                if (netChange > 0) { ui.roundMessage.textContent = `You won $${netChange.toFixed(0)}!`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-green-400'; }
-                else if (netChange < 0) { ui.roundMessage.textContent = `You lost $${Math.abs(netChange).toFixed(0)}.`; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-red-400'; }
-                else { ui.roundMessage.textContent = "Broke even."; ui.roundMessage.className = 'text-xl font-semibold h-7 text-center text-yellow-300'; }
-                state.bankrollHistory.push(state.bankroll); updateChart();
-                if (state.bankroll <= 0) { state.bankroll = 0; updateStats(); gameOver(); }
-                else { ui.playButton.classList.add('hidden'); ui.nextRoundButton.classList.remove('hidden'); }
-                updateStats();
-            }, 1000);
-        }
-
-        async function gameOver() { ui.modalTitle.textContent = 'Game Over!'; ui.modalText.innerHTML = `You've gone bankrupt after ${state.round} rounds. Your peak bankroll was $${Math.round(state.peakBankroll)}.`; ui.modalButton.textContent = 'Play Again'; ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); ui.showStrategyButton.classList.remove('hidden'); const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (ui.chartCanvas && gameOverChartContainer) { gameOverChartContainer.appendChild(ui.chartCanvas); } ui.modalScreen.classList.remove('hidden'); ui.gameContainer.classList.add('hidden'); await checkAndSubmitHighScore(); }
-        async function checkAndSubmitHighScore() { if (!state.userId) return; const docRef = doc(db, "leaderboard", state.userId); const docSnap = await getDoc(docRef); const currentHighScore = docSnap.exists() ? docSnap.data().score : 0; if (state.peakBankroll > currentHighScore) { ui.modalText.innerHTML += `<br>Congratulations, you have a new high score!`; ui.modalControls.classList.add('hidden'); ui.highscoreForm.classList.remove('hidden'); ui.playerNameInput.value = state.playerName || ''; } }
-        async function saveHighScore() {
-            const name = ui.playerNameInput.value.trim();
-            if (!name) { alert("Please enter a name."); return; }
-            state.playerName = name;
-            localStorage.setItem('playerName', name);
-            ui.submitScoreButton.disabled = true;
-            ui.submitScoreButton.textContent = 'Saving...';
-            try {
-                const docRef = doc(db, "leaderboard", state.userId);
-                // We add the timestamp field here using serverTimestamp()
-                await setDoc(docRef, {
-                    name: state.playerName,
-                    score: Math.round(state.peakBankroll),
-                    rounds: state.round,
-                    timestamp: serverTimestamp()
-                });
-                ui.modalText.innerHTML = `High score saved! You've gone bankrupt after ${state.round} rounds.`;
-            } catch (error) {
-                console.error("Error saving high score:", error);
-                ui.modalText.innerHTML += `<br><span class="text-red-500">Could not save score.</span>`;
-            } finally {
-                ui.highscoreForm.classList.add('hidden');
-                ui.modalControls.classList.remove('hidden');
-                ui.submitScoreButton.disabled = false;
-                ui.submitScoreButton.textContent = 'Submit Score';
-            }
-        }
-        async function showLeaderboard() {
-            ui.leaderboardModal.classList.remove('hidden');
-            ui.leaderboardContent.innerHTML = `<p class="text-center">Loading...</p>`;
-            const scoresRef = collection(db, "leaderboard");
-            const q = query(scoresRef, orderBy("score", "desc"), limit(10));
-            try {
-                const querySnapshot = await getDocs(q);
-                let html = '<ol class="list-decimal list-outside space-y-2 ml-4">';
-                if (querySnapshot.empty) {
-                    html = '<p class="text-center">No scores yet. Be the first!</p>';
-                } else {
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        let dateString = '';
-                        if (data.timestamp) {
-                            const date = data.timestamp.toDate();
-                            // Using a more compact date format
-                            dateString = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
-                        }
-
-                        // THE FIX: All stats (score, rounds, date) are now in one flex container.
-                        html += `<li class="text-lg p-2 rounded ${doc.id === state.userId ? 'bg-blue-900/50' : ''}">
-                                     <div class="flex justify-between items-center">
-                                         <span>${data.name}</span>
-                                         <div class="flex items-baseline gap-3 whitespace-nowrap">
-                                             <span class="font-bold text-green-400">$${data.score}</span>
-                                             <span class="text-xs text-gray-400">(${data.rounds} rounds)</span>
-                                             <span class="text-xs text-gray-500">${dateString}</span>
-                                         </div>
-                                     </div>
-                                 </li>`;
-                    });
-                    html += '</ol>';
-                }
-                ui.leaderboardContent.innerHTML = html;
-            } catch (error) {
-                ui.leaderboardContent.innerHTML = `<p class="text-center text-red-400">Could not load leaderboard.</p>`;
-                console.error("Error fetching leaderboard:", error);
-            }
-        }
-        function initGameState() { state = { round: 1, bankroll: 1000, peakBankroll: 1000, statements: [], bankrollHistory: [1000], userId: state.userId, playerName: state.playerName, }; ui.modalTitle.textContent = 'Welcome!'; ui.modalText.textContent = 'Start with $1000 and test your luck. Place bets on random events and see if you can win big!'; ui.modalButton.textContent = 'Start Game'; ui.showStrategyButton.classList.add('hidden'); ui.modalControls.classList.remove('hidden'); ui.highscoreForm.classList.add('hidden'); }
-
-        // --- Event Listeners ---
-        ui.playButton.addEventListener('click', playRound);
-        ui.nextRoundButton.addEventListener('click', () => { state.round++; startRound(); });
-        ui.modalButton.addEventListener('click', () => { const gameOverChartContainer = document.getElementById('gameover-chart-container'); if (ui.chartCanvas && ui.gameChartContainer) { ui.gameChartContainer.appendChild(ui.chartCanvas); } if (gameOverChartContainer) { gameOverChartContainer.innerHTML = ''; } ui.modalScreen.classList.add('hidden'); ui.gameContainer.classList.remove('hidden'); initGameState(); initChart(); startRound(); });
-        ui.showStrategyButton.addEventListener('click', () => { ui.strategyModal.classList.remove('hidden'); });
-        ui.closeStrategyButton.addEventListener('click', () => { ui.strategyModal.classList.add('hidden'); });
-        ui.leaderboardButton.addEventListener('click', showLeaderboard);
-        ui.closeLeaderboardButton.addEventListener('click', () => { ui.leaderboardModal.classList.add('hidden'); });
-        ui.submitScoreButton.addEventListener('click', saveHighScore);
-
-        // --- Firebase Initialization ---
-        async function initializeFirebase() {
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-                apiKey: "AIzaSyAlTtdba9-A6TXRzLSmDo0Iv7fvL6b_n5E",
-                authDomain: "betting-game-8e703.firebaseapp.com",
-                projectId: "betting-game-8e703",
-                storageBucket: "betting-game-8e703.firebasestorage.app",
-                messagingSenderId: "442916375849",
-                appId: "1:442916375849:web:d651af435354103688fb38",
-                measurementId: "G-91246D6EY7"
-            }; if (!firebaseConfig.projectId) { console.error("Firebase initialization failed: 'firebaseConfig' is not set."); ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable: Firebase config is missing.</span>'; ui.leaderboardButton.disabled = true; return; }
-            try { const app = initializeApp(firebaseConfig); db = getFirestore(app); auth = getAuth(app); onAuthStateChanged(auth, async (user) => { if (user) { state.userId = user.uid; const docRef = doc(db, "leaderboard", state.userId); const docSnap = await getDoc(docRef); if (docSnap.exists()) { state.playerName = docSnap.data().name; localStorage.setItem('playerName', state.playerName); } } }); await signInAnonymously(auth); } catch (error) { console.error("Firebase initialization failed:", error); ui.modalText.innerHTML += '<br><span class="text-red-400">Leaderboard is unavailable. Check console for errors.</span>'; ui.leaderboardButton.disabled = true; }
-        }
-
-        state.playerName = localStorage.getItem('playerName');
-        initGameState();
-        initializeFirebase();
-    </script>
-</body>
-
-</html>
+<body><main>
+<noscript><p class="rules">Enable JavaScript to play this probability game. The rules below are available without it.</p></noscript>
+<header class="intro"><p class="eyebrow">Play & learn / Probability lab</p><h1>Probability Parlay</h1><p>Two dice. Three coins. A fresh deck of cards. Explore chance with 1,000 imaginary credits and see the whole round unfold.</p><p class="muted">Runs in your browser. No account, real money, or network connection needed after loading.</p><div class="actions"><button id="start-button">Start a session</button><button id="leaderboard-button" class="secondary">Local records</button></div></header>
+<details class="rules"><summary>How it works</summary><p>Enter wagers in credits, down to 0.01. A winning wager returns your stake plus the listed profit multiplier. For example, 10 credits at ×2.50 returns 35 credits. Each winning profit is rounded to the nearest cent.</p><p>Dice and coins are independent and fair. Three cards are drawn without replacement from a new 52-card deck each round. J, Q and K have value 10; A has value 11. “Face cards” means J, Q or K, excluding 10. All displayed probabilities are calculated from these rules.</p><p>The two sum predictions pay ×1 profit, with no refund for equality. Other payouts are below fair odds. Different wagers on the same outcome can be correlated; a higher win probability does not guarantee growth. This is a probability toy, not a strategy guide.</p></details>
+<section id="game" hidden aria-label="Current session">
+<div class="stats" aria-live="polite"><div class="stat"><small>Round</small><strong id="round-number">1</strong></div><div class="stat"><small>Available credits</small><strong id="bankroll">1,000.00</strong></div><div class="stat"><small>Total wager</small><strong id="total-bet">0.00</strong></div><div class="stat"><small>Session peak</small><strong id="peak">1,000.00</strong></div></div>
+<div class="controls"><div class="actions"><button id="play-button">Play this round</button><button id="next-round-button" hidden>Next round</button><button id="clear-button" class="secondary">Clear wagers</button></div><button id="finish-button" class="secondary">Finish session</button><p id="round-message" class="status" role="status"></p></div>
+<div class="board">
+<section class="panel"><h2>Dice roll</h2><p class="muted">Two six-sided dice</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="dice-betting-table"></tbody></table></section>
+<section class="panel"><h2>Coin flip</h2><p class="muted">Three independent flips</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="coin-betting-table"></tbody></table></section>
+<section class="panel"><h2>Card draw</h2><p class="muted">Product of the first two card values</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="card-betting-table"></tbody></table><h3 class="sum-note">Three-card sum predictions · ×1 profit</h3><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="sum-betting-table"></tbody></table></section>
+</div>
+<div class="summary-grid"><section class="panel" aria-live="polite"><h2>Round reveal</h2><div id="results-display"><p class="muted">Place a wager to reveal this round.</p></div></section><section class="panel"><h2>Your credit history</h2><svg id="bankroll-chart" class="chart" viewBox="0 0 600 170" role="img" aria-label="Credit balance by round"></svg><details class="history"><summary>View every balance</summary><ol id="balance-history"></ol></details></section></div>
+</section>
+<section id="session-end" class="session-end" hidden aria-labelledby="end-title"><h2 id="end-title">Session complete</h2><p id="end-message"></p><form id="save-form" class="save-form"><label for="player-name">Name for this browser’s records<input id="player-name" name="player-name" maxlength="24" required autocomplete="nickname"></label><button id="save-score" type="submit">Save locally</button></form><p id="save-message" role="status"></p></section>
+<p class="footer">Records stay in this browser and may disappear when site data is cleared. Private browsing or blocked storage may prevent saving.</p>
+</main>
+<dialog id="leaderboard-dialog" aria-labelledby="leaderboard-title"><div class="dialog-header"><h2 id="leaderboard-title">Local records</h2><button class="secondary close" id="close-leaderboard" aria-label="Close local records">×</button></div><p class="muted">Top 10 session peaks saved on this browser. These are editable local records, not a verified or online ranking.</p><div id="leaderboard-content"></div></dialog>
+</body></html>

@@ -1,0 +1,138 @@
+{
+  "initial": {
+    "requests": 159,
+    "artwork_elements": 186,
+    "year_rows": 31,
+    "thumbnail_requests": 146,
+    "width": 1440,
+    "viewport": 1440,
+    "chartHeight": 3260,
+    "chartScrollHeight": 3260,
+    "tableHeight": 3260,
+    "resourceTransferBytes": 0,
+    "documentTransferBytes": 181430,
+    "domContentLoadedMs": 155.19999992847443,
+    "chartTop": 396
+  },
+  "all_artwork_decoded": 186,
+  "pack_scale": {
+    "desktop": {
+      "packs": {
+        "2025-06-sv-sv11b": {
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-06-sv-sv11w": {
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-08-m-m1l": {
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-08-m-m1s": {
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-09-m-m2": {
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-11-m-m2a": {
+          "naturalWidth": 110,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        }
+      },
+      "august_to_june": 1.0,
+      "september_to_november": 1.0
+    },
+    "mobile": {
+      "packs": {
+        "2025-06-sv-sv11b": {
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "containedHeight": 73.93810679611651
+        },
+        "2025-06-sv-sv11w": {
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "containedHeight": 73.93810679611651
+        },
+        "2025-08-m-m1l": {
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "containedHeight": 76.15625
+        },
+        "2025-08-m-m1s": {
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "containedHeight": 76.92550505050505
+        },
+        "2025-09-m-m2": {
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        },
+        "2025-11-m-m2a": {
+          "naturalWidth": 110,
+          "naturalHeight": 200,
+          "containedHeight": 88
+        }
+      },
+      "august_to_june": 1.0299999999999998,
+      "september_to_november": 1.0
+    }
+  },
+  "triple_cell": {
+    "cell": {
+      "left": 418.96875,
+      "right": 529.625
+    },
+    "images": [
+      {
+        "left": 422.96875,
+        "right": 454.859375,
+        "top": 505.5625,
+        "bottom": 593.5625,
+        "width": 31.890625,
+        "height": 88
+      },
+      {
+        "left": 457.859375,
+        "right": 489.734375,
+        "top": 505.5625,
+        "bottom": 593.5625,
+        "width": 31.875,
+        "height": 88
+      },
+      {
+        "left": 492.734375,
+        "right": 524.625,
+        "top": 505.5625,
+        "bottom": 593.5625,
+        "width": 31.890625,
+        "height": 88
+      }
+    ]
+  },
+  "mobile": {
+    "width": 390,
+    "viewport": 390,
+    "chartWidth": 364,
+    "tableWidth": 1120,
+    "chartHeight": 3260,
+    "chartScrollHeight": 3260
+  },
+  "nojs": {
+    "artwork_elements": 186,
+    "year_rows": 31
+  },
+  "page_errors": [],
+  "checks": "passed"
+}

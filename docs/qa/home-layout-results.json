@@ -1,0 +1,2169 @@
+{
+  "measured_on": "2026-09-29",
+  "reference": "https://www.pokemon.co.jp/",
+  "method": "Chrome, actual DOM boxes after image decoding and local font loading. Local pages opened via file://.",
+  "baseline": {
+    "1440": [
+      {
+        "card": {
+          "x": 120,
+          "y": 232.03125,
+          "width": 500,
+          "height": 361.984375,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 120,
+          "y": 232.03125,
+          "width": 500,
+          "height": 240,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 120,
+          "y": 232.03125,
+          "width": 500,
+          "height": 280,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 660,
+          "y": 322.03125,
+          "width": 310,
+          "height": 271.984375,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "90px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 660,
+          "y": 322.03125,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 660,
+          "y": 322.03125,
+          "width": 310,
+          "height": 188.796875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 1010,
+          "y": 322.03125,
+          "width": 310,
+          "height": 271.984375,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "90px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 1010,
+          "y": 322.03125,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 1010,
+          "y": 322.03125,
+          "width": 310,
+          "height": 188.796875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 120,
+          "y": 624.015625,
+          "width": 310,
+          "height": 263.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 120,
+          "y": 624.015625,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 120,
+          "y": 624.015625,
+          "width": 310,
+          "height": 188.796875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 605,
+          "y": 624.015625,
+          "width": 310,
+          "height": 263.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 605,
+          "y": 624.015625,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 605,
+          "y": 624.015625,
+          "width": 310,
+          "height": 188.796875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 1090,
+          "y": 660.015625,
+          "width": 230,
+          "height": 227.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "36px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 1090,
+          "y": 660.015625,
+          "width": 230,
+          "height": 110.390625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 1090,
+          "y": 660.015625,
+          "width": 230,
+          "height": 150.390625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ],
+    "1024": [
+      {
+        "card": {
+          "x": 20,
+          "y": 281.046875,
+          "width": 410,
+          "height": 318.984375,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 281.046875,
+          "width": 410,
+          "height": 196.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 281.046875,
+          "width": 410,
+          "height": 236.796875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 462.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 245.1875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "73.7969px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 462.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 462.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 162,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 749.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 245.1875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "73.7969px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 749.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 749.8125,
+          "y": 354.84375,
+          "width": 254.1875,
+          "height": 162,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 258.21875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 162,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 417.703125,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 258.21875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 417.703125,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 417.703125,
+          "y": 630.03125,
+          "width": 254.1875,
+          "height": 162,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 815.40625,
+          "y": 659.546875,
+          "width": 188.59375,
+          "height": 228.703125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "29.5156px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 815.40625,
+          "y": 659.546875,
+          "width": 188.59375,
+          "height": 90.515625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 815.40625,
+          "y": 659.546875,
+          "width": 188.59375,
+          "height": 130.515625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ],
+    "390": [
+      {
+        "card": {
+          "x": 20,
+          "y": 126.75,
+          "width": 350,
+          "height": 274,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 126.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 126.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 425.75,
+          "width": 350,
+          "height": 274,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 425.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 425.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 724.75,
+          "width": 350,
+          "height": 274,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 724.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 724.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1023.75,
+          "width": 350,
+          "height": 274,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1023.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1023.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1322.75,
+          "width": 350,
+          "height": 274,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1322.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1322.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1621.75,
+          "width": 350,
+          "height": 291.1875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 25px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1621.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1621.75,
+          "width": 350,
+          "height": 208,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ]
+  },
+  "reference_boxes": {
+    "1440": [
+      {
+        "card": {
+          "x": 120,
+          "y": 104.8125,
+          "width": 500,
+          "height": 390.171875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 120,
+          "y": 104.8125,
+          "width": 500,
+          "height": 240,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "240px 0px 0px"
+        },
+        "figure": {
+          "x": 120,
+          "y": 104.8125,
+          "width": 500,
+          "height": 279,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 660,
+          "y": 194.8125,
+          "width": 310,
+          "height": 300.171875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "90px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 660,
+          "y": 194.8125,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "148.797px 0px 0px"
+        },
+        "figure": {
+          "x": 660,
+          "y": 194.8125,
+          "width": 310,
+          "height": 187.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 1010,
+          "y": 194.8125,
+          "width": 310,
+          "height": 300.171875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "90px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 1010,
+          "y": 194.8125,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "148.797px 0px 0px"
+        },
+        "figure": {
+          "x": 1010,
+          "y": 194.8125,
+          "width": 310,
+          "height": 187.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 120,
+          "y": 524.984375,
+          "width": 310,
+          "height": 288.15625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 120,
+          "y": 524.984375,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "148.797px 0px 0px"
+        },
+        "figure": {
+          "x": 120,
+          "y": 524.984375,
+          "width": 310,
+          "height": 187.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 470,
+          "y": 524.984375,
+          "width": 310,
+          "height": 288.15625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 470,
+          "y": 524.984375,
+          "width": 310,
+          "height": 148.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "148.797px 0px 0px"
+        },
+        "figure": {
+          "x": 470,
+          "y": 524.984375,
+          "width": 310,
+          "height": 187.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 820,
+          "y": 560.984375,
+          "width": 230,
+          "height": 252.15625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "36px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 820,
+          "y": 560.984375,
+          "width": 230,
+          "height": 110.390625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "110.391px 0px 0px"
+        },
+        "figure": {
+          "x": 820,
+          "y": 560.984375,
+          "width": 230,
+          "height": 149.390625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 1090,
+          "y": 560.984375,
+          "width": 230,
+          "height": 252.15625,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "36px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 1090,
+          "y": 560.984375,
+          "width": 230,
+          "height": 110.390625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "110.391px 0px 0px"
+        },
+        "figure": {
+          "x": 1090,
+          "y": 560.984375,
+          "width": 230,
+          "height": 149.390625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ],
+    "1024": [
+      {
+        "card": {
+          "x": 20,
+          "y": 290.015625,
+          "width": 410,
+          "height": 335.84375,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 290.015625,
+          "width": 410,
+          "height": 196.796875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "196.797px 0px 0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 290.015625,
+          "width": 410,
+          "height": 224.46875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 462.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 262.046875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "73.7969px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 462.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "122px 0px 0px"
+        },
+        "figure": {
+          "x": 462.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 149.671875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 749.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 262.046875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "73.7969px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 749.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "122px 0px 0px"
+        },
+        "figure": {
+          "x": 749.8125,
+          "y": 363.8125,
+          "width": 254.1875,
+          "height": 149.671875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 262.046875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "122px 0px 0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 149.671875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 307,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 262.046875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 307,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 122,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "122px 0px 0px"
+        },
+        "figure": {
+          "x": 307,
+          "y": 655.859375,
+          "width": 254.1875,
+          "height": 149.671875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 594,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 232.53125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "29.5156px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 594,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 90.515625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "90.5156px 0px 0px"
+        },
+        "figure": {
+          "x": 594,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 118.1875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 815.40625,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 232.53125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "29.5156px 0px 30px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 815.40625,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 90.515625,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "90.5156px 0px 0px"
+        },
+        "figure": {
+          "x": 815.40625,
+          "y": 685.375,
+          "width": 188.59375,
+          "height": 118.1875,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ],
+    "390": [
+      {
+        "card": {
+          "x": 20,
+          "y": 46.578125,
+          "width": 350,
+          "height": 316.171875,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 46.578125,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 46.578125,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 382.75,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 382.75,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 382.75,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 693.328125,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 693.328125,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 693.328125,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1003.90625,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1003.90625,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1003.90625,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1314.484375,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1314.484375,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1314.484375,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1625.0625,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1625.0625,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1625.0625,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 1935.640625,
+          "width": 350,
+          "height": 290.578125,
+          "position": "static",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 20px",
+          "padding": "0px"
+        },
+        "art": {
+          "x": 20,
+          "y": 1935.640625,
+          "width": 350,
+          "height": 168,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px",
+          "padding": "0px"
+        },
+        "figure": {
+          "x": 20,
+          "y": 1935.640625,
+          "width": 350,
+          "height": 207,
+          "position": "relative",
+          "objectFit": "fill",
+          "justifyContent": "normal",
+          "columnGap": "normal",
+          "margin": "0px 0px 10px",
+          "padding": "0px"
+        }
+      }
+    ]
+  },
+  "after": {
+    "1440": {
+      "overflow": false,
+      "cards": [
+        {
+          "card": {
+            "x": 120,
+            "y": 917.03125,
+            "width": 500,
+            "height": 360.984375
+          },
+          "art": {
+            "x": 120,
+            "y": 917.03125,
+            "width": 500,
+            "height": 240
+          },
+          "figure": {
+            "x": 120,
+            "y": 917.03125,
+            "width": 500,
+            "height": 279
+          }
+        },
+        {
+          "card": {
+            "x": 660,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 270.984375
+          },
+          "art": {
+            "x": 660,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 148.796875
+          },
+          "figure": {
+            "x": 660,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 187.796875
+          }
+        },
+        {
+          "card": {
+            "x": 1010,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 270.984375
+          },
+          "art": {
+            "x": 1010,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 148.796875
+          },
+          "figure": {
+            "x": 1010,
+            "y": 1007.03125,
+            "width": 310,
+            "height": 187.796875
+          }
+        },
+        {
+          "card": {
+            "x": 120,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 270.984375
+          },
+          "art": {
+            "x": 120,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 148.796875
+          },
+          "figure": {
+            "x": 120,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 187.796875
+          }
+        },
+        {
+          "card": {
+            "x": 470,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 270.984375
+          },
+          "art": {
+            "x": 470,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 148.796875
+          },
+          "figure": {
+            "x": 470,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 187.796875
+          }
+        },
+        {
+          "card": {
+            "x": 820,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 270.984375
+          },
+          "art": {
+            "x": 820,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 148.796875
+          },
+          "figure": {
+            "x": 820,
+            "y": 1308.015625,
+            "width": 310,
+            "height": 187.796875
+          }
+        }
+      ],
+      "sections": [
+        {
+          "topic": "card",
+          "layout": "gallery",
+          "links": 6,
+          "rect": {
+            "x": 0,
+            "y": 1761,
+            "width": 1440,
+            "height": 903.40625
+          }
+        },
+        {
+          "topic": "sports",
+          "layout": "feature",
+          "links": 3,
+          "rect": {
+            "x": 0,
+            "y": 2664.40625,
+            "width": 1440,
+            "height": 1157.5625
+          }
+        },
+        {
+          "topic": "notes",
+          "layout": "journal",
+          "links": 2,
+          "rect": {
+            "x": 0,
+            "y": 3821.96875,
+            "width": 1440,
+            "height": 620.1875
+          }
+        }
+      ],
+      "images": 48,
+      "broken": [],
+      "dcl": 76,
+      "image_bytes": 561950,
+      "image_files": 10,
+      "errors": []
+    },
+    "1024": {
+      "overflow": false,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 717.046875,
+            "width": 410,
+            "height": 306.65625
+          },
+          "art": {
+            "x": 20,
+            "y": 717.046875,
+            "width": 410,
+            "height": 196.796875
+          },
+          "figure": {
+            "x": 20,
+            "y": 717.046875,
+            "width": 410,
+            "height": 224.46875
+          }
+        },
+        {
+          "card": {
+            "x": 462.796875,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 232.859375
+          },
+          "art": {
+            "x": 462.796875,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 122
+          },
+          "figure": {
+            "x": 462.796875,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 149.671875
+          }
+        },
+        {
+          "card": {
+            "x": 749.78125,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 232.859375
+          },
+          "art": {
+            "x": 749.78125,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 122
+          },
+          "figure": {
+            "x": 749.78125,
+            "y": 790.84375,
+            "width": 254.1875,
+            "height": 149.671875
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 232.859375
+          },
+          "art": {
+            "x": 20,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 122
+          },
+          "figure": {
+            "x": 20,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 149.671875
+          }
+        },
+        {
+          "card": {
+            "x": 306.984375,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 232.859375
+          },
+          "art": {
+            "x": 306.984375,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 122
+          },
+          "figure": {
+            "x": 306.984375,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 149.671875
+          }
+        },
+        {
+          "card": {
+            "x": 593.96875,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 232.859375
+          },
+          "art": {
+            "x": 593.96875,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 122
+          },
+          "figure": {
+            "x": 593.96875,
+            "y": 1053.703125,
+            "width": 254.1875,
+            "height": 149.671875
+          }
+        }
+      ],
+      "sections": [
+        {
+          "topic": "card",
+          "layout": "gallery",
+          "links": 6,
+          "rect": {
+            "x": 0,
+            "y": 1468.5625,
+            "width": 1024,
+            "height": 823
+          }
+        },
+        {
+          "topic": "sports",
+          "layout": "feature",
+          "links": 3,
+          "rect": {
+            "x": 0,
+            "y": 2291.5625,
+            "width": 1024,
+            "height": 1147.5625
+          }
+        },
+        {
+          "topic": "notes",
+          "layout": "journal",
+          "links": 2,
+          "rect": {
+            "x": 0,
+            "y": 3439.125,
+            "width": 1024,
+            "height": 610.1875
+          }
+        }
+      ],
+      "images": 48,
+      "broken": [],
+      "dcl": 29.5,
+      "image_bytes": 561950,
+      "image_files": 10,
+      "errors": []
+    },
+    "390": {
+      "overflow": false,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 809.75,
+            "width": 350,
+            "height": 273
+          },
+          "art": {
+            "x": 20,
+            "y": 809.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 809.75,
+            "width": 350,
+            "height": 207
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1107.75,
+            "width": 350,
+            "height": 273
+          },
+          "art": {
+            "x": 20,
+            "y": 1107.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 1107.75,
+            "width": 350,
+            "height": 207
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1405.75,
+            "width": 350,
+            "height": 273
+          },
+          "art": {
+            "x": 20,
+            "y": 1405.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 1405.75,
+            "width": 350,
+            "height": 207
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1703.75,
+            "width": 350,
+            "height": 273
+          },
+          "art": {
+            "x": 20,
+            "y": 1703.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 1703.75,
+            "width": 350,
+            "height": 207
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 2001.75,
+            "width": 350,
+            "height": 273
+          },
+          "art": {
+            "x": 20,
+            "y": 2001.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 2001.75,
+            "width": 350,
+            "height": 207
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 2299.75,
+            "width": 350,
+            "height": 290.1875
+          },
+          "art": {
+            "x": 20,
+            "y": 2299.75,
+            "width": 350,
+            "height": 168
+          },
+          "figure": {
+            "x": 20,
+            "y": 2299.75,
+            "width": 350,
+            "height": 207
+          }
+        }
+      ],
+      "sections": [
+        {
+          "topic": "card",
+          "layout": "gallery",
+          "links": 6,
+          "rect": {
+            "x": 0,
+            "y": 2721.9375,
+            "width": 390,
+            "height": 1014.390625
+          }
+        },
+        {
+          "topic": "sports",
+          "layout": "feature",
+          "links": 3,
+          "rect": {
+            "x": 0,
+            "y": 3736.328125,
+            "width": 390,
+            "height": 784.21875
+          }
+        },
+        {
+          "topic": "notes",
+          "layout": "journal",
+          "links": 2,
+          "rect": {
+            "x": 0,
+            "y": 4520.546875,
+            "width": 390,
+            "height": 604.984375
+          }
+        }
+      ],
+      "images": 48,
+      "broken": [],
+      "dcl": 33.89999997615814,
+      "image_bytes": 561950,
+      "image_files": 10,
+      "errors": []
+    },
+    "320": {
+      "overflow": false,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 723.890625,
+            "width": 280,
+            "height": 262.578125
+          },
+          "art": {
+            "x": 20,
+            "y": 723.890625,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 723.890625,
+            "width": 280,
+            "height": 173.390625
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1011.46875,
+            "width": 280,
+            "height": 256.578125
+          },
+          "art": {
+            "x": 20,
+            "y": 1011.46875,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 1011.46875,
+            "width": 280,
+            "height": 173.390625
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1293.046875,
+            "width": 280,
+            "height": 239.390625
+          },
+          "art": {
+            "x": 20,
+            "y": 1293.046875,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 1293.046875,
+            "width": 280,
+            "height": 173.390625
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1557.4375,
+            "width": 280,
+            "height": 239.390625
+          },
+          "art": {
+            "x": 20,
+            "y": 1557.4375,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 1557.4375,
+            "width": 280,
+            "height": 173.390625
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1821.828125,
+            "width": 280,
+            "height": 256.578125
+          },
+          "art": {
+            "x": 20,
+            "y": 1821.828125,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 1821.828125,
+            "width": 280,
+            "height": 173.390625
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 2103.40625,
+            "width": 280,
+            "height": 256.578125
+          },
+          "art": {
+            "x": 20,
+            "y": 2103.40625,
+            "width": 280,
+            "height": 134.390625
+          },
+          "figure": {
+            "x": 20,
+            "y": 2103.40625,
+            "width": 280,
+            "height": 173.390625
+          }
+        }
+      ],
+      "sections": [
+        {
+          "topic": "card",
+          "layout": "gallery",
+          "links": 6,
+          "rect": {
+            "x": 0,
+            "y": 2491.984375,
+            "width": 320,
+            "height": 907.109375
+          }
+        },
+        {
+          "topic": "sports",
+          "layout": "feature",
+          "links": 3,
+          "rect": {
+            "x": 0,
+            "y": 3399.09375,
+            "width": 320,
+            "height": 766.75
+          }
+        },
+        {
+          "topic": "notes",
+          "layout": "journal",
+          "links": 2,
+          "rect": {
+            "x": 0,
+            "y": 4165.84375,
+            "width": 320,
+            "height": 721.0625
+          }
+        }
+      ],
+      "images": 48,
+      "broken": [],
+      "dcl": 38.10000002384186,
+      "image_bytes": 561950,
+      "image_files": 10,
+      "errors": []
+    }
+  }
+}

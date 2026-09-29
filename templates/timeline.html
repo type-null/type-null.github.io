@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from 'post-parts.html' import dates %}
+{% block extra_head %}<link rel="stylesheet" href="/assets/css/timeline.css">{% endblock %}
+{% block content %}
+{% set years = timeline.years|default(timeline.sets|map(attribute='year')|unique|sort|list) %}
+{% set era_names = {'original':'Original','neo':'Neo','e':'e-Card','ADV':'ADV','PCG':'PCG','DP':'Diamond & Pearl','DPt':'Platinum','LEGEND':'LEGEND','BW':'Black & White','XY':'XY','SM':'Sun & Moon','S':'Sword & Shield','SV':'Scarlet & Violet','M':'Mega Evolution'} %}
+{% set era_ids = timeline.sets|map(attribute='era')|unique|list %}
+{% set months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] %}
+<article class="timeline-page" data-timeline>
+  <header class="timeline-intro">
+    <a class="timeline-back" href="/{{ page.topic.slug }}/">← {{ page.topic.label }}</a>
+    <h1>Pokémon Card Set Timeline</h1>
+    <p>Japanese releases, {{ years|first }}–{{ years|last }}. Browse the pack artwork by year and month.</p>
+    {{ dates(page) }}
+  </header>
+  <section class="timeline-explorer" aria-label="Japanese Pokémon card release calendar">
+    <form class="timeline-filters" role="search" aria-label="Filter card sets" hidden data-timeline-controls>
+      <label class="timeline-search"><span>Search</span><input type="search" name="q" placeholder="Find a set…" maxlength="200" autocomplete="off"></label>
+      <label><span>Era</span><select name="era"><option value="">All eras</option>{% for era in era_ids %}<option value="{{ era }}">{{ era_names.get(era, era) }}</option>{% endfor %}</select></label>
+      <label><span>From</span><select name="from">{% for year in years %}<option value="{{ year }}"{% if loop.first %} selected{% endif %}>{{ year }}</option>{% endfor %}</select></label>
+      <label><span>To</span><select name="to">{% for year in years %}<option value="{{ year }}"{% if loop.last %} selected{% endif %}>{{ year }}</option>{% endfor %}</select></label>
+      <button class="timeline-reset" type="reset">Reset</button>
+    </form>
+    <div class="timeline-summary"><p aria-live="polite" aria-atomic="true" id="timeline-status">{{ timeline.sets|length }} sets · {{ years|length }} years</p><div class="timeline-share share-actions"><button type="button" data-copy-link hidden>Copy link ↗</button><span class="share-status" role="status"></span></div></div>
+    <p class="timeline-scroll-hint">Swipe or scroll sideways to see every month.</p>
+    <div class="timeline-chart" role="region" aria-label="Japanese card set release calendar, horizontally scrollable" tabindex="0" data-timeline-chart>
+      <table class="timeline-table">
+        <caption class="timeline-sr-only">Japanese Pokémon card sets by year and month. Select the pack artwork for details. Blank cells mean no entry in this archive, not necessarily no release.</caption>
+        <thead><tr><th scope="col">Year</th>{% for month in months %}<th scope="col">{{ month }}</th>{% endfor %}</tr></thead>
+        <tbody>{% for year in years|reverse %}
+          {% set year_sets = timeline.sets|selectattr('year','equalto',year)|list %}
+          <tr data-year="{{ year }}"><th scope="row">{{ year }}{% if year == 2026 %}<span class="timeline-partial" title="Partial archive">*</span>{% endif %}</th>{% for month in range(1,13) %}
+            <td data-month="{{ month }}"><div class="timeline-packs">{% for set in year_sets|selectattr('month','equalto',month) %}<a class="set-art" data-set-id="{{ set.id }}" href="{{ set.image }}" title="{{ set.name }} · {{ year }}-{{ '%02d'|format(month) }}" aria-label="{{ set.name }}, {{ months[month-1] }} {{ year }}"><img src="{{ set.thumbnail|default(set.image) }}" alt="{{ set.name }}" width="{{ set.thumbnailWidth|default(160) }}" height="{{ set.thumbnailHeight|default(200) }}" loading="lazy" decoding="async"></a>{% endfor %}</div></td>{% endfor %}</tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="timeline-empty" hidden data-timeline-empty><h2>No sets found</h2><p>Try another name or a wider year range.</p><button type="button" data-reset-filters>Reset filters</button></div>
+    <noscript><p class="timeline-note">All pack artwork is available without JavaScript. Select a pack to open the original image.</p></noscript>
+  </section>
+  <div class="timeline-notes"><p><strong>About this archive.</strong> {{ timeline.sets|length }} entries from the original personal collection. Coverage is incomplete, especially in 2026. The author-recorded release months have not been independently verified against official sources; blank cells do not confirm that nothing was released.</p><p><strong>Reading the pattern.</strong> Compare the same month across years. Paired releases remain together. August has entries in 2002, 2018, 2019, and a pair in 2025, so seasonal patterns are observations, not predictions.</p></div>
+  <dialog class="timeline-dialog" aria-labelledby="timeline-dialog-title" data-set-dialog>
+    <button class="timeline-dialog-close" type="button" aria-label="Close set details" data-dialog-close>×</button>
+    <div class="timeline-dialog-art" data-dialog-art></div>
+    <div class="timeline-dialog-content"><p class="timeline-dialog-era" data-dialog-era></p><h2 id="timeline-dialog-title" lang="ja"></h2><p class="timeline-dialog-date" data-dialog-date></p><p class="timeline-note">The archive records a release month, not an exact day.</p><a class="timeline-source" data-dialog-source target="_blank" rel="noopener noreferrer">Official product page ↗</a><p class="timeline-note" data-dialog-no-source>No official product link was recorded for this entry.</p><a class="timeline-original" data-dialog-original target="_blank" rel="noopener noreferrer">Open original artwork ↗</a></div>
+  </dialog>
+  <script type="application/json" id="timeline-data">{{ timeline|tojson }}</script>
+</article>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/timeline.js" defer></script>{% endblock %}

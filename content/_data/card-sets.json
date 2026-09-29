@@ -1,0 +1,1974 @@
+{
+  "metadata": {
+    "title": "Japanese Pokémon card release archive",
+    "description": "An author-maintained snapshot of Japanese booster releases, imported from the original timeline.",
+    "coverageStart": "1996-10",
+    "coverageEnd": "2026-09",
+    "source": "/card/2024/02/timeline.html",
+    "archivedSource": "docs/legacy-timeline.html.txt",
+    "precision": "month",
+    "recordCount": 186,
+    "datePolicy": "Year and month preserve the original table cells; official release dates have not been independently verified.",
+    "codePolicy": "Codes are original image filename stems with a trailing -key removed, not verified product identifiers.",
+    "coverageNote": "This is an incomplete historical snapshot, not a live release calendar. Empty months mean no entry was recorded; they do not establish that no product was released. The final year is partial.",
+    "notes": [
+      "Paired releases remain individual entries in the same month.",
+      "Placeholder links are null; original images and Japanese names are preserved.",
+      "The 2025 August cell contains Mega Brave and Mega Symphonia, so an archive-wide claim that August is always empty would be false.",
+      "VS and Web images exist in the repository but have no actual entries in the original table; they are not silently added."
+    ]
+  },
+  "eras": [
+    {
+      "id": "original",
+      "label": "Original Series"
+    },
+    {
+      "id": "neo",
+      "label": "Neo"
+    },
+    {
+      "id": "e",
+      "label": "e-Card"
+    },
+    {
+      "id": "ADV",
+      "label": "ADV"
+    },
+    {
+      "id": "PCG",
+      "label": "PCG"
+    },
+    {
+      "id": "DP",
+      "label": "Diamond & Pearl"
+    },
+    {
+      "id": "DPt",
+      "label": "Platinum"
+    },
+    {
+      "id": "LEGEND",
+      "label": "LEGEND"
+    },
+    {
+      "id": "BW",
+      "label": "Black & White"
+    },
+    {
+      "id": "XY",
+      "label": "XY"
+    },
+    {
+      "id": "SM",
+      "label": "Sun & Moon"
+    },
+    {
+      "id": "S",
+      "label": "Sword & Shield"
+    },
+    {
+      "id": "SV",
+      "label": "Scarlet & Violet"
+    },
+    {
+      "id": "M",
+      "label": "Mega Evolution"
+    }
+  ],
+  "years": [
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "sets": [
+    {
+      "id": "2026-01-m-m3",
+      "year": 2026,
+      "month": 1,
+      "name": "ムニキスゼロ",
+      "era": "M",
+      "code": "M3",
+      "image": "/assets/images/card/set-package-jp/M/M3.png",
+      "url": "https://www.pokemon-card.com/ex/m3/"
+    },
+    {
+      "id": "2026-03-m-m4",
+      "year": 2026,
+      "month": 3,
+      "name": "ニンジャスピナー",
+      "era": "M",
+      "code": "M4",
+      "image": "/assets/images/card/set-package-jp/M/M4.png",
+      "url": "https://www.pokemon-card.com/ex/m4/"
+    },
+    {
+      "id": "2026-05-m-m5",
+      "year": 2026,
+      "month": 5,
+      "name": "アビスアイ",
+      "era": "M",
+      "code": "M5",
+      "image": "/assets/images/card/set-package-jp/M/M5.png",
+      "url": "https://www.pokemon-card.com/ex/m5/"
+    },
+    {
+      "id": "2026-09-m-m6a",
+      "year": 2026,
+      "month": 9,
+      "name": "30th CELEBRATION",
+      "era": "M",
+      "code": "M6a",
+      "image": "/assets/images/card/set-package-jp/M/M6a.webp",
+      "url": "https://www.30th.pokemon-card.com/product/m6a"
+    },
+    {
+      "id": "2025-01-sv-sv9",
+      "year": 2025,
+      "month": 1,
+      "name": "バトルパートナーズ",
+      "era": "SV",
+      "code": "sv9",
+      "image": "/assets/images/card/set-package-jp/SV/sv9.png",
+      "url": "https://www.pokemon-card.com/ex/sv9/"
+    },
+    {
+      "id": "2025-03-sv-sv9a",
+      "year": 2025,
+      "month": 3,
+      "name": "熱風のアリーナ",
+      "era": "SV",
+      "code": "sv9a",
+      "image": "/assets/images/card/set-package-jp/SV/sv9a.png",
+      "url": "https://www.pokemon-card.com/products/sv/sv9a.html"
+    },
+    {
+      "id": "2025-04-sv-sv10",
+      "year": 2025,
+      "month": 4,
+      "name": "ロケット団の栄光",
+      "era": "SV",
+      "code": "sv10",
+      "image": "/assets/images/card/set-package-jp/SV/sv10.png",
+      "url": "https://www.pokemon-card.com/ex/sv10/"
+    },
+    {
+      "id": "2025-06-sv-sv11b",
+      "year": 2025,
+      "month": 6,
+      "name": "ブラックボルト",
+      "era": "SV",
+      "code": "SV11B",
+      "image": "/assets/images/card/set-package-jp/SV/SV11B.png",
+      "url": "https://www.pokemon-card.com/ex/sv11/"
+    },
+    {
+      "id": "2025-06-sv-sv11w",
+      "year": 2025,
+      "month": 6,
+      "name": "ホワイトフレア",
+      "era": "SV",
+      "code": "SV11W",
+      "image": "/assets/images/card/set-package-jp/SV/SV11W.png",
+      "url": "https://www.pokemon-card.com/ex/sv11/"
+    },
+    {
+      "id": "2025-08-m-m1l",
+      "year": 2025,
+      "month": 8,
+      "name": "メガブレイブ",
+      "era": "M",
+      "code": "M1L",
+      "image": "/assets/images/card/set-package-jp/M/M1L.png",
+      "url": "https://www.pokemon-card.com/ex/m1/"
+    },
+    {
+      "id": "2025-08-m-m1s",
+      "year": 2025,
+      "month": 8,
+      "name": "メガシンフォニア",
+      "era": "M",
+      "code": "M1S",
+      "image": "/assets/images/card/set-package-jp/M/M1S.png",
+      "url": "https://www.pokemon-card.com/ex/m1/"
+    },
+    {
+      "id": "2025-09-m-m2",
+      "year": 2025,
+      "month": 9,
+      "name": "インフェルノX",
+      "era": "M",
+      "code": "M2",
+      "image": "/assets/images/card/set-package-jp/M/M2.png",
+      "url": "https://www.pokemon-card.com/ex/m2/"
+    },
+    {
+      "id": "2025-11-m-m2a",
+      "year": 2025,
+      "month": 11,
+      "name": "MEGAドリームex",
+      "era": "M",
+      "code": "M2a",
+      "image": "/assets/images/card/set-package-jp/M/M2a.png",
+      "url": "https://www.pokemon-card.com/ex/m2a/"
+    },
+    {
+      "id": "2024-01-sv-sv5k",
+      "year": 2024,
+      "month": 1,
+      "name": "ワイルドフォース",
+      "era": "SV",
+      "code": "SV5K",
+      "image": "/assets/images/card/set-package-jp/SV/SV5K-key.png",
+      "url": null
+    },
+    {
+      "id": "2024-01-sv-sv5m",
+      "year": 2024,
+      "month": 1,
+      "name": "サイバージャッジ",
+      "era": "SV",
+      "code": "SV5M",
+      "image": "/assets/images/card/set-package-jp/SV/SV5M-key.png",
+      "url": null
+    },
+    {
+      "id": "2024-03-sv-sv5a",
+      "year": 2024,
+      "month": 3,
+      "name": "クリムゾンヘイズ",
+      "era": "SV",
+      "code": "SV5a",
+      "image": "/assets/images/card/set-package-jp/SV/SV5a-key.png",
+      "url": null
+    },
+    {
+      "id": "2024-04-sv-sv6",
+      "year": 2024,
+      "month": 4,
+      "name": "変幻の仮面",
+      "era": "SV",
+      "code": "SV6",
+      "image": "/assets/images/card/set-package-jp/SV/SV6-key.png",
+      "url": null
+    },
+    {
+      "id": "2024-06-sv-sv6a-1",
+      "year": 2024,
+      "month": 6,
+      "name": "ナイトワンダラー",
+      "era": "SV",
+      "code": "SV6a_1",
+      "image": "/assets/images/card/set-package-jp/SV/SV6a_1.png",
+      "url": null
+    },
+    {
+      "id": "2024-07-sv-sv7",
+      "year": 2024,
+      "month": 7,
+      "name": "ステラミラクル",
+      "era": "SV",
+      "code": "SV7",
+      "image": "/assets/images/card/set-package-jp/SV/SV7.png",
+      "url": "https://www.pokemon-card.com/ex/sv7/"
+    },
+    {
+      "id": "2024-09-sv-sv7a",
+      "year": 2024,
+      "month": 9,
+      "name": "楽園ドラゴーナ",
+      "era": "SV",
+      "code": "sv7a",
+      "image": "/assets/images/card/set-package-jp/SV/sv7a-key.png",
+      "url": "https://www.pokemon-card.com/products/sv/sv7a.html"
+    },
+    {
+      "id": "2024-10-sv-sv8",
+      "year": 2024,
+      "month": 10,
+      "name": "超電ブレイカー",
+      "era": "SV",
+      "code": "SV8",
+      "image": "/assets/images/card/set-package-jp/SV/SV8.png",
+      "url": "https://www.pokemon-card.com/ex/sv8/"
+    },
+    {
+      "id": "2024-12-sv-sv8a",
+      "year": 2024,
+      "month": 12,
+      "name": "テラスタルフェスex",
+      "era": "SV",
+      "code": "SV8a",
+      "image": "/assets/images/card/set-package-jp/SV/SV8a.png",
+      "url": "https://www.pokemon-card.com/ex/sv8a/"
+    },
+    {
+      "id": "2023-01-sv-sv1s",
+      "year": 2023,
+      "month": 1,
+      "name": "スカーレットex",
+      "era": "SV",
+      "code": "SV1S",
+      "image": "/assets/images/card/set-package-jp/SV/SV1S-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-01-sv-sv1v",
+      "year": 2023,
+      "month": 1,
+      "name": "バイオレットex",
+      "era": "SV",
+      "code": "SV1V",
+      "image": "/assets/images/card/set-package-jp/SV/SV1V-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-03-sv-sv1a",
+      "year": 2023,
+      "month": 3,
+      "name": "トリプレットビート",
+      "era": "SV",
+      "code": "SV1a",
+      "image": "/assets/images/card/set-package-jp/SV/SV1a-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-04-sv-sv2p",
+      "year": 2023,
+      "month": 4,
+      "name": "スノーハザード",
+      "era": "SV",
+      "code": "SV2P",
+      "image": "/assets/images/card/set-package-jp/SV/SV2P-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-04-sv-sv2d",
+      "year": 2023,
+      "month": 4,
+      "name": "クレイバースト",
+      "era": "SV",
+      "code": "SV2D",
+      "image": "/assets/images/card/set-package-jp/SV/SV2D-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-06-sv-sv2a",
+      "year": 2023,
+      "month": 6,
+      "name": "ポケモンカード151（イチゴーイチ）",
+      "era": "SV",
+      "code": "SV2a",
+      "image": "/assets/images/card/set-package-jp/SV/SV2a-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-07-sv-sv3",
+      "year": 2023,
+      "month": 7,
+      "name": "黒炎の支配者",
+      "era": "SV",
+      "code": "SV3",
+      "image": "/assets/images/card/set-package-jp/SV/SV3-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-09-sv-sv3a",
+      "year": 2023,
+      "month": 9,
+      "name": "レイジングサーフ",
+      "era": "SV",
+      "code": "SV3a",
+      "image": "/assets/images/card/set-package-jp/SV/SV3a-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-10-sv-sv4k",
+      "year": 2023,
+      "month": 10,
+      "name": "古代の咆哮",
+      "era": "SV",
+      "code": "SV4K",
+      "image": "/assets/images/card/set-package-jp/SV/SV4K-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-10-sv-sv4m",
+      "year": 2023,
+      "month": 10,
+      "name": "未来の一閃",
+      "era": "SV",
+      "code": "SV4M",
+      "image": "/assets/images/card/set-package-jp/SV/SV4M-key.png",
+      "url": null
+    },
+    {
+      "id": "2023-12-sv-sv4a",
+      "year": 2023,
+      "month": 12,
+      "name": "シャイニートレジャーex",
+      "era": "SV",
+      "code": "SV4a",
+      "image": "/assets/images/card/set-package-jp/SV/SV4a.png",
+      "url": null
+    },
+    {
+      "id": "2022-01-s-s9",
+      "year": 2022,
+      "month": 1,
+      "name": "スターバースュ",
+      "era": "S",
+      "code": "S9",
+      "image": "/assets/images/card/set-package-jp/S/S9-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-02-s-s9a",
+      "year": 2022,
+      "month": 2,
+      "name": "バトルリージョン",
+      "era": "S",
+      "code": "S9a",
+      "image": "/assets/images/card/set-package-jp/S/S9a-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-04-s-s10d",
+      "year": 2022,
+      "month": 4,
+      "name": "タイムゲイザー",
+      "era": "S",
+      "code": "S10D",
+      "image": "/assets/images/card/set-package-jp/S/S10D-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-04-s-s10p",
+      "year": 2022,
+      "month": 4,
+      "name": "スペースジャグラー",
+      "era": "S",
+      "code": "S10P",
+      "image": "/assets/images/card/set-package-jp/S/S10P-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-05-s-s10a",
+      "year": 2022,
+      "month": 5,
+      "name": "ダークファンタズマ",
+      "era": "S",
+      "code": "S10a",
+      "image": "/assets/images/card/set-package-jp/S/S10a-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-06-s-s10b",
+      "year": 2022,
+      "month": 6,
+      "name": "Pokémon GO",
+      "era": "S",
+      "code": "S10b",
+      "image": "/assets/images/card/set-package-jp/S/S10b-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-07-s-s11",
+      "year": 2022,
+      "month": 7,
+      "name": "ロストアビス",
+      "era": "S",
+      "code": "S11",
+      "image": "/assets/images/card/set-package-jp/S/S11-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-09-s-s11a",
+      "year": 2022,
+      "month": 9,
+      "name": "白熱のアルカナ",
+      "era": "S",
+      "code": "S11a",
+      "image": "/assets/images/card/set-package-jp/S/S11a-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-10-s-s12",
+      "year": 2022,
+      "month": 10,
+      "name": "パラダイムトリガー",
+      "era": "S",
+      "code": "S12",
+      "image": "/assets/images/card/set-package-jp/S/S12-key.png",
+      "url": null
+    },
+    {
+      "id": "2022-12-s-s12a",
+      "year": 2022,
+      "month": 12,
+      "name": "VSTARユニバース",
+      "era": "S",
+      "code": "S12a",
+      "image": "/assets/images/card/set-package-jp/S/S12a-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-01-s-s5i",
+      "year": 2021,
+      "month": 1,
+      "name": "一撃マスター",
+      "era": "S",
+      "code": "S5I",
+      "image": "/assets/images/card/set-package-jp/S/S5I-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-01-s-s5r",
+      "year": 2021,
+      "month": 1,
+      "name": "連撃マスター",
+      "era": "S",
+      "code": "S5R",
+      "image": "/assets/images/card/set-package-jp/S/S5R-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-03-s-s5a",
+      "year": 2021,
+      "month": 3,
+      "name": "双璧のファイター",
+      "era": "S",
+      "code": "S5a",
+      "image": "/assets/images/card/set-package-jp/S/S5a-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-04-s-s6h",
+      "year": 2021,
+      "month": 4,
+      "name": "白銀のランス",
+      "era": "S",
+      "code": "S6H",
+      "image": "/assets/images/card/set-package-jp/S/S6H-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-04-s-s6k",
+      "year": 2021,
+      "month": 4,
+      "name": "漆黒のガイスト",
+      "era": "S",
+      "code": "S6K",
+      "image": "/assets/images/card/set-package-jp/S/S6K-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-05-s-s6a",
+      "year": 2021,
+      "month": 5,
+      "name": "イーブイヒーローズ",
+      "era": "S",
+      "code": "S6a",
+      "image": "/assets/images/card/set-package-jp/S/S6a-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-07-s-s7d",
+      "year": 2021,
+      "month": 7,
+      "name": "摩天パーフェクト",
+      "era": "S",
+      "code": "S7D",
+      "image": "/assets/images/card/set-package-jp/S/S7D-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-07-s-s7r",
+      "year": 2021,
+      "month": 7,
+      "name": "蒼空ストリーム",
+      "era": "S",
+      "code": "S7R",
+      "image": "/assets/images/card/set-package-jp/S/S7R-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-09-s-s8",
+      "year": 2021,
+      "month": 9,
+      "name": "フュージョンアーツ",
+      "era": "S",
+      "code": "S8",
+      "image": "/assets/images/card/set-package-jp/S/S8-key.png",
+      "url": null
+    },
+    {
+      "id": "2021-10-s-s8a",
+      "year": 2021,
+      "month": 10,
+      "name": "25th ANNIVERSARY COLLECTION",
+      "era": "S",
+      "code": "S8a",
+      "image": "/assets/images/card/set-package-jp/S/S8a.png",
+      "url": null
+    },
+    {
+      "id": "2021-12-s-s8b",
+      "year": 2021,
+      "month": 12,
+      "name": "VMAXクライマックス",
+      "era": "S",
+      "code": "S8b",
+      "image": "/assets/images/card/set-package-jp/S/S8b-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-02-s-s1a",
+      "year": 2020,
+      "month": 2,
+      "name": "VMAXライジング",
+      "era": "S",
+      "code": "S1a",
+      "image": "/assets/images/card/set-package-jp/S/S1a-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-03-s-s2",
+      "year": 2020,
+      "month": 3,
+      "name": "反逆クラッシュ",
+      "era": "S",
+      "code": "S2",
+      "image": "/assets/images/card/set-package-jp/S/S2-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-04-s-s2a",
+      "year": 2020,
+      "month": 4,
+      "name": "爆炎ウォーカー",
+      "era": "S",
+      "code": "S2a",
+      "image": "/assets/images/card/set-package-jp/S/S2a-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-06-s-s3",
+      "year": 2020,
+      "month": 6,
+      "name": "ムゲンゾーン",
+      "era": "S",
+      "code": "S3",
+      "image": "/assets/images/card/set-package-jp/S/S3-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-07-s-s3a",
+      "year": 2020,
+      "month": 7,
+      "name": "伝説の鼓動",
+      "era": "S",
+      "code": "S3a",
+      "image": "/assets/images/card/set-package-jp/S/S3a-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-09-s-s4",
+      "year": 2020,
+      "month": 9,
+      "name": "仰天のボルテッカー",
+      "era": "S",
+      "code": "S4",
+      "image": "/assets/images/card/set-package-jp/S/S4-key.png",
+      "url": null
+    },
+    {
+      "id": "2020-11-s-s4a",
+      "year": 2020,
+      "month": 11,
+      "name": "シャイニースターV Shiny Star V",
+      "era": "S",
+      "code": "S4a",
+      "image": "/assets/images/card/set-package-jp/S/S4a-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-01-sm-sm9a",
+      "year": 2019,
+      "month": 1,
+      "name": "ナイトユニゾン",
+      "era": "SM",
+      "code": "SM9a",
+      "image": "/assets/images/card/set-package-jp/SM/SM9a-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-02-sm-sm9b",
+      "year": 2019,
+      "month": 2,
+      "name": "フルメタルウォール",
+      "era": "SM",
+      "code": "SM9b",
+      "image": "/assets/images/card/set-package-jp/SM/SM9b-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-03-sm-sm10",
+      "year": 2019,
+      "month": 3,
+      "name": "ダブルブレイズ",
+      "era": "SM",
+      "code": "SM10",
+      "image": "/assets/images/card/set-package-jp/SM/SM10-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-04-sm-sm10a",
+      "year": 2019,
+      "month": 4,
+      "name": "ジージーエンド",
+      "era": "SM",
+      "code": "SM10a",
+      "image": "/assets/images/card/set-package-jp/SM/SM10a-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-04-sm-smp2",
+      "year": 2019,
+      "month": 4,
+      "name": "名探偵ピカチュウ",
+      "era": "SM",
+      "code": "SMP2",
+      "image": "/assets/images/card/set-package-jp/SM/SMP2-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-04-sm-sm10b",
+      "year": 2019,
+      "month": 4,
+      "name": "スカイレジェンド",
+      "era": "SM",
+      "code": "SM10b",
+      "image": "/assets/images/card/set-package-jp/SM/SM10b-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-05-sm-sm11",
+      "year": 2019,
+      "month": 5,
+      "name": "ミラクルツイン",
+      "era": "SM",
+      "code": "SM11",
+      "image": "/assets/images/card/set-package-jp/SM/SM11-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-07-sm-sm11a",
+      "year": 2019,
+      "month": 7,
+      "name": "リミックスバウト",
+      "era": "SM",
+      "code": "SM11a",
+      "image": "/assets/images/card/set-package-jp/SM/SM11a-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-08-sm-sm11b",
+      "year": 2019,
+      "month": 8,
+      "name": "ドリームリーグ",
+      "era": "SM",
+      "code": "SM11b",
+      "image": "/assets/images/card/set-package-jp/SM/SM11b.png",
+      "url": null
+    },
+    {
+      "id": "2019-09-sm-sm12",
+      "year": 2019,
+      "month": 9,
+      "name": "オルタージェネシス",
+      "era": "SM",
+      "code": "SM12",
+      "image": "/assets/images/card/set-package-jp/SM/SM12-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-10-sm-sm12a",
+      "year": 2019,
+      "month": 10,
+      "name": "TAG TEAM GX タッグオールスターズ",
+      "era": "SM",
+      "code": "SM12a",
+      "image": "/assets/images/card/set-package-jp/SM/SM12a.png",
+      "url": null
+    },
+    {
+      "id": "2019-12-s-s1h",
+      "year": 2019,
+      "month": 12,
+      "name": "シールド Shield",
+      "era": "S",
+      "code": "S1h",
+      "image": "/assets/images/card/set-package-jp/S/S1h-key.png",
+      "url": null
+    },
+    {
+      "id": "2019-12-s-s1w",
+      "year": 2019,
+      "month": 12,
+      "name": "ソード Sword",
+      "era": "S",
+      "code": "S1w",
+      "image": "/assets/images/card/set-package-jp/S/S1w-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-01-sm-sm5",
+      "year": 2018,
+      "month": 1,
+      "name": "ウルトラフォース",
+      "era": "SM",
+      "code": "SM5+",
+      "image": "/assets/images/card/set-package-jp/SM/SM5+-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-03-sm-sm6",
+      "year": 2018,
+      "month": 3,
+      "name": "禁断の光",
+      "era": "SM",
+      "code": "SM6",
+      "image": "/assets/images/card/set-package-jp/SM/SM6-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-04-sm-sm6a",
+      "year": 2018,
+      "month": 4,
+      "name": "ドラゴンストーム",
+      "era": "SM",
+      "code": "SM6a",
+      "image": "/assets/images/card/set-package-jp/SM/SM6a-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-05-sm-sm6b",
+      "year": 2018,
+      "month": 5,
+      "name": "チャンピオンロード",
+      "era": "SM",
+      "code": "SM6b",
+      "image": "/assets/images/card/set-package-jp/SM/SM6b-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-06-sm-sm7",
+      "year": 2018,
+      "month": 6,
+      "name": "裂空のカリスマ",
+      "era": "SM",
+      "code": "SM7",
+      "image": "/assets/images/card/set-package-jp/SM/SM7-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-07-sm-sm7a",
+      "year": 2018,
+      "month": 7,
+      "name": "迅雷スパーク",
+      "era": "SM",
+      "code": "SM7a",
+      "image": "/assets/images/card/set-package-jp/SM/SM7a-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-08-sm-sm7b",
+      "year": 2018,
+      "month": 8,
+      "name": "フェアリーライズ",
+      "era": "SM",
+      "code": "SM7b",
+      "image": "/assets/images/card/set-package-jp/SM/SM7b-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-09-sm-sm8",
+      "year": 2018,
+      "month": 9,
+      "name": "超爆インパクト",
+      "era": "SM",
+      "code": "SM8",
+      "image": "/assets/images/card/set-package-jp/SM/SM8-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-10-sm-sm8a",
+      "year": 2018,
+      "month": 10,
+      "name": "ダークオーダー",
+      "era": "SM",
+      "code": "SM8a",
+      "image": "/assets/images/card/set-package-jp/SM/SM8a-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-11-sm-sm8b",
+      "year": 2018,
+      "month": 11,
+      "name": "GXウルトラシャイニー",
+      "era": "SM",
+      "code": "SM8b",
+      "image": "/assets/images/card/set-package-jp/SM/SM8b-key.png",
+      "url": null
+    },
+    {
+      "id": "2018-12-sm-sm9",
+      "year": 2018,
+      "month": 12,
+      "name": "タッグボルト",
+      "era": "SM",
+      "code": "SM9",
+      "image": "/assets/images/card/set-package-jp/SM/SM9-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-01-sm-sm1",
+      "year": 2017,
+      "month": 1,
+      "name": "サン＆ムーン",
+      "era": "SM",
+      "code": "SM1+",
+      "image": "/assets/images/card/set-package-jp/SM/SM1+-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-03-sm-sm2k",
+      "year": 2017,
+      "month": 3,
+      "name": "キミを待つ島々",
+      "era": "SM",
+      "code": "SM2K",
+      "image": "/assets/images/card/set-package-jp/SM/SM2K-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-03-sm-sm2l",
+      "year": 2017,
+      "month": 3,
+      "name": "アローラの月光",
+      "era": "SM",
+      "code": "SM2L",
+      "image": "/assets/images/card/set-package-jp/SM/SM2L-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-04-xy-xy",
+      "year": 2017,
+      "month": 4,
+      "name": "THE BEST OF XY",
+      "era": "XY",
+      "code": "XY",
+      "image": "/assets/images/card/set-package-jp/XY/XY-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-04-sm-sm2",
+      "year": 2017,
+      "month": 4,
+      "name": "新たなる試練の向こう",
+      "era": "SM",
+      "code": "SM2+",
+      "image": "/assets/images/card/set-package-jp/SM/SM2+-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-06-sm-sm3h",
+      "year": 2017,
+      "month": 6,
+      "name": "闘う虹を見たか",
+      "era": "SM",
+      "code": "SM3H",
+      "image": "/assets/images/card/set-package-jp/SM/SM3H-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-06-sm-sm3n",
+      "year": 2017,
+      "month": 6,
+      "name": "光を喰らう闇",
+      "era": "SM",
+      "code": "SM3N",
+      "image": "/assets/images/card/set-package-jp/SM/SM3N-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-07-sm-sm3",
+      "year": 2017,
+      "month": 7,
+      "name": "ひかる伝説",
+      "era": "SM",
+      "code": "SM3+",
+      "image": "/assets/images/card/set-package-jp/SM/SM3+-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-09-sm-sm4s",
+      "year": 2017,
+      "month": 9,
+      "name": "覚醒の勇者",
+      "era": "SM",
+      "code": "SM4S",
+      "image": "/assets/images/card/set-package-jp/SM/SM4S-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-09-sm-sm4a",
+      "year": 2017,
+      "month": 9,
+      "name": "超次元の暴獣",
+      "era": "SM",
+      "code": "SM4A",
+      "image": "/assets/images/card/set-package-jp/SM/SM4A-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-10-sm-sm4",
+      "year": 2017,
+      "month": 10,
+      "name": "GXバトルブースト",
+      "era": "SM",
+      "code": "SM4+",
+      "image": "/assets/images/card/set-package-jp/SM/SM4+-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-12-sm-sm5s",
+      "year": 2017,
+      "month": 12,
+      "name": "ウルトラサン",
+      "era": "SM",
+      "code": "SM5S",
+      "image": "/assets/images/card/set-package-jp/SM/SM5S-key.png",
+      "url": null
+    },
+    {
+      "id": "2017-12-sm-sm5m",
+      "year": 2017,
+      "month": 12,
+      "name": "ウルトラサン",
+      "era": "SM",
+      "code": "SM5M",
+      "image": "/assets/images/card/set-package-jp/SM/SM5M-key.png",
+      "url": null
+    },
+    {
+      "id": "2016-01-xy-cp3",
+      "year": 2016,
+      "month": 1,
+      "name": "コンセプトパック「ポケキュンコレクション」",
+      "era": "XY",
+      "code": "cp3",
+      "image": "/assets/images/card/set-package-jp/XY/cp3-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp3.html"
+    },
+    {
+      "id": "2016-03-xy-xy10",
+      "year": 2016,
+      "month": 3,
+      "name": "拡張パック「めざめる超王」",
+      "era": "XY",
+      "code": "xy10",
+      "image": "/assets/images/card/set-package-jp/XY/xy10-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy10.html"
+    },
+    {
+      "id": "2016-04-xy-cp4",
+      "year": 2016,
+      "month": 4,
+      "name": "プレミアムチャンピオンパック「EX×M×BREAK」",
+      "era": "XY",
+      "code": "cp4",
+      "image": "/assets/images/card/set-package-jp/XY/cp4-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp4.html"
+    },
+    {
+      "id": "2016-06-xy-xy11r",
+      "year": 2016,
+      "month": 6,
+      "name": "拡張パック「冷酷の反逆者」",
+      "era": "XY",
+      "code": "xy11r",
+      "image": "/assets/images/card/set-package-jp/XY/xy11r-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy11.html"
+    },
+    {
+      "id": "2016-06-xy-xy11h",
+      "year": 2016,
+      "month": 6,
+      "name": "拡張パック「爆熱の闘士」",
+      "era": "XY",
+      "code": "xy11h",
+      "image": "/assets/images/card/set-package-jp/XY/xy11h-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy11.html"
+    },
+    {
+      "id": "2016-07-xy-cp5",
+      "year": 2016,
+      "month": 7,
+      "name": "コンセプトパック「幻・伝説ドリームキラコレクション」",
+      "era": "XY",
+      "code": "cp5",
+      "image": "/assets/images/card/set-package-jp/XY/cp5-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp5.html"
+    },
+    {
+      "id": "2016-09-xy-cp6",
+      "year": 2016,
+      "month": 9,
+      "name": "コンセプトパック「ポケットモンスターカードゲーム 拡張パック 20th Anniversary」",
+      "era": "XY",
+      "code": "cp6",
+      "image": "/assets/images/card/set-package-jp/XY/cp6-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp6.html"
+    },
+    {
+      "id": "2016-12-sm-sm1s",
+      "year": 2016,
+      "month": 12,
+      "name": "コレクション サン",
+      "era": "SM",
+      "code": "SM1S",
+      "image": "/assets/images/card/set-package-jp/SM/SM1S-key.png",
+      "url": null
+    },
+    {
+      "id": "2016-12-sm-sm1m",
+      "year": 2016,
+      "month": 12,
+      "name": "コレクション ムーン",
+      "era": "SM",
+      "code": "SM1M",
+      "image": "/assets/images/card/set-package-jp/SM/SM1M-key.png",
+      "url": null
+    },
+    {
+      "id": "2015-01-xy-cp1",
+      "year": 2015,
+      "month": 1,
+      "name": "コンセプトパック「マグマ団VSアクア団　ダブルクライシス」",
+      "era": "XY",
+      "code": "cp1",
+      "image": "/assets/images/card/set-package-jp/XY/cp1-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp1.html"
+    },
+    {
+      "id": "2015-03-xy-xy6",
+      "year": 2015,
+      "month": 3,
+      "name": "拡張パック「エメラルドブレイク」",
+      "era": "XY",
+      "code": "xy6",
+      "image": "/assets/images/card/set-package-jp/XY/xy6-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy6.html"
+    },
+    {
+      "id": "2015-06-xy-xy7",
+      "year": 2015,
+      "month": 6,
+      "name": "拡張パック「バンデットリング」",
+      "era": "XY",
+      "code": "xy7",
+      "image": "/assets/images/card/set-package-jp/XY/xy7-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy7.html"
+    },
+    {
+      "id": "2015-07-xy-cp2y",
+      "year": 2015,
+      "month": 7,
+      "name": "コンセプトパック「伝説キラコレクション」yellow",
+      "era": "XY",
+      "code": "cp2y",
+      "image": "/assets/images/card/set-package-jp/XY/cp2y-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp2.html"
+    },
+    {
+      "id": "2015-07-xy-cp2b",
+      "year": 2015,
+      "month": 7,
+      "name": "コンセプトパック「伝説キラコレクション」blue",
+      "era": "XY",
+      "code": "cp2b",
+      "image": "/assets/images/card/set-package-jp/XY/cp2b-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/cp2.html"
+    },
+    {
+      "id": "2015-09-xy-xy8k",
+      "year": 2015,
+      "month": 9,
+      "name": "拡張パック「赤い閃光」",
+      "era": "XY",
+      "code": "xy8k",
+      "image": "/assets/images/card/set-package-jp/XY/xy8k-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy8.html"
+    },
+    {
+      "id": "2015-09-xy-xy8o",
+      "year": 2015,
+      "month": 9,
+      "name": "拡張パック 「青い衝撃」",
+      "era": "XY",
+      "code": "xy8o",
+      "image": "/assets/images/card/set-package-jp/XY/xy8o-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy8.html"
+    },
+    {
+      "id": "2015-12-xy-xy9",
+      "year": 2015,
+      "month": 12,
+      "name": "拡張パック「破天の怒り」",
+      "era": "XY",
+      "code": "xy9",
+      "image": "/assets/images/card/set-package-jp/XY/xy9-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy9.html"
+    },
+    {
+      "id": "2014-03-xy-xy2",
+      "year": 2014,
+      "month": 3,
+      "name": "拡張パック「ワイルドブレイズ」",
+      "era": "XY",
+      "code": "xy2",
+      "image": "/assets/images/card/set-package-jp/XY/xy2-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy2.html"
+    },
+    {
+      "id": "2014-06-xy-xy3",
+      "year": 2014,
+      "month": 6,
+      "name": "拡張パック「ライジングフィスト」",
+      "era": "XY",
+      "code": "xy3",
+      "image": "/assets/images/card/set-package-jp/XY/xy3-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy3.html"
+    },
+    {
+      "id": "2014-09-xy-xy4",
+      "year": 2014,
+      "month": 9,
+      "name": "拡張パック「ファントムゲート」",
+      "era": "XY",
+      "code": "xy4",
+      "image": "/assets/images/card/set-package-jp/XY/xy4-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy4.html"
+    },
+    {
+      "id": "2014-12-xy-xy5r",
+      "year": 2014,
+      "month": 12,
+      "name": "拡張パック「ガイアボルケーノ」",
+      "era": "XY",
+      "code": "xy5r",
+      "image": "/assets/images/card/set-package-jp/XY/xy5r-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy5.html"
+    },
+    {
+      "id": "2014-12-xy-xy5b",
+      "year": 2014,
+      "month": 12,
+      "name": "拡張パック「タイダルストーム」",
+      "era": "XY",
+      "code": "xy5b",
+      "image": "/assets/images/card/set-package-jp/XY/xy5b-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy5.html"
+    },
+    {
+      "id": "2013-02-bw-sc",
+      "year": 2013,
+      "month": 2,
+      "name": "コンセプトパック「シャイニーコレクション」",
+      "era": "BW",
+      "code": "sc",
+      "image": "/assets/images/card/set-package-jp/BW/sc-key.png",
+      "url": null
+    },
+    {
+      "id": "2013-03-bw-bw9",
+      "year": 2013,
+      "month": 3,
+      "name": "拡張パック「メガロキャノン」",
+      "era": "BW",
+      "code": "bw9",
+      "image": "/assets/images/card/set-package-jp/BW/bw9-key.png",
+      "url": null
+    },
+    {
+      "id": "2013-07-bw-ebb",
+      "year": 2013,
+      "month": 7,
+      "name": "コンセプトパック「EXバトルブースト」",
+      "era": "BW",
+      "code": "ebb",
+      "image": "/assets/images/card/set-package-jp/BW/ebb-key.png",
+      "url": null
+    },
+    {
+      "id": "2013-12-xy-xy1x",
+      "year": 2013,
+      "month": 12,
+      "name": "拡張パック「コレクションX」",
+      "era": "XY",
+      "code": "xy1x",
+      "image": "/assets/images/card/set-package-jp/XY/xy1x-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy1.html"
+    },
+    {
+      "id": "2013-12-xy-xy1y",
+      "year": 2013,
+      "month": 12,
+      "name": "拡張パック「コレクションY」",
+      "era": "XY",
+      "code": "xy1y",
+      "image": "/assets/images/card/set-package-jp/XY/xy1y-key.png",
+      "url": "https://www.pokemon-card.com/products/xy/xy1.html"
+    },
+    {
+      "id": "2012-01-bw-ds",
+      "year": 2012,
+      "month": 1,
+      "name": "拡張パック「ドラゴンセレクション」",
+      "era": "BW",
+      "code": "ds",
+      "image": "/assets/images/card/set-package-jp/BW/ds-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-03-bw-bw5g",
+      "year": 2012,
+      "month": 3,
+      "name": "拡張パック「リューズブラスト」",
+      "era": "BW",
+      "code": "bw5g",
+      "image": "/assets/images/card/set-package-jp/BW/bw5g-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-03-bw-bw5r",
+      "year": 2012,
+      "month": 3,
+      "name": "拡張パック「リューノブレード」",
+      "era": "BW",
+      "code": "bw5r",
+      "image": "/assets/images/card/set-package-jp/BW/bw5r-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-07-bw-bw6b",
+      "year": 2012,
+      "month": 7,
+      "name": "拡張パック「フリーズボルト」",
+      "era": "BW",
+      "code": "bw6b",
+      "image": "/assets/images/card/set-package-jp/BW/bw6b-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-07-bw-bw6r",
+      "year": 2012,
+      "month": 7,
+      "name": "拡張パック「コールドフレア」",
+      "era": "BW",
+      "code": "bw6r",
+      "image": "/assets/images/card/set-package-jp/BW/bw6r-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-09-bw-bw7",
+      "year": 2012,
+      "month": 9,
+      "name": "拡張パック「プラズマゲイル」",
+      "era": "BW",
+      "code": "bw7",
+      "image": "/assets/images/card/set-package-jp/BW/bw7-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-12-bw-bw8r",
+      "year": 2012,
+      "month": 12,
+      "name": "拡張パック「ラセンフォース」",
+      "era": "BW",
+      "code": "bw8r",
+      "image": "/assets/images/card/set-package-jp/BW/bw8r-key.png",
+      "url": null
+    },
+    {
+      "id": "2012-12-bw-bw8b",
+      "year": 2012,
+      "month": 12,
+      "name": "拡張パック「ライデンナックル」",
+      "era": "BW",
+      "code": "bw8b",
+      "image": "/assets/images/card/set-package-jp/BW/bw8b-key.png",
+      "url": null
+    },
+    {
+      "id": "2011-07-bw-bw2",
+      "year": 2011,
+      "month": 7,
+      "name": "拡張パック「レッドコレクション」",
+      "era": "BW",
+      "code": "bw2",
+      "image": "/assets/images/card/set-package-jp/BW/bw2-key.png",
+      "url": null
+    },
+    {
+      "id": "2011-09-bw-bw3p",
+      "year": 2011,
+      "month": 9,
+      "name": "拡張パック「サイコドライブ」",
+      "era": "BW",
+      "code": "bw3p",
+      "image": "/assets/images/card/set-package-jp/BW/bw3p-key.png",
+      "url": null
+    },
+    {
+      "id": "2011-09-bw-bw3b",
+      "year": 2011,
+      "month": 9,
+      "name": "拡張パック「ヘイルブリザード」",
+      "era": "BW",
+      "code": "bw3b",
+      "image": "/assets/images/card/set-package-jp/BW/bw3b-key.png",
+      "url": null
+    },
+    {
+      "id": "2011-12-bw-bw4",
+      "year": 2011,
+      "month": 12,
+      "name": "拡張パック「ダークラッシュ」",
+      "era": "BW",
+      "code": "bw4",
+      "image": "/assets/images/card/set-package-jp/BW/bw4-key.png",
+      "url": null
+    },
+    {
+      "id": "2010-02-legend-l2",
+      "year": 2010,
+      "month": 2,
+      "name": "拡張パック「よみがえる伝説」",
+      "era": "LEGEND",
+      "code": "l2",
+      "image": "/assets/images/card/set-package-jp/LEGEND/l2-key.png",
+      "url": null
+    },
+    {
+      "id": "2010-04-legend-ll",
+      "year": 2010,
+      "month": 4,
+      "name": "強化パック「ロストリンク」",
+      "era": "LEGEND",
+      "code": "ll",
+      "image": "/assets/images/card/set-package-jp/LEGEND/ll-key.png",
+      "url": null
+    },
+    {
+      "id": "2010-07-legend-l3",
+      "year": 2010,
+      "month": 7,
+      "name": "拡張パック「頂上大激突」",
+      "era": "LEGEND",
+      "code": "l3",
+      "image": "/assets/images/card/set-package-jp/LEGEND/l3-key.png",
+      "url": null
+    },
+    {
+      "id": "2010-12-bw-bw1w",
+      "year": 2010,
+      "month": 12,
+      "name": "拡張パック「ブラックコレクション」",
+      "era": "BW",
+      "code": "bw1w",
+      "image": "/assets/images/card/set-package-jp/BW/bw1w-key.png",
+      "url": null
+    },
+    {
+      "id": "2010-12-bw-bw1b",
+      "year": 2010,
+      "month": 12,
+      "name": "拡張パック「ホワイトコレクション」",
+      "era": "BW",
+      "code": "bw1b",
+      "image": "/assets/images/card/set-package-jp/BW/bw1b-key.png",
+      "url": null
+    },
+    {
+      "id": "2009-03-dpt-pt3",
+      "year": 2009,
+      "month": 3,
+      "name": "拡張パック「フロンティアの鼓動」",
+      "era": "DPt",
+      "code": "pt3",
+      "image": "/assets/images/card/set-package-jp/DPt/pt3-key.png",
+      "url": null
+    },
+    {
+      "id": "2009-07-dpt-pt4",
+      "year": 2009,
+      "month": 7,
+      "name": "拡張パック「アルセウス光臨」",
+      "era": "DPt",
+      "code": "pt4",
+      "image": "/assets/images/card/set-package-jp/DPt/pt4-key.png",
+      "url": null
+    },
+    {
+      "id": "2009-10-legend-l1g",
+      "year": 2009,
+      "month": 10,
+      "name": "拡張パック「ハートゴールドコレクション」",
+      "era": "LEGEND",
+      "code": "l1g",
+      "image": "/assets/images/card/set-package-jp/LEGEND/l1g-key.png",
+      "url": null
+    },
+    {
+      "id": "2009-10-legend-l1s",
+      "year": 2009,
+      "month": 10,
+      "name": "拡張パック「ソウルシルバーコレクション」",
+      "era": "LEGEND",
+      "code": "l1s",
+      "image": "/assets/images/card/set-package-jp/LEGEND/l1s-key.png",
+      "url": null
+    },
+    {
+      "id": "2008-03-dp-dp5r",
+      "year": 2008,
+      "month": 3,
+      "name": "拡張パック「秘境の叫び」",
+      "era": "DP",
+      "code": "dp5r",
+      "image": "/assets/images/card/set-package-jp/DP/dp5r-key.png",
+      "url": null
+    },
+    {
+      "id": "2008-03-dp-dp5w",
+      "year": 2008,
+      "month": 3,
+      "name": "拡張パック「怒りの神殿」",
+      "era": "DP",
+      "code": "dp5w",
+      "image": "/assets/images/card/set-package-jp/DP/dp5w-key.png",
+      "url": null
+    },
+    {
+      "id": "2008-07-dp-dp6",
+      "year": 2008,
+      "month": 7,
+      "name": "拡張パック「破空の激闘」",
+      "era": "DP",
+      "code": "dp6",
+      "image": "/assets/images/card/set-package-jp/DP/dp6-key.png",
+      "url": null
+    },
+    {
+      "id": "2008-10-dpt-pt1",
+      "year": 2008,
+      "month": 10,
+      "name": "拡張パック「ギンガの覇道」",
+      "era": "DPt",
+      "code": "pt1",
+      "image": "/assets/images/card/set-package-jp/DPt/pt1-key.png",
+      "url": null
+    },
+    {
+      "id": "2008-12-dpt-pt2",
+      "year": 2008,
+      "month": 12,
+      "name": "拡張パック「時の果ての絆」",
+      "era": "DPt",
+      "code": "pt2",
+      "image": "/assets/images/card/set-package-jp/DPt/pt2-key.png",
+      "url": null
+    },
+    {
+      "id": "2007-03-dp-dp2",
+      "year": 2007,
+      "month": 3,
+      "name": "拡張パック「湖の秘密」",
+      "era": "DP",
+      "code": "dp2",
+      "image": "/assets/images/card/set-package-jp/DP/dp2-key.png",
+      "url": null
+    },
+    {
+      "id": "2007-07-dp-dp3",
+      "year": 2007,
+      "month": 7,
+      "name": "拡張パック「ひかる闇」",
+      "era": "DP",
+      "code": "dp3",
+      "image": "/assets/images/card/set-package-jp/DP/dp3-key.png",
+      "url": null
+    },
+    {
+      "id": "2007-10-dp-dp4p",
+      "year": 2007,
+      "month": 10,
+      "name": "拡張パック「月光の追跡」",
+      "era": "DP",
+      "code": "dp4p",
+      "image": "/assets/images/card/set-package-jp/DP/dp4p-key.png",
+      "url": null
+    },
+    {
+      "id": "2007-10-dp-dp4y",
+      "year": 2007,
+      "month": 10,
+      "name": "拡張パック「夜明けの疾走」",
+      "era": "DP",
+      "code": "dp4y",
+      "image": "/assets/images/card/set-package-jp/DP/dp4y-key.png",
+      "url": null
+    },
+    {
+      "id": "2006-01-pcg-7",
+      "year": 2006,
+      "month": 1,
+      "name": "拡張パック「ホロンの幻影(かげ)」",
+      "era": "PCG",
+      "code": "7",
+      "image": "/assets/images/card/set-package-jp/PCG/7-key.png",
+      "url": null
+    },
+    {
+      "id": "2006-03-pcg-8",
+      "year": 2006,
+      "month": 3,
+      "name": "拡張パック「きせきの結晶」",
+      "era": "PCG",
+      "code": "8",
+      "image": "/assets/images/card/set-package-jp/PCG/8-key.png",
+      "url": null
+    },
+    {
+      "id": "2006-06-pcg-9",
+      "year": 2006,
+      "month": 6,
+      "name": "拡張パック「さいはての攻防」",
+      "era": "PCG",
+      "code": "9",
+      "image": "/assets/images/card/set-package-jp/PCG/9-key.png",
+      "url": null
+    },
+    {
+      "id": "2006-11-dp-dp1d",
+      "year": 2006,
+      "month": 11,
+      "name": "拡張パック「時空の創造 ダイヤモンドコレクション」",
+      "era": "DP",
+      "code": "dp1d",
+      "image": "/assets/images/card/set-package-jp/DP/dp1d-key.png",
+      "url": null
+    },
+    {
+      "id": "2006-11-dp-dp1p",
+      "year": 2006,
+      "month": 11,
+      "name": "拡張パック「時空の創造 パールコレクション」",
+      "era": "DP",
+      "code": "dp1p",
+      "image": "/assets/images/card/set-package-jp/DP/dp1p-key.png",
+      "url": null
+    },
+    {
+      "id": "2005-04-pcg-4",
+      "year": 2005,
+      "month": 4,
+      "name": "拡張パック「金の空、銀の海」",
+      "era": "PCG",
+      "code": "4",
+      "image": "/assets/images/card/set-package-jp/PCG/4-key.png",
+      "url": null
+    },
+    {
+      "id": "2005-06-pcg-5",
+      "year": 2005,
+      "month": 6,
+      "name": "拡張パック「まぼろしの森」",
+      "era": "PCG",
+      "code": "5",
+      "image": "/assets/images/card/set-package-jp/PCG/5-key.png",
+      "url": null
+    },
+    {
+      "id": "2005-10-pcg-6",
+      "year": 2005,
+      "month": 10,
+      "name": "拡張パック「ホロンの研究塔」",
+      "era": "PCG",
+      "code": "6",
+      "image": "/assets/images/card/set-package-jp/PCG/6-key.png",
+      "url": null
+    },
+    {
+      "id": "2004-01-adv-4",
+      "year": 2004,
+      "month": 1,
+      "name": "第4弾拡張パック「とかれた封印」",
+      "era": "ADV",
+      "code": "4",
+      "image": "/assets/images/card/set-package-jp/ADV/4-key.png",
+      "url": null
+    },
+    {
+      "id": "2004-04-pcg-1",
+      "year": 2004,
+      "month": 4,
+      "name": "拡張パック「伝説の飛翔」",
+      "era": "PCG",
+      "code": "1",
+      "image": "/assets/images/card/set-package-jp/PCG/1-key.png",
+      "url": null
+    },
+    {
+      "id": "2004-07-pcg-2",
+      "year": 2004,
+      "month": 7,
+      "name": "拡張パック「蒼空の激突」",
+      "era": "PCG",
+      "code": "2",
+      "image": "/assets/images/card/set-package-jp/PCG/2-key.png",
+      "url": null
+    },
+    {
+      "id": "2004-10-pcg-3",
+      "year": 2004,
+      "month": 10,
+      "name": "拡張パック｢ロケット団の逆襲｣",
+      "era": "PCG",
+      "code": "3",
+      "image": "/assets/images/card/set-package-jp/PCG/3-key.png",
+      "url": null
+    },
+    {
+      "id": "2003-01-adv-1",
+      "year": 2003,
+      "month": 1,
+      "name": "第1弾拡張パック",
+      "era": "ADV",
+      "code": "1",
+      "image": "/assets/images/card/set-package-jp/ADV/1-key.png",
+      "url": null
+    },
+    {
+      "id": "2003-04-adv-2",
+      "year": 2003,
+      "month": 4,
+      "name": "第2弾拡張パック「砂漠のきせき」",
+      "era": "ADV",
+      "code": "2",
+      "image": "/assets/images/card/set-package-jp/ADV/2-key.png",
+      "url": null
+    },
+    {
+      "id": "2003-06-adv-3",
+      "year": 2003,
+      "month": 6,
+      "name": "第3弾 拡張パック「天空の覇者」",
+      "era": "ADV",
+      "code": "3",
+      "image": "/assets/images/card/set-package-jp/ADV/3-key.png",
+      "url": null
+    },
+    {
+      "id": "2003-10-adv-ex1",
+      "year": 2003,
+      "month": 10,
+      "name": "強化拡張パックex1「マグマVSアクア　ふたつの野望」",
+      "era": "ADV",
+      "code": "ex1",
+      "image": "/assets/images/card/set-package-jp/ADV/ex1-key.png",
+      "url": null
+    },
+    {
+      "id": "2002-03-e-2",
+      "year": 2002,
+      "month": 3,
+      "name": "拡張パック 第2弾「地図にない町」",
+      "era": "e",
+      "code": "2",
+      "image": "/assets/images/card/set-package-jp/e/2-key.png",
+      "url": null
+    },
+    {
+      "id": "2002-05-e-3",
+      "year": 2002,
+      "month": 5,
+      "name": "拡張パック 第3弾「海からの風」",
+      "era": "e",
+      "code": "3",
+      "image": "/assets/images/card/set-package-jp/e/3-key.png",
+      "url": null
+    },
+    {
+      "id": "2002-08-e-4",
+      "year": 2002,
+      "month": 8,
+      "name": "拡張パック 第4弾「裂けた大地」",
+      "era": "e",
+      "code": "4",
+      "image": "/assets/images/card/set-package-jp/e/4-key.png",
+      "url": null
+    },
+    {
+      "id": "2002-10-e-5",
+      "year": 2002,
+      "month": 10,
+      "name": "拡張パック 第5弾「神秘なる山」",
+      "era": "e",
+      "code": "5",
+      "image": "/assets/images/card/set-package-jp/e/5-key.png",
+      "url": null
+    },
+    {
+      "id": "2001-04-neo-4",
+      "year": 2001,
+      "month": 4,
+      "name": "拡張パック 第4弾「闇、そして光へ...」",
+      "era": "neo",
+      "code": "4",
+      "image": "/assets/images/card/set-package-jp/neo/4-key.png",
+      "url": null
+    },
+    {
+      "id": "2001-12-e-1",
+      "year": 2001,
+      "month": 12,
+      "name": "第1弾 基本拡張パック",
+      "era": "e",
+      "code": "1",
+      "image": "/assets/images/card/set-package-jp/e/1-key.png",
+      "url": null
+    },
+    {
+      "id": "2000-02-neo-1",
+      "year": 2000,
+      "month": 2,
+      "name": "拡張パック 第1弾「金、銀、新世界へ...」",
+      "era": "neo",
+      "code": "1",
+      "image": "/assets/images/card/set-package-jp/neo/1-key.png",
+      "url": null
+    },
+    {
+      "id": "2000-07-neo-2",
+      "year": 2000,
+      "month": 7,
+      "name": "拡張パック 第2弾「遺跡をこえて...」",
+      "era": "neo",
+      "code": "2",
+      "image": "/assets/images/card/set-package-jp/neo/2-key.png",
+      "url": null
+    },
+    {
+      "id": "2000-11-neo-3",
+      "year": 2000,
+      "month": 11,
+      "name": "拡張パック 第3弾「めざめる伝説」",
+      "era": "neo",
+      "code": "3",
+      "image": "/assets/images/card/set-package-jp/neo/3-key.png",
+      "url": null
+    },
+    {
+      "id": "1999-06-original-gym2",
+      "year": 1999,
+      "month": 6,
+      "name": "ポケモンジム ジム拡張第2弾「闇からの挑戦」",
+      "era": "original",
+      "code": "gym2",
+      "image": "/assets/images/card/set-package-jp/original/gym2-key.png",
+      "url": null
+    },
+    {
+      "id": "1998-10-original-gym1",
+      "year": 1998,
+      "month": 10,
+      "name": "ジム拡張第1弾「リーダーズスタジアム」",
+      "era": "original",
+      "code": "gym1",
+      "image": "/assets/images/card/set-package-jp/original/gym1-key.png",
+      "url": null
+    },
+    {
+      "id": "1997-03-original-2",
+      "year": 1997,
+      "month": 3,
+      "name": "第2弾 拡張パック「ポケモンジャングル」",
+      "era": "original",
+      "code": "2",
+      "image": "/assets/images/card/set-package-jp/original/2-key.png",
+      "url": null
+    },
+    {
+      "id": "1997-06-original-3",
+      "year": 1997,
+      "month": 6,
+      "name": "第3弾 拡張パック「化石の秘密」",
+      "era": "original",
+      "code": "3",
+      "image": "/assets/images/card/set-package-jp/original/3-key.png",
+      "url": null
+    },
+    {
+      "id": "1997-11-original-4",
+      "year": 1997,
+      "month": 11,
+      "name": "第4弾 拡張パック「ロケット団」",
+      "era": "original",
+      "code": "4",
+      "image": "/assets/images/card/set-package-jp/original/4-key.png",
+      "url": null
+    },
+    {
+      "id": "1996-10-original-1",
+      "year": 1996,
+      "month": 10,
+      "name": "第1弾 拡張パック",
+      "era": "original",
+      "code": "1",
+      "image": "/assets/images/card/set-package-jp/original/1-key.png",
+      "url": null
+    }
+  ]
+}

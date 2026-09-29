@@ -1,0 +1,45 @@
+{% from 'macros.html' import icon %}
+<!doctype html>
+<html lang="{{ page.lang or site.language|default('en') }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+{% block document_base %}{% endblock %}
+<title>{{ page.seo_title }}{% if page.title != site.title %} · {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.seo_description|default(site.description, true) }}">
+{% if page.unlisted|default(false) %}<meta name="robots" content="noindex, follow">{% endif %}
+<meta name="theme-color" content="#489fe6">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{{ 'article' if page.date else 'website' }}"><meta property="og:title" content="{{ page.seo_title }}"><meta property="og:description" content="{{ page.seo_description|default(site.description, true) }}"><meta property="og:url" content="{{ site.url }}{{ page.url }}"><meta property="og:site_name" content="{{ site.title }}">
+{% if page.date %}<meta property="article:published_time" content="{{ page.date }}"><meta name="dcterms.created" content="{{ page.created }}"><meta property="article:modified_time" content="{{ page.updated }}">{% endif %}
+<meta name="author" content="{{ page.author or site.author }}">
+<meta property="og:image" content="{{ page.seo_image_url }}"><meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+{% block runtime %}{% block stylesheets %}<link rel="stylesheet" href="/assets/fonts/pokemon-fonts.css"><link rel="stylesheet" href="/assets/css/site.css">{% endblock %}<script src="/search-index.js" defer></script><script src="/assets/js/site.js" defer></script>{% endblock %}
+{% block extra_head %}{% endblock %}
+</head>
+<body class="{{ 'page-home' if page.url == '/' else 'page-sub' }}{% if page.url == '/' and not featured_posts %} page-home--plain{% endif %}{% if page.topic %} page-{{ page.topic.slug }}{% endif %}">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header" id="header">
+<div class="header__body">
+<a class="header__logo" href="/" aria-label="Type Null home"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren" width="145" height="63"{% if page.url == '/404.html' %} loading="lazy"{% endif %}></a>
+<details class="mobile-navigation">
+<summary aria-label="Toggle navigation" aria-controls="main-navigation"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></summary>
+</details>
+<nav class="gnav main-nav" id="main-navigation" aria-label="Main navigation"><ul class="gnav__list">
+<li class="gnav__list-item nav-cat-news"><a class="gnav__list-links{% if page.url == '/' %} is-active{% endif %}" href="/"{% if page.url == '/' %} aria-current="page"{% endif %}><span>NEWS</span></a></li>
+{% for topic in topics %}<li class="gnav__list-item" style="--topic-color:{{ topic.color }}"><a class="gnav__list-links{% if page.topic and page.topic.slug == topic.slug %} is-active{% endif %}" href="/{{ topic.slug }}/"{% if page.topic and page.topic.slug == topic.slug %} aria-current="true"{% endif %}><span>{{ topic.label|upper }}</span></a></li>{% endfor %}
+</ul></nav>
+<div class="gnav-link__list">
+<a class="header-utility github-link" href="https://github.com/type-null" target="_blank" rel="noopener noreferrer">{{ icon('external') }}<span>GitHub</span></a>
+<a class="header-utility guide-link" href="/feed.xml">{{ icon('notebook') }}<span>RSS</span></a>
+<button class="header-utility search-toggle" data-search-open aria-label="Search this site" hidden>{{ icon('search') }}<span>Search</span></button>
+</div></div></header>
+<main class="main-area" id="main" tabindex="-1">{% block content %}{% endblock %}</main>
+<footer class="footer site-footer">
+<div class="footer__upper"><div class="footer__upper-body"><a class="footer__logo" href="/"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren" width="145" height="63" loading="lazy"></a><nav class="footer__sitemap-body" aria-label="Footer navigation"><a href="/">NEWS</a>{% for topic in topics %}<a href="/{{ topic.slug }}/">{{ topic.label|upper }}</a>{% endfor %}</nav><a class="footer-pagetop" href="#main" aria-label="Back to top">⌃</a></div></div>
+<div class="footer-bottom"><nav aria-label="More links"><a href="/feed.xml">RSS feed</a><a href="https://github.com/type-null" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav><p>© {{ site.author }} · {{ site.title }}</p><p>{{ site.footer_note|default('', true) }}</p></div>
+</footer>
+<dialog class="search-dialog" id="site-search" aria-labelledby="search-title"><div class="search-dialog-head"><h2 id="search-title">Search</h2><button data-search-close aria-label="Close search">×</button></div><label class="search-field">{{ icon('search') }}<input id="site-search-input" type="search" placeholder="Search articles, tools, and notes…" autocomplete="off" aria-label="Search articles"></label><p class="search-status" role="status">Start typing to search.</p><div id="search-results"></div></dialog>
+{% block scripts %}{% endblock %}
+</body></html>

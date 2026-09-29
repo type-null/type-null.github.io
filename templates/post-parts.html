@@ -1,0 +1,40 @@
+{% from 'macros.html' import icon, card %}
+{% macro dates(page) %}
+<div class="news-detail__header-time article-meta">
+  <span{% if page.created_inferred %} title="Uses the publication date because no separate writing date was recorded."{% endif %}>First written <time datetime="{{ page.created }}">{{ page.created_display }}</time></span>
+  <span{% if not page.updated_explicit %} title="Initial published edition; no later revision was recorded."{% endif %}>Last revised <time datetime="{{ page.updated }}">{{ page.updated_display }}</time></span>
+  {% if page.show_publication_date %}<span>Published <time datetime="{{ page.date }}">{{ page.date_display }}</time></span>{% endif %}
+  <span>{{ page.reading_time }} min read</span>
+</div>
+{% endmacro %}
+{% macro heading(page, site) %}
+<div class="news-detail__header">
+  <div class="news-detail__header-info">
+    <a class="news-detail__header-category" style="--topic-color:{{ page.topic.color }}" href="{{ page.topic.url }}">{{ page.topic.label }}</a>
+    {% if page.eyebrow %}<span class="post-eyebrow">{{ page.eyebrow }}</span>{% endif %}
+  </div>
+  <div class="detail-header__sns"><button type="button" class="share-button" data-share hidden>{{ icon('share') }} Share</button></div>
+</div>
+<h1 class="m-ttl-top">{{ page.title }}</h1>
+{{ dates(page) }}
+{% if page.subtitle %}<p class="article-subtitle">{{ page.subtitle }}</p>{% endif %}
+<p class="article-description">{{ page.description }}</p>
+<p class="article-byline">{{ page.author or site.author }}</p>
+{% if page.links %}<div class="post-actions detail-website">{% for link in page.links %}<a class="m-btn-nxt button{% if link.style == 'secondary' %} button-outline{% else %} button-dark{% endif %}" href="{{ link.url }}">{{ link.label }} {{ icon('arrow') }}</a>{% endfor %}</div>{% endif %}
+{% endmacro %}
+{% macro facts(page) %}
+{% if page.facts %}
+<section class="post-facts m-unit" aria-label="At a glance">
+  <h2 class="m-ttl-sub">At a glance</h2>
+  <table class="m-tbl-nml"><tbody>{% for fact in page.facts %}<tr><th scope="row">{{ fact.label }}</th><td>{{ fact.value }}</td></tr>{% endfor %}</tbody></table>
+</section>
+{% endif %}
+{% endmacro %}
+{% macro related(page) %}
+{% if page.related_posts %}
+<section class="related-posts" aria-labelledby="related-heading">
+  <div class="section-heading"><h2 class="m-ttl-sub" id="related-heading">Related articles</h2></div>
+  <div class="news-list"><div class="news-list__body post-grid">{% for post in page.related_posts %}{{ card(post) }}{% endfor %}</div></div>
+</section>
+{% endif %}
+{% endmacro %}

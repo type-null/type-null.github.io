@@ -1,0 +1,73 @@
+/* Reveal the backgrounds only. Links and artwork never depend on motion. */
+[data-color-reveal] {
+  --reveal-easing:cubic-bezier(.97,0,.1,1.01);
+  overflow:hidden;
+  background:transparent;
+  pointer-events:none
+}
+[data-color-reveal]::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#ffc9e1,#ffec9b,#fef8c2,#e2fbff,#e6e9ff,#ffeafb,#ffc9e1,#ffec9b,#fef8c2);
+  background-size:700% 100%
+}
+[data-color-reveal]>span {
+  display:none
+}
+.home-motion-ready [data-color-reveal]::before {
+  animation:home-pastel-drift 8s linear infinite paused
+}
+.home-motion-ready [data-color-reveal].is-revealed.is-on-screen::before {
+  animation-play-state:running
+}
+.home-motion-ready [data-color-reveal="columns"]>span,
+.home-motion-ready [data-color-reveal="rows"]>span {
+  display:block;
+  position:absolute;
+  background:#fff;
+  transform:scaleX(1);
+  transform-origin:left;
+  transition:transform .7s var(--reveal-easing) .3s
+}
+.home-motion-ready [data-color-reveal="columns"]>span {
+  top:0;
+  width:34%;
+  height:100%
+}
+[data-color-reveal="columns"]>span:nth-child(1) { left:0 }
+[data-color-reveal="columns"]>span:nth-child(2) { left:34% }
+[data-color-reveal="columns"]>span:nth-child(3) { left:68% }
+.home-motion-ready [data-color-reveal="rows"]>span {
+  left:0;
+  width:100%;
+  height:34%
+}
+[data-color-reveal="rows"]>span:nth-child(1) { top:0 }
+.home-motion-ready [data-color-reveal="rows"]>span:nth-child(2) { top:34%; transition-delay:.4s }
+.home-motion-ready [data-color-reveal="rows"]>span:nth-child(3) { top:68%; transition-delay:.5s }
+.home-motion-ready [data-color-reveal].is-revealed>span {
+  transform:scaleX(0)
+}
+.home-motion-ready [data-color-reveal="from-left"].is-revealed::before,
+.home-motion-ready [data-color-reveal="from-right"].is-revealed::before {
+  transition:transform .5s var(--reveal-easing)
+}
+.home-motion-ready [data-color-reveal="from-left"]::before { transform:translateX(-100%) }
+.home-motion-ready [data-color-reveal="from-right"]::before { transform:translateX(100%) }
+.home-motion-ready [data-color-reveal].is-revealed::before { transform:translateX(0) }
+@keyframes home-pastel-drift {
+  from { background-position:0% 0 }
+  to { background-position:86% 0 }
+}
+@media(prefers-reduced-motion:reduce) {
+  [data-color-reveal]::before {
+    animation:none!important;
+    transition:none!important;
+    transform:none!important
+  }
+  [data-color-reveal]>span { display:none!important }
+}
+@media print {
+  [data-color-reveal] { display:none }
+}

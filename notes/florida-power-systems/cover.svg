@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" role="img" aria-label="Illustrative power network and transmission tower">
+  <rect width="1000" height="480" fill="#eaf4f8"/>
+  <path d="M0 366 1000 250V480H0Z" fill="#d8e9ef"/>
+  <circle cx="812" cy="140" r="68" fill="#ffe4ba"/>
+  <g fill="none" stroke="#95bdcc" stroke-width="3">
+    <path d="M50 295 210 233 355 306 525 196 688 267 898 230M210 233 271 101 525 196 594 69M355 306 415 415 688 267 806 394"/>
+  </g>
+  <g fill="#fff" stroke="#6f9cb0" stroke-width="3">
+    <circle cx="50" cy="295" r="9"/><circle cx="210" cy="233" r="9"/><circle cx="271" cy="101" r="9"/><circle cx="355" cy="306" r="9"/><circle cx="525" cy="196" r="9"/><circle cx="594" cy="69" r="9"/><circle cx="415" cy="415" r="9"/><circle cx="688" cy="267" r="9"/><circle cx="898" cy="230" r="9"/><circle cx="806" cy="394" r="9"/>
+  </g>
+  <g fill="none" stroke="#234d64" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M740 391 790 158 840 391M790 158V91M756 177H824M746 218H834M770 246 817 282 755 325 832 370M810 246 763 282 825 325 748 370M756 177 790 140 824 177M746 218 790 183 834 218"/>
+    <path d="M670 197Q710 222 746 218M834 218Q893 250 970 233M659 150Q710 187 756 177M824 177Q902 215 975 189" stroke-width="3"/>
+  </g>
+  <rect x="48" y="40" width="243" height="45" rx="22.5" fill="#fff"/>
+  <text x="72" y="70" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#234d64">RESEARCH PREVIEW</text>
+</svg>

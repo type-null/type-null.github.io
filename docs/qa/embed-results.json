@@ -1,0 +1,318 @@
+{
+  "verified": "2026-09-29",
+  "method": "Installed Chrome through file://, external requests blocked; desktop and mobile viewport emulation.",
+  "theme_before": {
+    "prize-1440": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "35.2px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "prize-390": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "25.6px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "prize-320": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "25.6px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-1440": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "35.2px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-390": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "25.6px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-320": {
+      "font": "-apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(39, 51, 70)",
+      "background": "rgb(243, 247, 250)",
+      "headingSize": "25.6px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-1440": {
+      "font": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(38, 49, 62)",
+      "background": "rgb(243, 246, 248)",
+      "headingSize": "44px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-390": {
+      "font": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(38, 49, 62)",
+      "background": "rgb(243, 246, 248)",
+      "headingSize": "28px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-320": {
+      "font": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "color": "rgb(38, 49, 62)",
+      "background": "rgb(243, 246, 248)",
+      "headingSize": "28px",
+      "overflow": false,
+      "fontsLoaded": true,
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    }
+  },
+  "theme_after": {
+    "prize-1440": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "34px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "prize-390": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "prize-320": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-1440": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "34px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-390": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "trading-320": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-1440": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "34px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 938,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-390": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 348,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    },
+    "parlay-320": {
+      "font": "\"Noto Sans JP\", Helvetica, Arial, sans-serif",
+      "color": "rgb(64, 66, 72)",
+      "background": "rgb(255, 255, 255)",
+      "headingSize": "24px",
+      "overflow": false,
+      "loadedFonts": [
+        "Lato",
+        "Noto Sans JP"
+      ],
+      "width": 278,
+      "errors": [],
+      "remote": [],
+      "parentOverflow": false
+    }
+  },
+  "new_tab_functional": {
+    "1440": {
+      "button": {
+        "x": 1032.4375,
+        "y": 117.671875,
+        "width": 157.5625,
+        "height": 44
+      },
+      "toolbar": {
+        "x": 250,
+        "y": 109.671875,
+        "width": 940,
+        "height": 52
+      },
+      "overflow": false,
+      "buttonColor": "rgb(255, 255, 255)",
+      "errors": [],
+      "remote": [],
+      "popupWorks": true,
+      "articleInputPreserved": true
+    },
+    "390": {
+      "button": {
+        "x": 212.4375,
+        "y": 118.453125,
+        "width": 157.5625,
+        "height": 44
+      },
+      "toolbar": {
+        "x": 20,
+        "y": 110.453125,
+        "width": 350,
+        "height": 52
+      },
+      "overflow": false,
+      "buttonColor": "rgb(255, 255, 255)",
+      "errors": [],
+      "remote": [],
+      "popupWorks": true,
+      "articleInputPreserved": true
+    },
+    "320": {
+      "button": {
+        "x": 20,
+        "y": 150.390625,
+        "width": 157.5625,
+        "height": 44
+      },
+      "toolbar": {
+        "x": 20,
+        "y": 109.59375,
+        "width": 280,
+        "height": 84.796875
+      },
+      "overflow": false,
+      "buttonColor": "rgb(255, 255, 255)",
+      "errors": [],
+      "remote": [],
+      "popupWorks": true,
+      "articleInputPreserved": true
+    }
+  },
+  "notes": [
+    "The initial new-tab functional captures preceded the final tool theme. All nine strict direct-file tests passed again after the theme change.",
+    "Before-theme fontsLoaded used FontFaceSet.check and does not establish that a named font face was loaded. Use computed fontFamily for the baseline; after-theme loadedFonts lists actual loaded FontFace entries.",
+    "Theme matching uses the shared site design; it does not claim pixel identity with an official calculator."
+  ]
+}

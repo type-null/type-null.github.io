@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, cover %}
+{% from 'post-parts.html' import heading, facts, related %}
+{% block content %}
+<div class="section-wrap article-wrap news-detail article-template--{{ page.template }}" style="--topic-color:{{ page.topic.color }}">
+  <nav class="breadcrumb breadcrumbs" aria-label="Breadcrumb"><ol class="breadcrumb__list"><li><a href="/">TOP</a></li><li><a href="{{ page.topic.url }}">{{ page.topic.label }}</a></li><li><span aria-current="page">{{ page.title }}</span></li></ol></nav>
+  <article class="news-body">
+    {% block article_header %}<header class="page-head article-header">{{ heading(page,site) }}</header>{% endblock %}
+    <div class="page-mainwrap"><div class="page-parag"><div class="page-parag__inr">
+      {% block cover %}{% if page.template in ['feature','gallery'] or page.cover_images %}<figure class="m-unit article-cover">{{ cover(page, decorative=false) }}{% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}</figure>{% endif %}{% endblock %}
+      {% block facts %}{{ facts(page) }}{% endblock %}
+      <div class="article-content-layout{% if page.toc and page.toc_html %} has-toc{% endif %}">
+        {% if page.toc and page.toc_html %}<aside class="article-toc"><details open><summary>On this page</summary><nav aria-label="Table of contents">{{ page.toc_html|safe }}</nav></details></aside>{% endif %}
+        <div class="article-content-main"><div class="article-body prose">{{ page.html|safe }}</div>
+          {% if page.embeds_html %}<div class="article-embeds">{{ page.embeds_html|safe }}</div>{% endif %}
+        </div>
+      </div>
+      {% if page.gallery %}<div class="article-gallery m-unit">{% for item in page.gallery %}<figure><a href="{{ item.src }}" target="_blank" rel="noopener noreferrer"><img class="g-flex-image" src="{{ item.thumbnail|default(item.src) }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></a>{% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}</figure>{% endfor %}</div>{% endif %}
+      <div class="article-end">
+        {% if page.tags %}<div class="page-head__tags article-tags"><ul class="page-head__tags-list">{% for tag in page.tags %}<li class="page-head__tags-element"><span>#{{ tag }}</span></li>{% endfor %}</ul></div>{% endif %}
+        <div class="share-actions"><span>Share this article</span><button class="m-btn-nxt button button-small" type="button" data-copy-link hidden>Copy link {{ icon('share') }}</button><a class="m-btn-nxt button button-small button-outline" href="mailto:?subject={{ page.title|urlencode }}&body={{ (site.url ~ page.url)|urlencode }}">Email {{ icon('arrow') }}</a><span class="share-status" role="status"></span></div>
+      </div>
+    </div></div></div>
+  </article>
+  {{ related(page) }}
+  <div class="news-detail-button"><a class="back-link m-btn-nxt" href="{{ page.topic.url }}">{{ page.topic.label }} index {{ icon('arrow') }}</a></div>
+</div>
+{% endblock %}

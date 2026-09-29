@@ -1,0 +1,35 @@
+{% from 'macros.html' import icon, cover %}
+{% macro preview(post, variant) -%}
+<article class="topic-preview topic-preview--{{ variant }}">
+<a class="topic-showcase-link" href="{{ post.url }}">
+{% if variant == 'journal' %}<time class="topic-preview__date" datetime="{{ post.date }}"><span>{{ post.date[:4] }}</span><strong>{{ post.date[5:10]|replace('-', '.') }}</strong></time>{% endif %}
+<figure class="topic-preview__art">{{ cover(post) }}</figure>
+<div class="topic-preview__copy"><h3>{{ post.title }}</h3>
+{% if variant in ['lead', 'journal'] and post.description %}<p>{{ post.description }}</p>{% endif %}
+{% if variant != 'journal' %}<time datetime="{{ post.date }}">{{ post.date[:10]|replace('-', '.') }}</time>{% endif %}
+</div>
+</a></article>
+{%- endmacro %}
+{% for topic in topics %}
+{% set topic_posts = all_posts|selectattr('topic.slug', 'equalto', topic.slug)|list %}
+<section class="home-topic home-topic--{{ topic.home_layout }}" data-topic="{{ topic.slug }}" data-layout="{{ topic.home_layout }}" aria-labelledby="home-topic-{{ topic.slug }}" style="--topic-color:{{ topic.color }}">
+<div class="home-topic__background" data-color-reveal="{{ 'rows' if topic.home_layout == 'gallery' else 'from-left' if topic.home_layout == 'feature' else 'from-right' }}" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="home-topic__inner section-wrap">
+<header class="home-topic__heading"><h2 class="heading-home" id="home-topic-{{ topic.slug }}"><span>{{ topic.label|upper }}</span><small>{{ 'The artwork and the stories' if topic.home_layout == 'gallery' else 'Try something new' if topic.home_layout == 'feature' else 'From the journal' }}</small></h2>{% if topic.description %}<p>{{ topic.description }}</p>{% endif %}</header>
+{% if not topic_posts %}<p class="home-topic__empty">New posts will appear here.</p>
+{% elif topic.home_layout == 'feature' %}
+{% set tools = topic_posts|selectattr('template', 'in', ['tool', 'landing'])|list %}
+{% set lead = (tools or topic_posts)[0] %}
+<div class="topic-feature">
+{{ preview(lead, 'lead') }}
+{% set others = topic_posts|rejectattr('url', 'equalto', lead.url)|list %}
+{% if others %}<div class="topic-feature__previews">{% for post in others[:2] %}{{ preview(post, 'small') }}{% endfor %}</div>{% endif %}
+</div>
+{% elif topic.home_layout == 'journal' %}
+<div class="topic-journal">{% for post in topic_posts[:4] %}{{ preview(post, 'journal') }}{% endfor %}</div>
+{% else %}
+<div class="topic-gallery">{% for post in topic_posts[:6] %}{{ preview(post, 'gallery') }}{% endfor %}</div>
+{% endif %}
+<div class="button-block"><a class="button" href="{{ topic.url }}">More {{ topic.label|lower }} {{ icon('arrow') }}</a></div>
+</div></section>
+{% endfor %}

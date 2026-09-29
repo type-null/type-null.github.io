@@ -1,0 +1,5 @@
+{% extends 'article.html' %}
+{% from 'macros.html' import cover %}
+{% block cover %}
+<figure class="m-unit article-cover landing-visual">{{ cover(page, decorative=false) }}{% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}</figure>
+{% endblock %}

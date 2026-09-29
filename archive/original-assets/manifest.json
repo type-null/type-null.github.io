@@ -1,0 +1,1523 @@
+{
+  "schema": 1,
+  "created": "2026-09-29",
+  "reason": "Unreferenced original assets retained locally outside the published asset tree. Active timeline originals and publishing assets remain in assets/.",
+  "files": [
+    {
+      "original": "assets/css/error.css",
+      "archived": "archive/original-assets/assets/css/error.css",
+      "bytes": 517,
+      "sha256": "36633e044a565a3c3b64d6584bd0a35b55f804858bc048c0320ed52871164154"
+    },
+    {
+      "original": "assets/css/fonts.css",
+      "archived": "archive/original-assets/assets/css/fonts.css",
+      "bytes": 461992,
+      "sha256": "04095a854d5f1dd888e2f3434eae6c4e0c035bda977b0f4b6cbf977c377a5723"
+    },
+    {
+      "original": "assets/css/print.css",
+      "archived": "archive/original-assets/assets/css/print.css",
+      "bytes": 138,
+      "sha256": "4ddf8c23478b331c393624be4980534871287970f6d7cd6a9ae781a9bba4c8aa"
+    },
+    {
+      "original": "assets/css/style.css",
+      "archived": "archive/original-assets/assets/css/style.css",
+      "bytes": 689124,
+      "sha256": "521d1a526211594d082b559b5a71524381e49885ac6ced75150d7ff74bcfabc9"
+    },
+    {
+      "original": "assets/css/todelete.css",
+      "archived": "archive/original-assets/assets/css/todelete.css",
+      "bytes": 181328,
+      "sha256": "59455620dc77e4504c100daecb7d639bd7d8514208c87d326fa16b4cf091fb27"
+    },
+    {
+      "original": "assets/css/type-null-common.css",
+      "archived": "archive/original-assets/assets/css/type-null-common.css",
+      "bytes": 5879,
+      "sha256": "02cd8bc43141cc209bc1072e6a72c1c7bea75a3a44971538746ae84089bace7e"
+    },
+    {
+      "original": "assets/fonts/icomoon.eot",
+      "archived": "archive/original-assets/assets/fonts/icomoon.eot",
+      "bytes": 3116,
+      "sha256": "fb655f3debbac3c7a1169185c2b7caf3a4740b6d6d7fb44fc841f30b9ac12486"
+    },
+    {
+      "original": "assets/fonts/icomoon.svg",
+      "archived": "archive/original-assets/assets/fonts/icomoon.svg",
+      "bytes": 7659,
+      "sha256": "ece067eb2ac3d4dc7746ea0f08759635e3fd2daa086bda0544f0e1e938a210ff"
+    },
+    {
+      "original": "assets/fonts/icomoon.ttf",
+      "archived": "archive/original-assets/assets/fonts/icomoon.ttf",
+      "bytes": 2952,
+      "sha256": "bf94aa69620e7b8827c1c9a5820f138d3849c48683e21900bcfcbdcce916c54b"
+    },
+    {
+      "original": "assets/fonts/icomoon.woff",
+      "archived": "archive/original-assets/assets/fonts/icomoon.woff",
+      "bytes": 3028,
+      "sha256": "6f4bdf4fcf27440436f4e8261cb1525ffc498e385134329f952ba92cdb6e2414"
+    },
+    {
+      "original": "assets/fonts/pokemoncard-font.eot",
+      "archived": "archive/original-assets/assets/fonts/pokemoncard-font.eot",
+      "bytes": 5144,
+      "sha256": "160c6c1b2bf7dff3f66bcd6ec242375767b7af0ea1b6a60a55a481fa73897ba7"
+    },
+    {
+      "original": "assets/fonts/pokemoncard-font.ttf",
+      "archived": "archive/original-assets/assets/fonts/pokemoncard-font.ttf",
+      "bytes": 4944,
+      "sha256": "bf53f43671796a98861d4c28eb9c3c466375d71b2bab60d247cc9038159d0d6e"
+    },
+    {
+      "original": "assets/fonts/pokemoncard-font.woff",
+      "archived": "archive/original-assets/assets/fonts/pokemoncard-font.woff",
+      "bytes": 3204,
+      "sha256": "d7fd37fb6c24cd1e1e7bb35ff0931f8f0c6a7d29fafb047b26d86a8f9458f26c"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Cafe_ReMix_Logo_RGB_300dpi.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Cafe_ReMix_Logo_RGB_300dpi.png",
+      "bytes": 6934535,
+      "sha256": "4ce85740cb7905c214eeb4cdeb9931222b8bbab66187af21b6e69b84114591c4"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Champions_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Champions_Logo.png",
+      "bytes": 983586,
+      "sha256": "79fe942b24c29ffb5d41df9cbb3c0b611b166a82a600335822da6201f22a2a5d"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_GO_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_GO_Logo.png",
+      "bytes": 153444,
+      "sha256": "60e55cdc17bd6a997eaa33ce1ecb48180448a5fa575fc213af2863f2cfd65899"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_HOME_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_HOME_Logo.png",
+      "bytes": 2568367,
+      "sha256": "e4652f8afe8d650a9c9a144e66d22bf437e920b85392db1a4d3643833d4d9f80"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Legends_Z-A_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Legends_Z-A_Logo.png",
+      "bytes": 1512924,
+      "sha256": "d07f479ed91653a309857c9a30626ad533cdd2ba108a0ebda09a8a6377a18be7"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Masters_EX_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Masters_EX_Logo.png",
+      "bytes": 2423773,
+      "sha256": "24bdb12d00c08add53e3186fdb196c0c5d29c9bf43c8e40c4000270fb7f09c0b"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Masters_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Masters_Logo.png",
+      "bytes": 1320695,
+      "sha256": "4f232ae22d6a1542493778daad5fc38d0e517cef50edbb8f7c6cfd153b889bf1"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Sleep_Logo.jpg",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Sleep_Logo.jpg",
+      "bytes": 357384,
+      "sha256": "ced5928bb8cb8e376203156fec6f79e803b0d74fca0397a9a644b8bcec4d3ae3"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_TCG_Live_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_TCG_Live_Logo.png",
+      "bytes": 5426596,
+      "sha256": "a47b0af322f7ef49e8d5da64d3e8d6c89faa14da2fcec22c6ce3164c1ce82180"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_Trading_Card_Game_Pocket_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_Trading_Card_Game_Pocket_Logo.png",
+      "bytes": 620758,
+      "sha256": "00455c14511d6f3369afc751c3f0dad671d95260f8fa5a51494072172817b9ef"
+    },
+    {
+      "original": "assets/images/card/app-logo-en/Pokemon_UNITE_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/app-logo-en/Pokemon_UNITE_Logo.png",
+      "bytes": 1438200,
+      "sha256": "7d0fe6cdb39376ff585f1120fab73be726c33077994f8ff6c9c07a9ad1f100cb"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/Pokemon_VMAX_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/Pokemon_VMAX_Logo.png",
+      "bytes": 16053195,
+      "sha256": "bb91e46768aae4c04c336f72177e90fe8370ec511f67b3ce2091a71d054c5e51"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/Pokemon_V_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/Pokemon_V_Logo.png",
+      "bytes": 4136191,
+      "sha256": "7f48e9209c8ce15d08c5b8b7258ded7b15f377c8e8b0556ea18b5db2ffdfad82"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/SM3rd_GX_logo.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/SM3rd_GX_logo.png",
+      "bytes": 120275,
+      "sha256": "2881c20480451339a5ed83d2d0da3637bb1fa8efa7ab797ddd499d82074b720f"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/SM4Plus_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/SM4Plus_Logo.png",
+      "bytes": 195250,
+      "sha256": "8b74b79d3ac885fa131fa8495ab8575d57493b9b5cd2ff5c7165388761d23858"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/S_FUSION_stylelogo_1.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/S_FUSION_stylelogo_1.png",
+      "bytes": 86830,
+      "sha256": "49fa507144d017c16e4ec7028985048849da21d446300f4433391897b0df3d74"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/S_V-UNION_logo.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/S_V-UNION_logo.png",
+      "bytes": 44709,
+      "sha256": "ab1bdee426714c482052d269543d5bcd2b137eaff6f6cf46190c8695eac345f7"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/ultra_beast_gx.jpg",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/ultra_beast_gx.jpg",
+      "bytes": 56792,
+      "sha256": "f969e9b8f5af6b86e66d3d8536f753e1c7548f8270376b79b1410ffd2722a728"
+    },
+    {
+      "original": "assets/images/card/pokemon-gimmick/vstar-logo-2x.png",
+      "archived": "archive/original-assets/assets/images/card/pokemon-gimmick/vstar-logo-2x.png",
+      "bytes": 212593,
+      "sha256": "03d1a8c3b5b3ef4a49baaaef227786fa412e7f386eecd6b89c4c4ecee45a2db4"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Celebrations_Vertical_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Celebrations_Vertical_Logo.png",
+      "bytes": 39333,
+      "sha256": "94ce245082a78b96290ab1b065fae5fe59f45889ae53784cdfd6f852c3b84110"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Champion_s_Path_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Champion_s_Path_Logo.png",
+      "bytes": 1120066,
+      "sha256": "862af553a940b785518ad085cfcec01a5c25ed2ea1bd4093a773d7fd9b24322a"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Crown_Zenith_Logo.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Crown_Zenith_Logo.jpg",
+      "bytes": 163485,
+      "sha256": "56465784f3da19ccaa7f2a17a9b7aa445d1812bf5b1a3652646326bd15980137"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Pokemon_GO_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Pokemon_GO_Logo.png",
+      "bytes": 206738,
+      "sha256": "338b9da359196546e24a6f286a381bfecc437fdbdf1ad7e20ecd2ad4139c310a"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Shining_Fates_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Shining_Fates_Logo.png",
+      "bytes": 1267168,
+      "sha256": "ed68f3c5f5e5fc3d9092f37c7bb0d4b7f6abf65719a46408bf6d3a3be91536c1"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield_Logo.png",
+      "bytes": 980697,
+      "sha256": "07a44c148a518c5ff23c12a972764f838339143930e774675151a32cec1feb74"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Astral_Radiance_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Astral_Radiance_Logo.png",
+      "bytes": 167996,
+      "sha256": "9c1cced38ffee08636d0448ecb33ca4979862ad1891e04c0a0f23bbfffed27e8"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Battle_Styles_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Battle_Styles_Logo.png",
+      "bytes": 876346,
+      "sha256": "9b82a38c457f958fa1d7bd6c3eebbc1a90da3ee6a531f3911c92fcdbd7852260"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Brilliant_Stars_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Brilliant_Stars_Logo.png",
+      "bytes": 1215346,
+      "sha256": "9b17408d6fb43f10f49ac77712a812acc2ea34493cdaea69b7798815ec2e2863"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Chilling_Reign_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Chilling_Reign_Logo.png",
+      "bytes": 1919169,
+      "sha256": "b3bb0764bd75a69364a779a06326bc904355fddc1065c95d8a0a8e555c67dc6c"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Darkness_Ablaze_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Darkness_Ablaze_Logo.png",
+      "bytes": 971640,
+      "sha256": "8a247fe1585fb1abe3f1473e11b3df54ab30ca616f5a76578a22a63678d0ae49"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Evolving_Skies_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Evolving_Skies_Logo.png",
+      "bytes": 1609330,
+      "sha256": "7d4f3506b75de09c9795f4a3d41eb8789ae077eda3af09fc9b8ba7070d2296c1"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Fusion_Strike_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Fusion_Strike_Logo.png",
+      "bytes": 1244727,
+      "sha256": "a78d349cb91fd6d2ca869a198b372abf5d1e492a19dbd30fd5b29821b09b35a1"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Lost_Origin_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Lost_Origin_Logo.png",
+      "bytes": 177573,
+      "sha256": "b02acf55e51b3cf3b4478a4bb92e37fcb8d70f203175ffc80d38bca1ac4edebc"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Rebel_Clash_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Rebel_Clash_Logo.png",
+      "bytes": 1043382,
+      "sha256": "42bea192a58be3c4139d8663df48ada2619301b57023117096919ad6a8c412ac"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Silver_Tempest_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Pokemon_TCG_Sword_Shield—Silver_Tempest_Logo.png",
+      "bytes": 196126,
+      "sha256": "22a7dfe81f424854d60fb4fea20f9d23ba05a43b5b0dce0a8be2c997686d33c1"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SS/Sword_Shield—Vivid_Voltage_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SS/Sword_Shield—Vivid_Voltage_Logo.png",
+      "bytes": 1172333,
+      "sha256": "3d98d2ca30570908fe40606e322ed96b9cea26dd490ffbdbbfd787efec060632"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet_Logo.png",
+      "bytes": 166657,
+      "sha256": "cb33ca6d6794fc3a62c45f7d290f688e674b3526d3ccac8d478a86380d75f8ea"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—151_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—151_Logo.png",
+      "bytes": 330045,
+      "sha256": "fe6cab6d0b53b84e169507f71ec9f7b1b32e201d1ce370cc0e4770b1a6a93aec"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Journey_Together_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Journey_Together_Logo.png",
+      "bytes": 3990337,
+      "sha256": "f510c7fa5fbedf81b3279e4f1211119e89406fcc90acc58776e2f9abe4d7cde0"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Obsidian_Flames_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Obsidian_Flames_Logo.png",
+      "bytes": 432595,
+      "sha256": "74d31601d59441422b4275ade15a78060152b3d81e2d5b0b33b870b6e86c4d55"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paldea_Evolved_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paldea_Evolved_Logo.png",
+      "bytes": 196333,
+      "sha256": "1d171d6a2a6298da992924bb40c2515b8d41f88340ca2282838dd6ea2ca1b383"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paldean_Fates_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paldean_Fates_Logo.png",
+      "bytes": 637760,
+      "sha256": "4e2cf34a4fbb6750992769915436f73ec6789f6283216dab6a60cb95b627d46d"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paradox_Rift_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Paradox_Rift_Logo.png",
+      "bytes": 430978,
+      "sha256": "744962f6ec1ddffa0641406df89fc391a6c405c659cc3fe408353152362a2977"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Prismatic_Evolutions_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Prismatic_Evolutions_Logo.png",
+      "bytes": 2107255,
+      "sha256": "575b5d6625667774212ca459e8fdc215d1b60d5f14fffc1fcf56087169c4f233"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Shrouded_Fable_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Shrouded_Fable_Logo.png",
+      "bytes": 184913,
+      "sha256": "e5c1b0df2cc2445caca827b2ea2cc1327dc3539cdb64989a3deb96e242501173"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Stellar_Crown_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Stellar_Crown_Logo.png",
+      "bytes": 3855925,
+      "sha256": "f52f63e2033f92838df1e962b2ed0ad78532b47b47245f0fe9b0e9ef487ff1cc"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Surging_Sparks_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Surging_Sparks_Logo.png",
+      "bytes": 617228,
+      "sha256": "1d7a37e97a26624d0220ad15757bf1dbe164ca3b2ed23dc09f9f0345f5471ce8"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Temporal_Forces_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Temporal_Forces_Logo.png",
+      "bytes": 350591,
+      "sha256": "e357b5da2f40fbeddbeddf3fca82599e8a1dee8d708c207a037121d2076b424e"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Twilight_Masquerade_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokemon_TCG_Scarlet_Violet—Twilight_Masquerade_Logo.png",
+      "bytes": 239083,
+      "sha256": "806184aef497a215f5a5c490413b2a3df7c04fc5c614a9eb6f4374e33fc81401"
+    },
+    {
+      "original": "assets/images/card/set-logo-en/SV/Pokeween_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-en/SV/Pokeween_Logo.png",
+      "bytes": 94467,
+      "sha256": "38dba2e2646ef36814977308e2f4479fc2548d08007a8b1931bd4ea74028b6ce"
+    },
+    {
+      "original": "assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Mythical_Island_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Mythical_Island_Logo.png",
+      "bytes": 430622,
+      "sha256": "5a91fbe1c0cc0668c6eaa7ff13145098e28aebe7b3ffe762aff157aaddc4489e"
+    },
+    {
+      "original": "assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Logo_EN.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Logo_EN.png",
+      "bytes": 328368,
+      "sha256": "30ba04ff986c82891fecd8ec22d88553d243683f1d1dff43c2f2f78ac35b9665"
+    },
+    {
+      "original": "assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Space-Time_Smackdown_Logo.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Space-Time_Smackdown_Logo.png",
+      "bytes": 400290,
+      "sha256": "485dc9e9eb70a06a551ef44f4a30284a37e64d4a93c47564460ec30abe8b08c3"
+    },
+    {
+      "original": "assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Triumphant_Light_Logo_EN.png",
+      "archived": "archive/original-assets/assets/images/card/set-logo-pocket-en/Pokemon_Trading_Card_Game_Pocket_Triumphant_Light_Logo_EN.png",
+      "bytes": 295083,
+      "sha256": "23c84ed4a372b8e214e718970c2555f99652547ca41efa06686a247b5957aea3"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/ADV/extend-item-adv-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/ADV/extend-item-adv-1.jpg",
+      "bytes": 164709,
+      "sha256": "7a634553ab91686245b180a15d890b98b10e87092c5c368f1d60155862f6bffd"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/ADV/extend-item-adv-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/ADV/extend-item-adv-2.jpg",
+      "bytes": 191663,
+      "sha256": "0d89d3cb973f9b906a130c197e1db37f231a79f3b4d69e4ecd0c07ba31c595be"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/ADV/extend-item-adv-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/ADV/extend-item-adv-3.jpg",
+      "bytes": 208183,
+      "sha256": "1a54d3c1fedd89d4913a69e0491f360bf9490f459a7558501dffccbaf9fb5896"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/ADV/extend-item-adv-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/ADV/extend-item-adv-4.jpg",
+      "bytes": 218255,
+      "sha256": "73521fe9ab1efd143375c67c4394d741e77cacea65e041b05e9b4ae615f07f2b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/ADV/extend-item-adv-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/ADV/extend-item-adv-5.jpg",
+      "bytes": 164272,
+      "sha256": "06833a3949b24c2e635b72c8610419543b1b4dc676e987abbae41d256d28bdbd"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-1.jpg",
+      "bytes": 159943,
+      "sha256": "f4d86a4d9b03a1443b68fef260ab87fea6a59d0f97ab9146534f9ccefc2f8c89"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-10.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-10.jpg",
+      "bytes": 233921,
+      "sha256": "0f94e0e7010e44f6d88fdca162cad96b0ac2d4a1486ce36a3dc0d0c045f85d8f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-11.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-11.jpg",
+      "bytes": 185769,
+      "sha256": "c3c8b61bef856904e84e2f05730fb368a91cb428eda9323d3add84c416a3b6c8"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-12.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-12.jpg",
+      "bytes": 177039,
+      "sha256": "afc6f54dfb8bff8fd8b88452b652409d9dbbb084e92981891946fae272c7ac83"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-13.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-13.jpg",
+      "bytes": 216970,
+      "sha256": "5a9172ea4c71d8685db2d83edec381e35e31bcc61b7a1b021012cfafa74883d6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-14.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-14.jpg",
+      "bytes": 247083,
+      "sha256": "cf112d848b9dd91e10bde60c860129a1fd798ced551085a54c354f9ed48ce6fa"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-15.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-15.jpg",
+      "bytes": 229263,
+      "sha256": "ee496efb6c59299178d191061d939d6df8cea8546d2e17fe8e494317a03b8123"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-16.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-16.jpg",
+      "bytes": 229544,
+      "sha256": "ddf23e9cdbed8d536e637d828256748348453112c85f28612e1cd6aaf65eb730"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-17.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-17.jpg",
+      "bytes": 213466,
+      "sha256": "670e737d43ab56a380e601436008a27ff3ad90f91b9b9a0f090d61dc914afc4d"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-2.jpg",
+      "bytes": 149250,
+      "sha256": "aeea0763d7c866fa04fb5c857771d4943ad8aa31c661de47041d1dc0d04d240a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-3.jpg",
+      "bytes": 212575,
+      "sha256": "dc2bd026465ed3848f80ebcb06b5d388c4c34be372039235ed9cfe72eaa477c8"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-4.jpg",
+      "bytes": 172968,
+      "sha256": "8e93f141098cf2832df2f6251d41346cf512239e1020365487cd01e9a92eda4b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-5.jpg",
+      "bytes": 158235,
+      "sha256": "4805904fc71738746f011edb559518071418d1f507f4f95f09fcf22dd8f5684b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-6.jpg",
+      "bytes": 138707,
+      "sha256": "b1320b96a707b159517d32f386f6e5e5148a8adcf9d7cbe044674ef46561ba06"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-7.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-7.jpg",
+      "bytes": 332460,
+      "sha256": "9d2318367bb3d140cd4e9206bb94ef0cd99c4e4cf59aaa01f732965151d6433a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-8.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-8.jpg",
+      "bytes": 297139,
+      "sha256": "bc8ac2ce27558c07347531abe0487589ef832c0cede0d388f3d118537d516aab"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/BW/extend-item-bw-9.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/BW/extend-item-bw-9.jpg",
+      "bytes": 226887,
+      "sha256": "d738304a35bcc4a330c4c04854a1bd0b195bb77f1d08c366c48161f211948c91"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-1.jpg",
+      "bytes": 161804,
+      "sha256": "2dc8f8140463376b2730fa6057fdc61c7103a464f994b62baa2996ba78fae7e1"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-2.jpg",
+      "bytes": 185167,
+      "sha256": "e29e3fc09ef18cfbf58e4d33e91e6269641262e8e0c1b8fa489af5929d2b4d87"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-3.jpg",
+      "bytes": 224664,
+      "sha256": "91ed39fab4049ff6c863c89236fe43a71488ab95490644757f8553b59f122d39"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-4.jpg",
+      "bytes": 181954,
+      "sha256": "5db2480f1f5bc491a53a4fd61cdd5be20727244f02baa35a6768603a8cc88064"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-5.jpg",
+      "bytes": 175063,
+      "sha256": "ac29eb3a92ada62d5fbdce4d19c9296cf492aa0a5c4be1ce656e8d6f6c766f00"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-6.jpg",
+      "bytes": 182428,
+      "sha256": "fe5a39a294f27c16b6ff413485b9014017d43e569081a8838883ca16b859eeb4"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-7.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-7.jpg",
+      "bytes": 194222,
+      "sha256": "4a6f42deee2fa9dde38dc7db07a5c6ed83f17b5ff5fd60dd01ede9cd7a4d9e21"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-8.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-8.jpg",
+      "bytes": 189112,
+      "sha256": "d8a3aa95c26b99655a509948c37bad137791abdd462240db92464699bf800bfe"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DP/extend-item-dp-9.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DP/extend-item-dp-9.jpg",
+      "bytes": 221619,
+      "sha256": "af69dc5f5f197025aa6e6d3413bc7bf983709af98df093648fa6268954ee5e61"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DPt/extend-item-dpt-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DPt/extend-item-dpt-1.jpg",
+      "bytes": 184613,
+      "sha256": "ae0bf6979a264d065509b6845ea749059faf7c458164b57557ffc59210dd946c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DPt/extend-item-dpt-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DPt/extend-item-dpt-2.jpg",
+      "bytes": 167713,
+      "sha256": "e92a7cd47fca9c71f51920946fd55277f63059c4a3446c3aeb59b123ebc50b43"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DPt/extend-item-dpt-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DPt/extend-item-dpt-4.jpg",
+      "bytes": 200829,
+      "sha256": "242a5b598acd774ed61b3a461e53a45aa9c7187e5c3707bbafd851adda3e54a6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/DPt/extend-item-dpt-8.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/DPt/extend-item-dpt-8.jpg",
+      "bytes": 169333,
+      "sha256": "f51bb04b372a66c04e2307179a45ab2bd7bfa2476e6c0c0815b357e91aaccffe"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/LEGEND/extend-item-legend-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/LEGEND/extend-item-legend-1.jpg",
+      "bytes": 224861,
+      "sha256": "4095527747b0779ca4f204979da186b4f29a6e005586c10e3ca4c6fd43b6ac52"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/LEGEND/extend-item-legend-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/LEGEND/extend-item-legend-2.jpg",
+      "bytes": 202961,
+      "sha256": "e0eed9797c88acd1a4ce07923cdc8dabd71ee208ba39ad9b17eb58f373a6ed32"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/LEGEND/extend-item-legend-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/LEGEND/extend-item-legend-3.jpg",
+      "bytes": 208886,
+      "sha256": "738fa4e4f1517ac6bd41d01b2b55ebe9c1923251b3fbca3462e338a837913b47"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/LEGEND/extend-item-legend-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/LEGEND/extend-item-legend-4.jpg",
+      "bytes": 169292,
+      "sha256": "b6d10b12957ac9a5cc520f9a4f4385decceb12560d8e840eacdd4efe2d987f31"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/LEGEND/extend-item-legend-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/LEGEND/extend-item-legend-5.jpg",
+      "bytes": 209604,
+      "sha256": "070a4abc3af0b4f80c41c4be38279c5c97a73079f745b4ca08a5d6ce5d311b7f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/M/M1L.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/M/M1L.jpg",
+      "bytes": 132685,
+      "sha256": "f3b7613c11693b89e3213ec95e9a1e7b9ee3689a18f1b35b0324a407f0eca73d"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/M/M1S.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/M/M1S.jpg",
+      "bytes": 118631,
+      "sha256": "95bbc3e60f43de2163dd8baf2aacf51d47929931795c40fc7fceb21fa5ae3f1f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/M/M2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/M/M2.jpg",
+      "bytes": 126474,
+      "sha256": "f7481f66f1379d6f6571dc91518e226be5012b1d596cd12125c38626bf80c94c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/M/M2a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/M/M2a.jpg",
+      "bytes": 103882,
+      "sha256": "72dbd3d4d957e9c9d8ad7451d3c066ea1d8d6d2efbbb6149c94c445bb1cd17f6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-1.jpg",
+      "bytes": 204040,
+      "sha256": "1d84e8292a0e78d47ac4b07d1da310b40f8c4f9f56a2f1e064203540c9137d62"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-2.jpg",
+      "bytes": 194481,
+      "sha256": "9427a6d97e0b6c67a6408eade62e6d4438cbbcee88236445efcb648da8fcdc99"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-3.jpg",
+      "bytes": 148564,
+      "sha256": "c33deb2cc11c1c54ca45bc65182b5cb25b668327717af059ca7cf2dae36f5f63"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-4.jpg",
+      "bytes": 241527,
+      "sha256": "92d8b8b95d7ac8049b05122eaf2a75b8bac5b5e642ea6ae45bd3748edd720a5b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-5.jpg",
+      "bytes": 183327,
+      "sha256": "329311f49c28b3cea2d8f6601d7d4578113d6270a65caef557641075c5a83b71"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-6.jpg",
+      "bytes": 210794,
+      "sha256": "31296c5151146a61460a081f891034bdaa45b250473e9870502da906b701b56f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-7.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-7.jpg",
+      "bytes": 218319,
+      "sha256": "790faa027a007987619d3ec9d375709f8a3c6332becbe272cc6072d896c0e9b3"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-8.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-8.jpg",
+      "bytes": 219057,
+      "sha256": "88168e9e25412c51d5a98865827abadb5aee1e7b71fcf0883071ac9534ed1626"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-9.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/PCG/extend-item-pokeCardGame-9.jpg",
+      "bytes": 234185,
+      "sha256": "969bf207134cb51e58cb3890ca0ba43df4d9df5d6094220ec3193bf304fed5c0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S10D.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S10D.jpg",
+      "bytes": 99850,
+      "sha256": "3ee8d89005025cc51ec731bd8becb179103ffd7b68867e68d5fa545a32d7dbeb"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S10P.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S10P.jpg",
+      "bytes": 98637,
+      "sha256": "b36fca1efa4bbd0eda2b8bbb326b1353e1786fb4d02bf99b99135fdd43b44fa1"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S10a.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S10a.png",
+      "bytes": 3622655,
+      "sha256": "e4cd76c838f8d519ebb1fc0ac2804ed6498e00ac09e7f9b9c561d5cfd15bf79e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S10b.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S10b.jpg",
+      "bytes": 118983,
+      "sha256": "593e2e707536132ad7f8e58560ef9cd749c2d0bee560a4affc8abde204adf182"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S11.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S11.jpg",
+      "bytes": 103652,
+      "sha256": "8c735e353bde226bae512f79f10d1e65bd5b1524e2195b9da3f8bfcf2d7dd249"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S11a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S11a.jpg",
+      "bytes": 107609,
+      "sha256": "525c82b7b6e13d5c4f9dbe57cde589d580f2b67514ed09a6e795f385fc3a34b0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S12.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S12.jpg",
+      "bytes": 111142,
+      "sha256": "a62991d71ffef02590d2ff1c3c1d4c90ee152a8136574fa3153b9a1902345856"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S12a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S12a.jpg",
+      "bytes": 116302,
+      "sha256": "0b7c9f27991a6cadc2c90f7e0c4e65112e6159e5d226e6e861f7ee73fc5d2498"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S1a.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S1a.png",
+      "bytes": 4434262,
+      "sha256": "37fd82b66b5d0a1ca59ccfd9d7bac6dbd3236f8ecfd97c3eaf18f0fef825827b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S1h.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S1h.jpg",
+      "bytes": 111058,
+      "sha256": "15a2eefaeefd670666640a638ab246cf06079075ef82e5335904480b8c202063"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S1w.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S1w.jpg",
+      "bytes": 114462,
+      "sha256": "27cc96e6db165562e9adc82c51da752123b2123b9944d547817bb292e2704940"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S2.jpg",
+      "bytes": 78395,
+      "sha256": "a80c91b57287428960adfe3e93017fe9d7b5f415d926d09ff95548a10ef45c88"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S2a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S2a.jpg",
+      "bytes": 378937,
+      "sha256": "6e181f22b2e97f470f1ae236b6a4bc48e86ffe1d3a4476f84843e1122c7a23ba"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S3.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S3.png",
+      "bytes": 1078226,
+      "sha256": "a8fdedb2d4ddeade2eb274b7a5b31aab83a0a882530c442c9556c961c4df5834"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S3a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S3a.jpg",
+      "bytes": 308537,
+      "sha256": "fb3f08d06d6838c78e886f55da9bb0840b8c121a1ba9caf97377934db8f98ede"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S4.jpg",
+      "bytes": 426661,
+      "sha256": "0522f7359ae4009849267936cbebef086aeff6e975e608eaa194e3a52c816ea2"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S4a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S4a.jpg",
+      "bytes": 304681,
+      "sha256": "5689ed26e5ec81a05a67f65800d13e72b927fe98ed1312fb0441a2493cec8fc3"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S5I.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S5I.jpg",
+      "bytes": 410371,
+      "sha256": "4b36146c15075920f91c9a5715675381099c56e9b4bb017d4c0a27c8abcf05bd"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S5R.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S5R.jpg",
+      "bytes": 461392,
+      "sha256": "6dc3227693c1da8327c34e5502c3639189d82f64a26500810410e8c270ddd2ea"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S5a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S5a.jpg",
+      "bytes": 71673,
+      "sha256": "eaa22bbfc61407aca804619c9995efda9084bd7ef9914ccef8a579078a8e40e5"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S6H.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S6H.jpg",
+      "bytes": 450079,
+      "sha256": "2c59dcf58e79983054e9a75fbe76ef35a286b1085bef8f26ecff30212b3cde64"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S6K.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S6K.jpg",
+      "bytes": 467805,
+      "sha256": "a56acee9c91739cdb1faa74e5ba103fbb55c5fffe6b8b8b9d0b72435946200d5"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S6a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S6a.jpg",
+      "bytes": 90461,
+      "sha256": "60eca54a08280f489c4cd21a96259d4180076a8ee420d08ca0b1136e1653c9e9"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S7D.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S7D.jpg",
+      "bytes": 251947,
+      "sha256": "cb9b4af4c9eafe82fa0ecaa24d1a50d729ed6fe777c00e423652c6dc3b81f70e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S7R.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S7R.jpg",
+      "bytes": 269366,
+      "sha256": "6163fd8f3efc6bdff6c0febeb42c9925e09d92e7d3b6e390aafefea9c89a3dec"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S8.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S8.png",
+      "bytes": 3388649,
+      "sha256": "cb40b9392f9af014d6eb5a8d7c3837f7cccae8212eed0c72f8361d915904b488"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S8b.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S8b.png",
+      "bytes": 1111389,
+      "sha256": "fea34a9b1bca91797eb9b5cad4548faca71534ad7144bab0d3d042e34989a373"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S9_PKG.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S9_PKG.jpg",
+      "bytes": 103421,
+      "sha256": "6dce96bf0c01bb290d3a17e4d69d582780b204256d4501b5353d603ca6ffe213"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/S/S9a_PKG.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/S/S9a_PKG.jpg",
+      "bytes": 107042,
+      "sha256": "a3e9e5a2c10d2c4e045482059d26557194cd28f7663ac92cc705864843a8ea6e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM1+.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM1+.jpeg",
+      "bytes": 289736,
+      "sha256": "af060a38929f503d0d1f023fd499177782d96cd5cbc325e82cc2618bce5b386c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM10.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM10.jpeg",
+      "bytes": 453191,
+      "sha256": "9868ac4ca970342218511632a6cc69bb974da886d489aeb4bd73185e7a2ec697"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM10a.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM10a.jpeg",
+      "bytes": 104992,
+      "sha256": "e694e086eed3d2355f4390565a42dfc4990f92b73ff75012bbd26a2fda76fb9a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM10b.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM10b.jpeg",
+      "bytes": 123903,
+      "sha256": "175d5949ac43581eb986d75c3a96a138ebaa093042355ce59520819b3290b05c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM11.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM11.jpeg",
+      "bytes": 452314,
+      "sha256": "583a0009271a573c8a9b4f80203c34b8c1b435ae7659110b39314adf3d0bdb80"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM11a.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM11a.jpeg",
+      "bytes": 129738,
+      "sha256": "e6f6bd0252b41c575a15355fde0cb0ed6c259f73f28a19a67ebe448028e823e1"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM12.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM12.jpeg",
+      "bytes": 117012,
+      "sha256": "87d93da64133aee478ca21b41dd48f70a8c6a3c014e1bc40c14f1554cb553ef5"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM1M.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM1M.jpeg",
+      "bytes": 271035,
+      "sha256": "5a6dc49a0f0b43413e64260473e8373a491f64369b591018ee3bcf26710d97ff"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM1S.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM1S.jpeg",
+      "bytes": 344205,
+      "sha256": "d349d24ba0ff21e82b68f82f9026b10adbedc96cce363a0767cada8dfd7c9657"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM2+.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM2+.jpeg",
+      "bytes": 1174243,
+      "sha256": "06c43b36b11ec71a5d830c80b90066548e5d64781064d09cbe96d60e2462ea89"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM2K.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM2K.jpeg",
+      "bytes": 761039,
+      "sha256": "1d643b5e67ba65d553f5d979e21797d191267d35c88095fd287f87fb2f79fefc"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM2L.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM2L.jpeg",
+      "bytes": 680125,
+      "sha256": "99e0597c0a7057c8e28897e184bf6f4c109a3d68aaf2127fd4bf5736214f9a6d"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM3+.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM3+.png",
+      "bytes": 1390174,
+      "sha256": "3f0d18a60f4d1d661ed3d64c42fc30dc892e3bd19b2e370ca7fbd4eecf473f22"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM3H.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM3H.png",
+      "bytes": 1561355,
+      "sha256": "c58584131df677ccb4d79b83219ad80fba12190d5eb68d71bcd3d43380c32676"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM3N.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM3N.png",
+      "bytes": 1521185,
+      "sha256": "7cf408ebb44c6f08f021872248f9eef9ed8617aae1a771e3b154530c882724d0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM4+.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM4+.png",
+      "bytes": 1308196,
+      "sha256": "f749f4d96769f10f82d60af194e40e088ab57137262032326e4e4101c6f8f331"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM4A.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM4A.png",
+      "bytes": 1531761,
+      "sha256": "004b3101ef375d9bc7a2092aae8d49d155fb73642c2b5e9debce48589dba514d"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM4S.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM4S.png",
+      "bytes": 1422232,
+      "sha256": "f8566d50fc5fb4a81a941707c1e9b695575ab6911784206463c8b1f481d9be6e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM5+.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM5+.png",
+      "bytes": 666814,
+      "sha256": "c134bf70210f50302984b87d71e530e7f7b3de2c06838ab4a412dbbaf7abe957"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM5M.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM5M.png",
+      "bytes": 786223,
+      "sha256": "f3d1640a6104636d3feb8ded6ff3a1bb064a0c6a9d38dc8171fb1151542d27f0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM5S.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM5S.png",
+      "bytes": 809813,
+      "sha256": "d921ac229f1982dfa85921ab89410aff0fb40e7f5bfe86114d11507744a913c6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM6.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM6.png",
+      "bytes": 614649,
+      "sha256": "e8610308cc8eec6fa37311d4fce58cd2793eb8167553ad727c25669077a91307"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM6a.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM6a.png",
+      "bytes": 634352,
+      "sha256": "35d96b36e8d06de8c68d7e8860012e46cba776e64cc5dae4bea95ea64597e83f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM6b.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM6b.png",
+      "bytes": 590350,
+      "sha256": "b6388a56c5441faf5fcb8efbc67fb81e1049b7dbec4cf3dc8bceaf3baeefb1e6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM7.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM7.jpeg",
+      "bytes": 227775,
+      "sha256": "b28841063abdc92d3c8e5d06bff6fe2ffe60325de2e2333f515c002c8f866d90"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM7a.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM7a.jpeg",
+      "bytes": 268927,
+      "sha256": "1251ef7e6722de10a6d7b8abacd40be7e4b07958125d2c42c55d9cfe34b2eb50"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM7b.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM7b.jpeg",
+      "bytes": 393971,
+      "sha256": "7666e9e77ee0927da2e8ad4177a120afe21213f7ae4eaeeaeab6a02353cc4b17"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM8.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM8.jpeg",
+      "bytes": 113771,
+      "sha256": "af52a544c6fb7b911103e6b7625e107a94a5a1d607c1e34b714698f20ddbb831"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM8a.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM8a.png",
+      "bytes": 3663443,
+      "sha256": "f7b99ba2faf98f7021a8dbae38fcb7c61b33dbc74011c9ba6bba5fa475584a7e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM8b.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM8b.png",
+      "bytes": 3690996,
+      "sha256": "ff9b31dadf22936540d8fd54a81b402ef26493cd681fb0166e64de5b71fac95a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM9.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM9.jpeg",
+      "bytes": 109312,
+      "sha256": "70cbf4ba8bbd33db3a9923eb7e39f20a41e484d530bb88ab46f543f5a9aa53e4"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM9a.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM9a.jpeg",
+      "bytes": 124730,
+      "sha256": "293e9aa452cb2813f6da34933fc1038514b7105e65cedb3f69f82cca276c9c9e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SM9b.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SM9b.jpeg",
+      "bytes": 119906,
+      "sha256": "aac554feedc2fee77352c2763003a1d79fec134d881fc4221faa207088ac7d63"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SM/SMP2.jpeg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SM/SMP2.jpeg",
+      "bytes": 494175,
+      "sha256": "8a1481fcd12f57e849231a761a3df9ad92b8c12da2594acd12dc2638a4d4c723"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV2D.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV2D.png",
+      "bytes": 3726225,
+      "sha256": "25140b48dc59ecb2dbebacdd4a3ac09864d44b67282ca807364566b413879d84"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV2P.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV2P.png",
+      "bytes": 3730961,
+      "sha256": "c4d083de82325d765d758d5fac78aebbacd6899aa954ef7fbacfa1f3c5304103"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV3a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV3a.jpg",
+      "bytes": 596179,
+      "sha256": "437258887fe563f3917650c66d174e1433627a2ab3006402487f2fad0bf82df5"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV5K.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV5K.jpg",
+      "bytes": 145834,
+      "sha256": "9ce418ecae89c79cc3c7a359017d1cf9edc86d679df7105dea73c5670406ce96"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV5M.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV5M.jpg",
+      "bytes": 139979,
+      "sha256": "e8d24df1a7a725f5c5dd38f36342e9e545a30b9b1d63a3c8c87f8a6f2de99c56"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/SV5a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/SV5a.jpg",
+      "bytes": 293529,
+      "sha256": "ed40386905bb8eafb66de249507efb67622ec822b7cfecc2a82d919bb9db4139"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv1a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv1a.jpg",
+      "bytes": 511378,
+      "sha256": "7b32360e06993f32fe88fca58a8366aeff2037182596f849d5d76e83d9405d7c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv1s.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv1s.jpg",
+      "bytes": 133336,
+      "sha256": "6990ae8bc8f2c62e44365f86a2775e51df8c77bcfe8fa034d3e69cdf79836506"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv1v.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv1v.jpg",
+      "bytes": 137691,
+      "sha256": "cc1800cf37ffc891da4e1b913aac050c197dbc30abbe5466821aabf63a6da1f7"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv2a.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv2a.jpg",
+      "bytes": 118873,
+      "sha256": "846938d03f8a8a5bfe52b89a230d0a98d08e93129f14ac8b253e0571e8117827"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv3.jpg",
+      "bytes": 83327,
+      "sha256": "990085468e168344c45844bf43b72f1150d7337cf9dd75e0a226fd748df50d4a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/SV/sv7a_pillow.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/SV/sv7a_pillow.jpg",
+      "bytes": 678035,
+      "sha256": "c28fda45f23eae4a724a7930f9f1fd895caa64f93c3591692b614a9a7a175f9d"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/XY.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/XY.jpg",
+      "bytes": 245243,
+      "sha256": "cdcd0539b1871c77c43f16a39942a45ab072ad58bdf8b5fba5850ecb8de350e4"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/XY11_pillow.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/XY11_pillow.jpg",
+      "bytes": 428351,
+      "sha256": "62571cc9d39b74c8b624eb0bb260b1eba6bc34db6e4d72a58d7615628161929b"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/XY4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/XY4.jpg",
+      "bytes": 244705,
+      "sha256": "a91bf091596fbde3ec66aa35b56b8a1c8e6d7dd88e59e678670f901ec9c9a1da"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp1.jpg",
+      "bytes": 411281,
+      "sha256": "e43350633003c3f5d389b6cd1a73da1147f5775ae8e5fb687bf9dc73ad09fa28"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp2.jpg",
+      "bytes": 530699,
+      "sha256": "775f2e4e6a2f761f796d5702676982e1e07638cf051842a59b73db9e06297734"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp3.jpg",
+      "bytes": 321892,
+      "sha256": "be217443ab9df76f542127fc6786fabb54886b44e86b69985e4a94a46f1f0737"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp4.jpg",
+      "bytes": 300883,
+      "sha256": "0e2de2a51be50b1f1194369e34e63dcd8afb723f798a9af55a5e347123d99ab3"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp5.jpg",
+      "bytes": 284374,
+      "sha256": "5b491d8e5402e360d104ac965497fc4453d161ed1b42424e9c7968167e427565"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/cp6jpg.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/cp6jpg.jpg",
+      "bytes": 365259,
+      "sha256": "d9bcfa1e6a4e8c262140e9c473e4ee0605f4e010b6b450ce84ba0e03b4dc9511"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy1.jpg",
+      "bytes": 375546,
+      "sha256": "6610dc88e657830a89889917dded5f76e274f9f80d90be2c4f4b1a67b161c8b7"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy10.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy10.jpg",
+      "bytes": 315764,
+      "sha256": "88119efdd4c81b4ea6d21d8c2c0f0fb93e0bcef627a0bc29460829558c84bf4f"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy2.jpg",
+      "bytes": 366075,
+      "sha256": "3539c00fc32ee0b9accbb657836a40bc2f507d7b67a96445d0f9897ea25e8df7"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy3.jpg",
+      "bytes": 258142,
+      "sha256": "d53af1cd36cdd3a373026d6cd963851903c0669ebf177f4a673aee65dcf7a7a3"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy5.jpg",
+      "bytes": 450266,
+      "sha256": "e2db7161a7f93cc6a788a8eb44c49da082a0d427e6629feecdb8c4f0bb349ce6"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy6.jpg",
+      "bytes": 315579,
+      "sha256": "352fa8a7d6c945d4f1dcf33119fb56f035880e06047d0c8ed26c461ce362fe28"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy7.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy7.jpg",
+      "bytes": 303581,
+      "sha256": "510a048524c7b3edf0baf1250186d908f9b1b5c026c7efb69e495d87ffed968c"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy8.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy8.jpg",
+      "bytes": 454725,
+      "sha256": "c02c359e5965efa82fa05a321b1d3fcc95fa5ab772eda1f68b3c789b7dd9c5f9"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/XY/xy9.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/XY/xy9.jpg",
+      "bytes": 345843,
+      "sha256": "f558f3534184d71684829af8cb6ea164a23a1bee0e636de273a5d88d38a90697"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/e/extend-item-e-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/e/extend-item-e-1.jpg",
+      "bytes": 181293,
+      "sha256": "a321c6486252b08d4eb4f6c96820e2a2a70496f9999ffb45d17ae5bdedc5001e"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/e/extend-item-e-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/e/extend-item-e-3.jpg",
+      "bytes": 180192,
+      "sha256": "9af8238a9635d67c9f087e856f61ffc0617aca02cee77ab013d00bc44ec203c8"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/e/extend-item-e-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/e/extend-item-e-4.jpg",
+      "bytes": 190453,
+      "sha256": "52e8e52703a0de8548ac003e5c7b54aa3b03e40041dc6d43d8d9860745f0a614"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/e/extend-item-e-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/e/extend-item-e-5.jpg",
+      "bytes": 173962,
+      "sha256": "360aed7381df3fcf47d2b2dec5a8aa7023ab2ba79a3ca37cbf73b9e7b87b8a15"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/e/extend-item-e-6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/e/extend-item-e-6.jpg",
+      "bytes": 188552,
+      "sha256": "2e14b5338b8a4be7009e0c7b3f03a3cb4a3364e2725619ae02ebe4a146fe82f7"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/neo/extend-item-neo-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/neo/extend-item-neo-1.jpg",
+      "bytes": 144134,
+      "sha256": "1905aac97c0338f773ee4d5f9da628406733ec5024de518a29cd87b8746604ff"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/neo/extend-item-neo-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/neo/extend-item-neo-2.jpg",
+      "bytes": 159535,
+      "sha256": "73b496a024ba6fe1bca884e4d571cff35ba202ec66afadee04198b7a56d04536"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/neo/extend-item-neo-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/neo/extend-item-neo-3.jpg",
+      "bytes": 173696,
+      "sha256": "35e90088506b2ba993791491aee8e339346cb3eb5935b57efadd33dca6b43d10"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/neo/extend-item-neo-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/neo/extend-item-neo-4.jpg",
+      "bytes": 151338,
+      "sha256": "6cd3609357b1c79617635a3be328ae24b9a5e5df998583cb353cdc222f75e7c2"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-1.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-1.jpg",
+      "bytes": 201345,
+      "sha256": "ccd44596987f0ce6dcbdc1484fa773dd4c60aa1b62ffdb52dec96b502a2d1e35"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-2.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-2.jpg",
+      "bytes": 194873,
+      "sha256": "d386ba96020508d96e0a6dc39100c1c7368e9d58793e4f2ff3fd43f9c3f81d64"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-3.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-3.jpg",
+      "bytes": 180886,
+      "sha256": "2b36e28fb3298b04b000ea8dcc93e8baa0b803e766694ba5a548c27247fae2c0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-4.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-4.jpg",
+      "bytes": 185897,
+      "sha256": "96df7046db221f53f9268606ee8dc9d48493d4ce676e38523a5f21ea67fc807a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-5.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-5.jpg",
+      "bytes": 172213,
+      "sha256": "25f7252977df6efd42cca75cf8110ddad068f0cbcd95bd5c1cbb50e3d4120d8a"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-6.jpg",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/original/extend-item-poketMonsterCardGame-6.jpg",
+      "bytes": 162630,
+      "sha256": "6d201c17f82267a0b326e36f97577dcda8e495244b2b4766afa85befa51d26d0"
+    },
+    {
+      "original": "assets/images/card/set-package-jp/set-timeline-Mar24.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-jp/set-timeline-Mar24.png",
+      "bytes": 724762,
+      "sha256": "f9edd42fa93de3a4c77bcf80461712cffd6beeee3558f59c87172f7588d1ccca"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Lunala_(Back).png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Lunala_(Back).png",
+      "bytes": 1083968,
+      "sha256": "3a22cf95229b5f38b71495556342058bfd8bac1b3c86b410f03ae89b3323117e"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Lunala_(Front).png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Lunala_(Front).png",
+      "bytes": 1290295,
+      "sha256": "84e400ebba8ee1acf486bf93144573ad078b9544a4ae132041bfd4a3ffd5505a"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Solgaleo_(Back).png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Solgaleo_(Back).png",
+      "bytes": 1120592,
+      "sha256": "743d3aa77651b28f78131a2cb95177544045eb8c4052125204dbe5889670553e"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Solgaleo_(Front).png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Celestial_Guardians_Booster_Pack_Solgaleo_(Front).png",
+      "bytes": 1331919,
+      "sha256": "6114bd44b2105878e523cc22a089449adf42a26bd96117ad16d403fc5d4d4602"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Space-Time_Smackdown_Booster_Pack_Dialga.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Space-Time_Smackdown_Booster_Pack_Dialga.png",
+      "bytes": 1508691,
+      "sha256": "60e6a0b9cb65841df0997efb9c53bdf9067fb191319600ab6fbed35b298344a5"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Space-Time_Smackdown_Booster_Pack_Palkia.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_TCG_Pocket_Space-Time_Smackdown_Booster_Pack_Palkia.png",
+      "bytes": 1393370,
+      "sha256": "327275c48580d103ae47aac1a66b497bd342b2ceec8db651814cd726e2c8df3c"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Mythical_Island_Booster_Pack.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Mythical_Island_Booster_Pack.png",
+      "bytes": 983129,
+      "sha256": "509ff3bc4c99b5821931268223ac96ee1f77695b766ee1cc184cdb8fdc51c3a7"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Pack_Artwork_EN.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Pack_Artwork_EN.png",
+      "bytes": 1248395,
+      "sha256": "c1619ba56b63f473612a3555e4216ce8549c9872efc7ab0a6a9e17dc20e4e277"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Pack_Artwork_Reverse_Side.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Shining_Revelry_Pack_Artwork_Reverse_Side.png",
+      "bytes": 899909,
+      "sha256": "25f27394a3ffcce759ebb343090e918a6b1163c7181ba0aeba5bdc8b5f7f8d43"
+    },
+    {
+      "original": "assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Triumphant_Light_Booster_Art_EN.png",
+      "archived": "archive/original-assets/assets/images/card/set-package-pocket-en/Pokemon_Trading_Card_Game_Pocket_Triumphant_Light_Booster_Art_EN.png",
+      "bytes": 1403039,
+      "sha256": "951b311bd344e5502bad6ab52df8364a5dfc791ff7c29dfbf9d93646aa7ab40e"
+    },
+    {
+      "original": "assets/images/event/icon-clock.svg",
+      "archived": "archive/original-assets/assets/images/event/icon-clock.svg",
+      "bytes": 908,
+      "sha256": "ba0d81456454511a5a1c7fb36d838b05f407c47948fa4bd5681b5a17d02dce1a"
+    },
+    {
+      "original": "assets/images/event/icon-gym.svg",
+      "archived": "archive/original-assets/assets/images/event/icon-gym.svg",
+      "bytes": 1552,
+      "sha256": "240ad90bf9a66c567251925cdfebd6c85aa6675a0be3627b735dc811941b3348"
+    },
+    {
+      "original": "assets/images/event/icon-organizer.svg",
+      "archived": "archive/original-assets/assets/images/event/icon-organizer.svg",
+      "bytes": 1528,
+      "sha256": "3f786136b84f6bbbf2813ace142e57deb9516031e11d46f370ffba0ef2e8d88c"
+    },
+    {
+      "original": "assets/images/icon-breadcrumb.svg",
+      "archived": "archive/original-assets/assets/images/icon-breadcrumb.svg",
+      "bytes": 166,
+      "sha256": "514d5ca42ccd80009f9e6916a9cc300f57baed4ca619b4e35f9570d288b315ee"
+    },
+    {
+      "original": "assets/images/icon-line.svg",
+      "archived": "archive/original-assets/assets/images/icon-line.svg",
+      "bytes": 812,
+      "sha256": "6d60609bc4e87e7b4d5d6c6cb78a8c5e261259a2e52592ef53376063a05ce22a"
+    },
+    {
+      "original": "assets/images/icon-new-label.svg",
+      "archived": "archive/original-assets/assets/images/icon-new-label.svg",
+      "bytes": 1073,
+      "sha256": "0fb6d02e72db10034e3b16a199d0c0965c8f912a1fb7879623e0a22b932955dd"
+    },
+    {
+      "original": "assets/images/icon-twitter.svg",
+      "archived": "archive/original-assets/assets/images/icon-twitter.svg",
+      "bytes": 591,
+      "sha256": "1736b6b97196ef992d06436294550208e4f4a235599eb77218090deeac1cf5c2"
+    },
+    {
+      "original": "assets/images/icon-zoom-up.svg",
+      "archived": "archive/original-assets/assets/images/icon-zoom-up.svg",
+      "bytes": 996,
+      "sha256": "05932bbd5e5bb23a14f9196082de97b9b75764d0f81c4f6e0a76feb0aeeddcd0"
+    },
+    {
+      "original": "assets/images/logo-header.png",
+      "archived": "archive/original-assets/assets/images/logo-header.png",
+      "bytes": 2615,
+      "sha256": "e43e4a57db9daaa28afff12d99b5c403ace5e88811edef456e33e44693673f47"
+    },
+    {
+      "original": "assets/images/logo_arceus.png",
+      "archived": "archive/original-assets/assets/images/logo_arceus.png",
+      "bytes": 350637,
+      "sha256": "4e53b22666c6308b43b207327e660895fbe36565d83e64a0f9d1c8c6698d596e"
+    },
+    {
+      "original": "assets/images/sprite-2x.png",
+      "archived": "archive/original-assets/assets/images/sprite-2x.png",
+      "bytes": 108921,
+      "sha256": "321a8cb43eef78180090b0d859d9276407e740948de19d558951a809ff79aa5e"
+    },
+    {
+      "original": "assets/images/sprite.png",
+      "archived": "archive/original-assets/assets/images/sprite.png",
+      "bytes": 45067,
+      "sha256": "cc15447783171f3b00cb3e4e12732ec8f53b3ba4f19febb82810a4b426e8041d"
+    },
+    {
+      "original": "assets/images/test.jpg",
+      "archived": "archive/original-assets/assets/images/test.jpg",
+      "bytes": 105301,
+      "sha256": "8b49c79059a38ed8e2a832a6603ca44ae833a577c5079d05d49d8f078e029a3d"
+    }
+  ],
+  "total_files": 252,
+  "total_bytes": 164399576,
+  "source_assets_before_bytes": 363680649,
+  "source_assets_before_files": 606
+}

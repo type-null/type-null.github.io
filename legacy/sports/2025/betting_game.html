@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A browser-only probability playground with dice, coins and cards. No real money or account required.">
+<title>Probability Parlay · Type: Null</title>
+<link rel="stylesheet" href="../../assets/fonts/pokemon-fonts.css">
+<style>
+:root{color-scheme:light;--ink:#404248;--muted:#75777e;--line:#dde1ea;--blue:#489fe6;--purple:#5969df;--surface:#f3f4f5}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 'Noto Sans JP',Helvetica,Arial,sans-serif}
+main{max-width:1280px;margin:auto;padding:24px}
+h1,h2,h3,p{margin:0 0 12px}
+h1{font-size:34px;line-height:1.4;letter-spacing:normal}
+h2{font-size:24px;line-height:1.4;letter-spacing:normal}
+h3{font-size:16px}
+button,input{font:inherit}
+button{border:0;border-radius:60px;padding:10px 19px;background:linear-gradient(90deg,#489fe6,#84c3f6);color:white;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 6px #0003}
+button:enabled:hover{opacity:.75}
+button:disabled{opacity:.45;cursor:default}
+.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #246ba6;outline-offset:3px}
+[hidden]{display:none!important}
+.eyebrow{font:700 12px/1.6 'Lato',sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--blue)}
+.muted{color:var(--muted);font-size:13px}
+.intro{background:white;border-radius:10px;padding:clamp(20px,4vw,40px);border:1px solid var(--line);box-shadow:0 0 15px #0000000d;position:relative;overflow:hidden}
+.intro p{max-width:70ch}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.intro .actions{margin-top:22px}
+.rules{margin:20px 0;background:white;border-top:3px dotted var(--line);border-bottom:3px dotted var(--line);padding:16px 20px}
+.rules summary{font-weight:700;cursor:pointer}
+.rules p:first-of-type{margin-top:12px}
+.rules p:last-child{margin-bottom:0}
+.stats{display:flex;flex-wrap:wrap;gap:12px 30px;margin:22px 0}
+.stat{display:flex;flex-direction:column}
+.stat small{color:var(--muted);font:400 12px/1.6 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.09em}
+.stat strong{font:700 24px/1.6 'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);padding:16px;border-radius:10px;margin-bottom:16px}
+.controls p{margin:0;flex-basis:100%}
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0;box-shadow:0 0 15px #0000000d}
+.panel:nth-child(2){border-top:4px solid var(--purple)}
+.panel:nth-child(1){border-top:4px solid var(--blue)}
+.panel:nth-child(3){border-top:4px solid #ff9f3d}
+.panel h2{margin-bottom:3px}
+.bet-table{width:100%;border-collapse:collapse;margin-top:16px;table-layout:fixed}
+.bet-table th{text-align:left;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 4px;border-bottom:1px solid var(--line)}
+.bet-table td{padding:10px 4px;vertical-align:middle;border-bottom:1px solid var(--line);font-size:13px}
+.bet-table th:first-child{width:48%}
+.bet-table th:nth-child(2){width:21%}
+.bet-table th:last-child{width:31%;text-align:right}
+.bet-table small{display:block;color:var(--muted);font-size:11px}
+.bet-table .payout{color:var(--purple);font-family:'Lato',sans-serif;font-weight:700;font-variant-numeric:tabular-nums}
+.bet-input{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px;text-align:right;background:var(--surface);color:var(--ink);font-family:'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.bet-input[aria-invalid=true]{border:2px solid #a43343}
+.bet-input:disabled{color:var(--muted);opacity:.8}
+.win td{background:#e5f5f1}
+.loss td{background:#fbebed}
+.result-marker{font-size:11px;font-weight:750}
+.win .result-marker{color:#08654f}
+.loss .result-marker{color:#a43343}
+.sum-note{margin:16px 0 0;font-size:12px;color:var(--muted)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.result-pieces{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.piece{display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:48px;padding:6px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font:700 20px/1.6 'Lato',sans-serif}
+.coin{border-radius:50%;background:#fff7dd;font-size:17px}
+.red{color:#b33850}
+.chart{display:block;width:100%;height:170px}
+.chart path{stroke:var(--line)}
+.chart polyline{stroke:var(--blue)}
+.chart circle{fill:var(--purple)}
+.chart text{fill:var(--muted);font-family:'Lato',sans-serif}
+.history{font-size:12px}
+.history summary{cursor:pointer}
+.history ol{display:flex;gap:8px 20px;flex-wrap:wrap;padding-left:22px;font-family:'Lato',sans-serif;font-variant-numeric:tabular-nums}
+.status{min-height:24px;color:#97404d;font-weight:650}
+.session-end{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.save-form{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.save-form label{font-size:13px;font-weight:650}
+.save-form input{display:block;margin-top:5px;border:1px solid var(--line);border-radius:8px;padding:8px;max-width:100%;background:white;color:var(--ink)}
+dialog{border:1px solid var(--line);border-radius:10px;box-shadow:0 0 30px #0003;color:var(--ink);width:min(560px,calc(100% - 32px));padding:28px}
+dialog::backdrop{background:#40424888}
+.dialog-header{display:flex;align-items:start;justify-content:space-between;gap:10px}
+.score-list{padding-left:22px}
+.score-list li{padding:8px;border-bottom:2px dotted var(--line);overflow-wrap:anywhere}
+.score-list strong,.score-list small{display:block}
+.close{padding:6px 14px;font-size:18px}
+.footer{font-size:12px;color:var(--muted);margin:24px 0 0}
+
+@media(max-width:1000px){.board{grid-template-columns:1fr 1fr}
+.panel:last-child{grid-column:1/-1}
+}
+@media(max-width:650px){main{padding:16px}
+body{font-size:14px}
+h1{font-size:24px}
+h2{font-size:20px}
+.board,.summary-grid{grid-template-columns:1fr}
+.panel{padding:16px}
+.panel:last-child{grid-column:auto}
+.stats{gap:12px 20px}
+.stat strong{font-size:19px}
+.controls .actions{width:100%}
+.controls button{flex:1}
+.intro{padding:24px}
+.bet-table th:first-child{width:51%}
+.bet-table th:nth-child(2){width:20%}
+.bet-table th:last-child{width:29%}
+.intro h1{max-width:12ch}
+}
+
+@media(prefers-reduced-motion:no-preference){button{transition:opacity .3s}
+tr.win td,tr.loss td{transition:background .25s}
+}
+
+</style>
+<script defer src="../../assets/js/tools/betting.js"></script>
+</head>
+<body><main>
+<noscript><p class="rules">Enable JavaScript to play this probability game. The rules below are available without it.</p></noscript>
+<header class="intro"><p class="eyebrow">Play & learn / Probability lab</p><h1>Probability Parlay</h1><p>Two dice. Three coins. A fresh deck of cards. Explore chance with 1,000 imaginary credits and see the whole round unfold.</p><p class="muted">Runs in your browser. No account, real money, or network connection needed after loading.</p><div class="actions"><button id="start-button">Start a session</button><button id="leaderboard-button" class="secondary">Local records</button></div></header>
+<details class="rules"><summary>How it works</summary><p>Enter wagers in credits, down to 0.01. A winning wager returns your stake plus the listed profit multiplier. For example, 10 credits at ×2.50 returns 35 credits. Each winning profit is rounded to the nearest cent.</p><p>Dice and coins are independent and fair. Three cards are drawn without replacement from a new 52-card deck each round. J, Q and K have value 10; A has value 11. “Face cards” means J, Q or K, excluding 10. All displayed probabilities are calculated from these rules.</p><p>The two sum predictions pay ×1 profit, with no refund for equality. Other payouts are below fair odds. Different wagers on the same outcome can be correlated; a higher win probability does not guarantee growth. This is a probability toy, not a strategy guide.</p></details>
+<section id="game" hidden aria-label="Current session">
+<div class="stats" aria-live="polite"><div class="stat"><small>Round</small><strong id="round-number">1</strong></div><div class="stat"><small>Available credits</small><strong id="bankroll">1,000.00</strong></div><div class="stat"><small>Total wager</small><strong id="total-bet">0.00</strong></div><div class="stat"><small>Session peak</small><strong id="peak">1,000.00</strong></div></div>
+<div class="controls"><div class="actions"><button id="play-button">Play this round</button><button id="next-round-button" hidden>Next round</button><button id="clear-button" class="secondary">Clear wagers</button></div><button id="finish-button" class="secondary">Finish session</button><p id="round-message" class="status" role="status"></p></div>
+<div class="board">
+<section class="panel"><h2>Dice roll</h2><p class="muted">Two six-sided dice</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="dice-betting-table"></tbody></table></section>
+<section class="panel"><h2>Coin flip</h2><p class="muted">Three independent flips</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="coin-betting-table"></tbody></table></section>
+<section class="panel"><h2>Card draw</h2><p class="muted">Product of the first two card values</p><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="card-betting-table"></tbody></table><h3 class="sum-note">Three-card sum predictions · ×1 profit</h3><table class="bet-table"><thead><tr><th scope="col">Outcome / chance</th><th scope="col">Profit</th><th scope="col">Wager</th></tr></thead><tbody id="sum-betting-table"></tbody></table></section>
+</div>
+<div class="summary-grid"><section class="panel" aria-live="polite"><h2>Round reveal</h2><div id="results-display"><p class="muted">Place a wager to reveal this round.</p></div></section><section class="panel"><h2>Your credit history</h2><svg id="bankroll-chart" class="chart" viewBox="0 0 600 170" role="img" aria-label="Credit balance by round"></svg><details class="history"><summary>View every balance</summary><ol id="balance-history"></ol></details></section></div>
+</section>
+<section id="session-end" class="session-end" hidden aria-labelledby="end-title"><h2 id="end-title">Session complete</h2><p id="end-message"></p><form id="save-form" class="save-form"><label for="player-name">Name for this browser’s records<input id="player-name" name="player-name" maxlength="24" required autocomplete="nickname"></label><button id="save-score" type="submit">Save locally</button></form><p id="save-message" role="status"></p></section>
+<p class="footer">Records stay in this browser and may disappear when site data is cleared. Private browsing or blocked storage may prevent saving.</p>
+</main>
+<dialog id="leaderboard-dialog" aria-labelledby="leaderboard-title"><div class="dialog-header"><h2 id="leaderboard-title">Local records</h2><button class="secondary close" id="close-leaderboard" aria-label="Close local records">×</button></div><p class="muted">Top 10 session peaks saved on this browser. These are editable local records, not a verified or online ranking.</p><div id="leaderboard-content"></div></dialog>
+</body></html>

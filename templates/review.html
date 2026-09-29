@@ -1,0 +1,7 @@
+{% extends 'article.html' %}
+{% from 'macros.html' import cover %}
+{% from 'post-parts.html' import facts %}
+{% block cover %}
+<figure class="m-unit article-cover review-visual">{{ cover(page, decorative=false) }}{% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}</figure>
+{% endblock %}
+{% block facts %}<div class="review-facts">{{ facts(page) }}</div>{% endblock %}

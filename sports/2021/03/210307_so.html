@@ -1,203 +1,150 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">    <!-- Last-Modified="2021/03/10 00:00:00"-->
-    <meta name="theme-color" content="#489FE6">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Too Young To Be A Top Soccer Player? | Type Null</title>
-    <meta name="keywords" content="soccer,player,data,age,insight,sports,analytics,python">
-    <meta name="description" content="A recent article points that most of the top players in Europe in 2019-20 season are no younger than 29 years old. It also refers to a statistics study which finds the peak age for the UEFA Champions League is 26-30. We try to answer the following questions using the evidence from MLS: Does a soccer player need to get older in order to perform better? Should the contract of a younger player be longer until peak age? How should age be factored into value assessment for different positions ...">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo_arceus.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@typenull21">
-    <meta property="og:title" content="Too Young To Be A Top Soccer Player? | Type Null">
-    <meta property="og:type" content="article">
-    <meta property="og:description" content="A recent article points that most of the top players in Europe in 2019-20 season are no younger than 29 years old. It also refers to a statistics study which finds the peak age for the UEFA Champions League is 26-30. We try to answer the following questions using the evidence from MLS: Does a soccer player need to get older in order to perform better? Should the contract of a younger player be longer until &quot;peak age&quot;? How should age be factored into value assessment for different positions ...">
-    <meta property="og:url" content="https://type-null.github.io/sports/2021/03/210307_so.html">
-    <meta property="og:image" content="https://www.pokemon.co.jp/PostImages/9417f679995b8f3ce6055a4e6c03fa0d845b22fc.jpg">
-    <meta property="og:site_name" content="Type Null Official">
-    <meta property="og:locale" content="ja_JP">
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">  </head>  <body class="page-sub page-shop">    <div class="body-wrapper">
-<header class="header" id="header">
-  <div class="header__body">
-    <div class="header__logo view-pc"><a href="/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'logo', 'click-lbl':'btn', 'event':'click'});"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren"/></a></div>
-    <nav class="gnav" id="gnav">
-      <ul class="gnav__list">
-        <li class="gnav__list-item nav-cat__news"><a class="gnav__list-links" href="/info/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'news', 'click-lbl':'btn', 'event':'click'});"><span>NEWS</span></a></li>
-        <li class="gnav__list-item nav-cat__game"><a class="gnav__list-links" href="/game/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'game', 'click-lbl':'btn', 'event':'click'});"><span>GAME</span></a></li>
-        <li class="gnav__list-item nav-cat__app"><a class="gnav__list-links" href="/app/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'app', 'click-lbl':'btn', 'event':'click'});"><span>APP</span></a></li>
-        <li class="gnav__list-item nav-cat__card"><a class="gnav__list-links" href="/card/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'card', 'click-lbl':'btn', 'event':'click'});"><span>CARD</span></a></li>
-        <li class="gnav__list-item nav-cat__tv_movie"><a class="gnav__list-links" href="/tv_movie/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'tv-movie', 'click-lbl':'btn', 'event':'click'});"><span>TV／MOVIE</span></a></li>
-        <li class="gnav__list-item nav-cat__shop"><a class="gnav__list-links" href="/sports/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'shop', 'click-lbl':'btn', 'event':'click'});"><span>SPORTS</span></a></li>
-        <li class="gnav__list-item nav-cat__goods"><a class="gnav__list-links" href="/goods/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'goods', 'click-lbl':'btn', 'event':'click'});"><span>GOODS</span></a></li>
-      </ul>
-    </nav>
-    <ul class="gnav-link__list">
-      <li class="gnav-link__list-item gnav-link__list-item--zukan"><a href="https://zukan.pokemon.co.jp/" target="_blank" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'zukan', 'click-lbl':'btn', 'event':'click'});"><span class="view-sp">ポケモン</span><span>図鑑</span></a></li>
-      <li class="gnav-link__list-item gnav-link__list-item--support"><a href="https://www.linkedin.com/in/weihangren" target="_blank" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'support', 'click-lbl':'btn', 'event':'click'});"><span>LinkedIn</span></a></li>
-      <li class="gnav-link__list-item gnav-link__list-item--search">
-        <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'search', 'click-lbl':'btn', 'event':'click'});"><span>検索</span></button>
-      </li>
-    </ul>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Too young to be a top soccer player? · Type Null</title>
+<meta name="description" content="An unfinished question from the 2021 archive about age, performance, and how soccer players are valued.">
+
+<meta name="theme-color" content="#489fe6">
+<link rel="icon" type="image/svg+xml" href="../../../assets/images/favicon.svg">
+<link rel="canonical" href="https://type-null.github.io/sports/2021/03/210307_so.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Too young to be a top soccer player?"><meta property="og:description" content="An unfinished question from the 2021 archive about age, performance, and how soccer players are valued."><meta property="og:url" content="https://type-null.github.io/sports/2021/03/210307_so.html"><meta property="og:site_name" content="Type Null">
+<meta property="article:published_time" content="2021-03-07"><meta name="dcterms.created" content="2021-03-07"><meta property="article:modified_time" content="2026-09-29">
+<meta name="author" content="Weihang Ren">
+<meta property="og:image" content="https://type-null.github.io/assets/images/editorial/soccer.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Type Null" href="../../../feed.xml">
+<link rel="stylesheet" href="../../../assets/generated/css/assets/fonts/pokemon-fonts.css"><link rel="stylesheet" href="../../../assets/generated/css/assets/css/site.css"><script src="../../../search-index.js" defer></script><script src="../../../assets/js/site.js" defer></script>
+
+</head>
+<body class="page-sub page-sports">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header" id="header">
+<div class="header__body">
+<a class="header__logo" href="../../../index.html" aria-label="Type Null home"><img src="../../../assets/images/logo_arceus_en.png" alt="Weihang Ren" width="145" height="63"></a>
+<details class="mobile-navigation">
+<summary aria-label="Toggle navigation" aria-controls="main-navigation"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></summary>
+</details>
+<nav class="gnav main-nav" id="main-navigation" aria-label="Main navigation"><ul class="gnav__list">
+<li class="gnav__list-item nav-cat-news"><a class="gnav__list-links" href="../../../index.html"><span>NEWS</span></a></li>
+<li class="gnav__list-item" style="--topic-color:#5969df"><a class="gnav__list-links" href="../../../card/index.html"><span>CARDS</span></a></li><li class="gnav__list-item" style="--topic-color:#00c879"><a class="gnav__list-links is-active" href="../../index.html" aria-current="true"><span>SPORTS</span></a></li><li class="gnav__list-item" style="--topic-color:#489fe6"><a class="gnav__list-links" href="../../../notes/index.html"><span>NOTES</span></a></li>
+</ul></nav>
+<div class="gnav-link__list">
+<a class="header-utility github-link" href="https://github.com/type-null" target="_blank" rel="noopener noreferrer"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M14 3h7v7m0-7L10 14M10 4H4v16h16v-6"/>
+
+</svg><span>GitHub</span></a>
+<a class="header-utility guide-link" href="../../../feed.xml"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h13a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H5V3Zm3 0v18M11 8h5m-5 4h5m-5 4h3"/>
+
+</svg><span>RSS</span></a>
+<button class="header-utility search-toggle" data-search-open aria-label="Search this site" hidden><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>
+
+</svg><span>Search</span></button>
+</div></div></header>
+<main class="main-area" id="main" tabindex="-1">
+<div class="section-wrap article-wrap news-detail article-template--article" style="--topic-color:#00c879">
+  <nav class="breadcrumb breadcrumbs" aria-label="Breadcrumb"><ol class="breadcrumb__list"><li><a href="../../../index.html">TOP</a></li><li><a href="../../index.html">Sports</a></li><li><span aria-current="page">Too young to be a top soccer player?</span></li></ol></nav>
+  <article class="news-body">
+    <header class="page-head article-header">
+<div class="news-detail__header">
+  <div class="news-detail__header-info">
+    <a class="news-detail__header-category" style="--topic-color:#00c879" href="../../index.html">Sports</a>
+    
   </div>
-  <div class="header-search">
-    <button class="header-search__close"><span></span><span></span></button>
-    <div class="header-search__element">
-      <form name="search_form" action="https://pokemon.dga.jp/" method="GET" onsubmit="return mysearch(this);">
-      <!-- <form name="search_form" action="https://pokemon.dga.jp/" method="GET" onsubmit="return mysearch(this);"> -->
-      <input type="text" name="kw" value="" class="iSearchAssist header-search__input">
-      <input type="hidden" name="ie" value="u">
-      <button type="submit" onclick="dataLayer.push({'click-ctg':'g-header', 'click-act':'serch', 'click-lbl':'submit', 'event':'click'});" class="header-search__submit"><i class="icon-search"></i>
-      </button>
-      </form>
-    </div>
-    <ul class="header-search__tag"></ul>
-  </div>
-  <div class="header__sp-block view-sp">
-    <div class="header__sp-menu-toggle">
-      <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'menu', 'click-lbl':'btn', 'event':'click'});"></button>
-    </div>
-    <div class="header__logo home-logo"><a href="/" onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'logo', 'click-lbl':'btn', 'event':'click'});"><img src="/assets/images/logo_arceus_en.png" alt="Weihang Ren"/></a></div>
-    <div class="header__sp-search">
-      <button onclick="dataLayer.push({'click-ctg':'cojp-gnav', 'click-act':'search', 'click-lbl':'btn', 'event':'click'});"></button>
-    </div>
-  </div>
-</header>      <main class="main-area">
-        <div class="news-detail">
-          <div class="news-detail__header">
-            <div class="news-detail__header-info">
-              <div class="news-detail__header-category news-detail__header-category--sports"></div>              
-            </div>
-<ul class="detail-header__sns">
-  <li class="detail-header__sns-item"><a class="sns-item__tw" href="" target="_blank"><img src="/assets/images/icon-twitter.svg" alt="Twitter"/></a></li>
-  <li class="detail-header__sns-item"><a class="sns-item__ln" href="" target="_blank"><img src="/assets/images/icon-line.svg" alt="LINE"/></a></li>
-</ul>          </div>
-          <div class="news-body">
-            <div class="page-head">
-              <h1 class="m-ttl-top">Too Young To Be A Top Soccer Player?</h1>
-              <div class="news-detail__header-time">2021.03.07</div>
-              <div class="page-head__tags">
-                <ul class="page-head__tags-list">
-                  <li class="page-head__tags-element"><a href="/goods/?flg=9">Soccer</a></li>                </ul>
-              </div>
-            </div>
-            <div class="page-mainwrap"><div class="page-parag">
-<div class="page-parag__inr">
-<p class="m-text-center">
-<img src="/PostImages/7dd9453c5b75fd5e5906ce979f1d85f9e9511926.jpg" alt="Too Young To Be A Top Soccer Player?" class="g-flex-image">
-</p>
+  <div class="detail-header__sns"><button type="button" class="share-button" data-share hidden><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 16V3m-5 5 5-5 5 5M5 12v9h14v-9"/>
 
-<div class="m-unit">
-<div class="page-parag">
-<div class="page-parag__inr">
-<p class="m-text-preline">3月1日（月）に発売したポケモンパンをご紹介するよ！
-■ポケモンミニ蒸しケーキ　もも　鉄分入り…鉄分入りの、ふんわりとした、もも味の蒸しケーキだよ。
-■ポケモンミルククリーム＆ホイップパン…宮城県産の牛乳を使用したミルククリームを包んで、ホイップクリームを注入したパンだよ。
-■ポケモンシューブール　チョコクリーム入り…チョコクリームを包んで、シュー生地をかぶせたパンだよ。
-■ポケモンきなこチョコロール…ホイップクリームをサンドし、きなこチョコでコーティングしたパンだよ。
-■ポケモンたまごパン…ふんわりとした生地に、たまごサラダとケチャップを絞ったパンだよ。
-■ピカチュウのパウンドケーキ　バター味…ピカチュウの顔の形をした、バター味のしっとりとしたパウンドケーキだよ。
+</svg> Share</button></div>
+</div>
+<h1 class="m-ttl-top">Too young to be a top soccer player?</h1>
 
-どの商品にも、デコキャラシールが1枚入っているよ。</p>
-</div>
-</div>
-</div>
-</div>
+<div class="news-detail__header-time article-meta">
+  <span title="Uses the publication date because no separate writing date was recorded.">First written <time datetime="2021-03-07">Mar 7, 2021</time></span>
+  <span>Last revised <time datetime="2026-09-29">Sep 29, 2026</time></span>
+  
+  <span>2 min read</span>
 </div>
 
 
+<p class="article-description">An unfinished question from the 2021 archive about age, performance, and how soccer players are valued.</p>
+<p class="article-byline">Weihang Ren</p>
 
-<div class="m-slider js-slide">
-<div class="m-slider__hd">
-<ul class="m-slider__area js-slide__area">
-<li><img src="/PostImages/d7f0439d09951625235493bb739235cc87c55386.jpg" alt="ミニ蒸しケーキ　もも　鉄分入り"><p class="m-text-center">ミニ蒸しケーキ　もも　鉄分入り</p>
-</li>
-<li><img src="/PostImages/69a4ec51c6f586d1d7ffc9b1d8a53a25737a216f.jpg" alt="ミルククリーム＆ホイップパン"><p class="m-text-center">ミルククリーム＆ホイップパン</p>
-</li>
-<li><img src="/PostImages/21d428e3752b2b18b45e57e16b1b46ea6de08eef.jpg" alt="シューブール　チョコクリーム入り"><p class="m-text-center">シューブール　チョコクリーム入り</p>
-</li>
-<li><img src="/PostImages/9990e8b8709e7dfb7a4c807510beb3385005a58f.jpg" alt="きなこチョコロール"><p class="m-text-center">きなこチョコロール</p>
-</li>
-<li><img src="/PostImages/aa9d93bbff2925f7e1e0a5064880c3e2bf7622ef.jpg" alt="たまごパン"><p class="m-text-center">たまごパン</p>
-</li>
-<li><img src="/PostImages/e1384ab8e29385d947dddf31a0dbdd7bcfe4b05f.jpg" alt="パウンドケーキ　バター味"><p class="m-text-center">パウンドケーキ　バター味</p>
-</li>
-</ul></div>
-<div class="m-slider__btm">
-<ul class="m-slider__nav js-slide__nav">
-<li><img src="/PostImages/d7f0439d09951625235493bb739235cc87c55386.jpg" alt="ミニ蒸しケーキ　もも　鉄分入り"></li>
-<li><img src="/PostImages/69a4ec51c6f586d1d7ffc9b1d8a53a25737a216f.jpg" alt="ミルククリーム＆ホイップパン"></li>
-<li><img src="/PostImages/21d428e3752b2b18b45e57e16b1b46ea6de08eef.jpg" alt="シューブール　チョコクリーム入り"></li>
-<li><img src="/PostImages/9990e8b8709e7dfb7a4c807510beb3385005a58f.jpg" alt="きなこチョコロール"></li>
-<li><img src="/PostImages/aa9d93bbff2925f7e1e0a5064880c3e2bf7622ef.jpg" alt="たまごパン"></li>
-<li><img src="/PostImages/e1384ab8e29385d947dddf31a0dbdd7bcfe4b05f.jpg" alt="パウンドケーキ　バター味"></li>
-</ul></div></div>
-<div class="page-parag">
-<div class="page-parag__inr">
-<table class="m-tbl-nml">
-<colgroup>
-<col style="width:25%;">
-<col style="width:75%;">
-</colgroup>
-<tbody>
-<tr>
-<th>発売元</th>
-<td>第一屋製パン株式会社</td>
-</tr>
-<tr>
-<th>発売日</th>
-<td>2021年3月1日（月）</td>
-</tr>
-<tr>
-<th>価格</th>
-<td>■ポケモンミニ蒸しケーキ　もも　鉄分入り　112円（税込）<br>
-■ポケモンミルククリーム＆ホイップパン　134円（税込）<br>
-■ポケモンシューブール　チョコクリーム入り　134円（税込）<br>
-■ポケモンきなこチョコロール　134円（税込）<br>
-■ポケモンたまごパン　134円（税込）<br>
-■ピカチュウのパウンドケーキ　バター味　173円（税込）</td>
-</tr>
-<tr>
-<th>お問い合わせ</th>
-<td>第一屋製パン株式会社 お客様相談室<br>
-TEL：フリーダイヤル　0120-880-135<br>
-受付時間：9時～17時（土日、祝日、年末年始を除く）</td>
-</tr>
-<tr>
-<th>注意事項</th>
-<td><span class="m-text-supply">※新型コロナウイルス感染拡大の影響により、急遽、発売日の変更・延期となる可能性もございます。あらかじめ、ご了承ください。<br>
-また、最新情報は、リンク先ウェブサイトやお問い合わせ先にて、ご確認ください。<br>
-※店頭での商品のお取り扱い開始日は、地域・店舗によって異なる場合がございます。<br>
-※地域により、お取り扱いしていない商品もございます。ご容赦ください。<br>
-※掲載情報はページ公開時点のものです。予告なく変更になる場合がございます。<br>
-※写真はイメージです。実際の商品と、色やデザインが異なる場合がございます。</span></td>
-</tr>
-</tbody>
-</table>
+</header>
+    <div class="page-mainwrap"><div class="page-parag"><div class="page-parag__inr">
+      
+      
 
 
-
-<div class="detail-website">
-</div><h5 class="m-ttl-str">関連情報</h5>
-<p><a href="http://www.daiichipan.co.jp/?page_id=350" target="_blank" class="m-btn-nxt is-color6">第一屋製パン株式会社　ポケモンパン情報ページ<i class="m-icon-blank"></i></a></p>
-<div class="page-parag">
-<div class="page-parag__inr">
-<hr class="m-hr-line">
-<div class="m-unit--s">
-<p class="m-text-xxxxsmall m-text-supply">
-©Nintendo・Creatures・GAME FREAK・TV Tokyo・ShoPro・JR Kikaku ©Pokémon</p>
-</div>
-</div>
-</div>
-
+      <div class="article-content-layout">
+        
+        <div class="article-content-main"><div class="article-body prose"><blockquote>
+<p><strong>Archive note:</strong> The original page had this title and a description of the intended research, but its body still contained an unrelated sample article. No soccer analysis, dataset, or results were present. This page preserves the original questions without presenting an unfinished project as a completed study.</p>
+</blockquote>
+<h2 id="the-original-questions">The original questions</h2>
+<p>The page proposed using evidence from Major League Soccer to explore three questions:</p>
+<ul>
+<li>Does a soccer player need to get older in order to perform better?</li>
+<li>Should a younger player's contract run through an expected peak age?</li>
+<li>How should age affect value assessments for different positions?</li>
+</ul>
+<p>Its description referred to age patterns in European soccer as motivation. The source material and MLS analysis were not included in the repository, so those claims cannot be evaluated here.</p>
+<h2 id="what-a-complete-investigation-would-need">What a complete investigation would need</h2>
+<p>A useful follow-up would define performance before comparing age groups, separate playing positions, and account for playing time. Following the same players across seasons would also help distinguish an age effect from differences between players who remain in the league and those who leave it.</p>
+<p>Those are next questions, not findings from the archived page. The original publication date and URL are retained so existing links still lead to the right project.</p></div>
+          
         </div>
-      </main>
+      </div>
+      
+      <div class="article-end">
+        <div class="page-head__tags article-tags"><ul class="page-head__tags-list"><li class="page-head__tags-element"><span>#Soccer</span></li><li class="page-head__tags-element"><span>#Research question</span></li><li class="page-head__tags-element"><span>#Archive</span></li></ul></div>
+        <div class="share-actions"><span>Share this article</span><button class="m-btn-nxt button button-small" type="button" data-copy-link hidden>Copy link <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 16V3m-5 5 5-5 5 5M5 12v9h14v-9"/>
 
-<div class="breadcrumb">
-  <ol class="breadcrumb__list">
-    <li><a href="/">TOP</a></li>
-    <li><a href="/sports/">SPORTS</a></li>
-    <li><span>Too Young To Be A Top Soccer Player?</span></li>
-  </ol>
+</svg></button><a class="m-btn-nxt button button-small button-outline" href="mailto:?subject=Too%20young%20to%20be%20a%20top%20soccer%20player%3F&amp;body=https%3A%2F%2Ftype-null.github.io%2Fsports%2F2021%2F03%2F210307_so.html">Email <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+
+</svg></a><span class="share-status" role="status"></span></div>
+      </div>
+    </div></div></div>
+  </article>
+  
+
+<section class="related-posts" aria-labelledby="related-heading">
+  <div class="section-heading"><h2 class="m-ttl-sub" id="related-heading">Related articles</h2></div>
+  <div class="news-list"><div class="news-list__body post-grid"><article class="news-list__element post-card" data-topic="card" style="--topic-color:#5969df">
+<a href="../../../card/when-packs-share-a-month/index.html" class="news-list__links post-card-link">
+<figure class="news-list__th card-image"><div class="news-list__img"><div class="cover-art" style="--art-count:2;--topic-color:#5969df" aria-hidden="true"><img src="../../../assets/images/card/set-package-jp/SV/sv4k.jpg" alt="" width="225" height="400" loading="lazy" decoding="async"><img src="../../../assets/images/card/set-package-jp/SV/sv4m.jpg" alt="" width="225" height="400" loading="lazy" decoding="async"></div>
+</div><figcaption class="news-list__caption"><span class="caption-background" aria-hidden="true"><img src="../../../assets/images/card/set-package-jp/SV/sv4k.jpg" alt="" width="500" height="240" loading="lazy" decoding="async"></span><span class="caption-text">Cards</span></figcaption></figure>
+<div class="news-list__content card-copy"><span class="news-list__category">CARDS</span><h3 class="news-list__title">When two packs share a calendar square</h3><div class="news-list__time"><time class="time" datetime="2026-09-29">2026.09.29</time><span class="news-list__new">PICK UP</span></div></div>
+</a></article><article class="news-list__element post-card" data-topic="card" style="--topic-color:#5969df">
+<a href="../../../card/pack-art/index.html" class="news-list__links post-card-link">
+<figure class="news-list__th card-image"><div class="news-list__img"><div class="cover-art" style="--art-count:3;--topic-color:#5969df" aria-hidden="true"><img src="../../../assets/images/editorial/pack-original.webp" alt="" width="225" height="400" loading="lazy" decoding="async"><img src="../../../assets/images/editorial/pack-sv.webp" alt="" width="225" height="400" loading="lazy" decoding="async"><img src="../../../assets/images/editorial/pack-neo.webp" alt="" width="225" height="400" loading="lazy" decoding="async"></div>
+</div><figcaption class="news-list__caption"><span class="caption-background" aria-hidden="true"><img src="../../../assets/images/editorial/pack-original.webp" alt="" width="500" height="240" loading="lazy" decoding="async"></span><span class="caption-text">Artwork gallery</span></figcaption></figure>
+<div class="news-list__content card-copy"><span class="news-list__category">CARDS</span><h3 class="news-list__title">From the pack-art archive</h3><div class="news-list__time"><time class="time" datetime="2026-09-29">2026.09.29</time><span class="news-list__new">PICK UP</span></div></div>
+</a></article><article class="news-list__element post-card" data-topic="sports" style="--topic-color:#00c879">
+<a href="../../what-a-hand-can-tell-you/index.html" class="news-list__links post-card-link">
+<figure class="news-list__th card-image"><div class="news-list__img"><img class="cover-image" src="../../../assets/images/editorial/sports.webp" alt="" width="720" height="440" loading="lazy" decoding="async"></div><figcaption class="news-list__caption"><span class="caption-background" aria-hidden="true"><img src="../../../assets/images/editorial/sports.webp" alt="" width="500" height="240" loading="lazy" decoding="async"></span><span class="caption-text">Sports</span></figcaption></figure>
+<div class="news-list__content card-copy"><span class="news-list__category">SPORTS</span><h3 class="news-list__title">What a ten-card hand can tell you</h3><div class="news-list__time"><time class="time" datetime="2026-09-29">2026.09.29</time></div></div>
+</a></article></div></div>
+</section>
+
+
+  <div class="news-detail-button"><a class="back-link m-btn-nxt" href="../../index.html">Sports index <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+
+</svg></a></div>
 </div>
+</main>
+<footer class="footer site-footer">
+<div class="footer__upper"><div class="footer__upper-body"><a class="footer__logo" href="../../../index.html"><img src="../../../assets/images/logo_arceus_en.png" alt="Weihang Ren" width="145" height="63" loading="lazy"></a><nav class="footer__sitemap-body" aria-label="Footer navigation"><a href="../../../index.html">NEWS</a><a href="../../../card/index.html">CARDS</a><a href="../../index.html">SPORTS</a><a href="../../../notes/index.html">NOTES</a></nav><a class="footer-pagetop" href="#main" aria-label="Back to top">⌃</a></div></div>
+<div class="footer-bottom"><nav aria-label="More links"><a href="../../../feed.xml">RSS feed</a><a href="https://github.com/type-null" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav><p>© Weihang Ren · Type Null</p><p>An independent personal blog. Pokémon and related artwork belong to their respective owners.</p></div>
+</footer>
+<dialog class="search-dialog" id="site-search" aria-labelledby="search-title"><div class="search-dialog-head"><h2 id="search-title">Search</h2><button data-search-close aria-label="Close search">×</button></div><label class="search-field"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>
+
+</svg><input id="site-search-input" type="search" placeholder="Search articles, tools, and notes…" autocomplete="off" aria-label="Search articles"></label><p class="search-status" role="status">Start typing to search.</p><div id="search-results"></div></dialog>
+
+</body></html>

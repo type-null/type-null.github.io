@@ -1,0 +1,9 @@
+title: Type Null
+description: A personal collection of Pokémon cards, playful experiments, and field notes.
+url: https://type-null.github.io
+author: Weihang Ren
+language: en
+footer_note: An independent personal blog. Pokémon and related artwork belong to their respective owners.
+
+# Required media and runtime assets must be local; outbound links are still allowed.
+offline: true

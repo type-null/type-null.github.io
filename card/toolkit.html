@@ -1,221 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prize Card Odds</title>
-<style>
-    /* Base styles */
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        margin: 0;
-        padding: 20px;
-        line-height: 1.4;
-        transition: background 0.3s, color 0.3s;
-        background: #f2f2f7;
-        color: #1c1c1e;
-        display: flex;
-        justify-content: center;
-    }
-    .container {
-        width: 100%;
-        max-width: 400px; /* max width for wide screens */
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: 600;
-    }
-    @media (max-width: 500px) {
-        h1 {
-            text-align: left;
-        }
-    }
-    .card {
-        background: #ffffffcc;
-        border-radius: 16px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        backdrop-filter: blur(12px);
-        transition: background 0.3s, box-shadow 0.3s;
-        width: 90%; /* smaller width on phones */
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .stepper {
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-    .stepper label {
-        flex: 1;
-    }
-    .stepper button {
-        font-size: 20px;
-        color: #007aff; /* iOS blue */
-        border: none;
-        background: none;
-        padding: 0 8px;
-        cursor: pointer;
-    }
-    .stepper span {
-        width: 40px;
-        display: inline-block;
-        text-align: center;
-        font-weight: 600;
-    }
-    .result {
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-    .distribution {
-        margin-top: 10px;
-    }
-    .distribution div {
-        display: flex;
-        justify-content: space-between;
-        padding: 4px 0;
-        border-bottom: 1px solid #eee;
-    }
-    .distribution div:last-child {
-        border-bottom: none;
-    }
-
-    /* Dark mode */
-    @media (prefers-color-scheme: dark) {
-        body {
-            background: #1c1c1e;
-            color: #f2f2f7;
-        }
-        .card {
-            background: rgba(30, 30, 30, 0.85);
-            box-shadow: 0 4px 16px rgba(255,255,255,0.08);
-        }
-        .distribution div {
-            border-bottom: 1px solid #444;
-        }
-        .stepper button {
-            color: #0a84ff;
-        }
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 400px) {
-        .card {
-            width: 85%;
-        }
-        .stepper label {
-            font-size: 18px;
-        }
-        .stepper button {
-            font-size: 18px;
-        }
-        .stepper span {
-            width: 36px;
-        }
-    }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prize Card Odds — Card Toolkit</title>
+  <meta name="description" content="Find the probability that your key cards land in the prizes, with an exact distribution and adjustable deck size.">
+  <link rel="stylesheet" href="../assets/generated/css/assets/css/tools/tools.css">
+  <script src="../assets/js/tools/probability.js" defer></script>
+  <script src="../assets/js/tools/prizes.js" defer></script>
 </head>
 <body>
-
-<div class="container">
-<h1>Prize Card Odds</h1>
-
-<div class="card">
-    <div class="stepper">
-        <label>Deck size</label>
-        <button onclick="updateValue('deckSize', -5)">–</button>
-        <span id="deckSizeValue">60</span>
-        <button onclick="updateValue('deckSize', 5)">+</button>
-    </div>
-
-    <div class="stepper">
-        <label>Copies in deck</label>
-        <button onclick="updateValue('copies', -1)">–</button>
-        <span id="copiesValue">2</span>
-        <button onclick="updateValue('copies', 1)">+</button>
-    </div>
-
-    <div class="stepper">
-        <label>Prize cards</label>
-        <button onclick="updateValue('prizeCards', -1)">–</button>
-        <span id="prizeCardsValue">6</span>
-        <button onclick="updateValue('prizeCards', 1)">+</button>
-    </div>
-</div>
-
-<div class="card">
-    <div class="result">
-        At least one in deck after setup: <span id="atLeastOne">0%</span>
-    </div>
-    <div class="distribution" id="distribution"></div>
-</div>
-</div>
-
-<script>
-let deckSize = 60;
-let copies = 2;
-let prizeCards = 6;
-
-function binomial(n, k) {
-    if(k < 0 || k > n) return 0;
-    if(k === 0 || k === n) return 1;
-    k = Math.min(k, n - k);
-    let result = 1;
-    for(let i=1;i<=k;i++){
-        result = result * (n - i + 1) / i;
-    }
-    return result;
-}
-
-function hypergeometric(C, k, deck, prize) {
-    let numerator = binomial(C, k) * binomial(deck - C, prize - k);
-    let denominator = binomial(deck, prize);
-    return denominator > 0 ? numerator / denominator : 0;
-}
-
-function updateValue(type, delta) {
-    if(type === 'deckSize') {
-        deckSize = Math.max(Math.max(copies, prizeCards), deckSize + delta);
-        document.getElementById('deckSizeValue').textContent = deckSize;
-    } else if(type === 'copies') {
-        copies = Math.min(deckSize, Math.max(1, copies + delta));
-        document.getElementById('copiesValue').textContent = copies;
-    } else if(type === 'prizeCards') {
-        prizeCards = Math.min(deckSize, Math.max(1, prizeCards + delta));
-        document.getElementById('prizeCardsValue').textContent = prizeCards;
-    }
-    calculate();
-}
-
-function calculate() {
-    let yRange = [];
-    let upper = Math.min(copies, deckSize - prizeCards);
-    for(let y=0; y<=Math.max(0, upper); y++) yRange.push(y);
-
-    let deckProbabilities = yRange.map(y => {
-        let x = copies - y;
-        return {y: x, p: hypergeometric(copies, x, deckSize, prizeCards)};
-    });
-
-    // At least one in deck
-    let pAllPrized = deckProbabilities.find(d => d.y === copies)?.p || 0;
-    document.getElementById('atLeastOne').textContent = (100*(1-pAllPrized)).toFixed(5) + "%";
-
-    // Full distribution
-    let distDiv = document.getElementById('distribution');
-    distDiv.innerHTML = '';
-    deckProbabilities.slice().reverse().forEach(d => {
-        let div = document.createElement('div');
-        div.innerHTML = `<span>${d.y} in prize</span><span>${(100*d.p).toFixed(2)}%</span>`;
-        distDiv.appendChild(div);
-    });
-}
-
-// Initial calculation
-calculate();
-</script>
-
+<main class="prize-main">
+  <p class="eyebrow">Card toolkit / Probability</p>
+  <h1>Will your key card be prized?</h1>
+  <p class="intro">A quick look at the odds, from one crucial copy to a full playset.</p>
+  <noscript><p class="panel">Enable JavaScript to adjust the calculator. For the default 60-card deck with two copies and six prizes, the chance that at least one copy is not prized is 99.15%.</p></noscript>
+  <div class="grid">
+    <section class="panel" aria-labelledby="setup-title">
+      <h2 id="setup-title">Set up your deck</h2>
+      <form id="prize-form" class="prize-fields" novalidate>
+        <div class="stepper">
+          <label for="deckSize">Deck size</label>
+          <button type="button" data-field="deckSize" data-delta="-5" aria-label="Remove five cards from deck">−</button>
+          <input id="deckSize" type="number" min="1" max="500" step="1" value="60" inputmode="numeric" aria-describedby="input-note">
+          <button type="button" data-field="deckSize" data-delta="5" aria-label="Add five cards to deck">+</button>
+        </div>
+        <div class="stepper">
+          <label for="copies">Copies in deck</label>
+          <button type="button" data-field="copies" data-delta="-1" aria-label="Remove one copy">−</button>
+          <input id="copies" type="number" min="0" max="60" step="1" value="2" inputmode="numeric">
+          <button type="button" data-field="copies" data-delta="1" aria-label="Add one copy">+</button>
+        </div>
+        <div class="stepper">
+          <label for="prizeCards">Prize cards</label>
+          <button type="button" data-field="prizeCards" data-delta="-1" aria-label="Remove one prize card">−</button>
+          <input id="prizeCards" type="number" min="0" max="60" step="1" value="6" inputmode="numeric">
+          <button type="button" data-field="prizeCards" data-delta="1" aria-label="Add one prize card">+</button>
+        </div>
+        <p id="input-note" class="note">Use whole numbers. Deck size: 1–500. Copies and prizes cannot exceed the deck size.</p>
+        <p id="prize-error" class="error note" role="status"></p>
+      </form>
+      <button type="button" class="button secondary" id="reset-prizes">Reset to 60 / 2 / 6</button>
+      <details>
+        <summary>What these odds mean</summary>
+        <p class="note">The model draws the specified number of prizes uniformly from the full deck, without replacement. “Not prized” includes cards in your opening hand or remaining deck. It does not model an opening-hand requirement, mulligans, or other information you already know.</p>
+        <p class="note">Probability of exactly k copies in prizes: C(copies, k) × C(deck − copies, prizes − k) ÷ C(deck, prizes).</p>
+      </details>
+    </section>
+    <section class="panel" aria-labelledby="odds-title">
+      <h2 id="odds-title">Your odds</h2>
+      <div class="stat" aria-live="polite" aria-atomic="true">
+        <p class="note">At least one copy is not prized</p>
+        <p id="atLeastOne" class="output">99.15%</p>
+        <p id="result-summary" class="note"></p>
+      </div>
+      <div class="distribution">
+        <table>
+          <caption class="note">Possible prize outcomes</caption>
+          <thead><tr><th scope="col">Copies prized</th><th scope="col">Probability</th></tr></thead>
+          <tbody id="distribution"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <p class="footer-note">Calculated on your device. No account or network service required.</p>
+</main>
 </body>
 </html>

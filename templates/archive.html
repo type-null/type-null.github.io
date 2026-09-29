@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, card %}
+{% block content %}
+<div class="section-wrap topic-page news-index">
+<nav class="breadcrumb breadcrumbs" aria-label="Breadcrumb"><ol class="breadcrumb__list"><li><a href="/">TOP</a></li><li><span aria-current="page">NEWS</span></li></ol></nav>
+<header class="page-head topic-page-header"><h1 class="m-ttl-top">NEWS</h1><p class="topic-page-description">All articles, tools, and notes.</p></header>
+<div class="news-index-heading"><h2 class="m-ttl-sub">Latest articles</h2><span class="section-count">{{ posts|length }} posts</span></div>
+<div class="topic-filter archive-filter" hidden role="group" aria-label="Filter articles by topic"><button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All posts</button>{% for topic in topics %}<button type="button" class="filter-chip" data-filter="{{ topic.slug }}" aria-pressed="false" style="--topic-color:{{ topic.color }}">{{ topic.label }}</button>{% endfor %}</div>
+<div class="news-list"><div class="news-list__body post-grid" id="post-grid">{% for post in posts %}{{ card(post) }}{% endfor %}</div></div><p class="filter-status sr-only" role="status"></p>
+</div>
+{% endblock %}

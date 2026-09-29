@@ -1,0 +1,55 @@
+[
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_configured_website_uses_preview_and_open_button_without_loading_it_early",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://github.com/type-null/example-project",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://type-null.github.io/example-project/?view=cards",
+      "https://github.com/type-null/example-project"
+    ]
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_florida_research_placeholder_is_discoverable_without_invented_destinations",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": []
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_project_previews_and_keyboard_links_work_without_javascript",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker"
+    ]
+  },
+  {
+    "test": "test_project_ui.ProjectBrowserTests.test_project_previews_are_local_portable_and_link_to_their_own_repositories",
+    "errors": [],
+    "failedResources": [],
+    "unexpectedNetworkAttempts": [],
+    "outsidePackage": [],
+    "interceptedOutboundNavigations": [
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker",
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker",
+      "https://github.com/type-null/PTCG-calendar",
+      "https://github.com/type-null/PTCG-database",
+      "https://github.com/type-null/Website-central-park-squirrel-tracker"
+    ]
+  }
+]

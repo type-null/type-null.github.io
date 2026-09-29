@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, card, cover %}
+{% block extra_head %}<link rel="stylesheet" href="/assets/css/home-sections.css"><link rel="stylesheet" href="/assets/css/home-motion.css">{% endblock %}
+{% block content %}
+<h1 class="sr-only">{{ site.title }} — {{ site.description }}</h1>
+{% set slides = (featured_posts|selectattr('template','equalto','timeline')|list) + (featured_posts|rejectattr('template','equalto','timeline')|list) %}
+{% if slides %}<section class="home-hero" aria-label="Featured articles" aria-roledescription="carousel"><div class="home-hero__inner">
+<div class="home-hero__slider">{% for post in slides %}<a class="home-hero__slide" href="{{ post.url }}" data-slide="{{ loop.index0 }}" style="--topic-color:{{ post.topic.color }}"{% if not loop.first %} hidden{% endif %} aria-label="{{ post.title }}">{{ cover(post, true, loop.first) }}{% if not post.hero_image|default('') %}<div class="hero-caption"><span>{{ post.topic.label|upper }}</span><h2>{{ post.title }}</h2><p>{{ post.description }}</p></div>{% endif %}</a>{% endfor %}</div>
+<div class="hero-pagination" hidden>{% for post in slides %}<button type="button" data-slide-to="{{ loop.index0 }}" aria-label="Show featured article {{ loop.index }}: {{ post.title }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"></button>{% endfor %}<button type="button" class="hero-pause" data-slide-pause aria-label="Pause featured slideshow">Ⅱ</button></div>
+<div class="home-hero__button"><a class="button" href="#latest">All articles {{ icon('arrow') }}</a></div>
+</div></section>{% endif %}
+{% set notices = (posts|selectattr('announcement','sameas',true)|list) + (posts|rejectattr('announcement','sameas',true)|list) %}
+<section class="home-notice" aria-label="Site updates"><div class="home-notice__body"><h2 class="home-notice__heading">INFORMATION</h2><div class="home-notice__list">{% for post in notices[:2] %}<a class="home-notice__list-links" href="{{ post.url }}"><time datetime="{{ post.date }}">{{ post.date|replace('-','.') }}</time><span>{{ post.title }}</span></a>{% endfor %}</div></div></section>
+<section class="home-news" id="latest" aria-labelledby="latest-title"><div class="home-news__bg" data-color-reveal="columns" aria-hidden="true"><span></span><span></span><span></span></div><div class="home-news__inner section-wrap"><div class="home-news-list">
+<h2 class="heading-home" id="latest-title"><span>NEWS</span><small>Latest posts</small></h2>
+<div class="news-list__body post-grid" id="post-grid">{% for post in posts[:6] %}{{ card(post) }}{% endfor %}</div>
+</div>
+<div class="button-block"><a class="button" href="/posts/">More articles {{ icon('arrow') }}</a></div>
+</div></section>
+{% include 'home-topics.html' %}
+{% endblock %}
+{% block scripts %}<script src="/assets/js/home-motion.js" defer></script>{% endblock %}

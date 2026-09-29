@@ -1,0 +1,395 @@
+{
+  "method": "Local file:// Chrome. Visible artwork bounds combine thumbnail alpha bounds with actual object-fit:contain sizing.",
+  "before": {
+    "1440": {
+      "packs": [
+        {
+          "id": "2025-01-sv-sv9",
+          "naturalWidth": 113,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 87.12
+        },
+        {
+          "id": "2025-03-sv-sv9a",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-04-sv-sv10",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11b",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 45.32,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11w",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 45.32,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-08-m-m1l",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 25.280664062499998,
+          "visibleHeight": 49.328125
+        },
+        {
+          "id": "2025-08-m-m1s",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 25.280664062499998,
+          "visibleHeight": 49.328125
+        },
+        {
+          "id": "2025-09-m-m2",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 27.675,
+          "visibleHeight": 54.0
+        },
+        {
+          "id": "2025-11-m-m2a",
+          "naturalWidth": 111,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 48.84,
+          "visibleHeight": 88.0
+        }
+      ],
+      "errors": [],
+      "remote": [],
+      "overflow": false
+    },
+    "390": {
+      "packs": [
+        {
+          "id": "2025-01-sv-sv9",
+          "naturalWidth": 113,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 87.12
+        },
+        {
+          "id": "2025-03-sv-sv9a",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-04-sv-sv10",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11b",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 73.93810679611651
+        },
+        {
+          "id": "2025-06-sv-sv11w",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 73.93810679611651
+        },
+        {
+          "id": "2025-08-m-m1l",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 19.515039062499998,
+          "visibleHeight": 38.078125
+        },
+        {
+          "id": "2025-08-m-m1s",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 19.515039062499998,
+          "visibleHeight": 38.078125
+        },
+        {
+          "id": "2025-09-m-m2",
+          "naturalWidth": 160,
+          "naturalHeight": 160,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 27.675,
+          "visibleHeight": 54.0
+        },
+        {
+          "id": "2025-11-m-m2a",
+          "naturalWidth": 111,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 48.84,
+          "visibleHeight": 88.0
+        }
+      ],
+      "errors": [],
+      "remote": [],
+      "overflow": false
+    }
+  },
+  "after": {
+    "1440": {
+      "packs": [
+        {
+          "id": "2025-01-sv-sv9",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-03-sv-sv9a",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-04-sv-sv10",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11b",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 45.32,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11w",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 45.32,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-08-m-m1l",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-08-m-m1s",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 49.328125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-09-m-m2",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-11-m-m2a",
+          "naturalWidth": 110,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 48.4,
+          "visibleHeight": 88.0
+        }
+      ],
+      "errors": [],
+      "remote": [],
+      "overflow": false
+    },
+    "390": {
+      "packs": [
+        {
+          "id": "2025-01-sv-sv9",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-03-sv-sv9a",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-04-sv-sv10",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 44.0,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-06-sv-sv11b",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 73.93810679611651
+        },
+        {
+          "id": "2025-06-sv-sv11w",
+          "naturalWidth": 103,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 73.93810679611651
+        },
+        {
+          "id": "2025-08-m-m1l",
+          "naturalWidth": 100,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 76.15625
+        },
+        {
+          "id": "2025-08-m-m1s",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 38.078125,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 38.078125,
+          "visibleHeight": 76.92550505050505
+        },
+        {
+          "id": "2025-09-m-m2",
+          "naturalWidth": 99,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 43.56,
+          "visibleHeight": 88.0
+        },
+        {
+          "id": "2025-11-m-m2a",
+          "naturalWidth": 110,
+          "naturalHeight": 200,
+          "width": 54,
+          "height": 88,
+          "fit": "contain",
+          "visibleWidth": 48.4,
+          "visibleHeight": 88.0
+        }
+      ],
+      "errors": [],
+      "remote": [],
+      "overflow": false
+    }
+  }
+}

@@ -1,0 +1,2580 @@
+{
+  "source": "https://www.pokemon.co.jp/",
+  "inspected": "2026-09-29",
+  "viewports": [
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "sections": [
+        {
+          "name": "news",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 471,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 574.8125,
+                    "w": 1440,
+                    "h": 789.921875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 719.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical",
+                    "x": 0,
+                    "y": 719.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "34.2194% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 719.765625,
+                    "w": 416.15625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 416.15625,
+                    "y": 719.765625,
+                    "w": 416.15625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 832.3125,
+                    "y": 719.765625,
+                    "w": 416.15625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 521,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 524.8125,
+                    "w": 1440,
+                    "h": 789.921875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 669.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical run",
+                    "x": 0,
+                    "y": 669.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "39.7729% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 669.765625,
+                    "w": 397.90625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 416.15625,
+                    "y": 669.765625,
+                    "w": 397.90625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 832.3125,
+                    "y": 669.765625,
+                    "w": 397.90625,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 611,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 434.8125,
+                    "w": 1440,
+                    "h": 789.921875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 579.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical run",
+                    "x": 0,
+                    "y": 579.765625,
+                    "w": 1224,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "53.7478% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 579.765625,
+                    "w": 0,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 416.15625,
+                    "y": 579.765625,
+                    "w": 0,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 832.3125,
+                    "y": 579.765625,
+                    "w": 0,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "goods",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 1249,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 656.734375,
+                    "w": 1440,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 460.8125,
+                    "y": 719.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape",
+                    "x": 460.8125,
+                    "y": 719.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "56.6138% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 460.8125,
+                    "y": 719.734375,
+                    "w": 979.1875,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 460.8125,
+                    "y": 889.734375,
+                    "w": 979.1875,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 460.8125,
+                    "y": 1059.734375,
+                    "w": 979.1875,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 100,
+                    "y": 656.734375,
+                    "w": 1240,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 140,
+                    "y": 731.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 384.328125,
+                    "y": 731.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 628.65625,
+                    "y": 731.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 1299,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 606.734375,
+                    "w": 1440,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 460.8125,
+                    "y": 669.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape run",
+                    "x": 460.8125,
+                    "y": 669.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "62.1683% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 460.8125,
+                    "y": 669.734375,
+                    "w": 936.25,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 460.8125,
+                    "y": 839.734375,
+                    "w": 970.671875,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.4s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 460.8125,
+                    "y": 1009.734375,
+                    "w": 979.1875,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.5s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 100,
+                    "y": 606.734375,
+                    "w": 1240,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 140,
+                    "y": 681.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 384.328125,
+                    "y": 681.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 628.65625,
+                    "y": 681.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 1389,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 516.734375,
+                    "w": 1440,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 460.8125,
+                    "y": 579.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape run",
+                    "x": 460.8125,
+                    "y": 579.734375,
+                    "w": 979.1875,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "76.1433% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 460.8125,
+                    "y": 579.734375,
+                    "w": 0,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 460.8125,
+                    "y": 749.734375,
+                    "w": 0,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.4s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 460.8125,
+                    "y": 919.734375,
+                    "w": 0,
+                    "h": 170,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.5s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 100,
+                    "y": 516.734375,
+                    "w": 1240,
+                    "h": 875.109375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 140,
+                    "y": 591.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 384.328125,
+                    "y": 591.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 628.65625,
+                    "y": 591.734375,
+                    "w": 204.328125,
+                    "h": 226.171875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            }
+          ]
+        },
+        {
+          "name": "movie",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 2157,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 693.84375,
+                    "w": 1440,
+                    "h": 850.40625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 719.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left",
+                    "x": -1120,
+                    "y": 719.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "matrix(1, 0, 0, 1, -1120, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "78.8308% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 195,
+                    "y": 768.84375,
+                    "w": 1050,
+                    "h": 613.21875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 195,
+                    "y": 1407.0625,
+                    "w": 1050,
+                    "h": 35.59375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 280,
+                    "y": 1362.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right",
+                    "x": 1440,
+                    "y": 1362.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "matrix(1, 0, 0, 1, 1160, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "78.8308% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 2207,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 643.84375,
+                    "w": 1440,
+                    "h": 850.40625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 669.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left run",
+                    "x": -0.12256119400262833,
+                    "y": 669.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "matrix(1, 0, 0, 1, -0.122561, 0)",
+                    "transition": "0.5s cubic-bezier(0.97, 0, 0.1, 1.01)",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "84.3832% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 195,
+                    "y": 718.84375,
+                    "w": 1050,
+                    "h": 613.21875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 195,
+                    "y": 1357.0625,
+                    "w": 1050,
+                    "h": 35.59375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 280,
+                    "y": 1312.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right",
+                    "x": 1440,
+                    "y": 1312.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "matrix(1, 0, 0, 1, 1160, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "84.3832% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 2297,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 553.84375,
+                    "w": 1440,
+                    "h": 850.40625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 579.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left run",
+                    "x": 0,
+                    "y": 579.796875,
+                    "w": 1120,
+                    "h": 500,
+                    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                    "transition": "0.5s cubic-bezier(0.97, 0, 0.1, 1.01)",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "12.3582% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 195,
+                    "y": 628.84375,
+                    "w": 1050,
+                    "h": 613.21875,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 195,
+                    "y": 1267.0625,
+                    "w": 1050,
+                    "h": 35.59375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 280,
+                    "y": 1222.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right",
+                    "x": 1440,
+                    "y": 1222.65625,
+                    "w": 1160,
+                    "h": 100,
+                    "transform": "matrix(1, 0, 0, 1, 1160, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "12.3582% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "event",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 3261,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 520.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 720.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 720.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "15.2249% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 201,
+                    "y": 605.25,
+                    "w": 1038,
+                    "h": 872.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 221,
+                    "y": 605.25,
+                    "w": 998,
+                    "h": 278.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 3311,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 470.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 670.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 670.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "20.6002% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 201,
+                    "y": 555.25,
+                    "w": 1038,
+                    "h": 872.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 221,
+                    "y": 555.25,
+                    "w": 998,
+                    "h": 278.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 3401,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 380.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 580.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 580.25,
+                    "w": 1440,
+                    "h": 957.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "34.5742% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 201,
+                    "y": 465.25,
+                    "w": 1038,
+                    "h": 872.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 221,
+                    "y": 465.25,
+                    "w": 998,
+                    "h": 278.5625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "sections": [
+        {
+          "name": "news",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 211,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 594.578125,
+                    "w": 390,
+                    "h": 2318.234375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 610.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical",
+                    "x": 0,
+                    "y": 610.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "34.2194% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 610.578125,
+                    "w": 98.59375,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 98.59375,
+                    "y": 610.578125,
+                    "w": 98.59375,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 197.1875,
+                    "y": 610.578125,
+                    "w": 98.59375,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 261,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 544.578125,
+                    "w": 390,
+                    "h": 2318.234375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 560.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical run",
+                    "x": 0,
+                    "y": 560.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "39.7729% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 560.578125,
+                    "w": 94.265625,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 98.59375,
+                    "y": 560.578125,
+                    "w": 94.265625,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 197.1875,
+                    "y": 560.578125,
+                    "w": 94.265625,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 351,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-news": [
+                  {
+                    "class": "home-section home-news",
+                    "x": 0,
+                    "y": 454.578125,
+                    "w": 390,
+                    "h": 2318.234375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg": [
+                  {
+                    "class": "home-news__bg",
+                    "x": 0,
+                    "y": 470.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-vertical run",
+                    "x": 0,
+                    "y": 470.578125,
+                    "w": 290,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "53.7478% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-news__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 0,
+                    "y": 470.578125,
+                    "w": 0,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 98.59375,
+                    "y": 470.578125,
+                    "w": 0,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 197.1875,
+                    "y": 470.578125,
+                    "w": 0,
+                    "h": 795,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "goods",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 2579,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 594.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 130,
+                    "y": 610.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape",
+                    "x": 130,
+                    "y": 610.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "55.5395% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 130,
+                    "y": 610.8125,
+                    "w": 260,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 130,
+                    "y": 850.171875,
+                    "w": 260,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 130,
+                    "y": 1089.53125,
+                    "w": 260,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 0,
+                    "y": 594.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 641.8125,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 760.09375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 878.375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 2629,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 544.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 130,
+                    "y": 560.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape run",
+                    "x": 130,
+                    "y": 560.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "60.9138% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 130,
+                    "y": 560.8125,
+                    "w": 250.84375,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 130,
+                    "y": 800.171875,
+                    "w": 258.46875,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.4s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 130,
+                    "y": 1039.53125,
+                    "w": 260,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.5s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 0,
+                    "y": 544.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 591.8125,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 710.09375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 828.375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 2719,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-goods": [
+                  {
+                    "class": "home-section home-goods",
+                    "x": 0,
+                    "y": 454.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg": [
+                  {
+                    "class": "home-goods__bg",
+                    "x": 130,
+                    "y": 470.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg div": [
+                  {
+                    "class": "home-bg-slide-in-step-landscape run",
+                    "x": 130,
+                    "y": 470.8125,
+                    "w": 260,
+                    "h": 704,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "75.0673% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__bg span": [
+                  {
+                    "class": "bg01",
+                    "x": 130,
+                    "y": 470.8125,
+                    "w": 0,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.3s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg02",
+                    "x": 130,
+                    "y": 710.171875,
+                    "w": 0,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.4s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "bg03",
+                    "x": 130,
+                    "y": 949.53125,
+                    "w": 0,
+                    "h": 239.359375,
+                    "transform": "none",
+                    "transition": "0.7s cubic-bezier(0.97, 0, 0.1, 1.01) 0.5s",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods__inner": [
+                  {
+                    "class": "home-goods__inner",
+                    "x": 0,
+                    "y": 454.8125,
+                    "w": 390,
+                    "h": 1513.890625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-goods-list .goods-list__element": [
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 501.8125,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 620.09375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  },
+                  {
+                    "class": "goods-list__element",
+                    "x": 20,
+                    "y": 738.375,
+                    "w": 350,
+                    "h": 108.28125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-ranking": [],
+                ".ranking-list__element": []
+              }
+            }
+          ]
+        },
+        {
+          "name": "movie",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 4142,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 595.703125,
+                    "w": 390,
+                    "h": 510.3125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 610.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left",
+                    "x": -285,
+                    "y": 610.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "matrix(1, 0, 0, 1, -285, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "76.8582% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 0,
+                    "y": 642.703125,
+                    "w": 390,
+                    "h": 304.328125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 10,
+                    "y": 942.03125,
+                    "w": 380,
+                    "h": 72.390625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 40,
+                    "y": 919.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right",
+                    "x": 390,
+                    "y": 919.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "matrix(1, 0, 0, 1, 350, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "76.8582% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 4192,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 545.703125,
+                    "w": 390,
+                    "h": 510.3125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 560.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left run",
+                    "x": -0.03111460618674755,
+                    "y": 560.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "matrix(1, 0, 0, 1, -0.0311146, 0)",
+                    "transition": "0.5s cubic-bezier(0.97, 0, 0.1, 1.01)",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "82.2332% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 0,
+                    "y": 592.703125,
+                    "w": 390,
+                    "h": 304.328125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 10,
+                    "y": 892.03125,
+                    "w": 380,
+                    "h": 72.390625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 40,
+                    "y": 869.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right",
+                    "x": 390,
+                    "y": 869.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "matrix(1, 0, 0, 1, 350, 0)",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "82.2332% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 4282,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-movie": [
+                  {
+                    "class": "home-section home-movie",
+                    "x": 0,
+                    "y": 455.703125,
+                    "w": 390,
+                    "h": 510.3125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-wrapper__bg",
+                    "x": 0,
+                    "y": 470.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-wrapper__bg div": [],
+                ".home-movie__slider-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-left run",
+                    "x": 0,
+                    "y": 470.703125,
+                    "w": 285,
+                    "h": 285,
+                    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                    "transition": "0.5s cubic-bezier(0.97, 0, 0.1, 1.01)",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "10.3867% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider": [
+                  {
+                    "class": "home-movie__slider",
+                    "x": 0,
+                    "y": 502.703125,
+                    "w": 390,
+                    "h": 304.328125,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav": [
+                  {
+                    "class": "home-movie__slider-nav",
+                    "x": 10,
+                    "y": 802.03125,
+                    "w": 380,
+                    "h": 72.390625,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg": [
+                  {
+                    "class": "home-movie__slider-nav-wrapper__bg",
+                    "x": 40,
+                    "y": 779.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-movie__slider-nav-wrapper__bg span": [
+                  {
+                    "class": "home-bg-slide-in-right run",
+                    "x": 40,
+                    "y": 779.421875,
+                    "w": 350,
+                    "h": 70,
+                    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                    "transition": "0.5s cubic-bezier(0.97, 0, 0.1, 1.01)",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "10.3867% 0%",
+                    "display": "block"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "event",
+          "states": [
+            {
+              "label": "before",
+              "scrollY": 4712,
+              "elapsed_wait_ms": 100,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 586.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 611.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 611.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "12.3578% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 20,
+                    "y": 665.015625,
+                    "w": 350,
+                    "h": 480,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 0,
+                    "y": 0,
+                    "w": 0,
+                    "h": 0,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "none"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            },
+            {
+              "label": "crossing",
+              "scrollY": 4762,
+              "elapsed_wait_ms": 500,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 536.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 561.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 561.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "17.7332% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 20,
+                    "y": 615.015625,
+                    "w": 350,
+                    "h": 480,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 0,
+                    "y": 0,
+                    "w": 0,
+                    "h": 0,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "none"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            },
+            {
+              "label": "after",
+              "scrollY": 4852,
+              "elapsed_wait_ms": 1300,
+              "computed": {
+                ".home-event": [
+                  {
+                    "class": "home-section home-event",
+                    "x": 0,
+                    "y": 446.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg": [
+                  {
+                    "class": "home-event__bg",
+                    "x": 0,
+                    "y": 471.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__bg div": [],
+                ".home-event__bg span": [
+                  {
+                    "class": "",
+                    "x": 0,
+                    "y": 471.015625,
+                    "w": 390,
+                    "h": 559,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "8s linear infinite gradient",
+                    "backgroundPosition": "31.7082% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".home-event__inner": [
+                  {
+                    "class": "home-event__inner",
+                    "x": 20,
+                    "y": 525.015625,
+                    "w": 350,
+                    "h": 480,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "block"
+                  }
+                ],
+                ".event-list": [
+                  {
+                    "class": "news-list event-list view-pc",
+                    "x": 0,
+                    "y": 0,
+                    "w": 0,
+                    "h": 0,
+                    "transform": "none",
+                    "transition": "all",
+                    "animation": "none",
+                    "backgroundPosition": "0% 0%",
+                    "display": "none"
+                  }
+                ],
+                ".home-calendar": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reduced_motion": {
+        ".home-news__bg div": [
+          {
+            "class": "home-bg-slide-in-step-vertical",
+            "x": 0,
+            "y": 1190.765625,
+            "w": 1224,
+            "h": 500,
+            "transform": "none",
+            "width": "1224px",
+            "height": "500px",
+            "transition": "all",
+            "animation": "8s linear infinite gradient",
+            "background": "linear-gradient(90deg, rgb(255, 201, 225), rgb(255, 236, 155), rgb(254, 248, 194), rgb(226, 251, 255), rgb(230, 233, 255), rgb(255, 234, 251), rgb(255, 201, 225), rgb(255, 236, 155), rgb(254, 248, 194))",
+            "backgroundPosition": "16.841% 0%",
+            "display": "block",
+            "gap": "normal",
+            "grid": "none"
+          }
+        ],
+        ".home-event__bg span": [
+          {
+            "class": "",
+            "x": 0,
+            "y": 3981.25,
+            "w": 1440,
+            "h": 957.5625,
+            "transform": "none",
+            "width": "1440px",
+            "height": "957.562px",
+            "transition": "all",
+            "animation": "8s linear infinite gradient",
+            "background": "linear-gradient(90deg, rgb(255, 201, 225), rgb(255, 236, 155), rgb(254, 248, 194), rgb(226, 251, 255), rgb(230, 233, 255), rgb(255, 234, 251), rgb(255, 201, 225), rgb(255, 236, 155), rgb(254, 248, 194))",
+            "backgroundPosition": "16.841% 0%",
+            "display": "block",
+            "gap": "normal",
+            "grid": "none"
+          }
+        ]
+      }
+    }
+  ]
+}

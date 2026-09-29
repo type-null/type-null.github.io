@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon %}
+{% block document_base %}
+<script>
+// Pages serves this document at the missing URL, which can be any depth.
+// Files opened from disk already have their correct local document location.
+if (location.protocol === 'https:' || location.protocol === 'http:') {
+  const base = document.createElement('base');
+  base.href = new URL('/', location.href).href;
+  document.head.append(base);
+}
+</script>
+{% endblock %}
+{% block runtime %}
+{# Keep the speculative loader from fetching assets before the base is set. #}
+<template id="error-resources">{{ super() }}</template>
+<script>document.write(document.getElementById('error-resources').innerHTML);</script>
+<noscript>{{ self.stylesheets() }}</noscript>
+{% endblock %}
+{% block content %}
+<section class="not-found section-wrap news-detail">
+  <nav class="breadcrumb breadcrumbs" aria-label="Breadcrumb"><ol class="breadcrumb__list"><li><a href="/">TOP</a></li><li><span aria-current="page">404 Not Found</span></li></ol></nav>
+  <div class="news-body"><header class="page-head"><h1 class="m-ttl-top">404 Not Found</h1></header>
+    <div class="page-mainwrap"><div class="page-parag"><div class="page-parag__inr">
+      <p class="m-text-center">The page you are looking for could not be found.</p>
+      <p class="m-text-center">Please return to the homepage or choose a section below.</p>
+      <div class="detail-website"><a href="/" class="m-btn-nxt button button-dark">Back to TOP {{ icon('arrow') }}</a></div>
+      <nav class="error-topics" aria-label="Browse sections">{% for topic in topics %}<a class="m-btn-nxt" href="{{ topic.url }}">{{ topic.label }} {{ icon('arrow') }}</a>{% endfor %}</nav>
+    </div></div></div>
+  </div>
+</section>
+{% endblock %}

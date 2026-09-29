@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Suits — Interactive Playbook</title>
+  <meta name="description" content="A compact hand probability calculator and strategy notebook for Trading Suits.">
+  <link rel="stylesheet" href="../../assets/css/tools/tools.css">
+  <script src="../../assets/js/tools/probability.js" defer></script>
+  <script src="../../assets/js/tools/trading.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Play / Experiment / Learn</p>
+  <h1>Trading Suits</h1>
+  <p class="intro">A pocket playbook for the card table. Explore what your hand tells you, compare player styles, and plan a round.</p>
+  <noscript><p class="panel">Enable JavaScript to use the hand calculator and switch playbook sections. The model and its assumptions are listed below.</p></noscript>
+  <nav class="tabs" aria-label="Playbook sections">
+    <button type="button" data-section="assessor" aria-pressed="true" aria-controls="assessor">Hand assessor</button>
+    <button type="button" data-section="market" aria-pressed="false" aria-controls="market">Player styles</button>
+    <button type="button" data-section="campaign" aria-pressed="false" aria-controls="campaign">Round budget</button>
+  </nav>
+  <section id="assessor" aria-label="Hand assessor">
+    <div class="grid">
+      <div class="panel">
+        <h2>Your ten-card hand</h2>
+        <p class="muted">Enter how many cards you hold in each suit.</p>
+        <form id="hand-form" novalidate>
+          <div class="field-grid">
+            <label for="spades">♠ Spades<input id="spades" class="card-input" type="number" min="0" max="10" step="1" value="0" inputmode="numeric"></label>
+            <label for="clubs">♣ Clubs<input id="clubs" class="card-input" type="number" min="0" max="10" step="1" value="0" inputmode="numeric"></label>
+            <label for="hearts">♥ Hearts<input id="hearts" class="card-input" type="number" min="0" max="10" step="1" value="0" inputmode="numeric"></label>
+            <label for="diamonds">♦ Diamonds<input id="diamonds" class="card-input" type="number" min="0" max="10" step="1" value="0" inputmode="numeric"></label>
+          </div>
+          <p class="readout">Total: <span id="total-cards">0</span> / 10 cards</p>
+          <button class="button" id="calculate-btn" type="submit" disabled>Calculate probabilities</button>
+          <p class="error note" id="hand-error" role="status"></p>
+        </form>
+        <button class="button secondary" type="button" id="example-hand">Try an example hand</button>
+      </div>
+      <div class="panel">
+        <h2>Which suit is gold?</h2>
+        <div id="probabilityChart" class="bars" aria-label="Gold suit probabilities"></div>
+        <p id="assessor-interpretation" class="note" aria-live="polite">Before a hand is entered, all four model outcomes have equal probability.</p>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:20px">
+      <details>
+        <summary>Model assumptions &amp; how the calculation works</summary>
+        <p class="note">These 40-card deck compositions preserve the final model in the original playbook. That page contained conflicting suit mappings, and no authoritative game rules were provided. Results are conditional on this table: check it against your game's rules. Each gold suit has an equal prior probability; the ten cards are drawn without replacement.</p>
+        <div class="table-scroll"><table>
+          <caption>Cards of each suit in the full deck</caption>
+          <thead><tr><th scope="col">Gold suit</th><th scope="col">♠</th><th scope="col">♣</th><th scope="col">♥</th><th scope="col">♦</th></tr></thead>
+          <tbody><tr><th scope="row">Spades</th><td>10</td><td>12</td><td>10</td><td>8</td></tr><tr><th scope="row">Clubs</th><td>12</td><td>10</td><td>10</td><td>8</td></tr><tr><th scope="row">Hearts</th><td>8</td><td>10</td><td>10</td><td>12</td></tr><tr><th scope="row">Diamonds</th><td>10</td><td>8</td><td>12</td><td>10</td></tr></tbody>
+        </table></div>
+        <p class="note" style="margin-top:12px">For each candidate deck, the likelihood is C(♠ count, your ♠) × C(♣ count, your ♣) × C(♥ count, your ♥) × C(♦ count, your ♦) ÷ C(40, 10). The four likelihoods are normalized to sum to 100%.</p>
+      </details>
+    </div>
+  </section>
+  <section id="market" aria-label="Player styles" hidden>
+    <div class="panel">
+      <h2>Read the table</h2>
+      <p class="muted">Use these broad styles as observations, then adjust when a player's behavior changes.</p>
+      <div class="archetypes" id="archetype-selector"></div>
+      <div id="archetype-display" class="profiles" aria-live="polite"></div>
+    </div>
+  </section>
+  <section id="campaign" aria-label="Round budget" hidden>
+    <div class="grid">
+      <div class="panel">
+        <h2>Round budget sandbox</h2>
+        <p class="note">An illustrative fixed-fraction rule from the original playbook, using fictional game credits. This is a heuristic, not a Kelly calculation; no payout odds are included.</p>
+        <label for="bankroll">Game balance: <strong id="bankroll-value">300 credits</strong></label>
+        <input type="range" id="bankroll" min="100" max="5000" value="300" step="50">
+        <fieldset>
+          <legend>Confidence in your reading of the hand</legend>
+          <div class="choices">
+            <label><input type="radio" name="confidence" value="low"> Low</label>
+            <label><input type="radio" name="confidence" value="medium" checked> Medium</label>
+            <label><input type="radio" name="confidence" value="high"> High</label>
+          </div>
+        </fieldset>
+        <p class="muted">Illustrative round allocation</p>
+        <p id="budget-recommendation" class="output" aria-live="polite"></p>
+        <p class="note" id="budget-rule"></p>
+      </div>
+      <div class="panel">
+        <h2>Across the campaign</h2>
+        <h3>Early rounds · Observe</h3><p class="note">Learn how the other players trade, keep notes, and test your interpretation of the deck.</p>
+        <h3>Middle rounds · Reassess</h3><p class="note">Compare the cards you can see with the model. A larger balance does not make an uncertain read more reliable.</p>
+        <h3>Final rounds · Check the objective</h3><p class="note">Consider the game's scoring and remaining rounds. An average return and the chance of finishing first are different quantities.</p>
+      </div>
+    </div>
+  </section>
+  <p class="footer-note">All calculations run in your browser. No account, tracking, or network service is required.</p>
+</main>
+</body>
+</html>

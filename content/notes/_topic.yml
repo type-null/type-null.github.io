@@ -1,0 +1,6 @@
+label: Notes
+description: Notes about making and maintaining this little corner of the web.
+color: "#489fe6"
+icon: notebook
+order: 3
+home_layout: journal

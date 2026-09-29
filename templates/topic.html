@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, card %}
+{% block content %}
+<div class="section-wrap topic-page news-index" style="--topic-color:{{ page.topic.color }}">
+  <nav class="breadcrumb breadcrumbs" aria-label="Breadcrumb"><ol class="breadcrumb__list"><li><a href="/">TOP</a></li><li><span aria-current="page">{{ page.topic.label }}</span></li></ol></nav>
+  <header class="page-head topic-page-header">
+    <h1 class="m-ttl-top">{{ page.topic.label }}</h1>
+    <p class="topic-page-description">{{ page.topic.description }}</p>
+  </header>
+  <div class="news-index-heading"><h2 class="m-ttl-sub">Articles</h2><span class="section-count">{{ posts|length }} posts</span></div>
+  <div class="news-list"><div class="news-list__body post-grid topic-posts">{% for post in posts %}{{ card(post) }}{% else %}<div class="news-empty page-parag"><p>There are no published articles in this section yet.</p><a class="m-btn-nxt button" href="/">Back to TOP {{ icon('arrow') }}</a></div>{% endfor %}</div></div>
+</div>
+{% endblock %}
